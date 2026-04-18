@@ -60,6 +60,9 @@
       --radius-xs: 10px;
       --ease: cubic-bezier(0.16, 1, 0.3, 1);
       --ease-out: cubic-bezier(0, 0, 0.2, 1);
+      --duration-fast: 0.2s;
+      --duration-med: 0.35s;
+      --duration-slow: 0.5s;
     }
     body.theme-light {
       --bg: #f6f1e7;
@@ -109,18 +112,34 @@
     }
     .nav-links a {
       padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 600;
-      color: var(--muted); transition: color 0.2s, background 0.2s;
+      color: var(--muted); transition: color var(--duration-fast), background var(--duration-fast);
     }
     .nav-links a:hover { color: var(--text); background: var(--surface); }
     .nav-links .rss-link { color: var(--gold); }
     .nav-links .rss-link:hover { background: var(--gold-dim); }
+
+    /* ── Search trigger ── */
+    .search-trigger {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 14px; border-radius: 999px; border: 1px solid var(--border);
+      background: var(--surface); color: var(--muted); font-weight: 600; font-size: 13px;
+      cursor: pointer; transition: color var(--duration-fast), border-color var(--duration-fast), background var(--duration-fast);
+      font-family: inherit;
+    }
+    .search-trigger:hover { color: var(--text); border-color: var(--border-strong); }
+    .search-trigger svg { width: 14px; height: 14px; }
+    .search-trigger kbd {
+      font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: 600;
+      padding: 2px 5px; border-radius: 4px; border: 1px solid var(--border);
+      background: var(--surface); color: var(--muted); line-height: 1;
+    }
 
     /* ── Theme toggle ── */
     .theme-toggle {
       display: inline-flex; align-items: center; justify-content: center; gap: 6px;
       padding: 8px 14px; border-radius: 999px; border: 1px solid var(--border);
       background: var(--surface); color: var(--muted); font-weight: 600; font-size: 13px;
-      cursor: pointer; transition: color 0.2s, border-color 0.2s, background 0.2s;
+      cursor: pointer; transition: color var(--duration-fast), border-color var(--duration-fast), background var(--duration-fast);
       font-family: inherit;
     }
     .theme-toggle:hover { color: var(--text); border-color: var(--border-strong); }
@@ -135,7 +154,7 @@
       width: 44px; height: 44px; border-radius: var(--radius-xs); overflow: hidden;
       display: grid; place-items: center; flex-shrink: 0;
       box-shadow: 0 6px 20px rgba(240,180,74,0.18);
-      transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+      transition: transform var(--duration-med) var(--ease), box-shadow var(--duration-med) var(--ease);
     }
     .brand-mark img { width: 100%; height: 100%; display: block; border-radius: inherit; }
     .brand:hover .brand-mark { transform: scale(1.04); box-shadow: 0 10px 28px rgba(240,180,74,0.28); }
@@ -147,9 +166,22 @@
       height: 1px; background: var(--border); margin: 16px 0 0;
     }
 
+    /* ── Stats strip ── */
+    .stats-strip {
+      display: flex; gap: 24px; flex-wrap: wrap; align-items: center;
+      padding: 14px 0; margin: 12px 0 0;
+      font-family: 'IBM Plex Mono', monospace; font-size: 12px;
+      color: var(--muted); letter-spacing: 0.04em;
+    }
+    .stat {
+      display: inline-flex; align-items: center; gap: 6px;
+    }
+    .stat-value { color: var(--gold); font-weight: 600; }
+    .stat-sep { width: 3px; height: 3px; border-radius: 50%; background: var(--border-strong); }
+
     /* ── Hero ── */
     .hero {
-      padding: 48px 0 24px;
+      padding: 36px 0 24px;
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
       gap: 32px;
@@ -192,7 +224,7 @@
       display: inline-flex; align-items: center; justify-content: center; gap: 8px;
       border-radius: 999px; font-weight: 700; font-size: 14px;
       padding: 12px 20px; border: 1px solid var(--border);
-      transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), background 0.2s, border-color 0.2s;
+      transition: transform var(--duration-fast) var(--ease), box-shadow var(--duration-fast) var(--ease), background var(--duration-fast), border-color var(--duration-fast);
       font-family: inherit; cursor: pointer;
     }
     .btn:hover { transform: translateY(-2px); }
@@ -203,7 +235,7 @@
     .btn.primary:hover { box-shadow: 0 8px 28px rgba(240,180,74,0.35); }
     .btn.secondary { background: var(--surface); color: var(--text); }
     .btn.secondary:hover { background: var(--surface-hover); border-color: var(--border-strong); }
-    .btn-arrow { font-size: 16px; transition: transform 0.2s var(--ease); }
+    .btn-arrow { font-size: 16px; transition: transform var(--duration-fast) var(--ease); }
     .btn:hover .btn-arrow { transform: translateX(3px); }
 
     /* ── Hero panel (today's lead) ── */
@@ -213,7 +245,7 @@
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow);
       overflow: hidden;
-      transition: border-color 0.3s, box-shadow 0.3s;
+      transition: border-color var(--duration-med), box-shadow var(--duration-med);
     }
     .hero-panel:hover { border-color: var(--border-strong); }
     .hero-cover {
@@ -235,6 +267,18 @@
       color: var(--muted); font-size: 15px; line-height: 1.65;
       font-family: 'Source Serif 4', serif;
     }
+    .panel-tags {
+      display: flex; gap: 6px; flex-wrap: wrap; margin-top: 14px;
+    }
+    .panel-tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px; font-weight: 600; letter-spacing: 0.06em;
+      padding: 4px 10px; border-radius: 999px;
+      background: var(--gold-dim); color: var(--gold);
+      border: 1px solid transparent;
+      transition: border-color var(--duration-fast);
+    }
+    .panel-tag:hover { border-color: var(--gold); }
     .meta-strip {
       display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;
       margin-top: 18px;
@@ -242,7 +286,7 @@
     .meta-chip {
       padding: 14px 16px; border-radius: var(--radius-sm);
       background: var(--surface); border: 1px solid var(--border);
-      transition: border-color 0.2s;
+      transition: border-color var(--duration-fast);
     }
     .meta-chip:hover { border-color: var(--border-strong); }
     .meta-chip strong {
@@ -274,12 +318,12 @@
       border-radius: var(--radius-md);
       box-shadow: var(--shadow-sm);
       padding: 26px 24px;
-      transition: transform 0.35s var(--ease), border-color 0.3s, box-shadow 0.3s;
-      opacity: 0; transform: translateY(18px);
-      animation: fadeUp 0.6s var(--ease-out) forwards;
+      transition: transform var(--duration-med) var(--ease), border-color var(--duration-med), box-shadow var(--duration-med);
+      opacity: 0; transform: translateY(12px);
+      animation: fadeUp var(--duration-slow) var(--ease-out) forwards;
     }
-    .card:nth-child(2) { animation-delay: 0.07s; }
-    .card:nth-child(3) { animation-delay: 0.14s; }
+    .card:nth-child(2) { animation-delay: 0.06s; }
+    .card:nth-child(3) { animation-delay: 0.12s; }
     .card:hover { transform: translateY(-3px); border-color: var(--border-strong); box-shadow: var(--shadow); }
     .card-icon {
       width: 36px; height: 36px; border-radius: var(--radius-xs);
@@ -296,6 +340,23 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
+    /* ── Topic coverage ── */
+    .topic-cloud {
+      display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px;
+    }
+    .topic-tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.06em;
+      padding: 6px 14px; border-radius: 999px;
+      background: var(--surface); color: var(--muted);
+      border: 1px solid var(--border);
+      transition: color var(--duration-fast), background var(--duration-fast), border-color var(--duration-fast);
+      cursor: pointer;
+    }
+    .topic-tag:hover {
+      color: var(--gold); background: var(--gold-dim); border-color: var(--gold);
+    }
+
     /* ── Archive list ── */
     .archive { display: grid; gap: 12px; }
     .archive-item {
@@ -305,9 +366,9 @@
       border: 1px solid var(--border);
       border-radius: var(--radius-md);
       box-shadow: var(--shadow-sm);
-      transition: transform 0.3s var(--ease), border-color 0.3s, box-shadow 0.3s;
-      opacity: 0; transform: translateY(18px);
-      animation: fadeUp 0.6s var(--ease-out) forwards;
+      transition: transform var(--duration-med) var(--ease), border-color var(--duration-med), box-shadow var(--duration-med);
+      opacity: 0; transform: translateY(12px);
+      animation: fadeUp var(--duration-slow) var(--ease-out) forwards;
     }
     .archive-item:hover {
       transform: translateY(-2px);
@@ -322,10 +383,17 @@
     }
     .archive-title { font-size: 20px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 6px; }
     .archive-desc { color: var(--muted); line-height: 1.6; font-size: 14px; max-width: 60ch; }
+    .archive-tags { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 10px; }
+    .archive-tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px; font-weight: 600; letter-spacing: 0.04em;
+      padding: 3px 8px; border-radius: 999px;
+      background: var(--gold-dim); color: var(--gold);
+    }
     .archive-arrow {
       min-width: 40px; height: 40px; border-radius: 999px; display: grid; place-items: center;
       background: var(--surface); border: 1px solid var(--border); font-size: 18px;
-      transition: background 0.2s, border-color 0.2s, transform 0.2s var(--ease);
+      transition: background var(--duration-fast), border-color var(--duration-fast), transform var(--duration-fast) var(--ease);
       color: var(--muted);
     }
     .archive-item:hover .archive-arrow {
@@ -352,8 +420,18 @@
       font-family: 'IBM Plex Mono', monospace;
       letter-spacing: 0.02em;
     }
-    footer a { color: var(--gold); transition: opacity 0.2s; }
+    footer a { color: var(--gold); transition: opacity var(--duration-fast); }
     footer a:hover { opacity: 0.8; }
+
+    /* ── Reduced motion ── */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      .edition-dot { animation: none; opacity: 1; }
+    }
 
     /* ── Responsive ── */
     @media (max-width: 980px) {
@@ -370,6 +448,8 @@
       .archive-item { align-items: flex-start; }
       .nav-links a { padding: 6px 10px; font-size: 12px; }
       .colophon { flex-direction: column; gap: 8px; }
+      .stats-strip { gap: 14px; font-size: 11px; }
+      .search-trigger kbd { display: none; }
     }
   </style>
 </head>
@@ -389,6 +469,11 @@
           <a href="/about/">About</a>
           <a class="rss-link" href="/feed.xml" title="RSS Feed">RSS</a>
         </div>
+        <button class="search-trigger" id="searchTrigger" type="button" aria-label="Search editions" data-analytics="search-open">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          Search
+          <kbd>/</kbd>
+        </button>
         <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">
           <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
           <span id="themeLabel">Light</span>
@@ -396,6 +481,16 @@
       </div>
     </nav>
     <div class="divider"></div>
+
+    <div class="stats-strip" role="status" aria-label="Publication stats">
+      <span class="stat"><span class="stat-value">1</span> edition published</span>
+      <span class="stat-sep" aria-hidden="true"></span>
+      <span class="stat"><span class="stat-value">4</span> topics covered</span>
+      <span class="stat-sep" aria-hidden="true"></span>
+      <span class="stat"><span class="stat-value">7 min</span> avg read</span>
+      <span class="stat-sep" aria-hidden="true"></span>
+      <span class="stat"><span class="stat-value">High</span> signal confidence</span>
+    </div>
 
     <section class="hero">
       <div class="hero-copy">
@@ -406,17 +501,25 @@
         <h1>Modern risk briefings for operators, boards, and security&nbsp;teams.</h1>
         <p class="dek">CyberPulse distills fast-moving cyber, AI, infrastructure, and governance developments into crisp, high-context daily briefings built for people who need signal, not noise.</p>
         <div class="cta-row">
-          <a class="btn primary" href="./posts/2026-04-18.html">Read today's briefing <span class="btn-arrow">&rarr;</span></a>
-          <a class="btn secondary" href="/archive/">Browse archive</a>
+          <a class="btn primary" href="./posts/2026-04-18.html" data-analytics="cta-read-today">Read today's briefing <span class="btn-arrow">&rarr;</span></a>
+          <a class="btn secondary" href="/archive/" data-analytics="cta-browse-archive">Browse archive</a>
         </div>
       </div>
 
       <div class="hero-panel">
-        <img class="hero-cover" src="./assets/covers/2026-04-18.png" alt="CyberPulse cover art for April 18, 2026" loading="lazy">
+        <a href="./posts/2026-04-18.html" data-analytics="hero-panel-click">
+          <img class="hero-cover" src="./assets/covers/2026-04-18.png" alt="CyberPulse cover art for April 18, 2026" loading="lazy">
+        </a>
         <div class="hero-panel-inner">
           <div class="panel-label">Today's lead signal</div>
           <h2 class="signal-title">The Executive Is the New Perimeter</h2>
           <p class="signal-desc">A board-level analysis of active SharePoint exploitation, executive-targeted social engineering, and why attackers increasingly treat leadership itself as privileged infrastructure.</p>
+          <div class="panel-tags">
+            <a class="panel-tag" href="/archive/?tag=SharePoint">SharePoint</a>
+            <a class="panel-tag" href="/archive/?tag=Executive+Security">Executive Security</a>
+            <a class="panel-tag" href="/archive/?tag=Social+Engineering">Social Engineering</a>
+            <a class="panel-tag" href="/archive/?tag=AI+Risk">AI Risk</a>
+          </div>
           <div class="meta-strip">
             <div class="meta-chip">
               <strong>Primary signal</strong>
@@ -469,17 +572,36 @@
       </div>
     </section>
 
+    <section>
+      <div class="section-head">
+        <div class="section-kicker">Topics</div>
+        <div class="section-title">Coverage areas</div>
+      </div>
+      <div class="topic-cloud" role="list" aria-label="Topic tags">
+        <a class="topic-tag" href="/archive/?tag=SharePoint" role="listitem">SharePoint</a>
+        <a class="topic-tag" href="/archive/?tag=Executive+Security" role="listitem">Executive Security</a>
+        <a class="topic-tag" href="/archive/?tag=Social+Engineering" role="listitem">Social Engineering</a>
+        <a class="topic-tag" href="/archive/?tag=AI+Risk" role="listitem">AI Risk</a>
+      </div>
+    </section>
+
     <section id="archive">
       <div class="section-head">
         <div class="section-kicker">Archive</div>
         <div class="section-title">Recent editions</div>
       </div>
       <div class="archive">
-        <a class="archive-item" href="./posts/2026-04-18.html">
+        <a class="archive-item" href="./posts/2026-04-18.html" data-analytics="archive-click" data-tags="SharePoint,Executive Security,Social Engineering,AI Risk">
           <div>
             <div class="archive-date">April 18, 2026 &middot; Edition No. 1</div>
             <div class="archive-title">The Executive Is the New Perimeter</div>
             <div class="archive-desc">Today's edition connects active SharePoint exploitation, executive-targeted social engineering, and AI-driven attacker acceleration into one board-level risk narrative.</div>
+            <div class="archive-tags">
+              <span class="archive-tag">SharePoint</span>
+              <span class="archive-tag">Executive Security</span>
+              <span class="archive-tag">Social Engineering</span>
+              <span class="archive-tag">AI Risk</span>
+            </div>
           </div>
           <div class="archive-arrow">&rarr;</div>
         </a>
@@ -497,6 +619,7 @@
     </footer>
   </div>
   <script>
+    /* Theme */
     const storedTheme = localStorage.getItem('cyberpulse-theme');
     if (storedTheme === 'light') document.body.classList.add('theme-light');
     const btn = document.getElementById('themeToggle');
@@ -514,6 +637,26 @@
       document.body.classList.toggle('theme-light');
       localStorage.setItem('cyberpulse-theme', document.body.classList.contains('theme-light') ? 'light' : 'dark');
       syncTheme();
+    });
+
+    /* Search trigger → navigate to archive with search focus */
+    const searchBtn = document.getElementById('searchTrigger');
+    searchBtn.addEventListener('click', () => {
+      window.location.href = '/archive/?search=1';
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && !e.ctrlKey && !e.metaKey && !['INPUT','TEXTAREA','SELECT'].includes(document.activeElement.tagName)) {
+        e.preventDefault();
+        window.location.href = '/archive/?search=1';
+      }
+    });
+
+    /* Analytics stub — fires custom events for future integration */
+    document.querySelectorAll('[data-analytics]').forEach(el => {
+      el.addEventListener('click', () => {
+        const event = el.getAttribute('data-analytics');
+        if (typeof window.cpAnalytics === 'function') window.cpAnalytics(event);
+      });
     });
   </script>
 </body>

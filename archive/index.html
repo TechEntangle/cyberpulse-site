@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CyberPulse Archive | All Editions</title>
   <link rel="icon" type="image/png" href="/assets/brand/logo-square.png" />
-  <meta name="description" content="Browse all CyberPulse executive cyber intelligence briefings." />
+  <meta name="description" content="Browse all CyberPulse executive cyber intelligence briefings. Search by topic, filter by tag." />
   <link rel="canonical" href="https://tusharvartak.com/archive/" />
   <meta property="og:title" content="CyberPulse Archive" />
   <meta property="og:description" content="Browse all CyberPulse executive cyber intelligence briefings." />
@@ -33,6 +33,7 @@
       --shadow: 0 24px 70px rgba(0,0,0,0.28); --shadow-sm: 0 8px 24px rgba(0,0,0,0.18);
       --radius-lg: 28px; --radius-md: 20px; --radius-sm: 14px; --radius-xs: 10px;
       --ease: cubic-bezier(0.16, 1, 0.3, 1); --ease-out: cubic-bezier(0, 0, 0.2, 1);
+      --duration-fast: 0.2s; --duration-med: 0.35s; --duration-slow: 0.5s;
     }
     body.theme-light {
       --bg: #f6f1e7; --bg-soft: #fffdf8;
@@ -65,7 +66,7 @@
     .brand-mark {
       width: 40px; height: 40px; border-radius: var(--radius-xs); overflow: hidden; display: grid; place-items: center; flex-shrink: 0;
       box-shadow: 0 6px 20px rgba(240,180,74,0.18);
-      transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+      transition: transform var(--duration-med) var(--ease), box-shadow var(--duration-med) var(--ease);
     }
     .brand-mark img { width: 100%; height: 100%; display: block; border-radius: inherit; }
     .brand:hover .brand-mark { transform: scale(1.04); box-shadow: 0 10px 28px rgba(240,180,74,0.28); }
@@ -76,7 +77,7 @@
     .nav-links { display: flex; gap: 6px; align-items: center; }
     .nav-links a {
       padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 600;
-      color: var(--muted); transition: color 0.2s, background 0.2s;
+      color: var(--muted); transition: color var(--duration-fast), background var(--duration-fast);
     }
     .nav-links a:hover { color: var(--text); background: var(--surface); }
     .nav-links .rss-link { color: var(--gold); }
@@ -85,7 +86,7 @@
       display: inline-flex; align-items: center; justify-content: center; gap: 6px;
       padding: 8px 14px; border-radius: 999px; border: 1px solid var(--border);
       background: var(--surface); color: var(--muted); font-weight: 600; font-size: 13px;
-      cursor: pointer; transition: color 0.2s, border-color 0.2s; font-family: inherit;
+      cursor: pointer; transition: color var(--duration-fast), border-color var(--duration-fast); font-family: inherit;
     }
     .theme-toggle:hover { color: var(--text); border-color: var(--border-strong); }
     .theme-toggle svg { width: 14px; height: 14px; }
@@ -106,7 +107,59 @@
     .archive-intro {
       font-family: 'Source Serif 4', serif;
       color: var(--muted); font-size: 17px; line-height: 1.7; max-width: 56ch;
-      margin-bottom: 32px;
+      margin-bottom: 24px;
+    }
+
+    /* ── Search bar ── */
+    .search-bar {
+      display: flex; align-items: center; gap: 10px;
+      padding: 12px 18px; border-radius: var(--radius-md);
+      background: var(--surface); border: 1px solid var(--border);
+      margin-bottom: 20px;
+      transition: border-color var(--duration-fast);
+    }
+    .search-bar:focus-within { border-color: var(--gold); }
+    .search-bar svg {
+      width: 18px; height: 18px; color: var(--muted); flex-shrink: 0;
+    }
+    .search-input {
+      flex: 1; background: none; border: none; outline: none;
+      color: var(--text); font-family: inherit; font-size: 15px;
+      font-weight: 500; letter-spacing: -0.01em;
+    }
+    .search-input::placeholder { color: var(--muted); }
+    .search-clear {
+      display: none; align-items: center; justify-content: center;
+      width: 24px; height: 24px; border-radius: 999px;
+      background: var(--surface-hover); border: none; color: var(--muted);
+      cursor: pointer; font-size: 14px; font-weight: 700; line-height: 1;
+      transition: color var(--duration-fast), background var(--duration-fast);
+    }
+    .search-clear:hover { color: var(--text); }
+    .search-clear.visible { display: inline-flex; }
+    .search-count {
+      font-family: 'IBM Plex Mono', monospace; font-size: 11px;
+      color: var(--muted); letter-spacing: 0.04em; white-space: nowrap;
+    }
+
+    /* ── Tag filter strip ── */
+    .tag-filters {
+      display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 20px;
+    }
+    .tag-filter {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.06em;
+      padding: 6px 14px; border-radius: 999px;
+      background: var(--surface); color: var(--muted);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: color var(--duration-fast), background var(--duration-fast), border-color var(--duration-fast);
+    }
+    .tag-filter:hover {
+      color: var(--gold); border-color: var(--gold);
+    }
+    .tag-filter.active {
+      color: var(--gold); background: var(--gold-dim); border-color: var(--gold);
     }
 
     /* ── Edition counter ── */
@@ -120,6 +173,14 @@
     }
     .edition-count strong { color: var(--gold); }
 
+    /* ── No results ── */
+    .no-results {
+      padding: 40px 24px; text-align: center;
+      color: var(--muted); font-size: 15px;
+      font-family: 'Source Serif 4', serif;
+      display: none;
+    }
+
     /* ── Archive items ── */
     .archive-list { display: grid; gap: 12px; }
     .item {
@@ -128,15 +189,16 @@
       background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
       border: 1px solid var(--border);
       border-radius: var(--radius-md); box-shadow: var(--shadow-sm);
-      transition: transform 0.3s var(--ease), border-color 0.3s, box-shadow 0.3s;
-      opacity: 0; transform: translateY(16px);
-      animation: fadeUp 0.6s var(--ease-out) forwards;
+      transition: transform var(--duration-med) var(--ease), border-color var(--duration-med), box-shadow var(--duration-med);
+      opacity: 0; transform: translateY(12px);
+      animation: fadeUp var(--duration-slow) var(--ease-out) forwards;
     }
     .item:hover {
       transform: translateY(-2px);
       border-color: rgba(240,180,74,0.3);
       box-shadow: var(--shadow);
     }
+    .item.hidden { display: none; }
     .item-date {
       font-family: 'IBM Plex Mono', monospace;
       color: var(--gold); text-transform: uppercase; letter-spacing: 0.14em;
@@ -147,10 +209,17 @@
       color: var(--muted); line-height: 1.6; font-size: 14px; max-width: 58ch;
       font-family: 'Source Serif 4', serif;
     }
+    .item-tags { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 10px; }
+    .item-tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px; font-weight: 600; letter-spacing: 0.04em;
+      padding: 3px 8px; border-radius: 999px;
+      background: var(--gold-dim); color: var(--gold);
+    }
     .item-arrow {
       min-width: 40px; height: 40px; border-radius: 999px; display: grid; place-items: center;
       background: var(--surface); border: 1px solid var(--border); font-size: 18px;
-      transition: background 0.2s, border-color 0.2s, transform 0.2s var(--ease); color: var(--muted);
+      transition: background var(--duration-fast), border-color var(--duration-fast), transform var(--duration-fast) var(--ease); color: var(--muted);
     }
     .item:hover .item-arrow {
       background: var(--gold-dim); border-color: var(--gold);
@@ -159,13 +228,22 @@
 
     @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
 
+    /* ── Reduced motion ── */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
     footer {
       padding: 20px 0 0; color: var(--muted); font-size: 13px;
       border-top: 1px solid var(--border); margin-top: 44px;
       display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
       font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.02em;
     }
-    footer a { color: var(--gold); transition: opacity 0.2s; }
+    footer a { color: var(--gold); transition: opacity var(--duration-fast); }
     footer a:hover { opacity: 0.8; }
     @media (max-width: 760px) {
       .item { flex-direction: column; align-items: flex-start; }
@@ -198,17 +276,43 @@
     <div class="page-kicker">All editions</div>
     <h1>Archive</h1>
     <p class="archive-intro">Every CyberPulse edition is structured as a premium intelligence brief with executive framing, actionable takeaways, and full source attribution.</p>
-    <div class="edition-count"><strong>1</strong> edition published</div>
 
-    <div class="archive-list">
-      <a class="item" href="/posts/2026-04-18.html">
+    <div class="search-bar" role="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input class="search-input" id="searchInput" type="text" placeholder="Search editions by title, topic, or keyword..." aria-label="Search editions" autocomplete="off" />
+      <button class="search-clear" id="searchClear" type="button" aria-label="Clear search">&times;</button>
+      <span class="search-count" id="searchCount"></span>
+    </div>
+
+    <div class="tag-filters" id="tagFilters" role="group" aria-label="Filter by topic">
+      <button class="tag-filter active" data-tag="all">All</button>
+      <button class="tag-filter" data-tag="SharePoint">SharePoint</button>
+      <button class="tag-filter" data-tag="Executive Security">Executive Security</button>
+      <button class="tag-filter" data-tag="Social Engineering">Social Engineering</button>
+      <button class="tag-filter" data-tag="AI Risk">AI Risk</button>
+    </div>
+
+    <div class="edition-count"><strong id="editionTotal">1</strong> <span id="editionLabel">edition published</span></div>
+
+    <div class="archive-list" id="archiveList">
+      <a class="item" href="/posts/2026-04-18.html" data-tags="SharePoint,Executive Security,Social Engineering,AI Risk" data-title="The Executive Is the New Perimeter" data-desc="A board-level analysis of SharePoint exploitation, executive-targeted social engineering, and AI-driven attack acceleration." data-analytics="archive-click">
         <div>
           <div class="item-date">April 18, 2026 &middot; Edition No. 1</div>
           <div class="item-title">The Executive Is the New Perimeter</div>
           <div class="item-desc">A board-level analysis of SharePoint exploitation, executive-targeted social engineering, and AI-driven attack acceleration.</div>
+          <div class="item-tags">
+            <span class="item-tag">SharePoint</span>
+            <span class="item-tag">Executive Security</span>
+            <span class="item-tag">Social Engineering</span>
+            <span class="item-tag">AI Risk</span>
+          </div>
         </div>
         <div class="item-arrow">&rarr;</div>
       </a>
+    </div>
+
+    <div class="no-results" id="noResults">
+      No editions match your search. Try a different query or clear the filter.
     </div>
 
     <footer>
@@ -217,6 +321,7 @@
     </footer>
   </div>
   <script>
+    /* Theme */
     const storedTheme = localStorage.getItem('cyberpulse-theme');
     if (storedTheme === 'light') document.body.classList.add('theme-light');
     const btn = document.getElementById('themeToggle');
@@ -234,6 +339,97 @@
       document.body.classList.toggle('theme-light');
       localStorage.setItem('cyberpulse-theme', document.body.classList.contains('theme-light') ? 'light' : 'dark');
       syncTheme();
+    });
+
+    /* Search + Filter */
+    const searchInput = document.getElementById('searchInput');
+    const searchClear = document.getElementById('searchClear');
+    const searchCount = document.getElementById('searchCount');
+    const items = document.querySelectorAll('.item');
+    const tagBtns = document.querySelectorAll('.tag-filter');
+    const noResults = document.getElementById('noResults');
+    const editionTotal = document.getElementById('editionTotal');
+    const editionLabel = document.getElementById('editionLabel');
+    let activeTag = 'all';
+
+    function filterItems() {
+      const query = searchInput.value.toLowerCase().trim();
+      let visible = 0;
+      items.forEach(item => {
+        const title = (item.dataset.title || '').toLowerCase();
+        const desc = (item.dataset.desc || '').toLowerCase();
+        const tags = (item.dataset.tags || '').toLowerCase();
+        const textMatch = !query || title.includes(query) || desc.includes(query) || tags.includes(query);
+        const tagMatch = activeTag === 'all' || (item.dataset.tags || '').split(',').some(t => t.trim() === activeTag);
+        if (textMatch && tagMatch) {
+          item.classList.remove('hidden');
+          visible++;
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+      searchClear.classList.toggle('visible', query.length > 0);
+      noResults.style.display = visible === 0 ? 'block' : 'none';
+      if (query || activeTag !== 'all') {
+        searchCount.textContent = visible + ' of ' + items.length;
+        editionTotal.textContent = visible;
+        editionLabel.textContent = visible === 1 ? 'edition matching' : 'editions matching';
+      } else {
+        searchCount.textContent = '';
+        editionTotal.textContent = items.length;
+        editionLabel.textContent = items.length === 1 ? 'edition published' : 'editions published';
+      }
+    }
+
+    searchInput.addEventListener('input', filterItems);
+    searchClear.addEventListener('click', () => {
+      searchInput.value = '';
+      filterItems();
+      searchInput.focus();
+    });
+
+    tagBtns.forEach(b => {
+      b.addEventListener('click', () => {
+        activeTag = b.dataset.tag;
+        tagBtns.forEach(x => x.classList.toggle('active', x === b));
+        filterItems();
+      });
+    });
+
+    /* Handle URL params: ?search=1 focuses search, ?tag=X activates tag */
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('search') === '1') {
+      searchInput.focus();
+    }
+    const urlTag = params.get('tag');
+    if (urlTag) {
+      const match = Array.from(tagBtns).find(b => b.dataset.tag === urlTag);
+      if (match) {
+        activeTag = urlTag;
+        tagBtns.forEach(x => x.classList.toggle('active', x === match));
+        filterItems();
+      }
+    }
+
+    /* Keyboard shortcut: / to focus search */
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && !e.ctrlKey && !e.metaKey && document.activeElement !== searchInput) {
+        e.preventDefault();
+        searchInput.focus();
+      }
+      if (e.key === 'Escape' && document.activeElement === searchInput) {
+        searchInput.value = '';
+        filterItems();
+        searchInput.blur();
+      }
+    });
+
+    /* Analytics stub */
+    document.querySelectorAll('[data-analytics]').forEach(el => {
+      el.addEventListener('click', () => {
+        const event = el.getAttribute('data-analytics');
+        if (typeof window.cpAnalytics === 'function') window.cpAnalytics(event);
+      });
     });
   </script>
 </body>

@@ -78,6 +78,9 @@
       --radius-xs: 10px;
       --ease: cubic-bezier(0.16, 1, 0.3, 1);
       --ease-out: cubic-bezier(0, 0, 0.2, 1);
+      --duration-fast: 0.2s;
+      --duration-med: 0.35s;
+      --duration-slow: 0.5s;
     }
     body.theme-light {
       --bg: #f6f1e7;
@@ -140,7 +143,7 @@
     .brand-mark {
       width: 40px; height: 40px; border-radius: var(--radius-xs); display: grid; place-items: center; overflow: hidden; flex-shrink: 0;
       box-shadow: 0 6px 20px rgba(240,180,74,0.18);
-      transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+      transition: transform var(--duration-med) var(--ease), box-shadow var(--duration-med) var(--ease);
     }
     .brand-mark img { width: 100%; height: 100%; display: block; border-radius: inherit; }
     .brand:hover .brand-mark { transform: scale(1.04); box-shadow: 0 10px 28px rgba(240,180,74,0.28); }
@@ -159,7 +162,7 @@
       padding: 8px 14px; border-radius: 999px; border: 1px solid var(--border);
       background: var(--surface); color: var(--muted);
       font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer;
-      transition: color 0.2s, border-color 0.2s;
+      transition: color var(--duration-fast), border-color var(--duration-fast);
     }
     .theme-toggle:hover { color: var(--text); border-color: var(--border-strong); }
     .theme-toggle svg { width: 14px; height: 14px; }
@@ -178,7 +181,7 @@
       border-radius: 999px; border: 1px solid var(--border);
       background: var(--surface); color: var(--text);
       font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer;
-      transition: border-color 0.2s, background 0.2s, transform 0.2s var(--ease);
+      transition: border-color var(--duration-fast), background var(--duration-fast), transform var(--duration-fast) var(--ease);
     }
     .share-btn:hover { border-color: var(--border-strong); background: var(--surface-hover); transform: translateY(-1px); }
 
@@ -243,9 +246,10 @@
       padding: 5px 12px; border-radius: 999px;
       background: var(--gold-dim); color: var(--gold);
       border: 1px solid transparent;
-      transition: border-color 0.2s;
+      transition: border-color var(--duration-fast);
+      text-decoration: none;
     }
-    .tag:hover { border-color: var(--gold); }
+    .tag:hover { border-color: var(--gold); text-decoration: none; }
 
     /* ── Metadata cards ── */
     .hero-meta {
@@ -255,7 +259,7 @@
       padding: 16px; border-radius: var(--radius-sm);
       background: var(--surface); border: 1px solid var(--border);
       font-family: 'Inter', sans-serif;
-      transition: border-color 0.2s;
+      transition: border-color var(--duration-fast);
     }
     .meta-card:hover { border-color: var(--border-strong); }
     .meta-card strong {
@@ -286,7 +290,7 @@
       background: var(--surface); border: 1px solid var(--border);
       border-radius: var(--radius-md);
       box-shadow: var(--shadow-sm);
-      transition: border-color 0.2s;
+      transition: border-color var(--duration-fast);
     }
     .signal:hover { border-color: var(--border-strong); }
     .signal h3 {
@@ -367,7 +371,7 @@
     .toc-list a {
       display: block; padding: 8px 12px; border-radius: var(--radius-xs);
       font-size: 13px; font-weight: 500; color: var(--muted);
-      transition: color 0.2s, background 0.2s;
+      transition: color var(--duration-fast), background var(--duration-fast);
       text-decoration: none; line-height: 1.35;
     }
     .toc-list a:hover { color: var(--text); background: var(--surface-hover); }
@@ -385,6 +389,16 @@
     }
     footer a { color: var(--gold); text-decoration: none; }
     footer a:hover { text-decoration: underline; }
+
+    /* ── Reduced motion ── */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      .progress { transition: none; }
+    }
 
     /* ── Responsive ── */
     @media (max-width: 1020px) {
@@ -423,9 +437,9 @@
         </button>
         <div class="share-row">
           <span class="share-label">Share</span>
-          <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-04-18.html">LinkedIn</a>
-          <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=The%20Executive%20Is%20the%20New%20Perimeter&url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-04-18.html">X</a>
-          <button class="share-btn" id="copyLinkBtn" type="button">Copy link</button>
+          <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-04-18.html" data-analytics="share-linkedin">LinkedIn</a>
+          <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=The%20Executive%20Is%20the%20New%20Perimeter&url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-04-18.html" data-analytics="share-x">X</a>
+          <button class="share-btn" id="copyLinkBtn" type="button" data-analytics="share-copy">Copy link</button>
         </div>
       </div>
     </div>
@@ -438,10 +452,10 @@
           <p class="dek">Why this week's SharePoint exploitation and executive-targeted social engineering point to a more structural shift: attackers are skipping the lobby and going straight for the master keys.</p>
 
           <div class="tag-row">
-            <span class="tag">SharePoint</span>
-            <span class="tag">Executive Security</span>
-            <span class="tag">Social Engineering</span>
-            <span class="tag">AI Risk</span>
+            <a class="tag" href="/archive/?tag=SharePoint">SharePoint</a>
+            <a class="tag" href="/archive/?tag=Executive+Security">Executive Security</a>
+            <a class="tag" href="/archive/?tag=Social+Engineering">Social Engineering</a>
+            <a class="tag" href="/archive/?tag=AI+Risk">AI Risk</a>
           </div>
 
           <img class="article-cover" src="/assets/covers/2026-04-18.png" alt="CyberPulse editorial cover image for The Executive Is the New Perimeter" loading="lazy">
@@ -576,9 +590,9 @@
         <div class="sticky-card">
           <div class="side-kicker">Share this briefing</div>
           <div class="share-stack">
-            <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-04-18.html">Share on LinkedIn</a>
-            <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=The%20Executive%20Is%20the%20New%20Perimeter&url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-04-18.html">Share on X</a>
-            <button class="share-btn" id="copyLinkBtnAside" type="button">Copy article link</button>
+            <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-04-18.html" data-analytics="share-linkedin">Share on LinkedIn</a>
+            <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=The%20Executive%20Is%20the%20New%20Perimeter&url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-04-18.html" data-analytics="share-x">Share on X</a>
+            <button class="share-btn" id="copyLinkBtnAside" type="button" data-analytics="share-copy">Copy article link</button>
           </div>
         </div>
       </aside>
@@ -649,6 +663,14 @@
     };
     document.getElementById('copyLinkBtn')?.addEventListener('click', copyUrl);
     document.getElementById('copyLinkBtnAside')?.addEventListener('click', copyUrl);
+
+    /* Analytics stub */
+    document.querySelectorAll('[data-analytics]').forEach(el => {
+      el.addEventListener('click', () => {
+        const event = el.getAttribute('data-analytics');
+        if (typeof window.cpAnalytics === 'function') window.cpAnalytics(event);
+      });
+    });
   </script>
 </body>
 </html>
