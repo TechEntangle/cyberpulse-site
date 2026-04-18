@@ -16,33 +16,151 @@
   <meta name="twitter:title" content="About CyberPulse" />
   <meta name="twitter:description" content="A modern executive cyber intelligence publication focused on cyber risk, AI threats, infrastructure exposure, and board-level decision-making." />
   <link rel="alternate" type="application/rss+xml" title="CyberPulse RSS Feed" href="/feed.xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
   <style>
-    :root { --bg:#07080b; --text:#f5efe6; --muted:#b9b0a4; --gold:#f0b44a; --border:rgba(255,255,255,0.1); --panel:rgba(255,255,255,0.04); }
-    body.theme-light { --bg:#f7f2e8; --text:#171512; --muted:#6f675d; --gold:#b87b18; --border:rgba(23,21,18,0.1); --panel:rgba(255,255,255,0.92); }
-    * { box-sizing: border-box; }
-    body { margin:0; font-family: Inter, system-ui, sans-serif; background: radial-gradient(circle at top, #171b24 0%, #0b0d12 40%, #06070a 100%); color:var(--text); transition: background 0.25s ease, color 0.25s ease; }
-    body.theme-light { background: linear-gradient(180deg, #fffdf8 0%, #f7f2e8 100%); }
-    .wrap { width:min(900px, calc(100% - 32px)); margin:0 auto; padding:42px 0 80px; }
-    a { color:inherit; }
-    .topbar { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:28px; }
-    .brand { display:inline-flex; gap:12px; align-items:center; text-decoration:none; font-weight:800; letter-spacing:-0.03em; }
-    .brand-mark { width:38px; height:38px; border-radius:12px; display:grid; place-items:center; background:linear-gradient(135deg, var(--gold), #ff7c6b); color:#15120c; font-weight:900; }
-    .brand-sub { color:var(--muted); font-size:13px; font-weight:600; }
-    .nav-actions { display:flex; gap:10px; align-items:center; }
-    .nav-links { display:flex; gap:18px; align-items:center; font-size:14px; font-weight:600; }
-    .nav-links a { text-decoration:none; color:var(--muted); transition:color 0.2s; }
-    .nav-links a:hover { color:var(--text); }
-    .nav-links .rss-link { color:var(--gold); }
-    .theme-toggle { display:inline-flex; align-items:center; justify-content:center; padding:10px 14px; border-radius:999px; border:1px solid var(--border); background:rgba(255,255,255,0.04); color:var(--text); font-weight:700; font-size:13px; cursor:pointer; }
-    h1 { font-size: clamp(42px, 7vw, 78px); line-height:0.95; letter-spacing:-0.05em; margin:18px 0; }
-    p { font-size:20px; line-height:1.75; color:var(--muted); }
-    .grid { display:grid; gap:16px; grid-template-columns:1fr 1fr; margin-top:28px; }
-    .card { background:var(--panel); border:1px solid var(--border); border-radius:22px; padding:22px; }
-    .label { font-size:12px; color:var(--gold); text-transform:uppercase; letter-spacing:0.12em; font-weight:800; margin-bottom:10px; }
-    footer { padding:20px 0 0; color:var(--muted); font-size:14px; border-top:1px solid var(--border); margin-top:42px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; }
-    footer a { color:var(--gold); text-decoration:none; }
-    footer a:hover { text-decoration:underline; }
-    @media (max-width: 760px) { .grid { grid-template-columns:1fr; } p { font-size:18px; } .nav-links { gap:12px; font-size:13px; } }
+    :root {
+      --bg: #06070a; --bg-soft: #0b0d12;
+      --surface: rgba(255,255,255,0.04); --surface-hover: rgba(255,255,255,0.07);
+      --text: #f6f1e8; --text-secondary: #d4cdc2; --muted: #9e9689;
+      --gold: #f0b44a; --gold-dim: rgba(240,180,74,0.15);
+      --accent: #ff9f8c;
+      --border: rgba(255,255,255,0.08); --border-strong: rgba(255,255,255,0.14);
+      --shadow: 0 24px 70px rgba(0,0,0,0.25); --shadow-sm: 0 8px 24px rgba(0,0,0,0.18);
+      --radius-lg: 28px; --radius-md: 20px; --radius-sm: 14px; --radius-xs: 10px;
+      --ease: cubic-bezier(0.16, 1, 0.3, 1); --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    }
+    body.theme-light {
+      --bg: #f6f1e7; --bg-soft: #fffdf8;
+      --surface: rgba(255,255,255,0.72); --surface-hover: rgba(255,255,255,0.88);
+      --text: #171512; --text-secondary: #3d3830; --muted: #807868;
+      --gold: #b87b18; --gold-dim: rgba(184,123,24,0.10);
+      --accent: #ab4639;
+      --border: rgba(23,21,18,0.08); --border-strong: rgba(23,21,18,0.14);
+      --shadow: 0 20px 55px rgba(58,45,22,0.06); --shadow-sm: 0 6px 18px rgba(58,45,22,0.04);
+    }
+    * { box-sizing: border-box; margin: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body {
+      font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+      background: radial-gradient(ellipse at top, #1a1d28 0%, #0b0d12 40%, #06070a 100%);
+      color: var(--text); transition: background 0.4s var(--ease), color 0.3s var(--ease); line-height: 1.6;
+    }
+    body.theme-light { background: linear-gradient(180deg, #fffdf8 0%, #f6f1e7 100%); }
+    a { color: inherit; text-decoration: none; }
+
+    .wrap { width: min(900px, calc(100% - 40px)); margin: 0 auto; padding: 24px 0 80px; }
+
+    /* ── Nav ── */
+    .topbar {
+      display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
+      padding-bottom: 16px; border-bottom: 1px solid var(--border); margin-bottom: 44px;
+    }
+    .brand { display: inline-flex; gap: 12px; align-items: center; font-weight: 800; letter-spacing: -0.03em; }
+    .brand-mark {
+      width: 40px; height: 40px; border-radius: var(--radius-xs); overflow: hidden; display: grid; place-items: center;
+      background: linear-gradient(135deg, var(--gold), #ff7c6b); box-shadow: 0 6px 20px rgba(240,180,74,0.2);
+      transition: transform 0.3s var(--ease);
+    }
+    .brand:hover .brand-mark { transform: scale(1.04); }
+    .brand-name { font-size: 18px; letter-spacing: -0.03em; }
+    .brand-sub { color: var(--muted); font-size: 12px; font-weight: 600; }
+    .nav-actions { display: flex; gap: 8px; align-items: center; }
+    .nav-links { display: flex; gap: 6px; align-items: center; }
+    .nav-links a {
+      padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 600;
+      color: var(--muted); transition: color 0.2s, background 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); background: var(--surface); }
+    .nav-links .rss-link { color: var(--gold); }
+    .nav-links .rss-link:hover { background: var(--gold-dim); }
+    .theme-toggle {
+      display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+      padding: 8px 14px; border-radius: 999px; border: 1px solid var(--border);
+      background: var(--surface); color: var(--muted); font-weight: 600; font-size: 13px;
+      cursor: pointer; transition: color 0.2s, border-color 0.2s; font-family: inherit;
+    }
+    .theme-toggle:hover { color: var(--text); border-color: var(--border-strong); }
+    .theme-toggle svg { width: 14px; height: 14px; }
+
+    /* ── Content ── */
+    .page-kicker {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px; text-transform: uppercase; letter-spacing: 0.16em;
+      color: var(--gold); font-weight: 600;
+      display: flex; align-items: center; gap: 10px;
+      margin-bottom: 16px;
+    }
+    .page-kicker::before { content: ""; width: 20px; height: 1px; background: var(--gold); opacity: 0.5; }
+    h1 {
+      font-size: clamp(38px, 6vw, 68px); line-height: 0.96; letter-spacing: -0.05em;
+      font-weight: 900; margin-bottom: 24px; max-width: 16ch;
+    }
+    .about-dek {
+      font-family: 'Source Serif 4', serif;
+      font-size: clamp(18px, 2vw, 22px); line-height: 1.7; color: var(--muted);
+      max-width: 56ch; margin-bottom: 14px;
+    }
+
+    /* ── Cards ── */
+    .grid { display: grid; gap: 14px; grid-template-columns: 1fr 1fr; margin-top: 32px; }
+    .card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius-md); padding: 24px;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.3s var(--ease), border-color 0.3s, box-shadow 0.3s;
+      opacity: 0; transform: translateY(16px);
+      animation: fadeUp 0.6s var(--ease-out) forwards;
+    }
+    .card:nth-child(2) { animation-delay: 0.07s; }
+    .card:hover { transform: translateY(-2px); border-color: var(--border-strong); box-shadow: var(--shadow); }
+    .card-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px; color: var(--gold); text-transform: uppercase;
+      letter-spacing: 0.14em; font-weight: 600; margin-bottom: 12px;
+    }
+    .card p {
+      font-family: 'Source Serif 4', serif;
+      font-size: 16px; line-height: 1.7; color: var(--text-secondary);
+    }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+    /* ── Principles ── */
+    .principles {
+      margin-top: 36px; display: grid; gap: 12px;
+    }
+    .principle {
+      display: flex; gap: 16px; align-items: flex-start;
+      padding: 18px 20px; border-radius: var(--radius-sm);
+      background: var(--surface); border: 1px solid var(--border);
+      transition: border-color 0.2s;
+      opacity: 0; transform: translateY(14px);
+      animation: fadeUp 0.6s var(--ease-out) forwards;
+    }
+    .principle:nth-child(2) { animation-delay: 0.07s; }
+    .principle:nth-child(3) { animation-delay: 0.14s; }
+    .principle:hover { border-color: var(--border-strong); }
+    .principle-icon {
+      min-width: 32px; height: 32px; border-radius: var(--radius-xs);
+      background: var(--gold-dim); display: grid; place-items: center;
+      color: var(--gold); font-size: 15px;
+    }
+    .principle strong { display: block; font-size: 15px; margin-bottom: 4px; }
+    .principle span { font-size: 14px; color: var(--muted); line-height: 1.55; }
+
+    footer {
+      padding: 20px 0 0; color: var(--muted); font-size: 13px;
+      border-top: 1px solid var(--border); margin-top: 44px;
+      display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+      font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.02em;
+    }
+    footer a { color: var(--gold); transition: opacity 0.2s; }
+    footer a:hover { opacity: 0.8; }
+    @media (max-width: 760px) {
+      .grid { grid-template-columns: 1fr; }
+      .nav-links a { padding: 6px 10px; font-size: 12px; }
+    }
   </style>
 </head>
 <body>
@@ -51,7 +169,7 @@
       <a class="brand" href="/">
         <span class="brand-mark"><img src="../assets/brand/logo.svg" alt="CyberPulse logo" style="width:100%;height:100%;display:block;border-radius:inherit;" /></span>
         <span>
-          <div>CyberPulse</div>
+          <div class="brand-name">CyberPulse</div>
           <div class="brand-sub">Executive cyber intelligence</div>
         </span>
       </a>
@@ -60,40 +178,82 @@
           <a href="/archive/">Archive</a>
           <a class="rss-link" href="/feed.xml" title="RSS Feed">RSS</a>
         </div>
-        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">Light</button>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">
+          <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <span id="themeLabel">Light</span>
+        </button>
       </div>
     </nav>
+
+    <div class="page-kicker">About</div>
     <h1>CyberPulse is built for decision-makers who need signal fast.</h1>
-    <p>CyberPulse is a modern executive cyber intelligence publication focused on the overlap between cyber risk, artificial intelligence, infrastructure exposure, identity abuse, and board-level decision making. It is designed to feel more like a premium briefing product than a conventional newsletter.</p>
-    <p>CyberPulse is being developed as a web-first intelligence publication with premium visuals, daily archival publishing, automated cover generation, social-ready previews, and a reading experience designed to feel closer to a product than a standard newsletter.</p>
+    <p class="about-dek">CyberPulse is a modern executive cyber intelligence publication focused on the overlap between cyber risk, artificial intelligence, infrastructure exposure, identity abuse, and board-level decision making.</p>
+    <p class="about-dek">It is designed to feel more like a premium briefing product than a conventional newsletter. Web-first design, daily archival publishing, automated cover generation, and a reading experience closer to a product than a blog.</p>
+
     <div class="grid">
       <div class="card">
-        <div class="label">What it covers</div>
+        <div class="card-label">What it covers</div>
         <p>Cyber operations, exploited vulnerabilities, leadership-targeted attacks, cloud and identity risk, regulatory shifts, AI threat acceleration, and the strategic implications behind fast-moving headlines.</p>
       </div>
       <div class="card">
-        <div class="label">How it is written</div>
+        <div class="card-label">How it is written</div>
         <p>Each briefing is structured to answer what happened, why it matters, and what smart operators, CISOs, boards, and risk committees should do next.</p>
       </div>
     </div>
+
+    <div class="principles">
+      <div class="principle">
+        <div class="principle-icon">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/></svg>
+        </div>
+        <div>
+          <strong>Signal over noise</strong>
+          <span>Every edition strips away the clutter. No link dumps, no filler. Board-ready analysis of the developments that actually change risk posture.</span>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="principle-icon">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <div>
+          <strong>Web-native publishing</strong>
+          <span>Direct-to-domain on tusharvartak.com. No platform lock-in, no walled gardens. Fast, mobile-first, and designed for social sharing.</span>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="principle-icon">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div>
+          <strong>Independent perspective</strong>
+          <span>Not vendor-sponsored, not algorithm-optimized. Written by Tushar Vartak with the independence that executive-grade intelligence requires.</span>
+        </div>
+      </div>
+    </div>
+
     <footer>
-      <span>CyberPulse by Tushar Vartak</span>
-      <span><a href="/feed.xml">RSS</a> · <a href="/">Home</a> · <a href="/archive/">Archive</a></span>
+      <span>&copy; 2026 CyberPulse</span>
+      <span><a href="/feed.xml">RSS</a> &middot; <a href="/">Home</a> &middot; <a href="/archive/">Archive</a></span>
     </footer>
   </div>
   <script>
     const storedTheme = localStorage.getItem('cyberpulse-theme');
     if (storedTheme === 'light') document.body.classList.add('theme-light');
     const btn = document.getElementById('themeToggle');
-    const syncThemeLabel = () => {
+    const label = document.getElementById('themeLabel');
+    const icon = document.getElementById('themeIcon');
+    const sunIcon = '<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>';
+    const moonIcon = '<path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>';
+    const syncTheme = () => {
       const isLight = document.body.classList.contains('theme-light');
-      btn.textContent = isLight ? 'Dark' : 'Light';
+      label.textContent = isLight ? 'Dark' : 'Light';
+      icon.innerHTML = isLight ? moonIcon : sunIcon;
     };
-    syncThemeLabel();
+    syncTheme();
     btn.addEventListener('click', () => {
       document.body.classList.toggle('theme-light');
       localStorage.setItem('cyberpulse-theme', document.body.classList.contains('theme-light') ? 'light' : 'dark');
-      syncThemeLabel();
+      syncTheme();
     });
   </script>
 </body>
