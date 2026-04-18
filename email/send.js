@@ -6,18 +6,25 @@
 // (or to a single address for testing). Each subscriber gets a
 // personalised unsubscribe link using their unique token.
 //
+// Subscriber source: production Cloudflare D1 database, queried
+// locally via `wrangler d1 execute --remote`. This ensures the
+// send list matches the live subscribe flow exactly.
+//
 // Usage:
-//   # Send to all confirmed subscribers
+//   # Send to all confirmed subscribers (reads from D1)
 //   RESEND_API_KEY=re_xxx node email/send.js --date 2026-04-18 \
 //     --title "The Executive Is the New Perimeter" \
 //     --desc "Why SharePoint exploitation and executive-targeted social engineering..."
 //
-//   # Send to a single address (test)
+//   # Send to a single address (test — skips D1, no wrangler needed)
 //   RESEND_API_KEY=re_xxx node email/send.js --date 2026-04-18 \
 //     --title "Title" --desc "Desc" --to user@example.com
 //
 //   # Dry run (show what would be sent, no API calls)
 //   node email/send.js --date 2026-04-18 --title "Title" --desc "Desc" --dry-run
+//
+// Prerequisites:
+//   wrangler CLI authenticated (`wrangler login`) — for production sends
 //
 // Environment:
 //   RESEND_API_KEY   Required (unless --dry-run)
@@ -32,7 +39,7 @@
 //   --delay      Milliseconds between sends (default: 200)
 // ─────────────────────────────────────────────────────────────────
 const buildEmail = require('./template');
-const { activeSubscribers } = require('./subscribers');
+const { activeSubscribers } = require('./subscribers-d1');
 
 const args = process.argv.slice(2);
 const get = (flag) => { const i = args.indexOf(flag); return i > -1 ? args[i + 1] : ''; };
@@ -88,9 +95,9 @@ async function main() {
     recipients = [{ email: singleTo, token: null }];
     info(`Test send to: ${singleTo}`);
   } else {
-    recipients = activeSubscribers();
+    recipients = await activeSubscribers();
     if (recipients.length === 0) {
-      warn('No confirmed subscribers. Add with: node email/subscribers.js add <email>');
+      warn('No confirmed subscribers in D1. Subscribers arrive via the live subscribe flow.');
       process.exit(0);
     }
     info(`Sending to ${recipients.length} confirmed subscriber${recipients.length > 1 ? 's' : ''}`);

@@ -7,16 +7,21 @@ with double opt-in, tokenized unsubscribe, CAPTCHA protection, and rate limiting
 
 ## Architecture
 
-**Static site (GitHub Pages) + serverless API (deploy separately)**
+**Static site (GitHub Pages) + Cloudflare Workers API + D1 database**
 
-The subscribe form on the homepage POSTs to a serverless API endpoint. The API handles
-all subscription logic, sends confirmation emails via Resend, and redirects users to
-static confirmation/unsubscribe pages hosted on the same domain.
+Subscribers are stored in Cloudflare D1 (SQLite at the edge). The subscribe form
+on the homepage POSTs to a Workers API endpoint that writes to D1. Newsletter sends
+read from the same D1 database locally via `wrangler d1 execute --remote`.
 
 ```
-User submits form → Turnstile CAPTCHA verified → subscriber saved as "pending"
-  → confirmation email sent via Resend → user clicks confirm link
-  → API sets status to "confirmed" → redirects to confirmed.html
+Subscribe flow (deployed Worker):
+  User submits form → Turnstile CAPTCHA verified → subscriber saved as "pending" in D1
+    → confirmation email sent via Resend → user clicks confirm link
+    → Worker sets status to "confirmed" in D1 → redirects to confirmed.html
+
+Newsletter send (local CLI):
+  node email/send.js → wrangler d1 execute → reads confirmed subscribers from D1
+    → sends per-subscriber personalised email via Resend API
 ```
 
 ## Files
@@ -25,10 +30,9 @@ User submits form → Turnstile CAPTCHA verified → subscriber saved as "pendin
 |------|---------|
 | `template.js` | Premium branded HTML + plain-text newsletter template (per-subscriber unsubscribe tokens) |
 | `confirm-template.js` | Double opt-in confirmation email template |
-| `send.js` | Newsletter send script (per-subscriber personalised emails via Resend API) |
-| `subscribers.js` | Subscriber management with pending/confirmed/unsubscribed states and crypto tokens |
-| `api.js` | HTTP endpoint handler: subscribe, confirm, unsubscribe (with rate limiting + Turnstile) |
-| `subscribers.json` | Subscriber data (do not commit with real emails) |
+| `send.js` | Newsletter send script — reads subscribers from D1, sends via Resend API |
+| `subscribers-d1.js` | Local D1 reader — queries production D1 via `wrangler d1 execute --remote` |
+| `subscribers.js` | Legacy JSON flat-file subscriber management (retained for local dev/testing) |
 | `unsubscribe.html` | Tokenized unsubscribe landing page |
 | `confirmed.html` | Subscription confirmation success page |
 
@@ -60,31 +64,29 @@ User submits form → Turnstile CAPTCHA verified → subscriber saved as "pendin
 ## Quick start
 
 ```bash
-# Add a subscriber (creates as pending, prints confirm token)
-node email/subscribers.js add reader@example.com
-
-# Confirm a subscriber (simulates clicking the email link)
-node email/subscribers.js confirm <token>
+# Prerequisites: wrangler must be authenticated for D1 access
+wrangler login
 
 # Preview email template
 node email/template.js --title "Title" --desc "Description" --date 2026-04-18
 
-# Send newsletter to all confirmed subscribers
+# Send newsletter to all confirmed subscribers (reads from D1)
 RESEND_API_KEY=re_xxx node email/send.js \
   --date 2026-04-18 \
   --title "The Executive Is the New Perimeter" \
   --desc "Why SharePoint exploitation..."
 
-# Test send to a single address
+# Test send to a single address (no D1/wrangler needed)
 RESEND_API_KEY=re_xxx node email/send.js \
   --date 2026-04-18 --title "Title" --desc "Desc" \
   --to you@example.com
 
-# Dry run
+# Dry run — queries D1 for subscriber count but sends nothing
 node email/send.js --date 2026-04-18 --title "Title" --desc "Desc" --dry-run
 
-# Run subscriber API locally
-node email/api.js  # http://localhost:3001
+# Query subscribers directly via wrangler
+wrangler d1 execute cyberpulse_subscribers --remote \
+  --command "SELECT email, status FROM subscribers"
 ```
 
 ## Deployment
@@ -92,24 +94,26 @@ node email/api.js  # http://localhost:3001
 ### Prerequisites
 
 1. **Resend API key** (`RESEND_API_KEY`) — for sending emails
-2. **Cloudflare Turnstile site key + secret** — for CAPTCHA
-3. A serverless platform to host `api.js` (Cloudflare Workers, Vercel, Netlify, etc.)
+2. **Cloudflare Turnstile site key + secret** — for CAPTCHA on subscribe form
+3. **Wrangler CLI** authenticated (`wrangler login`) — for local newsletter sends
+4. Cloudflare Workers deployment (`wrangler deploy`) — for the subscribe API
 
-### Steps
+### Worker deployment
 
-1. Deploy `api.js` to your serverless platform
-2. Set environment variables: `RESEND_API_KEY`, `TURNSTILE_SECRET_KEY`, `CYBERPULSE_API_URL`
-3. Update `index.html`:
-   - Replace `0x4AAAAAAA_PLACEHOLDER_KEY` with your Turnstile site key
-   - Update `SUBSCRIBE_API` URL in the script to your deployed API URL
-4. The static pages (`confirmed.html`, `unsubscribe.html`) are served from GitHub Pages
+```bash
+wrangler deploy                              # deploy subscribe API
+wrangler secret put RESEND_API_KEY           # set Resend key
+wrangler secret put TURNSTILE_SECRET_KEY     # set Turnstile secret
+```
 
-### Not yet done
+### How subscriber data flows
 
-- Turnstile site key is a placeholder — needs a real Cloudflare Turnstile key
-- `SUBSCRIBE_API` URL in index.html needs to point to the deployed serverless function
-- subscribers.json is a flat file — works fine at small scale, consider Resend Contacts
-  API or a KV store if the list grows past a few hundred
+1. Users subscribe via the deployed Worker → D1 stores as "pending"
+2. Confirmation email link → Worker confirms in D1 → "confirmed"
+3. Newsletter send (`send.js`) queries D1 remotely via wrangler → sends to confirmed list
+4. Unsubscribe links in emails → Worker sets "unsubscribed" in D1
+
+The local `subscribers.json` is no longer used for production sends.
 
 ## Environment
 
