@@ -675,13 +675,15 @@
         <div class="subscribe-title">Get CyberPulse in your inbox</div>
         <p class="subscribe-desc">Receive executive cyber intelligence briefings directly. No spam, no tracking pixels, unsubscribe anytime.</p>
         <form class="subscribe-form" id="subscribeForm" action="javascript:void(0)">
-          <input class="subscribe-input" type="email" id="subscribeEmail" placeholder="you@example.com" required aria-label="Email address" />
+          <input class="subscribe-input" type="email" id="subscribeEmail" placeholder="you@example.com" required aria-label="Email address" autocomplete="email" />
+          <div class="cf-turnstile" id="turnstileWidget" data-sitekey="0x4AAAAAAA_PLACEHOLDER_KEY" data-theme="dark" data-size="compact" style="margin:10px auto 0;display:flex;justify-content:center;"></div>
           <button class="subscribe-btn" type="submit" data-analytics="subscribe-submit">Subscribe</button>
         </form>
         <div class="subscribe-status" id="subscribeStatus" role="status" aria-live="polite"></div>
-        <div class="subscribe-note">Free &middot; Executive-grade signal &middot; Direct to your inbox</div>
+        <div class="subscribe-note">Free &middot; Double opt-in &middot; Unsubscribe anytime</div>
       </div>
     </section>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
     <div class="colophon">
       <span class="colophon-mark">CyberPulse</span>
@@ -726,29 +728,60 @@
       }
     });
 
-    /* Subscribe form */
+    /* Subscribe form — double opt-in with Turnstile CAPTCHA */
+    const SUBSCRIBE_API = '/api/subscribe'; /* Update to deployed API URL */
     const subForm = document.getElementById('subscribeForm');
     const subEmail = document.getElementById('subscribeEmail');
     const subStatus = document.getElementById('subscribeStatus');
-    subForm.addEventListener('submit', (e) => {
+    const subBtn = subForm.querySelector('button[type="submit"]');
+    subForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const email = subEmail.value.trim();
       if (!email) return;
-      /* Static site: store subscription intent in localStorage and show confirmation.
-         For production, POST to your API endpoint (e.g., Cloudflare Worker, Vercel function)
-         that calls subscribers.js add and/or the Resend contacts API. */
+
+      /* Get Turnstile CAPTCHA token */
+      const captchaToken = typeof turnstile !== 'undefined'
+        ? turnstile.getResponse(document.querySelector('.cf-turnstile'))
+        : '';
+
+      subBtn.disabled = true;
+      subBtn.textContent = 'Sending...';
+      subStatus.textContent = '';
+      subStatus.className = 'subscribe-status';
+
       try {
-        const subs = JSON.parse(localStorage.getItem('cyberpulse-subs') || '[]');
-        if (!subs.includes(email)) subs.push(email);
-        localStorage.setItem('cyberpulse-subs', JSON.stringify(subs));
-        subStatus.textContent = 'You\u2019re in! Watch for your first briefing.';
-        subStatus.className = 'subscribe-status success';
-        subEmail.value = '';
-        if (typeof window.cpAnalytics === 'function') window.cpAnalytics('subscribe-success');
+        const res = await fetch(SUBSCRIBE_API, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, captchaToken })
+        });
+        const data = await res.json();
+
+        if (res.ok && data.ok) {
+          if (data.action === 'already_subscribed') {
+            subStatus.textContent = 'You\u2019re already subscribed. Watch for the next briefing!';
+          } else {
+            subStatus.textContent = 'Check your inbox! We\u2019ve sent a confirmation email to verify your address.';
+          }
+          subStatus.className = 'subscribe-status success';
+          subEmail.value = '';
+          if (typeof window.cpAnalytics === 'function') window.cpAnalytics('subscribe-success');
+        } else if (res.status === 429) {
+          subStatus.textContent = 'Too many attempts. Please try again in a few minutes.';
+          subStatus.className = 'subscribe-status error';
+        } else {
+          subStatus.textContent = data.error || 'Something went wrong. Please try again.';
+          subStatus.className = 'subscribe-status error';
+        }
       } catch {
-        subStatus.textContent = 'Something went wrong. Please email cyberpulse@tusharvartak.com to subscribe.';
+        subStatus.textContent = 'Connection error. Please email cyberpulse@tusharvartak.com to subscribe.';
         subStatus.className = 'subscribe-status error';
       }
+
+      subBtn.disabled = false;
+      subBtn.textContent = 'Subscribe';
+      /* Reset Turnstile for next attempt */
+      if (typeof turnstile !== 'undefined') turnstile.reset();
     });
 
     /* Analytics stub — fires custom events for future integration */

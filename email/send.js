@@ -2,11 +2,12 @@
 // ─────────────────────────────────────────────────────────────────
 // CyberPulse · Newsletter send via Resend API
 //
-// Sends the branded email template to all active subscribers
-// (or to a single address for testing).
+// Sends the branded email template to all confirmed subscribers
+// (or to a single address for testing). Each subscriber gets a
+// personalised unsubscribe link using their unique token.
 //
 // Usage:
-//   # Send to all subscribers
+//   # Send to all confirmed subscribers
 //   RESEND_API_KEY=re_xxx node email/send.js --date 2026-04-18 \
 //     --title "The Executive Is the New Perimeter" \
 //     --desc "Why SharePoint exploitation and executive-targeted social engineering..."
@@ -31,7 +32,7 @@
 //   --delay      Milliseconds between sends (default: 200)
 // ─────────────────────────────────────────────────────────────────
 const buildEmail = require('./template');
-const { activeEmails } = require('./subscribers');
+const { activeSubscribers } = require('./subscribers');
 
 const args = process.argv.slice(2);
 const get = (flag) => { const i = args.indexOf(flag); return i > -1 ? args[i + 1] : ''; };
@@ -51,10 +52,10 @@ if (!date || !title || !desc) {
   process.exit(1);
 }
 
-const info  = (msg) => console.log(`\x1b[34m▸\x1b[0m ${msg}`);
-const ok    = (msg) => console.log(`\x1b[32m✓\x1b[0m ${msg}`);
-const warn  = (msg) => console.log(`\x1b[33m⚠\x1b[0m ${msg}`);
-const fail  = (msg) => { console.error(`\x1b[31m✗\x1b[0m ${msg}`); process.exit(1); };
+const info  = (msg) => console.log(`\x1b[34m\u25b8\x1b[0m ${msg}`);
+const ok    = (msg) => console.log(`\x1b[32m\u2713\x1b[0m ${msg}`);
+const warn  = (msg) => console.log(`\x1b[33m\u26a0\x1b[0m ${msg}`);
+const fail  = (msg) => { console.error(`\x1b[31m\u2717\x1b[0m ${msg}`); process.exit(1); };
 
 async function sendOne(to, html, text, subject) {
   const res = await fetch('https://api.resend.com/emails', {
@@ -79,27 +80,28 @@ async function sendOne(to, html, text, subject) {
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 
 async function main() {
-  const { html, text } = buildEmail({ title, desc, date, edition });
   const subject = `CyberPulse \u2022 ${title}`;
 
   // Determine recipients
-  let recipients;
+  let recipients; // Array of { email, token } or [{ email, token: null }] for test
   if (singleTo) {
-    recipients = [singleTo];
+    recipients = [{ email: singleTo, token: null }];
     info(`Test send to: ${singleTo}`);
   } else {
-    recipients = activeEmails();
+    recipients = activeSubscribers();
     if (recipients.length === 0) {
-      warn('No active subscribers. Add with: node email/subscribers.js add <email>');
+      warn('No confirmed subscribers. Add with: node email/subscribers.js add <email>');
       process.exit(0);
     }
-    info(`Sending to ${recipients.length} subscriber${recipients.length > 1 ? 's' : ''}`);
+    info(`Sending to ${recipients.length} confirmed subscriber${recipients.length > 1 ? 's' : ''}`);
   }
 
   if (dryRun) {
-    info('DRY RUN — no emails will be sent');
+    // Build one sample email for preview
+    const { html, text } = buildEmail({ title, desc, date, edition });
+    info('DRY RUN \u2014 no emails will be sent');
     info(`Subject: ${subject}`);
-    info(`Recipients: ${recipients.join(', ')}`);
+    info(`Recipients: ${recipients.map(r => r.email).join(', ')}`);
     info(`HTML length: ${html.length} chars`);
     info(`Text length: ${text.length} chars`);
     return;
@@ -110,16 +112,18 @@ async function main() {
   }
 
   let sent = 0, failed = 0;
-  for (const to of recipients) {
+  for (const { email, token } of recipients) {
     try {
-      await sendOne(to, html, text, subject);
-      ok(`Sent → ${to}`);
+      // Build per-subscriber email with their unique unsubscribe token
+      const { html, text } = buildEmail({ title, desc, date, edition, unsubToken: token });
+      await sendOne(email, html, text, subject);
+      ok(`Sent \u2192 ${email}`);
       sent++;
     } catch (err) {
-      warn(`Failed → ${to}: ${err.message}`);
+      warn(`Failed \u2192 ${email}: ${err.message}`);
       failed++;
     }
-    if (recipients.length > 1 && to !== recipients[recipients.length - 1]) {
+    if (recipients.length > 1 && email !== recipients[recipients.length - 1].email) {
       await sleep(delay);
     }
   }

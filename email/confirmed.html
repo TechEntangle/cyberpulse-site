@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Unsubscribe | CyberPulse</title>
+  <title>Subscription Confirmed | CyberPulse</title>
   <link rel="icon" type="image/png" href="/assets/brand/logo-square.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,20 +31,14 @@
     .brand { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 28px; }
     .brand img { width: 36px; height: 36px; border-radius: 8px; }
     .brand-name { font-size: 18px; font-weight: 800; letter-spacing: -0.03em; }
-    .icon { font-size: 48px; margin-bottom: 16px; }
-    .icon-ok { color: var(--muted); }
-    .icon-err { color: #ff6b6b; }
+    .check { font-size: 48px; margin-bottom: 16px; }
+    .check-ok { color: var(--gold); }
+    .check-err { color: #ff6b6b; }
     h1 { font-size: 26px; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 12px; }
     p { color: var(--muted); font-size: 15px; line-height: 1.65; margin-bottom: 24px; }
     .email-display { color: var(--gold); font-weight: 600; }
-    .back { display: inline-block; margin-top: 8px; color: var(--gold); font-size: 13px; font-weight: 600; text-decoration: none; }
-    .back:hover { opacity: 0.8; }
-    .btn-resub {
-      display: inline-block; padding: 12px 24px; border-radius: 999px;
-      background: var(--gold); color: #15120c; font-size: 14px; font-weight: 700;
-      text-decoration: none; transition: transform 0.2s;
-    }
-    .btn-resub:hover { transform: translateY(-1px); }
+    .back { display: inline-block; padding: 12px 24px; border-radius: 999px; background: var(--gold); color: #15120c; font-size: 14px; font-weight: 700; text-decoration: none; transition: transform 0.2s; }
+    .back:hover { transform: translateY(-1px); }
     .mono { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 20px; }
     .hidden { display: none; }
   </style>
@@ -56,35 +50,20 @@
       <span class="brand-name">CyberPulse</span>
     </div>
 
-    <!-- Unsubscribed successfully -->
     <div id="success" class="hidden">
-      <div class="icon icon-ok">&#9993;</div>
-      <div class="mono">Unsubscribed</div>
-      <h1>You've been removed</h1>
-      <p><span id="emailOk" class="email-display"></span> has been unsubscribed from CyberPulse briefings. You won't receive any further emails.</p>
-      <p>Changed your mind? You can always resubscribe from the homepage.</p>
-      <a class="btn-resub" href="/#subscribe">Resubscribe</a>
-      <br/>
-      <a class="back" href="/">&larr; Back to CyberPulse</a>
+      <div class="check check-ok">&#10003;</div>
+      <div class="mono">Subscription confirmed</div>
+      <h1>You're in</h1>
+      <p>Your subscription is confirmed<span id="emailDisplay"></span>. You'll receive the next CyberPulse briefing directly in your inbox.</p>
+      <a class="back" href="/">Back to CyberPulse</a>
     </div>
 
-    <!-- Invalid or expired token -->
-    <div id="invalid" class="hidden">
-      <div class="icon icon-err">&#10007;</div>
-      <div class="mono">Invalid link</div>
-      <h1>Link not recognized</h1>
-      <p>This unsubscribe link is invalid or has already been used. If you're still receiving emails, please contact <strong>cyberpulse@tusharvartak.com</strong> for manual removal.</p>
-      <a class="back" href="/">&larr; Back to CyberPulse</a>
-    </div>
-
-    <!-- Fallback: no token in URL (direct visit) -->
-    <div id="fallback" class="hidden">
-      <div class="icon icon-ok">&#9993;</div>
-      <div class="mono">Email preferences</div>
-      <h1>Manage subscription</h1>
-      <p>To unsubscribe, click the unsubscribe link in any CyberPulse email you've received. Each email contains a unique link for your account.</p>
-      <p>Need help? Contact <strong>cyberpulse@tusharvartak.com</strong>.</p>
-      <a class="back" href="/">&larr; Back to CyberPulse</a>
+    <div id="error" class="hidden">
+      <div class="check check-err">&#10007;</div>
+      <div class="mono">Confirmation failed</div>
+      <h1>Invalid or expired link</h1>
+      <p>This confirmation link is no longer valid. Please subscribe again from the homepage to receive a new confirmation email.</p>
+      <a class="back" href="/#subscribe">Try again</a>
     </div>
   </div>
 
@@ -95,11 +74,11 @@
 
     if (status === 'ok') {
       document.getElementById('success').classList.remove('hidden');
-      if (email) document.getElementById('emailOk').textContent = email;
-    } else if (status === 'invalid' || status === 'error') {
-      document.getElementById('invalid').classList.remove('hidden');
+      if (email) {
+        document.getElementById('emailDisplay').textContent = ' for ' + email;
+      }
     } else {
-      document.getElementById('fallback').classList.remove('hidden');
+      document.getElementById('error').classList.remove('hidden');
     }
   </script>
 </body>

@@ -10,11 +10,14 @@
 //   node email/template.js --title "Title" --desc "Desc" --date 2026-04-18
 // ─────────────────────────────────────────────────────────────────
 
-function buildEmail({ title, desc, date, url, edition }) {
+function buildEmail({ title, desc, date, url, edition, unsubToken }) {
   const displayDate = formatDate(date);
   const postUrl = url || `https://tusharvartak.com/posts/${date}.html`;
-  const editionNum = edition || '—';
-  const unsubUrl = 'https://tusharvartak.com/email/unsubscribe.html';
+  const editionNum = edition || '\u2014';
+  const apiBase = process.env.CYBERPULSE_API_URL || 'https://tusharvartak.com/api';
+  const unsubUrl = unsubToken
+    ? `${apiBase}/unsubscribe?token=${unsubToken}`
+    : 'https://tusharvartak.com/email/unsubscribe.html';
   const prefsUrl = 'https://tusharvartak.com/email/unsubscribe.html';
   const siteUrl = 'https://tusharvartak.com';
   const logoUrl = 'https://tusharvartak.com/assets/brand/logo-square.png';

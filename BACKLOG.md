@@ -59,10 +59,27 @@
   (`scripts/publish.sh`) updated to 7-step flow with automatic newsletter distribution
   when `RESEND_API_KEY` is set.
 
+- [x] **10. Subscription layer hardening** — Double opt-in with
+  pending/confirmed/unsubscribed state machine and per-subscriber crypto tokens.
+  Confirmation email template (`email/confirm-template.js`) sent via Resend on
+  subscribe. Tokenized unsubscribe links in every newsletter (no email in URL).
+  Cloudflare Turnstile CAPTCHA widget on subscribe form. In-memory per-IP rate
+  limiting (5 requests / 15 min). Dedupe and safe re-subscribe handling (pending
+  token refresh, already-confirmed short-circuit). Static landing pages for confirm
+  (`email/confirmed.html`) and unsubscribe (`email/unsubscribe.html`) with
+  URL-param-driven state display. Legacy `send-test.js` removed. Homepage form
+  updated to POST to API with async UX. **Requires deployment**: Turnstile site key
+  is a placeholder, API endpoint URL needs updating, and the serverless function
+  (api.js) must be deployed to Cloudflare Workers / Vercel / Netlify.
+
 ## Backlog
 
-- [ ] **10. Multi-author support** — Extend template and publish script to support
+- [ ] **11. Multi-author support** — Extend template and publish script to support
   guest contributors with per-author metadata and bylines.
 
-- [ ] **11. Automated PDF generation** — Generate PDF versions of each briefing
+- [ ] **12. Automated PDF generation** — Generate PDF versions of each briefing
   automatically during the publish flow (e.g., via Puppeteer or wkhtmltopdf).
+
+- [ ] **13. Deploy subscriber API** — Deploy `email/api.js` to a serverless platform,
+  configure Turnstile site key, update `SUBSCRIBE_API` URL in `index.html`, and set
+  environment secrets (`RESEND_API_KEY`, `TURNSTILE_SECRET_KEY`).
