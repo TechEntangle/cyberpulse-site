@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CyberPulse Archive</title>
+  <style>
+    :root { --bg:#07080b; --text:#f5efe6; --muted:#b9b0a4; --gold:#f0b44a; --border:rgba(255,255,255,0.1); --panel:rgba(255,255,255,0.04); }
+    body { margin:0; font-family: Inter, system-ui, sans-serif; background: radial-gradient(circle at top, #171b24 0%, #0b0d12 40%, #06070a 100%); color:var(--text); }
+    .wrap { width:min(1000px, calc(100% - 32px)); margin:0 auto; padding:42px 0 80px; }
+    a { color:inherit; text-decoration:none; }
+    .back { color:var(--muted); font-size:14px; }
+    h1 { font-size: clamp(42px, 7vw, 78px); line-height:0.95; letter-spacing:-0.05em; margin:18px 0 24px; }
+    .item { background:var(--panel); border:1px solid var(--border); border-radius:22px; padding:22px; margin-bottom:16px; display:flex; justify-content:space-between; gap:16px; align-items:center; }
+    .date { color:var(--gold); text-transform:uppercase; letter-spacing:0.12em; font-size:12px; font-weight:800; margin-bottom:8px; }
+    .title { font-size:24px; margin-bottom:8px; }
+    .desc { color:var(--muted); line-height:1.6; }
+    @media (max-width: 760px) { .item { flex-direction:column; align-items:flex-start; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="/">← Back to CyberPulse</a>
+    <h1>Archive</h1>
+    <a class="item" href="/posts/2026-04-18.html">
+      <div>
+        <div class="date">April 18, 2026</div>
+        <div class="title">The Executive Is the New Perimeter</div>
+        <div class="desc">A board-level analysis of SharePoint exploitation, executive-targeted social engineering, and AI-driven attack acceleration.</div>
+      </div>
+      <div>Read →</div>
+    </a>
+  </div>
+</body>
+</html>

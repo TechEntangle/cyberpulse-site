@@ -1,0 +1,13 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#07080B"/>
+  <rect x="40" y="40" width="1120" height="550" rx="28" fill="url(#g1)" stroke="rgba(255,255,255,0.12)"/>
+  <text x="90" y="150" fill="#F0B44A" font-family="Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="5">CYBERPULSE</text>
+  <text x="90" y="250" fill="#F5EFE6" font-family="Arial, sans-serif" font-size="62" font-weight="800">Executive cyber intelligence</text>
+  <text x="90" y="330" fill="#C9BFB1" font-family="Arial, sans-serif" font-size="32">Modern daily briefings for operators, boards, and security teams.</text>
+  <defs>
+    <linearGradient id="g1" x1="90" y1="40" x2="1080" y2="590" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1A1D28"/>
+      <stop offset="1" stop-color="#0B0D12"/>
+    </linearGradient>
+  </defs>
+</svg>

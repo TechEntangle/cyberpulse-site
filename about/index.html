@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About CyberPulse</title>
+  <style>
+    :root { --bg:#07080b; --text:#f5efe6; --muted:#b9b0a4; --gold:#f0b44a; --border:rgba(255,255,255,0.1); --panel:rgba(255,255,255,0.04); }
+    body { margin:0; font-family: Inter, system-ui, sans-serif; background: radial-gradient(circle at top, #171b24 0%, #0b0d12 40%, #06070a 100%); color:var(--text); }
+    .wrap { width:min(900px, calc(100% - 32px)); margin:0 auto; padding:42px 0 80px; }
+    a { color:inherit; }
+    .back { color:var(--muted); text-decoration:none; font-size:14px; }
+    h1 { font-size: clamp(42px, 7vw, 78px); line-height:0.95; letter-spacing:-0.05em; margin:18px 0; }
+    p { font-size:20px; line-height:1.75; color:var(--muted); }
+    .grid { display:grid; gap:16px; grid-template-columns:1fr 1fr; margin-top:28px; }
+    .card { background:var(--panel); border:1px solid var(--border); border-radius:22px; padding:22px; }
+    .label { font-size:12px; color:var(--gold); text-transform:uppercase; letter-spacing:0.12em; font-weight:800; margin-bottom:10px; }
+    @media (max-width: 760px) { .grid { grid-template-columns:1fr; } p { font-size:18px; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="/">← Back to CyberPulse</a>
+    <h1>CyberPulse is built for decision-makers who need signal fast.</h1>
+    <p>CyberPulse is a modern executive cyber intelligence publication focused on the overlap between cyber risk, artificial intelligence, infrastructure exposure, identity abuse, and board-level decision making. It is designed to feel more like a premium briefing product than a conventional newsletter.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="label">What it covers</div>
+        <p>Cyber operations, exploited vulnerabilities, leadership-targeted attacks, cloud and identity risk, regulatory shifts, AI threat acceleration, and the strategic implications behind fast-moving headlines.</p>
+      </div>
+      <div class="card">
+        <div class="label">How it is written</div>
+        <p>Each briefing is structured to answer what happened, why it matters, and what smart operators, CISOs, boards, and risk committees should do next.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
