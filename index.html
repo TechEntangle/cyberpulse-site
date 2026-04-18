@@ -10,12 +10,12 @@
   <meta property="og:description" content="Modern daily briefings on cyber risk, AI threats, infrastructure exposure, and executive decision-making." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://tusharvartak.com/" />
-  <meta property="og:image" content="https://tusharvartak.com/assets/covers/2026-04-18.png" />
+  <meta property="og:image" content="https://tusharvartak.com/assets/og/2026-04-18.svg" />
   <meta property="og:site_name" content="CyberPulse" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="CyberPulse | Executive Cyber Intelligence" />
   <meta name="twitter:description" content="Modern daily briefings on cyber risk, AI threats, infrastructure exposure, and executive decision-making." />
-  <meta name="twitter:image" content="https://tusharvartak.com/assets/covers/2026-04-18.png" />
+  <meta name="twitter:image" content="https://tusharvartak.com/assets/og/2026-04-18.svg" />
   <link rel="alternate" type="application/rss+xml" title="CyberPulse RSS Feed" href="/feed.xml" />
   <script type="application/ld+json">
   {
@@ -175,14 +175,18 @@
     .grid {
       display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px;
     }
-    .card { padding: 22px; }
+    .card { padding: 22px; opacity: 0; transform: translateY(16px); animation: fadeUp 0.7s ease forwards; }
+    .card:nth-child(2) { animation-delay: 0.08s; }
+    .card:nth-child(3) { animation-delay: 0.16s; }
     .card h3 { margin: 0 0 10px; font-size: 22px; line-height: 1.15; }
     .card p { margin: 0; color: var(--muted); line-height: 1.65; }
     .archive { display: grid; gap: 14px; }
     .archive-item {
       display: flex; justify-content: space-between; gap: 18px; align-items: center; padding: 22px;
       text-decoration: none;
+      opacity: 0; transform: translateY(18px); animation: fadeUp 0.7s ease forwards;
     }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
     .archive-item:hover { border-color: rgba(240,180,74,0.35); }
     .archive-title { font-size: 22px; line-height: 1.12; margin: 0 0 6px; }
     .archive-date { color: var(--gold); font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 10px; }
@@ -299,6 +303,7 @@
           <div class="section-title">Recent editions</div>
         </div>
       </div>
+      <div style="color: var(--muted); max-width: 760px; margin-bottom: 18px; line-height: 1.7;">Each edition is built as a readable executive briefing with social-ready sharing, archive structure, and web-first design rather than a conventional newsletter dump.</div>
       <div class="archive">
         <a class="archive-item" href="./posts/2026-04-18.html">
           <div>
