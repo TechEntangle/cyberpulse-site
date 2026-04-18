@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>CyberPulse</title>
+    <link>https://tusharvartak.com</link>
+    <description>Executive cyber intelligence briefings on cyber risk, AI threats, infrastructure exposure, and board-level decision-making.</description>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 18 Apr 2026 06:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tusharvartak.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <image>
+      <url>https://tusharvartak.com/assets/og/default.svg</url>
+      <title>CyberPulse</title>
+      <link>https://tusharvartak.com</link>
+    </image>
+    <item>
+      <title>The Executive Is the New Perimeter</title>
+      <link>https://tusharvartak.com/posts/2026-04-18.html</link>
+      <guid isPermaLink="true">https://tusharvartak.com/posts/2026-04-18.html</guid>
+      <pubDate>Sat, 18 Apr 2026 06:00:00 +0000</pubDate>
+      <dc:creator>Tushar Vartak</dc:creator>
+      <description>A board-level analysis of active SharePoint exploitation, executive-targeted social engineering, and why attackers increasingly treat leadership itself as privileged infrastructure.</description>
+      <enclosure url="https://tusharvartak.com/assets/covers/2026-04-18.png" type="image/png" length="0"/>
+    </item>
+  </channel>
+</rss>

@@ -5,12 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CyberPulse | The Executive Is the New Perimeter</title>
   <meta name="description" content="A CyberPulse executive briefing on SharePoint exploitation, executive-targeted social engineering, and AI-accelerated attack economics." />
+  <link rel="canonical" href="https://tusharvartak.com/posts/2026-04-18.html" />
+  <meta name="author" content="Tushar Vartak" />
   <meta property="og:title" content="The Executive Is the New Perimeter" />
   <meta property="og:description" content="Why SharePoint exploitation and executive-targeted social engineering now belong in the same board-level conversation." />
   <meta property="og:type" content="article" />
   <meta property="og:image" content="https://tusharvartak.com/assets/covers/2026-04-18.png" />
   <meta property="og:url" content="https://tusharvartak.com/posts/2026-04-18.html" />
+  <meta property="og:site_name" content="CyberPulse" />
+  <meta property="article:published_time" content="2026-04-18T06:00:00+00:00" />
+  <meta property="article:author" content="Tushar Vartak" />
+  <meta property="article:section" content="Cybersecurity" />
+  <meta property="article:tag" content="SharePoint" />
+  <meta property="article:tag" content="Executive Security" />
+  <meta property="article:tag" content="Social Engineering" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Executive Is the New Perimeter" />
+  <meta name="twitter:description" content="Why SharePoint exploitation and executive-targeted social engineering now belong in the same board-level conversation." />
+  <meta name="twitter:image" content="https://tusharvartak.com/assets/covers/2026-04-18.png" />
+  <link rel="alternate" type="application/rss+xml" title="CyberPulse RSS Feed" href="/feed.xml" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "The Executive Is the New Perimeter",
+    "description": "A board-level analysis of active SharePoint exploitation, executive-targeted social engineering, and why attackers increasingly treat leadership itself as privileged infrastructure.",
+    "image": "https://tusharvartak.com/assets/covers/2026-04-18.png",
+    "datePublished": "2026-04-18T06:00:00+00:00",
+    "author": {
+      "@type": "Person",
+      "name": "Tushar Vartak",
+      "url": "https://tusharvartak.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CyberPulse",
+      "url": "https://tusharvartak.com"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://tusharvartak.com/posts/2026-04-18.html"
+    }
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
@@ -93,6 +130,10 @@
       text-decoration: none; border-radius: 999px; border: 1px solid var(--border);
       background: rgba(255,255,255,0.04); color: var(--text); font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 700;
       cursor: pointer;
+    }
+    .reading-time {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; color: var(--muted); letter-spacing: 0.06em;
     }
     .layout {
       display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 28px; align-items: start;
@@ -194,7 +235,10 @@
     footer {
       margin-top: 36px; padding-top: 16px; border-top: 1px solid var(--border);
       font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
     }
+    footer a { color: var(--gold); text-decoration: none; font-family: 'IBM Plex Mono', monospace; }
+    footer a:hover { text-decoration: underline; }
     @media (max-width: 1020px) {
       .layout { grid-template-columns: 1fr; }
       aside { position: static; }
@@ -223,7 +267,8 @@
         </span>
       </a>
       <div class="toolbar">
-        <button class="theme-toggle" id="themeToggle" type="button">☀️ Light</button>
+        <span class="reading-time">7 min read</span>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">Light</button>
         <div class="share-row">
         <span class="share-label">Share</span>
         <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-04-18.html">LinkedIn</a>
@@ -236,10 +281,10 @@
     <div class="layout">
       <article>
         <div class="article-inner">
-          <div class="eyebrow">CyberPulse • Daily Executive Intelligence Briefing</div>
+          <div class="eyebrow">CyberPulse · Daily Executive Intelligence Briefing</div>
           <h1>The Executive Is the New Perimeter</h1>
-          <p class="dek">Why this week’s SharePoint exploitation and executive-targeted social engineering point to a more structural shift: attackers are skipping the lobby and going straight for the master keys.</p>
-          <img src="/assets/covers/2026-04-18.png" alt="CyberPulse editorial cover image for The Executive Is the New Perimeter" style="width:100%;height:auto;border-radius:22px;margin:10px 0 24px;border:1px solid rgba(255,255,255,0.08);object-fit:cover;aspect-ratio:16/9;">
+          <p class="dek">Why this week's SharePoint exploitation and executive-targeted social engineering point to a more structural shift: attackers are skipping the lobby and going straight for the master keys.</p>
+          <img src="/assets/covers/2026-04-18.png" alt="CyberPulse editorial cover image for The Executive Is the New Perimeter" style="width:100%;height:auto;border-radius:22px;margin:10px 0 24px;border:1px solid rgba(255,255,255,0.08);object-fit:cover;aspect-ratio:16/9;" loading="lazy">
 
           <div class="hero-meta">
             <div class="card">
@@ -262,7 +307,7 @@
           <h2>The story that matters</h2>
           <div class="signal">
             <h3>SharePoint exploitation has moved from advisory language to active risk</h3>
-            <p>BleepingComputer reported that Microsoft SharePoint vulnerability C V E twenty twenty-six dash two zero nine six three, originally patched in January, is now being exploited in attacks. CISA added it to its Known Exploited Vulnerabilities catalog, which is the government’s way of saying this is no longer a hypothetical backlog item. It is live ammunition.</p>
+            <p>BleepingComputer reported that Microsoft SharePoint vulnerability C V E twenty twenty-six dash two zero nine six three, originally patched in January, is now being exploited in attacks. CISA added it to its Known Exploited Vulnerabilities catalog, which is the government's way of saying this is no longer a hypothetical backlog item. It is live ammunition.</p>
             <p>In plain language, this flaw can let an unauthenticated attacker run code remotely on vulnerable SharePoint servers. If you are still running legacy or under-managed collaboration infrastructure, this is the digital equivalent of discovering that someone can open a side door to headquarters without a badge.</p>
           </div>
           <div class="signal">
@@ -274,7 +319,7 @@
           <h2>Why this is structurally different</h2>
           <p>This is not just another breach pattern. It is a convergence pattern. The infrastructure layer remains vulnerable through widely deployed enterprise software. At the same time, the human privilege layer is being attacked with more automation, more speed, and better targeting. Attackers no longer need to choose between exploiting software and exploiting people. They can do both, in the same campaign, against the same organization, and often against the same window of confusion.</p>
           <p>That convergence matters because boards often separate these issues into different committees, different dashboards, and different vendors. Patch exposure is one slide. Executive awareness training is another. Collaboration security lives elsewhere. But the adversary sees a single attack surface: anything that can produce privileged access fast enough to monetize.</p>
-          <p>There is also a meaningful artificial intelligence subtext here. Google Cloud’s threat intelligence team warned this month that general-purpose artificial intelligence models are getting better at finding vulnerabilities and accelerating exploitation workflows. Even before fully autonomous offensive systems arrive, the economics are shifting. Discovery becomes faster. Campaign customization becomes cheaper. Social engineering becomes more personalized at scale. That means the gap between a disclosed weakness and an operational intrusion is likely to keep shrinking.</p>
+          <p>There is also a meaningful artificial intelligence subtext here. Google Cloud's threat intelligence team warned this month that general-purpose artificial intelligence models are getting better at finding vulnerabilities and accelerating exploitation workflows. Even before fully autonomous offensive systems arrive, the economics are shifting. Discovery becomes faster. Campaign customization becomes cheaper. Social engineering becomes more personalized at scale. That means the gap between a disclosed weakness and an operational intrusion is likely to keep shrinking.</p>
 
           <h2>What this means for enterprise risk</h2>
           <p>The first implication is that senior leaders are now part of the technical attack surface, whether they like the label or not. If your executives can approve remote access, override payment controls, receive priority help desk treatment, or hold broad cloud privileges, they must be defended as if they were production systems.</p>
@@ -309,8 +354,8 @@
           </div>
 
           <h2>The board blind spot</h2>
-          <p>Many boards still ask whether the company is secure enough. The sharper question is whether the company is organized for the way modern intrusions actually work. Today’s attackers blend vulnerability exploitation, identity abuse, conversational manipulation, and infrastructure timing into one campaign. If your controls are still measured separately, your exposure is being measured incorrectly.</p>
-          <p>That is the uncomfortable signal in today’s news. The perimeter did not disappear. It moved upward, into the org chart, into collaboration software, and into the moments when busy people trust the wrong request because it looks like relief.</p>
+          <p>Many boards still ask whether the company is secure enough. The sharper question is whether the company is organized for the way modern intrusions actually work. Today's attackers blend vulnerability exploitation, identity abuse, conversational manipulation, and infrastructure timing into one campaign. If your controls are still measured separately, your exposure is being measured incorrectly.</p>
+          <p>That is the uncomfortable signal in today's news. The perimeter did not disappear. It moved upward, into the org chart, into collaboration software, and into the moments when busy people trust the wrong request because it looks like relief.</p>
           <p>Starting Monday morning, the organizations that will look smartest are not the ones with the prettiest awareness posters. They are the ones that treat privilege, communication, and patching as one system.</p>
 
           <div class="source-box">
@@ -319,7 +364,7 @@
               <li><a href="https://www.bleepingcomputer.com/news/microsoft/critical-microsoft-sharepoint-flaw-now-exploited-in-attacks/">BleepingComputer, Critical Microsoft SharePoint flaw now exploited in attacks</a></li>
               <li><a href="https://www.bleepingcomputer.com/news/microsoft/microsoft-april-2026-patch-tuesday-fixes-167-flaws-2-zero-days/">BleepingComputer, Microsoft April 2026 Patch Tuesday fixes 167 flaws, 2 zero-days</a></li>
               <li><a href="https://www.cisa.gov/news-events/alerts/2026/03/18/cisa-adds-one-known-exploited-vulnerability-catalog-0">CISA, Adds One Known Exploited Vulnerability to Catalog</a></li>
-              <li><a href="https://cyberscoop.com/black-basta-affiliates-senior-executives-reliaquest/">CyberScoop, Black Basta’s playbook lives on as former affiliates launch fast-scale intrusion campaign</a></li>
+              <li><a href="https://cyberscoop.com/black-basta-affiliates-senior-executives-reliaquest/">CyberScoop, Black Basta's playbook lives on as former affiliates launch fast-scale intrusion campaign</a></li>
               <li><a href="https://reliaquest.com/blog/threat-spotlight-are-former-black-basta-affiliates-automating-executive-targeting/">ReliaQuest, Are Former Black Basta Affiliates Automating Executive Targeting?</a></li>
               <li><a href="https://www.proofpoint.com/us/blog/email-and-cloud-threats/subscription-bombing-hides-real-cyberattacks">Proofpoint, How Subscription Bombing Hides Real Cyberattacks</a></li>
               <li><a href="https://cloud.google.com/blog/topics/threat-intelligence/defending-enterprise-ai-vulnerabilities">Google Cloud, Defending Your Enterprise When AI Models Can Find Vulnerabilities Faster Than Ever</a></li>
@@ -327,14 +372,17 @@
             </ol>
           </div>
 
-          <footer>CyberPulse • Signal over noise • Executive edition</footer>
+          <footer>
+            <span>CyberPulse · Signal over noise · Executive edition</span>
+            <a href="/">Home</a>
+          </footer>
         </div>
       </article>
 
       <aside>
         <div class="sticky-card">
           <div class="side-kicker">At a glance</div>
-          <p>Today’s edition argues that executives, collaboration channels, and exposed enterprise software now form one combined attack surface.</p>
+          <p>Today's edition argues that executives, collaboration channels, and exposed enterprise software now form one combined attack surface.</p>
           <ul>
             <li>Active SharePoint exploitation raises the urgency.</li>
             <li>Leadership-targeted intrusion campaigns raise the stakes.</li>
@@ -360,7 +408,7 @@
     const themeBtn = document.getElementById('themeToggle');
     const syncThemeLabel = () => {
       const isLight = document.body.classList.contains('theme-light');
-      themeBtn.textContent = isLight ? '🌙 Dark' : '☀️ Light';
+      themeBtn.textContent = isLight ? 'Dark' : 'Light';
     };
     syncThemeLabel();
     themeBtn.addEventListener('click', () => {

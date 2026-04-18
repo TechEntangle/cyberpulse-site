@@ -5,6 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CyberPulse | Executive cyber intelligence by Tushar Vartak</title>
   <meta name="description" content="CyberPulse is a modern daily briefing on cyber risk, AI threats, infrastructure exposure, and executive decision-making." />
+  <link rel="canonical" href="https://tusharvartak.com/" />
+  <meta property="og:title" content="CyberPulse | Executive Cyber Intelligence" />
+  <meta property="og:description" content="Modern daily briefings on cyber risk, AI threats, infrastructure exposure, and executive decision-making." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tusharvartak.com/" />
+  <meta property="og:image" content="https://tusharvartak.com/assets/covers/2026-04-18.png" />
+  <meta property="og:site_name" content="CyberPulse" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="CyberPulse | Executive Cyber Intelligence" />
+  <meta name="twitter:description" content="Modern daily briefings on cyber risk, AI threats, infrastructure exposure, and executive decision-making." />
+  <meta name="twitter:image" content="https://tusharvartak.com/assets/covers/2026-04-18.png" />
+  <link rel="alternate" type="application/rss+xml" title="CyberPulse RSS Feed" href="/feed.xml" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "CyberPulse",
+    "url": "https://tusharvartak.com",
+    "description": "Executive cyber intelligence briefings on cyber risk, AI threats, infrastructure exposure, and board-level decision-making.",
+    "publisher": {
+      "@type": "Person",
+      "name": "Tushar Vartak",
+      "url": "https://tusharvartak.com"
+    }
+  }
+  </script>
   <style>
     :root {
       --bg: #06070a;
@@ -51,6 +77,16 @@
       padding: 22px 0 8px; gap: 12px; flex-wrap: wrap;
     }
     .nav-actions { display: flex; gap: 10px; align-items: center; }
+    .nav-links {
+      display: flex; gap: 18px; align-items: center;
+      font-size: 14px; font-weight: 600;
+    }
+    .nav-links a {
+      text-decoration: none; color: var(--muted);
+      transition: color 0.2s ease;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links .rss-link { color: var(--gold); }
     .theme-toggle {
       display: inline-flex; align-items: center; justify-content: center; gap: 8px;
       padding: 10px 14px; border-radius: 999px; border: 1px solid var(--border);
@@ -158,7 +194,10 @@
     footer {
       padding: 20px 0 56px; color: var(--muted); font-size: 14px;
       display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+      border-top: 1px solid var(--border); margin-top: 12px;
     }
+    footer a { color: var(--gold); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
     @media (max-width: 980px) {
       .hero, .grid { grid-template-columns: 1fr; }
     }
@@ -168,12 +207,13 @@
       .hero-panel, .card, .archive-item { border-radius: 20px; }
       .mini-grid { grid-template-columns: 1fr; }
       .archive-item { align-items: flex-start; }
+      .nav-links { gap: 12px; font-size: 13px; }
     }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <div class="nav">
+    <nav class="nav" role="navigation" aria-label="Main navigation">
       <a class="brand" href="/">
         <span class="brand-mark">CP</span>
         <span>
@@ -182,9 +222,14 @@
         </span>
       </a>
       <div class="nav-actions">
-        <button class="theme-toggle" id="themeToggle" type="button">☀️ Light</button>
+        <div class="nav-links">
+          <a href="/archive/">Archive</a>
+          <a href="/about/">About</a>
+          <a class="rss-link" href="/feed.xml" title="RSS Feed">RSS</a>
+        </div>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">Light</button>
       </div>
-    </div>
+    </nav>
 
     <section class="hero">
       <div class="hero-copy">
@@ -192,15 +237,15 @@
         <h1>Modern risk briefings for operators, boards, and security teams.</h1>
         <p class="dek">CyberPulse turns fast-moving cyber, AI, infrastructure, and governance developments into crisp, high-context daily briefings built for people who need signal, not noise.</p>
         <div class="cta-row">
-          <a class="btn primary" href="./posts/2026-04-18.html">Read today’s briefing</a>
+          <a class="btn primary" href="./posts/2026-04-18.html">Read today's briefing</a>
           <a class="btn secondary" href="/archive/">Browse archive</a>
           <a class="btn secondary" href="/about/">About CyberPulse</a>
         </div>
       </div>
 
       <div class="hero-panel">
-        <img src="./assets/covers/2026-04-18.png" alt="CyberPulse cover art for April 18, 2026" style="width:100%;height:auto;border-radius:18px;margin-bottom:18px;border:1px solid rgba(255,255,255,0.08);object-fit:cover;aspect-ratio:16/9;">
-        <div class="panel-label">Today’s lead</div>
+        <img src="./assets/covers/2026-04-18.png" alt="CyberPulse cover art for April 18, 2026" style="width:100%;height:auto;border-radius:18px;margin-bottom:18px;border:1px solid rgba(255,255,255,0.08);object-fit:cover;aspect-ratio:16/9;" loading="lazy">
+        <div class="panel-label">Today's lead</div>
         <h2 class="signal-title">The Executive Is the New Perimeter</h2>
         <p class="signal-desc">A board-level analysis of active SharePoint exploitation, executive-targeted social engineering, and why attackers increasingly treat leadership itself as privileged infrastructure.</p>
         <div class="mini-grid">
@@ -259,7 +304,7 @@
           <div>
             <div class="archive-date">April 18, 2026</div>
             <div class="archive-title">The Executive Is the New Perimeter</div>
-            <div class="archive-desc">Today’s edition connects active SharePoint exploitation, executive-targeted social engineering, and AI-driven attacker acceleration into one board-level risk narrative.</div>
+            <div class="archive-desc">Today's edition connects active SharePoint exploitation, executive-targeted social engineering, and AI-driven attacker acceleration into one board-level risk narrative.</div>
           </div>
           <div class="archive-arrow">→</div>
         </a>
@@ -267,8 +312,8 @@
     </section>
 
     <footer>
-      <span>CyberPulse on tusharvartak.com</span>
-      <span>Direct publishing, modern editorial design, and fast daily distribution.</span>
+      <span>CyberPulse by Tushar Vartak</span>
+      <span><a href="/feed.xml">RSS</a> · <a href="/about/">About</a> · <a href="/archive/">Archive</a></span>
     </footer>
   </div>
   <script>
@@ -277,7 +322,7 @@
     const btn = document.getElementById('themeToggle');
     const syncThemeLabel = () => {
       const isLight = document.body.classList.contains('theme-light');
-      btn.textContent = isLight ? '🌙 Dark' : '☀️ Light';
+      btn.textContent = isLight ? 'Dark' : 'Light';
     };
     syncThemeLabel();
     btn.addEventListener('click', () => {
