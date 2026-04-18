@@ -676,7 +676,7 @@
         <p class="subscribe-desc">Receive executive cyber intelligence briefings directly. No spam, no tracking pixels, unsubscribe anytime.</p>
         <form class="subscribe-form" id="subscribeForm" action="javascript:void(0)">
           <input class="subscribe-input" type="email" id="subscribeEmail" placeholder="you@example.com" required aria-label="Email address" autocomplete="email" />
-          <div class="cf-turnstile" id="turnstileWidget" data-sitekey="0x4AAAAAAA_PLACEHOLDER_KEY" data-theme="dark" data-size="compact" style="margin:10px auto 0;display:flex;justify-content:center;"></div>
+          <div class="cf-turnstile" id="turnstileWidget" data-sitekey="0x4AAAAAAC_bVkKsEI5lz1UT" data-theme="dark" data-size="compact" style="margin:10px auto 0;display:flex;justify-content:center;"></div>
           <button class="subscribe-btn" type="submit" data-analytics="subscribe-submit">Subscribe</button>
         </form>
         <div class="subscribe-status" id="subscribeStatus" role="status" aria-live="polite"></div>
@@ -729,7 +729,7 @@
     });
 
     /* Subscribe form — double opt-in with Turnstile CAPTCHA */
-    const SUBSCRIBE_API = '/api/subscribe'; /* Update to deployed API URL */
+    const SUBSCRIBE_API = 'https://cyberpulse-api.tusharvartak.workers.dev/subscribe';
     const subForm = document.getElementById('subscribeForm');
     const subEmail = document.getElementById('subscribeEmail');
     const subStatus = document.getElementById('subscribeStatus');
