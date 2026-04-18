@@ -144,7 +144,7 @@ fi
 
 # ── Step 1: Copy post HTML ───────────────────────────────────────
 if ! $OG_ONLY; then
-  info "Step 1/6: Copying post HTML"
+  info "Step 1/7: Copying post HTML"
   if ! $DRY_RUN; then
     cp "$HTML_SRC" "$POST_OUT"
   fi
@@ -153,7 +153,7 @@ fi
 
 # ── Step 2: Copy PDF (optional) ──────────────────────────────────
 if [[ -n "$PDF_SRC" ]] && ! $OG_ONLY; then
-  info "Step 2/6: Copying PDF asset"
+  info "Step 2/7: Copying PDF asset"
   if [[ -f "$PDF_SRC" ]]; then
     if ! $DRY_RUN; then
       cp "$PDF_SRC" "$ASSETS_DIR/cyberpulse-$DATE.pdf"
@@ -163,12 +163,12 @@ if [[ -n "$PDF_SRC" ]] && ! $OG_ONLY; then
     warn "PDF not found: $PDF_SRC (skipping)"
   fi
 else
-  info "Step 2/6: No PDF — skipping"
+  info "Step 2/7: No PDF — skipping"
 fi
 
 # ── Step 3: Generate cover art ───────────────────────────────────
 if ! $SKIP_COVER && ! $OG_ONLY; then
-  info "Step 3/6: Cover art"
+  info "Step 3/7: Cover art"
   if [[ -n "$COVER_PATH" ]]; then
     if [[ -f "$COVER_PATH" ]]; then
       if ! $DRY_RUN; then
@@ -193,18 +193,18 @@ if ! $SKIP_COVER && ! $OG_ONLY; then
     fi
   fi
 else
-  info "Step 3/6: Cover art — skipping"
+  info "Step 3/7: Cover art — skipping"
 fi
 
 # ── Step 4: Generate OG/social card ──────────────────────────────
 if ! $SKIP_OG; then
-  info "Step 4/6: Generating OG social card"
+  info "Step 4/7: Generating OG social card"
   if ! $DRY_RUN; then
     node "$ROOT/scripts/generate-og.js" "$DATE" "$TITLE" "$DESC"
   fi
   ok "OG card → $OG_DIR/$DATE.png"
 else
-  info "Step 4/6: OG card — skipping"
+  info "Step 4/7: OG card — skipping"
 fi
 
 if $OG_ONLY; then
@@ -213,7 +213,7 @@ if $OG_ONLY; then
 fi
 
 # ── Step 5: Update index, feed, sitemap, archive ─────────────────
-info "Step 5/6: Updating index, feed, sitemap, archive"
+info "Step 5/7: Updating index, feed, sitemap, archive"
 if ! $DRY_RUN; then
   python3 - <<'PY' "$ROOT/index.html" "$ROOT/feed.xml" "$ROOT/sitemap.xml" "$ROOT/archive/index.html" "$DATE" "$TITLE" "$DESC"
 from pathlib import Path
@@ -307,7 +307,7 @@ ok "Index, feed, sitemap, archive updated"
 
 # ── Step 6: Git commit & push ────────────────────────────────────
 if ! $SKIP_GIT; then
-  info "Step 6/6: Git commit & push"
+  info "Step 6/7: Git commit & push"
   if ! $DRY_RUN; then
     cd "$ROOT"
     git add \
@@ -325,7 +325,31 @@ if ! $SKIP_GIT; then
   fi
   ok "Committed and pushed"
 else
-  info "Step 6/6: Git — skipping"
+  info "Step 6/7: Git — skipping"
+fi
+
+# ── Step 7: Send newsletter to subscribers ───────────────────────
+info "Step 7/7: Newsletter distribution"
+if [[ -n "${RESEND_API_KEY:-}" ]]; then
+  SEND_ARGS=(--date "$DATE" --title "$TITLE" --desc "$DESC")
+  # Try to extract edition number from post HTML
+  if [[ -f "$POST_OUT" ]]; then
+    EDITION=$(python3 -c "
+import re, sys
+html = open(sys.argv[1]).read()
+m = re.search(r'Edition\s+(?:No\.\s*)?(\d+)', html, re.I)
+print(m.group(1) if m else '')
+" "$POST_OUT" 2>/dev/null || echo "")
+    [[ -n "$EDITION" ]] && SEND_ARGS+=(--edition "$EDITION")
+  fi
+  if $DRY_RUN; then
+    SEND_ARGS+=(--dry-run)
+  fi
+  node "$ROOT/email/send.js" "${SEND_ARGS[@]}"
+  ok "Newsletter sent"
+else
+  warn "No RESEND_API_KEY — skipping newsletter send"
+  info "To send manually: RESEND_API_KEY=re_xxx node email/send.js --date $DATE --title \"$TITLE\" --desc \"$DESC\""
 fi
 
 # ── Done ─────────────────────────────────────────────────────────

@@ -48,10 +48,18 @@
   to `window.cpAnalytics()` when a provider is connected. Ready for Plausible, Fathom,
   or custom integration without any markup changes.
 
-## Backlog
+- [x] **9. Email/newsletter distribution** — Full Resend-compatible newsletter system:
+  premium branded HTML email template (`email/template.js`) with dark theme, Outlook VML
+  fallback, and Apple Mail dark mode support. Subscriber management via JSON flat-file
+  (`email/subscribers.js`) with add/remove/import/export CLI. Batch send script
+  (`email/send.js`) with per-recipient Resend API calls, rate limiting, and dry-run mode.
+  Serverless-ready API handler (`email/api.js`) for subscribe/unsubscribe endpoints.
+  Homepage subscribe form with gold-accent card design and localStorage fallback.
+  Unsubscribe page (`email/unsubscribe.html`) matching site branding. Publish pipeline
+  (`scripts/publish.sh`) updated to 7-step flow with automatic newsletter distribution
+  when `RESEND_API_KEY` is set.
 
-- [ ] **9. Email/newsletter distribution** — Add email capture and automated distribution
-  for new briefings (e.g., Buttondown, Resend, or custom SMTP).
+## Backlog
 
 - [ ] **10. Multi-author support** — Extend template and publish script to support
   guest contributors with per-author metadata and bylines.
