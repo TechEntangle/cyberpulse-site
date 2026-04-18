@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CyberPulse | Tushar Vartak</title>
+  <style>
+    :root {
+      --bg: #06070a;
+      --panel: #11141a;
+      --panel2: #171b23;
+      --text: #f3efe7;
+      --muted: #b7afa3;
+      --gold: #e8b14a;
+      --accent: #ff9c85;
+      --border: rgba(255,255,255,0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #161a24 0%, #0a0c12 42%, #050608 100%);
+      color: var(--text);
+    }
+    .wrap { width: min(1080px, calc(100% - 32px)); margin: 0 auto; }
+    header { padding: 56px 0 28px; }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 12px;
+      color: var(--gold);
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+    h1 {
+      font-size: clamp(42px, 7vw, 74px);
+      line-height: 0.95;
+      margin: 0 0 16px;
+      letter-spacing: -0.04em;
+    }
+    .dek {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: clamp(18px, 2.5vw, 24px);
+      line-height: 1.5;
+      margin: 0;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      margin: 26px 0 48px;
+    }
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.22);
+    }
+    .card h2, .card h3 { margin-top: 0; }
+    .latest-title { font-size: 30px; line-height: 1.1; margin-bottom: 12px; }
+    .latest-desc { color: var(--muted); font-size: 16px; line-height: 1.6; }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 16px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      border: 1px solid var(--border);
+    }
+    .btn.primary { background: var(--gold); color: #16120c; }
+    .btn.secondary { color: var(--text); background: rgba(255,255,255,0.04); }
+    .meta-list { display: grid; gap: 12px; }
+    .meta-item {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px 16px;
+    }
+    .meta-label { font-size: 11px; letter-spacing: 0.10em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+    section { padding: 8px 0 42px; }
+    .section-title { font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 18px; }
+    .archive { display: grid; gap: 14px; }
+    .archive-item {
+      display: flex; justify-content: space-between; gap: 16px; align-items: center;
+      padding: 18px 20px; border-radius: 18px; border: 1px solid var(--border); background: rgba(255,255,255,0.03);
+    }
+    .archive-item a { color: var(--text); text-decoration: none; font-weight: 700; }
+    .archive-date { color: var(--muted); font-size: 14px; }
+    footer { padding: 10px 0 48px; color: var(--muted); font-size: 14px; }
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; }
+      .archive-item { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="eyebrow">CyberPulse on tusharvartak.com</div>
+      <h1>Daily executive cyber intelligence, published directly to your domain.</h1>
+      <p class="dek">A clean, fast daily briefing archive for CyberPulse. Each edition is generated locally, published as static HTML, and designed to be readable on desktop and mobile without platform lock-in.</p>
+    </header>
+
+    <div class="hero">
+      <div class="card">
+        <div class="section-title">Latest briefing</div>
+        <div class="latest-title">The Executive Is the New Perimeter</div>
+        <div class="latest-desc">Today’s edition connects active SharePoint exploitation, executive-targeted social engineering, and AI-driven attacker acceleration into one board-level risk narrative.</div>
+        <div class="actions">
+          <a class="btn primary" href="./posts/2026-04-18.html">Read latest post</a>
+          <a class="btn secondary" href="./assets/cyberpulse-2026-04-18.pdf">Download PDF</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="section-title">Publishing setup</div>
+        <div class="meta-list">
+          <div class="meta-item">
+            <div class="meta-label">Domain</div>
+            tusharvartak.com
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">Mode</div>
+            Static site, full switch from Blogger
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">Flow</div>
+            Daily HTML generation, archive update, homepage refresh
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section>
+      <div class="section-title">Archive</div>
+      <div class="archive">
+        <div class="archive-item">
+          <div>
+            <a href="./posts/2026-04-18.html">CyberPulse, April 18, 2026</a>
+            <div class="archive-date">Lead story: executive-targeted intrusion engineering and exploited SharePoint exposure</div>
+          </div>
+          <a class="btn secondary" href="./assets/cyberpulse-2026-04-18.pdf">PDF</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      Built for direct publishing on tusharvartak.com. Next step is deployment and DNS cutover.
+    </footer>
+  </div>
+</body>
+</html>
