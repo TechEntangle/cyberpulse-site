@@ -1,7 +1,11 @@
 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="64" height="64" rx="18" fill="#0B0D12"/>
-  <path d="M18 32C18 24.268 24.268 18 32 18H40V24H32C27.582 24 24 27.582 24 32C24 36.418 27.582 40 32 40H40V46H32C24.268 46 18 39.732 18 32Z" fill="#F0B44A"/>
-  <path d="M25 32C25 28.134 28.134 25 32 25H37V30H32C30.895 30 30 30.895 30 32C30 33.105 30.895 34 32 34H36V39H32C28.134 39 25 35.866 25 32Z" fill="#FF8E6E" fill-opacity="0.9"/>
-  <path d="M42 21H46V43H42V21Z" fill="#F5EFE6"/>
-  <circle cx="44" cy="17" r="3" fill="#F5EFE6"/>
+  <rect width="64" height="64" rx="16" fill="#0A0C12"/>
+  <!-- C arc -->
+  <path d="M28 16C20.3 16 14 22.3 14 30C14 37.7 20.3 44 28 44H31V39H28C23.0 39 19 35.0 19 30C19 25.0 23.0 21 28 21H31V16H28Z" fill="#F0B44A"/>
+  <!-- P stem -->
+  <rect x="34" y="16" width="5" height="28" rx="2.5" fill="#F5EFE6"/>
+  <!-- P bowl -->
+  <path d="M36.5 16H40C44.4 16 48 19.6 48 24C48 28.4 44.4 32 40 32H36.5V27H40C41.7 27 43 25.7 43 24C43 22.3 41.7 21 40 21H36.5V16Z" fill="#F5EFE6"/>
+  <!-- Signal dot -->
+  <circle cx="44" cy="41" r="2.5" fill="#F0B44A" opacity="0.55"/>
 </svg>

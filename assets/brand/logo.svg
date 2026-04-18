@@ -1,14 +1,22 @@
 <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="512" height="512" rx="132" fill="#0A0C12"/>
-  <rect x="36" y="36" width="440" height="440" rx="112" fill="url(#panel)" stroke="rgba(255,255,255,0.08)"/>
-  <path d="M173 262C173 205.114 219.114 159 276 159H320V199H276C241.758 199 214 226.758 214 261C214 295.242 241.758 323 276 323H320V363H276C219.114 363 173 316.886 173 260V262Z" fill="#F0B44A"/>
-  <path d="M188 256C188 220.654 216.654 192 252 192H292V224H252C234.327 224 220 238.327 220 256C220 273.673 234.327 288 252 288H286V320H252C216.654 320 188 291.346 188 256Z" fill="#FF8E6E" fill-opacity="0.88"/>
-  <path d="M328 176H360V336H328V176Z" fill="#F5EFE6"/>
-  <circle cx="344" cy="152" r="18" fill="#F5EFE6"/>
+  <rect width="512" height="512" rx="128" fill="#0A0C12"/>
+  <rect x="32" y="32" width="448" height="448" rx="108" fill="url(#bg)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <!--
+    CP monogram: C (gold arc) shares vertical edge with P (cream stem+bowl).
+    Clean geometric shapes, no strokes — all fills for crisp rendering.
+  -->
+  <!-- C: open arc, 40px stroke equivalent as filled shape -->
+  <path d="M236 152C174.1 152 124 202.1 124 264C124 325.9 174.1 376 236 376H260V336H236C196.2 336 164 303.8 164 264C164 224.2 196.2 192 236 192H260V152H236Z" fill="#F0B44A"/>
+  <!-- P: vertical stem -->
+  <rect x="276" y="152" width="40" height="224" rx="20" fill="#F5EFE6"/>
+  <!-- P: bowl (half-circle bulge) -->
+  <path d="M296 152H330C366.5 152 396 181.5 396 218C396 254.5 366.5 284 330 284H296V244H330C344.4 244 356 232.4 356 218C356 203.6 344.4 192 330 192H296V152Z" fill="#F5EFE6"/>
+  <!-- Signal dot -->
+  <circle cx="348" cy="344" r="18" fill="#F0B44A" opacity="0.55"/>
   <defs>
-    <linearGradient id="panel" x1="84" y1="68" x2="432" y2="444" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#141927"/>
-      <stop offset="1" stop-color="#0B0D12"/>
+    <linearGradient id="bg" x1="80" y1="60" x2="440" y2="460" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#131720"/>
+      <stop offset="1" stop-color="#0A0C12"/>
     </linearGradient>
   </defs>
 </svg>
