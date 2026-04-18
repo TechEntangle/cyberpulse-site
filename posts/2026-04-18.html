@@ -26,6 +26,18 @@
       --border: rgba(255,255,255,0.10);
       --shadow: 0 24px 70px rgba(0,0,0,0.25);
     }
+    body.theme-light {
+      --bg: #f7f2e8;
+      --bg-soft: #fffdf9;
+      --panel: rgba(255,255,255,0.92);
+      --panel-strong: rgba(255,255,255,0.96);
+      --text: #171512;
+      --muted: #6f675d;
+      --gold: #b87b18;
+      --accent: #ab4639;
+      --border: rgba(23,21,18,0.10);
+      --shadow: 0 22px 58px rgba(58,45,22,0.08);
+    }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
@@ -34,6 +46,10 @@
       color: var(--text);
       font-family: 'Source Serif 4', serif;
       line-height: 1.75;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+    body.theme-light {
+      background: linear-gradient(180deg, #fffdf8 0%, #f7f2e8 100%);
     }
     a { color: var(--accent); }
     .progress {
@@ -49,6 +65,12 @@
     .topbar {
       display: flex; justify-content: space-between; align-items: center; gap: 18px; flex-wrap: wrap;
       margin-bottom: 24px;
+    }
+    .toolbar { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+    .theme-toggle {
+      display: inline-flex; align-items: center; justify-content: center; padding: 10px 14px;
+      text-decoration: none; border-radius: 999px; border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04); color: var(--text); font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 700; cursor: pointer;
     }
     .brand {
       display: inline-flex; gap: 12px; align-items: center; color: var(--text); text-decoration: none; font-family: 'Inter', sans-serif;
@@ -199,11 +221,14 @@
           <div class="brand-meta">Executive cyber intelligence</div>
         </span>
       </a>
-      <div class="share-row">
+      <div class="toolbar">
+        <button class="theme-toggle" id="themeToggle" type="button">☀️ Light</button>
+        <div class="share-row">
         <span class="share-label">Share</span>
         <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-04-18.html">LinkedIn</a>
         <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=The%20Executive%20Is%20the%20New%20Perimeter&url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-04-18.html">X</a>
         <button class="share-btn" id="copyLinkBtn" type="button">Copy link</button>
+      </div>
       </div>
     </div>
 
@@ -328,6 +353,20 @@
   </div>
 
   <script>
+    const storedTheme = localStorage.getItem('cyberpulse-theme');
+    if (storedTheme === 'light') document.body.classList.add('theme-light');
+    const themeBtn = document.getElementById('themeToggle');
+    const syncThemeLabel = () => {
+      const isLight = document.body.classList.contains('theme-light');
+      themeBtn.textContent = isLight ? '🌙 Dark' : '☀️ Light';
+    };
+    syncThemeLabel();
+    themeBtn.addEventListener('click', () => {
+      document.body.classList.toggle('theme-light');
+      localStorage.setItem('cyberpulse-theme', document.body.classList.contains('theme-light') ? 'light' : 'dark');
+      syncThemeLabel();
+    });
+
     const progress = document.getElementById('progress');
     const updateProgress = () => {
       const scrollTop = window.scrollY;
