@@ -1,34 +1,221 @@
 #!/usr/bin/env bash
+# ─────────────────────────────────────────────────────────────────
+# CyberPulse · One-command publishing automation
+# Usage:
+#   ./scripts/publish.sh YYYY-MM-DD path/to/post.html [OPTIONS]
+#
+# Options:
+#   --pdf PATH          Attach a PDF asset
+#   --title TEXT        Article title (default: extracted from HTML <title>)
+#   --desc TEXT         Short description (default: extracted from HTML meta)
+#   --cover PATH        Use an existing cover image instead of generating one
+#   --cover-prompt PATH Text file with a custom DALL-E prompt for cover art
+#   --og-only           Regenerate OG image only (skip other updates)
+#   --skip-cover        Skip cover art generation
+#   --skip-og           Skip OG image generation
+#   --skip-git          Skip git add/commit/push
+#   --dry-run           Show what would be done without writing files
+#   --help              Show this help message
+#
+# Environment:
+#   OPENAI_API_KEY      Required for cover art generation (skipped if absent)
+#
+# Examples:
+#   ./scripts/publish.sh 2026-04-19 ~/briefing.html
+#   ./scripts/publish.sh 2026-04-19 ~/briefing.html --title "Zero Trust Dies at the Inbox"
+#   ./scripts/publish.sh 2026-04-19 ~/briefing.html --pdf ~/briefing.pdf --skip-cover
+# ─────────────────────────────────────────────────────────────────
 set -euo pipefail
 
-if [[ $# -lt 2 ]]; then
-  echo "Usage: $0 YYYY-MM-DD path/to/post.html [path/to/post.pdf] [title] [description]" >&2
-  exit 1
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+
+# ── Helpers ──────────────────────────────────────────────────────
+info()  { printf '\033[1;34m▸\033[0m %s\n' "$*"; }
+ok()    { printf '\033[1;32m✓\033[0m %s\n' "$*"; }
+warn()  { printf '\033[1;33m⚠\033[0m %s\n' "$*" >&2; }
+fail()  { printf '\033[1;31m✗\033[0m %s\n' "$*" >&2; exit 1; }
+
+usage() {
+  sed -n '2,/^# ──/{ /^#/s/^# \?//p }' "$0"
+  exit 0
+}
+
+# ── Parse arguments ──────────────────────────────────────────────
+DATE=""
+HTML_SRC=""
+PDF_SRC=""
+TITLE=""
+DESC=""
+COVER_PATH=""
+COVER_PROMPT=""
+OG_ONLY=false
+SKIP_COVER=false
+SKIP_OG=false
+SKIP_GIT=false
+DRY_RUN=false
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --help)          usage ;;
+    --pdf)           PDF_SRC="$2";      shift 2 ;;
+    --title)         TITLE="$2";        shift 2 ;;
+    --desc)          DESC="$2";         shift 2 ;;
+    --cover)         COVER_PATH="$2";   shift 2 ;;
+    --cover-prompt)  COVER_PROMPT="$2"; shift 2 ;;
+    --og-only)       OG_ONLY=true;      shift ;;
+    --skip-cover)    SKIP_COVER=true;   shift ;;
+    --skip-og)       SKIP_OG=true;      shift ;;
+    --skip-git)      SKIP_GIT=true;     shift ;;
+    --dry-run)       DRY_RUN=true;      shift ;;
+    -*)              fail "Unknown option: $1" ;;
+    *)
+      if [[ -z "$DATE" ]]; then
+        DATE="$1"
+      elif [[ -z "$HTML_SRC" ]]; then
+        HTML_SRC="$1"
+      else
+        fail "Unexpected argument: $1"
+      fi
+      shift ;;
+  esac
+done
+
+[[ -n "$DATE" ]] || fail "Date argument (YYYY-MM-DD) is required"
+[[ "$DATE" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]] || fail "Date must be YYYY-MM-DD format"
+
+if ! $OG_ONLY; then
+  [[ -n "$HTML_SRC" ]] || fail "HTML source file is required"
+  [[ -f "$HTML_SRC" ]] || fail "HTML file not found: $HTML_SRC"
 fi
 
-DATE="$1"
-HTML_SRC="$2"
-PDF_SRC="${3:-}"
-TITLE="${4:-CyberPulse, $DATE}"
-DESC="${5:-Executive cyber intelligence briefing for $DATE.}"
-ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+# ── Paths ────────────────────────────────────────────────────────
 POSTS_DIR="$ROOT/posts"
 ASSETS_DIR="$ROOT/assets"
-INDEX="$ROOT/index.html"
-FEED="$ROOT/feed.xml"
-SITEMAP="$ROOT/sitemap.xml"
-ARCHIVE="$ROOT/archive/index.html"
+COVERS_DIR="$ASSETS_DIR/covers"
+OG_DIR="$ASSETS_DIR/og"
 POST_OUT="$POSTS_DIR/$DATE.html"
 
-mkdir -p "$POSTS_DIR" "$ASSETS_DIR"
-cp "$HTML_SRC" "$POST_OUT"
+mkdir -p "$POSTS_DIR" "$COVERS_DIR" "$OG_DIR"
 
-if [[ -n "$PDF_SRC" && -f "$PDF_SRC" ]]; then
-  cp "$PDF_SRC" "$ASSETS_DIR/cyberpulse-$DATE.pdf"
+# ── Extract title/desc from HTML if not provided ─────────────────
+if [[ -n "$HTML_SRC" ]]; then
+  if [[ -z "$TITLE" ]]; then
+    TITLE=$(python3 -c "
+import re, sys
+html = open(sys.argv[1]).read()
+# Try og:title first, then <title> tag
+m = re.search(r'property=\"og:title\"\s+content=\"([^\"]+)\"', html)
+if not m:
+    m = re.search(r'<title>[^|]*\|\s*(.+?)</title>', html)
+if not m:
+    m = re.search(r'<title>(.+?)</title>', html)
+print(m.group(1).strip() if m else '')
+" "$HTML_SRC" 2>/dev/null || echo "")
+    TITLE="${TITLE:-CyberPulse, $DATE}"
+  fi
+  if [[ -z "$DESC" ]]; then
+    DESC=$(python3 -c "
+import re, sys
+html = open(sys.argv[1]).read()
+m = re.search(r'property=\"og:description\"\s+content=\"([^\"]+)\"', html)
+if not m:
+    m = re.search(r'name=\"description\"\s+content=\"([^\"]+)\"', html)
+print(m.group(1).strip() if m else '')
+" "$HTML_SRC" 2>/dev/null || echo "")
+    DESC="${DESC:-Executive cyber intelligence briefing for $DATE.}"
+  fi
 fi
 
-# Update index.html, feed.xml, sitemap.xml, and archive/index.html
-python3 - <<'PY' "$INDEX" "$FEED" "$SITEMAP" "$ARCHIVE" "$DATE" "$TITLE" "$DESC"
+TITLE="${TITLE:-CyberPulse, $DATE}"
+DESC="${DESC:-Executive cyber intelligence briefing for $DATE.}"
+
+# ── Summary ──────────────────────────────────────────────────────
+echo ""
+info "CyberPulse publish: $DATE"
+info "Title: $TITLE"
+info "Desc:  $DESC"
+[[ -n "$PDF_SRC" ]] && info "PDF:   $PDF_SRC"
+echo ""
+
+if $DRY_RUN; then
+  warn "DRY RUN — no files will be written"
+  echo ""
+fi
+
+# ── Step 1: Copy post HTML ───────────────────────────────────────
+if ! $OG_ONLY; then
+  info "Step 1/6: Copying post HTML"
+  if ! $DRY_RUN; then
+    cp "$HTML_SRC" "$POST_OUT"
+  fi
+  ok "Post → $POST_OUT"
+fi
+
+# ── Step 2: Copy PDF (optional) ──────────────────────────────────
+if [[ -n "$PDF_SRC" ]] && ! $OG_ONLY; then
+  info "Step 2/6: Copying PDF asset"
+  if [[ -f "$PDF_SRC" ]]; then
+    if ! $DRY_RUN; then
+      cp "$PDF_SRC" "$ASSETS_DIR/cyberpulse-$DATE.pdf"
+    fi
+    ok "PDF → $ASSETS_DIR/cyberpulse-$DATE.pdf"
+  else
+    warn "PDF not found: $PDF_SRC (skipping)"
+  fi
+else
+  info "Step 2/6: No PDF — skipping"
+fi
+
+# ── Step 3: Generate cover art ───────────────────────────────────
+if ! $SKIP_COVER && ! $OG_ONLY; then
+  info "Step 3/6: Cover art"
+  if [[ -n "$COVER_PATH" ]]; then
+    if [[ -f "$COVER_PATH" ]]; then
+      if ! $DRY_RUN; then
+        cp "$COVER_PATH" "$COVERS_DIR/$DATE.png"
+      fi
+      ok "Cover (copied) → $COVERS_DIR/$DATE.png"
+    else
+      fail "Cover file not found: $COVER_PATH"
+    fi
+  elif [[ -n "${OPENAI_API_KEY:-}" ]]; then
+    info "Generating DALL-E 3 cover art..."
+    if ! $DRY_RUN; then
+      COVER_ARGS=("$DATE")
+      [[ -n "$COVER_PROMPT" ]] && COVER_ARGS+=("$COVER_PROMPT")
+      node "$ROOT/scripts/generate-cover.js" "${COVER_ARGS[@]}"
+    fi
+    ok "Cover (generated) → $COVERS_DIR/$DATE.png"
+  else
+    warn "No OPENAI_API_KEY and no --cover provided — skipping cover generation"
+    if [[ ! -f "$COVERS_DIR/$DATE.png" ]]; then
+      warn "No cover image exists at $COVERS_DIR/$DATE.png"
+    fi
+  fi
+else
+  info "Step 3/6: Cover art — skipping"
+fi
+
+# ── Step 4: Generate OG/social card ──────────────────────────────
+if ! $SKIP_OG; then
+  info "Step 4/6: Generating OG social card"
+  if ! $DRY_RUN; then
+    node "$ROOT/scripts/generate-og.js" "$DATE" "$TITLE" "$DESC"
+  fi
+  ok "OG card → $OG_DIR/$DATE.png"
+else
+  info "Step 4/6: OG card — skipping"
+fi
+
+if $OG_ONLY; then
+  ok "OG-only mode complete"
+  exit 0
+fi
+
+# ── Step 5: Update index, feed, sitemap, archive ─────────────────
+info "Step 5/6: Updating index, feed, sitemap, archive"
+if ! $DRY_RUN; then
+  python3 - <<'PY' "$ROOT/index.html" "$ROOT/feed.xml" "$ROOT/sitemap.xml" "$ROOT/archive/index.html" "$DATE" "$TITLE" "$DESC"
 from pathlib import Path
 import sys, re
 from datetime import datetime
@@ -115,10 +302,36 @@ if archive_path.exists():
     archive_path.write_text(archive)
 
 PY
+fi
+ok "Index, feed, sitemap, archive updated"
 
-echo "Published $DATE into $ROOT"
-echo "  - Post:    $POST_OUT"
-echo "  - Index:   updated"
-echo "  - Feed:    updated"
-echo "  - Sitemap: updated"
-echo "  - Archive: updated"
+# ── Step 6: Git commit & push ────────────────────────────────────
+if ! $SKIP_GIT; then
+  info "Step 6/6: Git commit & push"
+  if ! $DRY_RUN; then
+    cd "$ROOT"
+    git add \
+      "posts/$DATE.html" \
+      "assets/covers/$DATE.png" \
+      "assets/og/$DATE.png" \
+      "index.html" \
+      "feed.xml" \
+      "sitemap.xml" \
+      "archive/index.html" \
+      2>/dev/null || true
+    [[ -n "$PDF_SRC" ]] && git add "assets/cyberpulse-$DATE.pdf" 2>/dev/null || true
+    git commit -m "Publish $DATE: $TITLE" || warn "Nothing to commit"
+    git push || warn "Push failed — you may need to push manually"
+  fi
+  ok "Committed and pushed"
+else
+  info "Step 6/6: Git — skipping"
+fi
+
+# ── Done ─────────────────────────────────────────────────────────
+echo ""
+ok "Publishing complete for $DATE"
+echo "  Post:    https://tusharvartak.com/posts/$DATE.html"
+echo "  Cover:   https://tusharvartak.com/assets/covers/$DATE.png"
+echo "  OG:      https://tusharvartak.com/assets/og/$DATE.png"
+echo ""
