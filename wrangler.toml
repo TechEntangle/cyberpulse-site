@@ -1,0 +1,23 @@
+# ─────────────────────────────────────────────────────────────────
+# CyberPulse · Cloudflare Worker configuration
+#
+# Subscriber API backed by D1 (SQLite at the edge).
+# ─────────────────────────────────────────────────────────────────
+name = "cyberpulse-api"
+main = "worker/index.js"
+compatibility_date = "2024-12-01"
+
+[vars]
+CORS_ORIGIN = "https://tusharvartak.com"
+CYBERPULSE_API_URL = "https://api.tusharvartak.com"
+FROM_EMAIL = "CyberPulse <cyberpulse@tusharvartak.com>"
+
+# Secrets (set via `wrangler secret put`):
+#   RESEND_API_KEY
+#   TURNSTILE_SECRET_KEY
+
+[[d1_databases]]
+binding = "DB"
+database_name = "cyberpulse_subscribers"
+database_id = "4d6cffe9-59a3-431e-931a-058d53ad4809"
+migrations_dir = "migrations"

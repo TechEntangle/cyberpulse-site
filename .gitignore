@@ -1,0 +1,8 @@
+# Cloudflare Wrangler local state
+.wrangler/
+
+# Node
+node_modules/
+
+# Subscriber data (may contain real emails)
+email/subscribers.json
