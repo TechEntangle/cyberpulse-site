@@ -3,302 +3,362 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CyberPulse — The Executive Is the New Perimeter</title>
+  <title>CyberPulse | The Executive Is the New Perimeter</title>
+  <meta name="description" content="A CyberPulse executive briefing on SharePoint exploitation, executive-targeted social engineering, and AI-accelerated attack economics." />
+  <meta property="og:title" content="The Executive Is the New Perimeter" />
+  <meta property="og:description" content="Why SharePoint exploitation and executive-targeted social engineering now belong in the same board-level conversation." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://tusharvartak.com/posts/2026-04-18.html" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Playfair+Display:wght@600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-primary: #0a0a0c;
-      --bg-secondary: #121217;
+      --bg: #06070a;
+      --bg-soft: #0d1016;
       --panel: rgba(255,255,255,0.05);
-      --text-primary: #f4efe6;
-      --text-secondary: #c3b9a8;
-      --accent: #d44a3a;
+      --panel-strong: rgba(255,255,255,0.07);
+      --text: #f5efe6;
+      --muted: #bdb4a7;
       --gold: #f0b44a;
+      --accent: #ff9f8c;
       --border: rgba(255,255,255,0.10);
-      --shadow: 0 20px 60px rgba(0,0,0,0.35);
+      --shadow: 0 24px 70px rgba(0,0,0,0.25);
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      background: radial-gradient(circle at top, #181820 0%, var(--bg-primary) 45%);
-      color: var(--text-primary);
+      background: radial-gradient(circle at top, #171b24 0%, #0c0f15 40%, #050608 100%);
+      color: var(--text);
       font-family: 'Source Serif 4', serif;
       line-height: 1.75;
     }
-    body.pdf-mode {
-      background: #000 !important;
-    }
+    a { color: var(--accent); }
     .progress {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 4px;
-      width: 0%;
-      background: linear-gradient(90deg, var(--accent), var(--gold));
-      z-index: 999;
-      box-shadow: 0 0 18px rgba(200,55,45,0.5);
+      position: fixed; top: 0; left: 0; width: 0%; height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--gold)); z-index: 999;
+      box-shadow: 0 0 16px rgba(255,159,140,0.5);
     }
-    main {
-      width: min(860px, calc(100% - 32px));
+    .wrap {
+      width: min(1180px, calc(100% - 32px));
       margin: 0 auto;
-      padding: 64px 0 96px;
+      padding: 26px 0 80px;
     }
-    .fade {
-      opacity: 0;
-      transform: translateY(22px);
-      animation: fadeUp 0.8s ease forwards;
+    .topbar {
+      display: flex; justify-content: space-between; align-items: center; gap: 18px; flex-wrap: wrap;
+      margin-bottom: 24px;
     }
-    .fade:nth-child(2) { animation-delay: 0.12s; }
-    .fade:nth-child(3) { animation-delay: 0.22s; }
-    .fade:nth-child(4) { animation-delay: 0.32s; }
-    .fade:nth-child(5) { animation-delay: 0.42s; }
-    @keyframes fadeUp {
-      to { opacity: 1; transform: translateY(0); }
+    .brand {
+      display: inline-flex; gap: 12px; align-items: center; color: var(--text); text-decoration: none; font-family: 'Inter', sans-serif;
     }
-    .eyebrow, .meta, .kicker {
+    .brand-mark {
+      width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center;
+      background: linear-gradient(135deg, var(--gold), #ff7c6b); color: #15120c; font-weight: 900;
+    }
+    .brand-meta { font-size: 13px; color: var(--muted); }
+    .share-row {
+      display: flex; gap: 10px; flex-wrap: wrap; align-items: center;
+      font-family: 'Inter', sans-serif;
+    }
+    .share-label {
+      font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); font-weight: 800;
+    }
+    .share-btn {
+      display: inline-flex; align-items: center; justify-content: center; padding: 10px 14px;
+      text-decoration: none; border-radius: 999px; border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04); color: var(--text); font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 700;
+      cursor: pointer;
+    }
+    .layout {
+      display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 28px; align-items: start;
+    }
+    article {
+      min-width: 0;
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .article-inner { padding: 42px 40px 46px; }
+    .eyebrow, .meta-kicker, .side-kicker {
       font-family: 'IBM Plex Mono', monospace;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--text-secondary);
-      font-size: 12px;
+      text-transform: uppercase; letter-spacing: 0.12em; font-size: 12px; color: var(--muted);
     }
-    header {
-      padding: 22px 0 36px;
-      border-bottom: 1px solid var(--border);
-      margin-bottom: 36px;
-    }
+    .eyebrow { color: var(--gold); }
     h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(42px, 8vw, 74px);
-      line-height: 0.98;
-      margin: 16px 0 14px;
-      letter-spacing: -0.03em;
-    }
-    h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(28px, 4vw, 38px);
-      margin: 54px 0 18px;
-      line-height: 1.08;
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(42px, 6vw, 74px);
+      line-height: 0.96;
+      letter-spacing: -0.05em;
+      margin: 18px 0 16px;
+      max-width: 12ch;
     }
     .dek {
-      font-size: clamp(21px, 3vw, 28px);
-      color: #ded7ca;
+      font-size: clamp(20px, 2.2vw, 28px);
       line-height: 1.45;
-      max-width: 18em;
+      color: #ddd6cb;
+      max-width: 19em;
+      margin: 0 0 22px;
     }
-    .meta-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 12px;
-      margin-top: 28px;
+    .hero-meta {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 0 0 26px;
     }
-    .meta-card, .signal, .action {
+    .hero-meta .card, .sticky-card, .signal, .action-box, .source-box {
       background: var(--panel);
       border: 1px solid var(--border);
       border-radius: 18px;
       box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
     }
-    .meta-card {
-      padding: 16px 18px;
+    .hero-meta .card {
+      padding: 16px 16px 14px;
+      font-family: 'Inter', sans-serif;
+      min-width: 0;
     }
-    .meta-card strong {
-      display: block;
-      color: var(--gold);
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 12px;
-      margin-bottom: 10px;
-      letter-spacing: 0.08em;
+    .hero-meta strong {
+      display: block; margin-bottom: 8px; color: var(--gold);
+      font-size: 11px; letter-spacing: 0.10em; text-transform: uppercase;
     }
-    p {
-      font-size: 20px;
-      margin: 0 0 22px;
-      color: var(--text-primary);
+    p { font-size: 21px; margin: 0 0 22px; color: var(--text); }
+    .lead {
+      font-size: 23px;
+      color: #f7f3ec;
     }
-    .pdf-mode p, .pdf-mode li, .pdf-mode .dek, .pdf-mode .meta-card, .pdf-mode .eyebrow, .pdf-mode .kicker {
-      color: var(--text-primary);
+    h2 {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(28px, 3.4vw, 40px);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      margin: 54px 0 16px;
     }
-    .lead:first-letter {
-      float: left;
-      font-family: 'Playfair Display', serif;
-      font-size: 4.6em;
-      line-height: 0.8;
-      padding-right: 12px;
-      color: var(--accent);
-    }
-    .signal {
-      padding: 24px 24px 10px;
-      margin: 22px 0;
-    }
+    .signal { padding: 24px; margin: 20px 0; }
     .signal h3 {
-      margin: 0 0 12px;
-      font-family: 'Playfair Display', serif;
-      font-size: 28px;
-      color: #fff3e0;
+      margin: 0 0 10px;
+      font-family: 'Inter', sans-serif;
+      font-size: 26px;
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+      color: #fff0e7;
     }
-    .action {
-      border-left: 4px solid var(--gold);
+    .takeaways {
+      display: grid; gap: 14px; margin: 28px 0 10px;
+    }
+    .action-box {
       padding: 22px 24px;
-      margin: 26px 0;
+      border-left: 4px solid var(--gold);
+      margin: 18px 0;
     }
-    .action h4 {
-      margin: 0 0 12px;
-      font-size: 14px;
-      font-family: 'IBM Plex Mono', monospace;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--gold);
+    .action-box h4 {
+      margin: 0 0 10px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.10em; text-transform: uppercase; color: var(--gold);
     }
-    ul {
-      margin: 0;
-      padding-left: 22px;
+    ul { margin: 0; padding-left: 22px; }
+    li { margin: 10px 0; font-size: 19px; color: #ece4d8; }
+    aside {
+      position: sticky; top: 22px;
+      display: grid; gap: 14px;
     }
-    li {
-      margin: 10px 0;
-      font-size: 19px;
-      color: #e9e2d6;
-    }
-    a { color: #ff9f8c; }
-    .sources {
-      margin-top: 54px;
-      padding-top: 28px;
-      border-top: 1px solid var(--border);
-    }
-    .sources ol {
-      padding-left: 24px;
-    }
-    .sources li {
-      font-size: 17px;
-      margin-bottom: 12px;
-      color: var(--text-secondary);
-    }
+    .sticky-card { padding: 18px; font-family: 'Inter', sans-serif; }
+    .sticky-card p { font-family: 'Inter', sans-serif; font-size: 15px; color: var(--muted); margin-bottom: 12px; }
+    .sticky-card ul { padding-left: 18px; }
+    .sticky-card li { font-family: 'Inter', sans-serif; font-size: 14px; color: var(--text); margin: 8px 0; }
+    .share-stack { display: grid; gap: 10px; }
+    .share-stack .share-btn { width: 100%; justify-content: center; }
+    .source-box { padding: 20px; margin-top: 34px; }
+    .source-box ol { padding-left: 22px; margin: 0; }
+    .source-box li { font-size: 17px; color: var(--muted); margin-bottom: 12px; }
     footer {
-      margin-top: 54px;
-      color: var(--text-secondary);
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+      margin-top: 36px; padding-top: 16px; border-top: 1px solid var(--border);
+      font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
     }
-    @media (max-width: 640px) {
-      p, li { font-size: 18px; }
-      .signal, .action, .meta-card { border-radius: 14px; }
-      main { padding-top: 38px; }
+    @media (max-width: 1020px) {
+      .layout { grid-template-columns: 1fr; }
+      aside { position: static; }
+    }
+    @media (max-width: 720px) {
+      .wrap { width: min(100% - 24px, 1180px); padding-top: 20px; }
+      .article-inner { padding: 28px 22px 34px; }
+      .hero-meta { grid-template-columns: 1fr; }
+      p { font-size: 19px; }
+      .lead { font-size: 20px; }
+      .signal, .action-box, .sticky-card, .source-box { border-radius: 16px; }
+      .topbar { align-items: flex-start; }
+      .share-row { width: 100%; }
     }
   </style>
 </head>
-<body class="pdf-mode">
+<body>
   <div class="progress" id="progress"></div>
-  <main>
-    <header class="fade">
-      <div class="eyebrow">CyberPulse • Daily Executive Intelligence Briefing</div>
-      <h1>The Executive Is the New Perimeter</h1>
-      <p class="dek">Why this week’s SharePoint exploitation and executive-targeted social engineering point to a more structural shift: attackers are skipping the lobby and going straight for the master keys.</p>
-      <div class="meta-grid">
-        <div class="meta-card">
-          <strong>Episode Date</strong>
-          Saturday, April 18, 2026
+  <div class="wrap">
+    <div class="topbar">
+      <a class="brand" href="/">
+        <span class="brand-mark">CP</span>
+        <span>
+          <div style="font-weight:800;">CyberPulse</div>
+          <div class="brand-meta">Executive cyber intelligence</div>
+        </span>
+      </a>
+      <div class="share-row">
+        <span class="share-label">Share</span>
+        <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-04-18.html">LinkedIn</a>
+        <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=The%20Executive%20Is%20the%20New%20Perimeter&url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-04-18.html">X</a>
+        <button class="share-btn" id="copyLinkBtn" type="button">Copy link</button>
+      </div>
+    </div>
+
+    <div class="layout">
+      <article>
+        <div class="article-inner">
+          <div class="eyebrow">CyberPulse • Daily Executive Intelligence Briefing</div>
+          <h1>The Executive Is the New Perimeter</h1>
+          <p class="dek">Why this week’s SharePoint exploitation and executive-targeted social engineering point to a more structural shift: attackers are skipping the lobby and going straight for the master keys.</p>
+
+          <div class="hero-meta">
+            <div class="card">
+              <strong>Episode date</strong>
+              Saturday, April 18, 2026
+            </div>
+            <div class="card">
+              <strong>Primary signal</strong>
+              Executives are now being targeted as infrastructure, not just people.
+            </div>
+            <div class="card">
+              <strong>Why it matters</strong>
+              Software exploitation and identity manipulation are converging into one attack path.
+            </div>
+          </div>
+
+          <p class="lead">The most important development today is not just that Microsoft is dealing with another high-volume patch cycle, or that a critical SharePoint flaw is now in active exploitation. It is that this coincides with a separate surge in highly targeted executive social engineering, where former Black Basta affiliates appear to be industrializing attacks against senior leaders through email bombing and fake Microsoft Teams help desk outreach. Those two signals belong in the same briefing, because together they describe a deeper shift in enterprise risk.</p>
+          <p>For years, many organizations treated the perimeter as a technical problem. Patch faster. Segment better. Filter harder. That still matters. But the current pattern says something more uncomfortable: attackers increasingly view your executives as privileged infrastructure. Not merely decision-makers, but access pathways. The chief financial officer, general counsel, chief operating officer, and regional managing director are becoming the digital equivalent of exposed admin consoles.</p>
+
+          <h2>The story that matters</h2>
+          <div class="signal">
+            <h3>SharePoint exploitation has moved from advisory language to active risk</h3>
+            <p>BleepingComputer reported that Microsoft SharePoint vulnerability C V E twenty twenty-six dash two zero nine six three, originally patched in January, is now being exploited in attacks. CISA added it to its Known Exploited Vulnerabilities catalog, which is the government’s way of saying this is no longer a hypothetical backlog item. It is live ammunition.</p>
+            <p>In plain language, this flaw can let an unauthenticated attacker run code remotely on vulnerable SharePoint servers. If you are still running legacy or under-managed collaboration infrastructure, this is the digital equivalent of discovering that someone can open a side door to headquarters without a badge.</p>
+          </div>
+          <div class="signal">
+            <h3>Former Black Basta operators are accelerating executive targeting</h3>
+            <p>ReliaQuest and CyberScoop describe a campaign in which attackers swamp victims with subscription emails, then contact them over Microsoft Teams while impersonating internal support staff. The reported trend line is especially telling: roughly seventy-seven percent of March incidents targeted leadership, up sharply from earlier in the year. This is not random spray-and-pray phishing. It is management-layer intrusion engineering.</p>
+            <p>The clever part is not the malware. It is the choreography. First bury the victim in noise. Then arrive as the person who can make the pain stop. It is the digital equivalent of pulling a fire alarm so you can walk in wearing a maintenance badge.</p>
+          </div>
+
+          <h2>Why this is structurally different</h2>
+          <p>This is not just another breach pattern. It is a convergence pattern. The infrastructure layer remains vulnerable through widely deployed enterprise software. At the same time, the human privilege layer is being attacked with more automation, more speed, and better targeting. Attackers no longer need to choose between exploiting software and exploiting people. They can do both, in the same campaign, against the same organization, and often against the same window of confusion.</p>
+          <p>That convergence matters because boards often separate these issues into different committees, different dashboards, and different vendors. Patch exposure is one slide. Executive awareness training is another. Collaboration security lives elsewhere. But the adversary sees a single attack surface: anything that can produce privileged access fast enough to monetize.</p>
+          <p>There is also a meaningful artificial intelligence subtext here. Google Cloud’s threat intelligence team warned this month that general-purpose artificial intelligence models are getting better at finding vulnerabilities and accelerating exploitation workflows. Even before fully autonomous offensive systems arrive, the economics are shifting. Discovery becomes faster. Campaign customization becomes cheaper. Social engineering becomes more personalized at scale. That means the gap between a disclosed weakness and an operational intrusion is likely to keep shrinking.</p>
+
+          <h2>What this means for enterprise risk</h2>
+          <p>The first implication is that senior leaders are now part of the technical attack surface, whether they like the label or not. If your executives can approve remote access, override payment controls, receive priority help desk treatment, or hold broad cloud privileges, they must be defended as if they were production systems.</p>
+          <p>The second implication is that collaboration platforms have become high-trust attack channels. Email is no longer the only front door. Attackers are exploiting the fact that internal chat feels informal, urgent, and authentic, especially when the victim is already overwhelmed.</p>
+          <p>The third implication is that post-quantum readiness still matters, but not in the cinematic way boards often imagine. NIST continues to emphasize that organizations should begin migration to quantum-resistant cryptography now. The lesson is similar: waiting for a dramatic quantum milestone is the wrong trigger. Structural risk accumulates long before the crisis headline arrives. In classic harvest-now-decrypt-later scenarios, the exposure begins when sensitive traffic is captured, not when a future quantum machine finally breaks it.</p>
+
+          <div class="takeaways">
+            <div class="action-box">
+              <h4>What should CISOs do?</h4>
+              <ul>
+                <li>Treat executive accounts, devices, and collaboration channels as tier-zero assets. Apply tighter access control, monitoring, and remote support rules immediately.</li>
+                <li>Audit SharePoint and adjacent internet-exposed collaboration systems this weekend, not next quarter. Verify patch state and unsupported versions, then force retirement plans where needed.</li>
+                <li>Require out-of-band verification for any help desk interaction that requests remote access, credential resets, or security tool changes, especially over chat platforms.</li>
+              </ul>
+            </div>
+            <div class="action-box">
+              <h4>What should boards demand?</h4>
+              <ul>
+                <li>Ask for one integrated view of privileged access risk that combines software exposure, executive targeting, collaboration abuse, and third-party support workflows.</li>
+                <li>Stop accepting phishing metrics that count generic employee clicks while ignoring high-value leadership attack paths.</li>
+                <li>Demand a concrete post-quantum migration inventory: where classical public-key cryptography is embedded, who owns the transition, and what can become crypto-agile this year.</li>
+              </ul>
+            </div>
+            <div class="action-box">
+              <h4>What should risk committees rethink?</h4>
+              <ul>
+                <li>Assume fraud, cyber, and operational resilience are colliding. A fake support interaction can become a ransomware event, a wire fraud event, or a regulatory disclosure issue in the same afternoon.</li>
+                <li>Reframe resilience around time-to-confusion. Attackers increasingly win by creating enough noise that normal control judgment breaks down.</li>
+                <li>Model executive compromise as an enterprise scenario, not a reputational side note.</li>
+              </ul>
+            </div>
+          </div>
+
+          <h2>The board blind spot</h2>
+          <p>Many boards still ask whether the company is secure enough. The sharper question is whether the company is organized for the way modern intrusions actually work. Today’s attackers blend vulnerability exploitation, identity abuse, conversational manipulation, and infrastructure timing into one campaign. If your controls are still measured separately, your exposure is being measured incorrectly.</p>
+          <p>That is the uncomfortable signal in today’s news. The perimeter did not disappear. It moved upward, into the org chart, into collaboration software, and into the moments when busy people trust the wrong request because it looks like relief.</p>
+          <p>Starting Monday morning, the organizations that will look smartest are not the ones with the prettiest awareness posters. They are the ones that treat privilege, communication, and patching as one system.</p>
+
+          <div class="source-box">
+            <div class="meta-kicker">Sources</div>
+            <ol>
+              <li><a href="https://www.bleepingcomputer.com/news/microsoft/critical-microsoft-sharepoint-flaw-now-exploited-in-attacks/">BleepingComputer, Critical Microsoft SharePoint flaw now exploited in attacks</a></li>
+              <li><a href="https://www.bleepingcomputer.com/news/microsoft/microsoft-april-2026-patch-tuesday-fixes-167-flaws-2-zero-days/">BleepingComputer, Microsoft April 2026 Patch Tuesday fixes 167 flaws, 2 zero-days</a></li>
+              <li><a href="https://www.cisa.gov/news-events/alerts/2026/03/18/cisa-adds-one-known-exploited-vulnerability-catalog-0">CISA, Adds One Known Exploited Vulnerability to Catalog</a></li>
+              <li><a href="https://cyberscoop.com/black-basta-affiliates-senior-executives-reliaquest/">CyberScoop, Black Basta’s playbook lives on as former affiliates launch fast-scale intrusion campaign</a></li>
+              <li><a href="https://reliaquest.com/blog/threat-spotlight-are-former-black-basta-affiliates-automating-executive-targeting/">ReliaQuest, Are Former Black Basta Affiliates Automating Executive Targeting?</a></li>
+              <li><a href="https://www.proofpoint.com/us/blog/email-and-cloud-threats/subscription-bombing-hides-real-cyberattacks">Proofpoint, How Subscription Bombing Hides Real Cyberattacks</a></li>
+              <li><a href="https://cloud.google.com/blog/topics/threat-intelligence/defending-enterprise-ai-vulnerabilities">Google Cloud, Defending Your Enterprise When AI Models Can Find Vulnerabilities Faster Than Ever</a></li>
+              <li><a href="https://csrc.nist.gov/projects/post-quantum-cryptography">NIST CSRC, Post-Quantum Cryptography Project</a></li>
+            </ol>
+          </div>
+
+          <footer>CyberPulse • Signal over noise • Executive edition</footer>
         </div>
-        <div class="meta-card">
-          <strong>Primary Signal</strong>
-          Executives are now being targeted as infrastructure, not just people.
+      </article>
+
+      <aside>
+        <div class="sticky-card">
+          <div class="side-kicker">At a glance</div>
+          <p>Today’s edition argues that executives, collaboration channels, and exposed enterprise software now form one combined attack surface.</p>
+          <ul>
+            <li>Active SharePoint exploitation raises the urgency.</li>
+            <li>Leadership-targeted intrusion campaigns raise the stakes.</li>
+            <li>AI lowers attacker cost and compresses response windows.</li>
+          </ul>
         </div>
-        <div class="meta-card">
-          <strong>Board Tension</strong>
-          Your crown jewels may be one fake help desk call away from privileged access.
+
+        <div class="sticky-card">
+          <div class="side-kicker">Share this briefing</div>
+          <div class="share-stack">
+            <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-04-18.html">Share on LinkedIn</a>
+            <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=The%20Executive%20Is%20the%20New%20Perimeter&url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-04-18.html">Share on X</a>
+            <button class="share-btn" id="copyLinkBtnAside" type="button">Copy article link</button>
+          </div>
         </div>
-      </div>
-    </header>
+      </aside>
+    </div>
+  </div>
 
-    <section class="fade">
-      <p class="lead">The most important development today is not just that Microsoft is dealing with another high-volume patch cycle, or that a critical SharePoint flaw is now in active exploitation. It is that this coincides with a separate surge in highly targeted executive social engineering, where former Black Basta affiliates appear to be industrializing attacks against senior leaders through email bombing and fake Microsoft Teams help desk outreach. Those two signals belong in the same briefing, because together they describe a deeper shift in enterprise risk.</p>
-      <p>For years, many organizations treated the perimeter as a technical problem. Patch faster. Segment better. Filter harder. That still matters. But the current pattern says something more uncomfortable: attackers increasingly view your executives as privileged infrastructure. Not merely decision-makers, but access pathways. The chief financial officer, general counsel, chief operating officer, and regional managing director are becoming the digital equivalent of exposed admin consoles.</p>
-    </section>
+  <script>
+    const progress = document.getElementById('progress');
+    const updateProgress = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progress.style.width = pct + '%';
+    };
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
 
-    <section class="fade">
-      <h2>The story that matters</h2>
-      <div class="signal">
-        <h3>SharePoint exploitation has moved from advisory language to active risk</h3>
-        <p>BleepingComputer reported that Microsoft SharePoint vulnerability C V E twenty twenty-six dash two zero nine six three, originally patched in January, is now being exploited in attacks. CISA added it to its Known Exploited Vulnerabilities catalog, which is the government’s way of saying this is no longer a hypothetical backlog item. It is live ammunition.</p>
-        <p>In plain language, this flaw can let an unauthenticated attacker run code remotely on vulnerable SharePoint servers. If you are still running legacy or under-managed collaboration infrastructure, this is the digital equivalent of discovering that someone can open a side door to headquarters without a badge.</p>
-      </div>
-      <div class="signal">
-        <h3>Former Black Basta operators are accelerating executive targeting</h3>
-        <p>ReliaQuest and CyberScoop describe a campaign in which attackers swamp victims with subscription emails, then contact them over Microsoft Teams while impersonating internal support staff. The reported trend line is especially telling: roughly seventy-seven percent of March incidents targeted leadership, up sharply from earlier in the year. This is not random spray-and-pray phishing. It is management-layer intrusion engineering.</p>
-        <p>The clever part is not the malware. It is the choreography. First bury the victim in noise. Then arrive as the person who can make the pain stop. It is the digital equivalent of pulling a fire alarm so you can walk in wearing a maintenance badge.</p>
-      </div>
-    </section>
-
-    <section class="fade">
-      <h2>Why this is structurally different</h2>
-      <p>This is not just another breach pattern. It is a convergence pattern. The infrastructure layer remains vulnerable through widely deployed enterprise software. At the same time, the human privilege layer is being attacked with more automation, more speed, and better targeting. Attackers no longer need to choose between exploiting software and exploiting people. They can do both, in the same campaign, against the same organization, and often against the same window of confusion.</p>
-      <p>That convergence matters because boards often separate these issues into different committees, different dashboards, and different vendors. Patch exposure is one slide. Executive awareness training is another. Collaboration security lives elsewhere. But the adversary sees a single attack surface: anything that can produce privileged access fast enough to monetize.</p>
-      <p>There is also a meaningful artificial intelligence subtext here. Google Cloud’s threat intelligence team warned this month that general-purpose artificial intelligence models are getting better at finding vulnerabilities and accelerating exploitation workflows. Even before fully autonomous offensive systems arrive, the economics are shifting. Discovery becomes faster. Campaign customization becomes cheaper. Social engineering becomes more personalized at scale. That means the gap between a disclosed weakness and an operational intrusion is likely to keep shrinking.</p>
-    </section>
-
-    <section class="fade">
-      <h2>What this means for enterprise risk</h2>
-      <p>The first implication is that senior leaders are now part of the technical attack surface, whether they like the label or not. If your executives can approve remote access, override payment controls, receive priority help desk treatment, or hold broad cloud privileges, they must be defended as if they were production systems.</p>
-      <p>The second implication is that collaboration platforms have become high-trust attack channels. Email is no longer the only front door. Attackers are exploiting the fact that internal chat feels informal, urgent, and authentic, especially when the victim is already overwhelmed.</p>
-      <p>The third implication is that post-quantum readiness still matters, but not in the cinematic way boards often imagine. NIST continues to emphasize that organizations should begin migration to quantum-resistant cryptography now. The lesson is similar: waiting for a dramatic quantum milestone is the wrong trigger. Structural risk accumulates long before the crisis headline arrives. In classic harvest-now-decrypt-later scenarios, the exposure begins when sensitive traffic is captured, not when a future quantum machine finally breaks it.</p>
-    </section>
-
-    <section class="fade">
-      <div class="action">
-        <h4>What should CISOs do?</h4>
-        <ul>
-          <li>Treat executive accounts, devices, and collaboration channels as tier-zero assets. Apply tighter access control, monitoring, and remote support rules immediately.</li>
-          <li>Audit SharePoint and adjacent internet-exposed collaboration systems this weekend, not next quarter. Verify patch state and unsupported versions, then force retirement plans where needed.</li>
-          <li>Require out-of-band verification for any help desk interaction that requests remote access, credential resets, or security tool changes, especially over chat platforms.</li>
-        </ul>
-      </div>
-
-      <div class="action">
-        <h4>What should boards demand?</h4>
-        <ul>
-          <li>Ask for one integrated view of privileged access risk that combines software exposure, executive targeting, collaboration abuse, and third-party support workflows.</li>
-          <li>Stop accepting phishing metrics that count generic employee clicks while ignoring high-value leadership attack paths.</li>
-          <li>Demand a concrete post-quantum migration inventory: where classical public-key cryptography is embedded, who owns the transition, and what can become crypto-agile this year.</li>
-        </ul>
-      </div>
-
-      <div class="action">
-        <h4>What should risk committees rethink?</h4>
-        <ul>
-          <li>Assume fraud, cyber, and operational resilience are colliding. A fake support interaction can become a ransomware event, a wire fraud event, or a regulatory disclosure issue in the same afternoon.</li>
-          <li>Reframe resilience around time-to-confusion. Attackers increasingly win by creating enough noise that normal control judgment breaks down.</li>
-          <li>Model executive compromise as an enterprise scenario, not a reputational side note.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="fade">
-      <h2>The board blind spot</h2>
-      <p>Many boards still ask whether the company is secure enough. The sharper question is whether the company is organized for the way modern intrusions actually work. Today’s attackers blend vulnerability exploitation, identity abuse, conversational manipulation, and infrastructure timing into one campaign. If your controls are still measured separately, your exposure is being measured incorrectly.</p>
-      <p>That is the uncomfortable signal in today’s news. The perimeter did not disappear. It moved upward, into the org chart, into collaboration software, and into the moments when busy people trust the wrong request because it looks like relief.</p>
-      <p>Starting Monday morning, the organizations that will look smartest are not the ones with the prettiest awareness posters. They are the ones that treat privilege, communication, and patching as one system.</p>
-    </section>
-
-    <section class="sources fade">
-      <div class="kicker">Sources</div>
-      <ol>
-        <li><a href="https://www.bleepingcomputer.com/news/microsoft/critical-microsoft-sharepoint-flaw-now-exploited-in-attacks/">BleepingComputer, Critical Microsoft SharePoint flaw now exploited in attacks</a></li>
-        <li><a href="https://www.bleepingcomputer.com/news/microsoft/microsoft-april-2026-patch-tuesday-fixes-167-flaws-2-zero-days/">BleepingComputer, Microsoft April 2026 Patch Tuesday fixes 167 flaws, 2 zero-days</a></li>
-        <li><a href="https://www.cisa.gov/news-events/alerts/2026/03/18/cisa-adds-one-known-exploited-vulnerability-catalog-0">CISA, Adds One Known Exploited Vulnerability to Catalog</a></li>
-        <li><a href="https://cyberscoop.com/black-basta-affiliates-senior-executives-reliaquest/">CyberScoop, Black Basta’s playbook lives on as former affiliates launch fast-scale intrusion campaign</a></li>
-        <li><a href="https://reliaquest.com/blog/threat-spotlight-are-former-black-basta-affiliates-automating-executive-targeting/">ReliaQuest, Are Former Black Basta Affiliates Automating Executive Targeting?</a></li>
-        <li><a href="https://www.proofpoint.com/us/blog/email-and-cloud-threats/subscription-bombing-hides-real-cyberattacks">Proofpoint, How Subscription Bombing Hides Real Cyberattacks</a></li>
-        <li><a href="https://cloud.google.com/blog/topics/threat-intelligence/defending-enterprise-ai-vulnerabilities">Google Cloud, Defending Your Enterprise When AI Models Can Find Vulnerabilities Faster Than Ever</a></li>
-        <li><a href="https://csrc.nist.gov/projects/post-quantum-cryptography">NIST CSRC, Post-Quantum Cryptography Project</a></li>
-      </ol>
-    </section>
-
-    <footer class="fade">CyberPulse • Signal over noise • Executive edition</footer>
-  </main>
-  
-    
+    const copyUrl = async () => {
+      const url = window.location.href;
+      try {
+        await navigator.clipboard.writeText(url);
+      } catch (err) {
+        const input = document.createElement('input');
+        input.value = url;
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand('copy');
+        input.remove();
+      }
+      const buttons = [document.getElementById('copyLinkBtn'), document.getElementById('copyLinkBtnAside')].filter(Boolean);
+      buttons.forEach(btn => {
+        const old = btn.textContent;
+        btn.textContent = 'Copied';
+        setTimeout(() => btn.textContent = old, 1200);
+      });
+    };
+    document.getElementById('copyLinkBtn')?.addEventListener('click', copyUrl);
+    document.getElementById('copyLinkBtnAside')?.addEventListener('click', copyUrl);
+  </script>
 </body>
 </html>
