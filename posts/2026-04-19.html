@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CyberPulse — The Half-Life of Exposure Is Shrinking</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Playfair+Display:wght@600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0a0a0c;
+      --bg-secondary: #121217;
+      --panel: rgba(255,255,255,0.05);
+      --text-primary: #f4efe6;
+      --text-secondary: #c3b9a8;
+      --accent: #d44a3a;
+      --gold: #f0b44a;
+      --border: rgba(255,255,255,0.10);
+      --shadow: 0 20px 60px rgba(0,0,0,0.35);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top, #181820 0%, var(--bg-primary) 45%);
+      color: var(--text-primary);
+      font-family: 'Source Serif 4', serif;
+      line-height: 1.75;
+    }
+    body.pdf-mode { background: #000 !important; }
+    main {
+      width: min(860px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 64px 0 96px;
+    }
+    .eyebrow, .meta, .kicker {
+      font-family: 'IBM Plex Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-secondary);
+      font-size: 12px;
+    }
+    header {
+      padding: 22px 0 36px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 36px;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(42px, 8vw, 74px);
+      line-height: 0.98;
+      margin: 16px 0 14px;
+      letter-spacing: -0.03em;
+    }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 38px);
+      margin: 54px 0 18px;
+      line-height: 1.08;
+    }
+    .dek {
+      font-size: clamp(21px, 3vw, 28px);
+      color: #ded7ca;
+      line-height: 1.45;
+      max-width: 19em;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .meta-card, .signal, .action {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+    .meta-card { padding: 16px 18px; }
+    .meta-card strong {
+      display: block;
+      color: var(--gold);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      margin-bottom: 10px;
+      letter-spacing: 0.08em;
+    }
+    p {
+      font-size: 20px;
+      margin: 0 0 22px;
+      color: var(--text-primary);
+    }
+    .lead:first-letter {
+      float: left;
+      font-family: 'Playfair Display', serif;
+      font-size: 4.6em;
+      line-height: 0.8;
+      padding-right: 12px;
+      color: var(--accent);
+    }
+    .signal {
+      padding: 24px 24px 10px;
+      margin: 22px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .signal h3 {
+      margin: 0 0 12px;
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      color: #fff3e0;
+    }
+    .action {
+      border-left: 4px solid var(--gold);
+      padding: 22px 24px;
+      margin: 26px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .action h4 {
+      margin: 0 0 12px;
+      font-size: 14px;
+      font-family: 'IBM Plex Mono', monospace;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    ul { margin: 0; padding-left: 22px; }
+    li {
+      margin: 10px 0;
+      font-size: 19px;
+      color: #e9e2d6;
+    }
+    a { color: #ff9f8c; }
+    .sources {
+      margin-top: 54px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+    }
+    .sources ol { padding-left: 24px; }
+    .sources li {
+      font-size: 17px;
+      margin-bottom: 12px;
+      color: var(--text-secondary);
+    }
+    footer {
+      margin-top: 54px;
+      color: var(--text-secondary);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    @media print {
+      @page { margin: 18mm 14mm 18mm 14mm; }
+      body { background: #000 !important; }
+      main { width: 100%; padding: 0; }
+      section, header, .signal, .action, .meta-card, p, li, h2 { break-inside: avoid-page; }
+    }
+  </style>
+</head>
+<body class="pdf-mode">
+  <main>
+    <header>
+      <div class="eyebrow">CyberPulse • Daily Executive Intelligence Briefing</div>
+      <h1>The Half-Life of Exposure Is Shrinking</h1>
+      <p class="dek">Apache ActiveMQ’s move into CISA’s exploited list is not just another patch story. It is a reminder that the gap between discovery, weaponization, and enterprise impact keeps collapsing.</p>
+      <div class="meta-grid">
+        <div class="meta-card">
+          <strong>Episode Date</strong>
+          Sunday, April 19, 2026
+        </div>
+        <div class="meta-card">
+          <strong>Primary Signal</strong>
+          Attackers are capitalizing on mature, exposed infrastructure faster than defenders are shrinking the patch window.
+        </div>
+        <div class="meta-card">
+          <strong>Board Tension</strong>
+          A vulnerability can age quietly for years, then become urgent the moment exploitation becomes easy and economically attractive.
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <p class="lead">Today’s most useful cyber signal is not flashy, but it is deeply important. CISA has added Apache ActiveMQ vulnerability CVE-2026-34197 to its Known Exploited Vulnerabilities catalog after evidence of active exploitation. On the surface, this looks like another enterprise middleware problem. But the bigger message is more strategic: the half-life of exposure is shrinking. Old weaknesses, widely deployed systems, and public-facing infrastructure are becoming easier to find, easier to validate, and easier to operationalize, which means defenders are losing calendar time even when the underlying bug is not brand new.</p>
+      <p>In practice, that changes the executive conversation. This is no longer only about whether a flaw is critical on paper. It is about whether the cost of turning that flaw into an intrusion has dropped low enough that attackers can industrialize it. Once that happens, an overlooked asset in the wrong corner of the environment stops being technical debt and starts being an active business liability.</p>
+    </section>
+
+    <section>
+      <h2>The story that matters</h2>
+      <div class="signal">
+        <h3>Apache ActiveMQ is now an exploited enterprise exposure, not a backlog item</h3>
+        <p>CISA’s April 16 update added CVE-2026-34197, an improper input validation flaw in Apache ActiveMQ, to the KEV catalog. BleepingComputer reports the issue had gone unnoticed for roughly thirteen years before being discovered and patched, and that federal agencies have been given an April 30 remediation deadline. Horizon3 warned that ActiveMQ remains a repeated target, and Shadowserver data cited in reporting suggests thousands of exposed servers are still visible on the internet.</p>
+        <p>That combination matters because ActiveMQ is not obscure hobbyist software. It sits inside real application and integration environments, often far from the board’s view but close to production data flows. When software like that becomes actively exploited, the blast radius extends beyond one server. It can become a bridge into adjacent systems, credentials, workflows, and downstream services.</p>
+      </div>
+      <div class="signal">
+        <h3>The patch volume story is now connected to the AI-assisted discovery story</h3>
+        <p>CyberScoop noted that Microsoft’s April patch cycle was one of its largest on record, and Trend Micro’s Zero Day Initiative attributed part of the rising submission volume across programs to artificial intelligence-assisted research. That is the real strategic signal hiding behind the patch count headlines. The problem is not only that there are many vulnerabilities. It is that the economics of finding, testing, and packaging them are improving.</p>
+        <p>When AI helps researchers and attackers alike move faster, the market changes. More issues get surfaced. More proof-of-concept paths emerge. More defenders face decisions under tighter time pressure. The question for leadership is no longer whether vulnerability volume will plateau. It is whether the organization is structured to survive a world where exploitability matures faster than governance cycles do.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Why this matters beyond one CVE</h2>
+      <p>There is a familiar board trap here. Leaders often hear about an old flaw in middleware and assume it belongs in the ordinary patch-and-move-on bucket. But a vulnerability’s age is not the same thing as its operational urgency. A bug can sleep in plain sight for years and still become strategically dangerous once discovery methods improve, exploit chains get simplified, or a large enough installed base remains exposed.</p>
+      <p>That is why this story fits into a broader pattern. Yesterday’s concern was privileged humans being treated as infrastructure. Today’s concern is long-lived infrastructure being rediscovered as easy entry. The common thread is attacker efficiency. Whether the route is a help desk impersonation or a message broker flaw, the attackers who win are increasingly the ones who can turn routine enterprise complexity into fast, repeatable access.</p>
+      <p>There is also a governance implication. Many companies still measure cyber readiness by annual program maturity, quarterly patch metrics, or generic mean-time-to-remediate dashboards. Those views can be directionally useful, but they often miss the thing that matters most in practice: how quickly can this specific weakness move from obscure to operationally exploited, and how quickly can we identify whether we have it in production?</p>
+    </section>
+
+    <section>
+      <h2>What this means for enterprise risk</h2>
+      <p>The first implication is that exposed middleware deserves the same scrutiny boards now give remote access infrastructure, identity systems, and perimeter appliances. Business integration layers are not back-office plumbing anymore. They are adversary routes.</p>
+      <p>The second implication is that asset visibility is still one of the most underrated controls in cyber defense. If a vulnerability can survive in a core product for over a decade and then immediately matter once exposed, the real failure mode is often not only patch latency. It is not knowing exactly where the software lives, who owns it, and whether it is reachable from the internet.</p>
+      <p>The third implication is that AI changes the tempo even when it does not autonomously launch attacks. If it speeds up triage, exploit development, code comprehension, or configuration analysis, then every weak process on the defense side becomes more painful. Slow inventories, unclear ownership, and exception-heavy patch governance all get more expensive in an AI-accelerated threat environment.</p>
+    </section>
+
+    <section>
+      <div class="action">
+        <h4>What should CISOs do?</h4>
+        <ul>
+          <li>Immediately identify whether Apache ActiveMQ exists anywhere in production, development, partner-facing, or inherited legacy environments, and verify version exposure rather than relying on assumptions.</li>
+          <li>Treat internet-exposed integration and messaging infrastructure as urgent validation territory this week, including broker logs, suspicious connection patterns, and adjacent identity paths.</li>
+          <li>Use this moment to tighten ownership for middleware and integration assets, because the biggest operational gap is often not patching itself but ambiguity over who is responsible.</li>
+        </ul>
+      </div>
+
+      <div class="action">
+        <h4>What should boards demand?</h4>
+        <ul>
+          <li>Ask for a short list of externally reachable enterprise infrastructure that is both security-critical and operationally easy to overlook, including message brokers, management consoles, and integration servers.</li>
+          <li>Request reporting on exploitability exposure, not just raw patch counts. A smaller number of reachable, actively exploited systems matters more than a larger number of low-value internal findings.</li>
+          <li>Push management to explain how AI is changing both their vulnerability intake and their remediation operating model, not as innovation theater but as a practical timing problem.</li>
+        </ul>
+      </div>
+
+      <div class="action">
+        <h4>What should risk committees rethink?</h4>
+        <ul>
+          <li>Stop treating technical debt as merely a cost issue. In many cases, it is latent adversary enablement.</li>
+          <li>Model enterprise risk around shrinking decision windows. The danger is not only that a weakness exists, but that it becomes exploitable faster than normal governance can react.</li>
+          <li>Revisit how resilience is measured. Mature cyber programs still fail if they cannot rapidly answer a simple question under pressure: do we have this, where is it, and is it exposed?</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>The board blind spot</h2>
+      <p>The blind spot is not ignorance of cyber headlines. Most directors see the headlines. The blind spot is assuming that exposure rises linearly. It does not. In practice, risk can remain dormant and then spike suddenly when tooling, research methods, or attacker incentives change.</p>
+      <p>That is the deeper lesson in today’s ActiveMQ story. Security teams are not only racing attackers. They are racing compressing timelines. And in that race, organizations with incomplete inventories, fuzzy ownership, and slow exception handling will keep discovering that what looked like stable infrastructure was actually a quietly aging liability.</p>
+      <p>The companies that will look smartest this quarter are the ones that stop asking whether they are patched enough in general and start asking where exploitability can outrun process.</p>
+    </section>
+
+    <section class="sources">
+      <div class="kicker">Sources</div>
+      <ol>
+        <li><a href="https://www.cisa.gov/news-events/alerts/2026/04/16/cisa-adds-one-known-exploited-vulnerability-catalog">CISA, Adds One Known Exploited Vulnerability to Catalog</a></li>
+        <li><a href="https://www.bleepingcomputer.com/news/security/cisa-flags-apache-activemq-flaw-as-actively-exploited-in-attacks/">BleepingComputer, CISA flags Apache ActiveMQ flaw as actively exploited in attacks</a></li>
+        <li><a href="https://cyberscoop.com/microsoft-patch-tuesday-april-2026/">CyberScoop, Microsoft drops its second-largest monthly batch of defects on record</a></li>
+      </ol>
+    </section>
+
+    <footer>CyberPulse • Signal over noise • Executive edition</footer>
+  </main>
+</body>
+</html>
