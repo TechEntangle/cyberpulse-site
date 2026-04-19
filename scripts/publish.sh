@@ -142,11 +142,11 @@ if $DRY_RUN; then
   echo ""
 fi
 
-# ── Step 1: Copy post HTML ───────────────────────────────────────
+# ── Step 1: Render integrated post HTML ──────────────────────────
 if ! $OG_ONLY; then
-  info "Step 1/7: Copying post HTML"
+  info "Step 1/7: Rendering integrated post HTML"
   if ! $DRY_RUN; then
-    cp "$HTML_SRC" "$POST_OUT"
+    node "$ROOT/scripts/render-post.js" "$DATE" "$HTML_SRC"
   fi
   ok "Post → $POST_OUT"
 fi
@@ -188,7 +188,12 @@ if ! $SKIP_COVER && ! $OG_ONLY; then
     ok "Cover (generated) → $COVERS_DIR/$DATE.png"
   else
     warn "No OPENAI_API_KEY and no --cover provided — skipping cover generation"
-    if [[ ! -f "$COVERS_DIR/$DATE.png" ]]; then
+    if [[ ! -f "$COVERS_DIR/$DATE.png" && -f "$OG_DIR/$DATE.png" ]]; then
+      warn "Falling back to OG image as article cover"
+      if ! $DRY_RUN; then
+        cp "$OG_DIR/$DATE.png" "$COVERS_DIR/$DATE.png"
+      fi
+    elif [[ ! -f "$COVERS_DIR/$DATE.png" ]]; then
       warn "No cover image exists at $COVERS_DIR/$DATE.png"
     fi
   fi
@@ -201,6 +206,9 @@ if ! $SKIP_OG; then
   info "Step 4/7: Generating OG social card"
   if ! $DRY_RUN; then
     node "$ROOT/scripts/generate-og.js" "$DATE" "$TITLE" "$DESC"
+    if [[ ! -f "$COVERS_DIR/$DATE.png" && -f "$OG_DIR/$DATE.png" ]]; then
+      cp "$OG_DIR/$DATE.png" "$COVERS_DIR/$DATE.png"
+    fi
   fi
   ok "OG card → $OG_DIR/$DATE.png"
 else
