@@ -5,13 +5,22 @@
     <link>https://tusharvartak.com</link>
     <description>Executive cyber intelligence briefings on cyber risk, AI threats, infrastructure exposure, and board-level decision-making.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 18 Apr 2026 06:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 19 Apr 2026 06:00:00 +0000</lastBuildDate>
     <atom:link href="https://tusharvartak.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://tusharvartak.com/assets/og/default.png</url>
       <title>CyberPulse</title>
       <link>https://tusharvartak.com</link>
     </image>
+    <item>
+      <title>The Half-Life of Exposure Is Shrinking</title>
+      <link>https://tusharvartak.com/posts/2026-04-19.html</link>
+      <guid isPermaLink="true">https://tusharvartak.com/posts/2026-04-19.html</guid>
+      <pubDate>Sun, 19 Apr 2026 06:00:00 +0000</pubDate>
+      <dc:creator>Tushar Vartak</dc:creator>
+      <description>A board-level analysis of ActiveMQ exploitation, shrinking patch windows, and why AI-assisted discovery is compressing the time between weakness and business risk.</description>
+      <enclosure url="https://tusharvartak.com/assets/covers/2026-04-19.png" type="image/png" length="0"/>
+    </item>
     <item>
       <title>The Executive Is the New Perimeter</title>
       <link>https://tusharvartak.com/posts/2026-04-18.html</link>

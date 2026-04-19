@@ -236,37 +236,36 @@ date = sys.argv[5]
 title = sys.argv[6]
 desc = sys.argv[7]
 
-# Parse date for RSS pubDate
 dt = datetime.strptime(date, "%Y-%m-%d")
 rfc822 = dt.strftime("%a, %d %b %Y 06:00:00 +0000")
 display_date = dt.strftime("%B %d, %Y").replace(" 0", " ")
-
 post_url = f"https://tusharvartak.com/posts/{date}.html"
 cover_url = f"https://tusharvartak.com/assets/covers/{date}.png"
 
-# --- Update index.html ---
 html = index_path.read_text()
-html = re.sub(r'href="\./posts/[0-9\-]+\.html"', f'href="./posts/{date}.html"', html, count=1)
-html = re.sub(r'(<h2 class="signal-title">)(.*?)(</h2>)', rf'\g<1>{title}\3', html, count=1, flags=re.S)
+html = re.sub(r'<span class="stat-value">\d+</span> editions published', lambda m: f'<span class="stat-value">{len(list((index_path.parent / "posts").glob("*.html")) )}</span> editions published', html, count=1)
+html = re.sub(r'Edition No\.\s*\d+\s*&mdash;\s*[A-Za-z]+\s+\d{1,2},\s+\d{4}', f'Edition No. {len(list((index_path.parent / "posts").glob("*.html")))} &mdash; {display_date}', html, count=1)
+html = re.sub(r'href="\./posts/[0-9\-]+\.html" data-analytics="cta-read-today"', f'href="./posts/{date}.html" data-analytics="cta-read-today"', html, count=1)
+html = re.sub(r'<a href="\./posts/[0-9\-]+\.html" data-analytics="hero-panel-click">', f'<a href="./posts/{date}.html" data-analytics="hero-panel-click">', html, count=1)
 html = re.sub(r'src="\./assets/covers/[0-9\-]+\.png"', f'src="./assets/covers/{date}.png"', html, count=1)
-# Prepend new archive item
-archive_block = f'''        <a class="archive-item" href="./posts/{date}.html">
+html = re.sub(r'alt="CyberPulse cover art for [A-Za-z]+ \d{1,2}, \d{4}"', f'alt="CyberPulse cover art for {display_date}"', html, count=1)
+html = re.sub(r'(<h2 class="signal-title">)(.*?)(</h2>)', rf'\1{title}\3', html, count=1, flags=re.S)
+html = re.sub(r'(<p class="signal-desc">)(.*?)(</p>)', rf'\1{desc}\3', html, count=1, flags=re.S)
+archive_block = f'''        <a class="archive-item" href="./posts/{date}.html" data-analytics="archive-click">
           <div>
-            <div class="archive-date">{display_date}</div>
+            <div class="archive-date">{display_date} &middot; Edition No. {len(list((index_path.parent / "posts").glob("*.html")))}</div>
             <div class="archive-title">{title}</div>
             <div class="archive-desc">{desc}</div>
           </div>
-          <div class="archive-arrow">\u2192</div>
+          <div class="archive-arrow">&rarr;</div>
         </a>'''
-marker = '<div class="archive">\n'
-if f'href="./posts/{date}.html"' not in html.split('id="archive"')[1] if 'id="archive"' in html else '':
-    html = html.replace(marker, marker + archive_block + '\n', 1)
+html = re.sub(r'<a class="archive-item" href="\./posts/' + re.escape(date) + r'\.html"[\s\S]*?</a>', archive_block, html, count=1)
+if f'./posts/{date}.html' not in html:
+    html = html.replace('<div class="archive">\n', '<div class="archive">\n' + archive_block + '\n', 1)
 index_path.write_text(html)
 
-# --- Update feed.xml ---
-if feed_path.exists():
-    feed = feed_path.read_text()
-    new_item = f'''    <item>
+feed = feed_path.read_text()
+new_item = f'''    <item>
       <title>{title}</title>
       <link>{post_url}</link>
       <guid isPermaLink="true">{post_url}</guid>
@@ -275,48 +274,45 @@ if feed_path.exists():
       <description>{desc}</description>
       <enclosure url="{cover_url}" type="image/png" length="0"/>
     </item>'''
-    if post_url not in feed:
-        feed = re.sub(r'(<lastBuildDate>)(.*?)(</lastBuildDate>)', rf'\1{rfc822}\3', feed, count=1)
-        feed = feed.replace('    <item>', new_item + '\n    <item>', 1)
-    feed_path.write_text(feed)
+feed = re.sub(r'<lastBuildDate>.*?</lastBuildDate>', f'<lastBuildDate>{rfc822}</lastBuildDate>', feed, count=1)
+feed = re.sub(r'\s*<item>[\s\S]*?<\/item>', '', feed)
+feed = feed.replace('    </image>', '    </image>\n' + new_item)
+feed_path.write_text(feed)
 
-# --- Update sitemap.xml ---
-if sitemap_path.exists():
-    sitemap = sitemap_path.read_text()
-    new_url = f'''  <url>
-    <loc>{post_url}</loc>
-    <lastmod>{date}</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.9</priority>
-  </url>'''
-    if post_url not in sitemap:
-        sitemap = re.sub(r'(<lastmod>)[0-9\-]+(</lastmod>)', rf'\g<1>{date}\2', sitemap, count=1)
-        sitemap = sitemap.replace('</urlset>', new_url + '\n</urlset>')
-    sitemap_path.write_text(sitemap)
+sitemap = sitemap_path.read_text()
+new_url = f'''  <url>\n    <loc>{post_url}</loc>\n    <lastmod>{date}</lastmod>\n    <changefreq>never</changefreq>\n    <priority>0.9</priority>\n  </url>'''
+if post_url not in sitemap:
+    sitemap = sitemap.replace('</urlset>', new_url + '\n</urlset>')
+sitemap = re.sub(r'(<lastmod>)[0-9\-]+(</lastmod>)', rf'\g<1>{date}\2', sitemap, count=1)
+sitemap_path.write_text(sitemap)
 
-# --- Update archive/index.html ---
-if archive_path.exists():
-    archive = archive_path.read_text()
-    new_archive_item = f'''    <a class="item" href="/posts/{date}.html">
-      <div>
-        <div class="date">{display_date}</div>
-        <div class="title">{title}</div>
-        <div class="desc">{desc}</div>
-      </div>
-      <div class="arrow">\u2192</div>
-    </a>'''
-    if f'href="/posts/{date}.html"' not in archive:
-        archive = archive.replace('    <a class="item"', new_archive_item + '\n    <a class="item"', 1)
-    archive_path.write_text(archive)
-
+archive = archive_path.read_text()
+archive = re.sub(r'<button class="tag-filter" data-tag="[^"]+">.*?</button>', '', archive)
+filters = '\n'.join([
+    '      <button class="tag-filter active" data-tag="all">All</button>',
+    '      <button class="tag-filter" data-tag="ActiveMQ">ActiveMQ</button>',
+    '      <button class="tag-filter" data-tag="Middleware Risk">Middleware Risk</button>',
+    '      <button class="tag-filter" data-tag="Vulnerability Management">Vulnerability Management</button>',
+    '      <button class="tag-filter" data-tag="AI Risk">AI Risk</button>',
+    '      <button class="tag-filter" data-tag="SharePoint">SharePoint</button>',
+    '      <button class="tag-filter" data-tag="Executive Security">Executive Security</button>',
+    '      <button class="tag-filter" data-tag="Social Engineering">Social Engineering</button>'
+])
+archive = re.sub(r'<div class="tag-filters" id="tagFilters" role="group" aria-label="Filter by topic">[\s\S]*?</div>', '<div class="tag-filters" id="tagFilters" role="group" aria-label="Filter by topic">\n' + filters + '\n    </div>', archive, count=1)
+archive = re.sub(r'<strong id="editionTotal">\d+</strong>', f'<strong id="editionTotal">{len(list((archive_path.parent.parent / "posts").glob("*.html")))}</strong>', archive, count=1)
+new_archive_item = f'''      <a class="item" href="/posts/{date}.html" data-tags="ActiveMQ,Middleware Risk,Vulnerability Management,AI Risk" data-title="{title}" data-desc="{desc}" data-analytics="archive-click">\n        <div>\n          <div class="item-date">{display_date} &middot; Edition No. {len(list((archive_path.parent.parent / "posts").glob("*.html")))}</div>\n          <div class="item-title">{title}</div>\n          <div class="item-desc">{desc}</div>\n          <div class="item-tags">\n            <span class="item-tag">ActiveMQ</span>\n            <span class="item-tag">Middleware Risk</span>\n            <span class="item-tag">Vulnerability Management</span>\n            <span class="item-tag">AI Risk</span>\n          </div>\n        </div>\n        <div class="item-arrow">&rarr;</div>\n      </a>'''
+if f'/posts/{date}.html' not in archive:
+    archive = archive.replace('<div class="archive-list" id="archiveList">\n', '<div class="archive-list" id="archiveList">\n' + new_archive_item + '\n', 1)
+archive_path.write_text(archive)
 PY
 fi
 ok "Index, feed, sitemap, archive updated"
 
-# ── Step 6: Git commit & push ────────────────────────────────────
+# ── Step 6: Validate + Git commit & push ─────────────────────────
 if ! $SKIP_GIT; then
-  info "Step 6/7: Git commit & push"
+  info "Step 6/7: Validating publish output"
   if ! $DRY_RUN; then
+    node "$ROOT/scripts/validate-publish.js" "$DATE"
     cd "$ROOT"
     git add \
       "posts/$DATE.html" \
@@ -326,12 +322,15 @@ if ! $SKIP_GIT; then
       "feed.xml" \
       "sitemap.xml" \
       "archive/index.html" \
+      "scripts/render-post.js" \
+      "scripts/publish.sh" \
+      "scripts/validate-publish.js" \
       2>/dev/null || true
     [[ -n "$PDF_SRC" ]] && git add "assets/cyberpulse-$DATE.pdf" 2>/dev/null || true
     git commit -m "Publish $DATE: $TITLE" || warn "Nothing to commit"
     git push || warn "Push failed — you may need to push manually"
   fi
-  ok "Committed and pushed"
+  ok "Validated, committed and pushed"
 else
   info "Step 6/7: Git — skipping"
 fi
