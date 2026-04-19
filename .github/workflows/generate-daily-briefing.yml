@@ -1,0 +1,68 @@
+name: Generate CyberPulse Daily Briefing
+
+on:
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'Edition date in YYYY-MM-DD format'
+        required: true
+      dry_run:
+        description: 'Run validation/build without git push'
+        required: false
+        default: 'false'
+  schedule:
+    - cron: '0 5 * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  generate-and-publish:
+    runs-on: ubuntu-latest
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      DATE_INPUT: ${{ github.event.inputs.date }}
+      DRY_RUN: ${{ github.event.inputs.dry_run }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install librsvg
+        run: sudo apt-get update && sudo apt-get install -y librsvg2-bin
+
+      - name: Resolve date
+        id: date
+        run: |
+          if [ -n "${DATE_INPUT}" ]; then
+            DATE="${DATE_INPUT}"
+          else
+            DATE=$(date -u +%F)
+          fi
+          echo "date=${DATE}" >> "$GITHUB_OUTPUT"
+
+      - name: Verify manifest exists
+        run: |
+          test -f "content/${{ steps.date.outputs.date }}.json"
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Publish manifest edition
+        run: |
+          if [ "${DRY_RUN}" = "true" ]; then
+            node scripts/generate-og.js "${{ steps.date.outputs.date }}" "$(node -e "const e=require('./content/${{ steps.date.outputs.date }}.json'); console.log(e.title)")" "$(node -e "const e=require('./content/${{ steps.date.outputs.date }}.json'); console.log(e.ogDescription)")"
+            node scripts/build-from-content.js "${{ steps.date.outputs.date }}"
+            node scripts/render-site-from-content.js
+            node scripts/validate-publish.js "${{ steps.date.outputs.date }}"
+          else
+            node scripts/publish-manifest.js "${{ steps.date.outputs.date }}"
+          fi
