@@ -58,7 +58,11 @@ jobs:
 
       - name: Ensure manifest exists
         run: |
-          node scripts/generate-manifest.js "${{ steps.date.outputs.date }}"
+          if [ ! -f "content/${{ steps.date.outputs.date }}.json" ]; then
+            echo "Missing manifest for ${{ steps.date.outputs.date }}."
+            echo "Automatic editorial generation is not wired in this workflow yet, so create the manifest first."
+            exit 1
+          fi
           if grep -q 'Draft manifest generated automatically' "content/${{ steps.date.outputs.date }}.json"; then
             echo "Manifest for ${{ steps.date.outputs.date }} is still a draft scaffold. Daily generation is not fully automated yet."
             echo "Please replace the scaffold with final editorial content before publish."
