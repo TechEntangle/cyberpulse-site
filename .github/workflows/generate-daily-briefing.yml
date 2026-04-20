@@ -7,9 +7,13 @@ on:
         description: 'Edition date in YYYY-MM-DD format'
         required: true
       dry_run:
-        description: 'Run validation/build without git push'
+        description: 'Run validation/build without git push or email send'
         required: false
         default: 'false'
+      send_newsletter:
+        description: 'Send newsletter after publish'
+        required: false
+        default: 'true'
   schedule:
     - cron: '0 5 * * *'
 
@@ -17,12 +21,14 @@ permissions:
   contents: write
 
 jobs:
-  generate-and-publish:
+  generate-publish-email:
     runs-on: ubuntu-latest
     env:
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
       DATE_INPUT: ${{ github.event.inputs.date }}
       DRY_RUN: ${{ github.event.inputs.dry_run }}
+      SEND_NEWSLETTER: ${{ github.event.inputs.send_newsletter || 'true' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -33,6 +39,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+
+      - name: Install dependencies
+        run: npm install -g wrangler@latest
 
       - name: Install librsvg
         run: sudo apt-get update && sudo apt-get install -y librsvg2-bin
@@ -47,9 +56,14 @@ jobs:
           fi
           echo "date=${DATE}" >> "$GITHUB_OUTPUT"
 
-      - name: Verify manifest exists
+      - name: Ensure manifest exists
         run: |
-          test -f "content/${{ steps.date.outputs.date }}.json"
+          node scripts/generate-manifest.js "${{ steps.date.outputs.date }}"
+          if grep -q 'Draft manifest generated automatically' "content/${{ steps.date.outputs.date }}.json"; then
+            echo "Manifest for ${{ steps.date.outputs.date }} is still a draft scaffold. Daily generation is not fully automated yet."
+            echo "Please replace the scaffold with final editorial content before publish."
+            exit 1
+          fi
 
       - name: Configure git
         run: |
@@ -65,4 +79,16 @@ jobs:
             node scripts/validate-publish.js "${{ steps.date.outputs.date }}"
           else
             node scripts/publish-manifest.js "${{ steps.date.outputs.date }}"
+          fi
+
+      - name: Send newsletter
+        if: ${{ env.SEND_NEWSLETTER == 'true' }}
+        run: |
+          TITLE=$(node -e "const e=require('./content/${{ steps.date.outputs.date }}.json'); console.log(e.title)")
+          DESC=$(node -e "const e=require('./content/${{ steps.date.outputs.date }}.json'); console.log(e.ogDescription)")
+          EDITION=$(node -e "const e=require('./content/${{ steps.date.outputs.date }}.json'); console.log(e.edition)")
+          if [ "${DRY_RUN}" = "true" ]; then
+            node email/send.js --date "${{ steps.date.outputs.date }}" --title "$TITLE" --desc "$DESC" --edition "$EDITION" --dry-run
+          else
+            node email/send.js --date "${{ steps.date.outputs.date }}" --title "$TITLE" --desc "$DESC" --edition "$EDITION"
           fi
