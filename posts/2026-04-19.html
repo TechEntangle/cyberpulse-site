@@ -431,15 +431,15 @@
         </span>
       </a>
       <div class="toolbar">
-        <span class="reading-time">6 min read min read</span>
+        <span class="reading-time">{{READ_TIME}} min read</span>
         <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">
           <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
           <span id="themeLabel">Light</span>
         </button>
         <div class="share-row">
           <span class="share-label">Share</span>
-          <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url={{ENCODED_URL}}" data-analytics="share-linkedin">LinkedIn</a>
-          <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text={{ENCODED_TITLE}}&url={{ENCODED_URL}}" data-analytics="share-x">X</a>
+          <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=https://tusharvartak.com/posts/2026-04-19.html" data-analytics="share-linkedin">LinkedIn</a>
+          <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=The%20Half-Life%20of%20Exposure%20Is%20Shrinking&url=https://tusharvartak.com/posts/2026-04-19.html" data-analytics="share-x">X</a>
           <button class="share-btn" id="copyLinkBtn" type="button" data-analytics="share-copy">Copy link</button>
         </div>
       </div>
@@ -448,13 +448,16 @@
     <div class="layout">
       <article>
         <div class="article-inner">
-          <div class="article-eyebrow">CyberPulse &middot; Edition No. {{EDITION_NUMBER}} &middot; Sunday, April 19, 2026</div>
+          <div class="article-eyebrow">CyberPulse &middot; Edition No. 2 &middot; Sunday, April 19, 2026</div>
           <h1>The Half-Life of Exposure Is Shrinking</h1>
           <p class="dek">Why the ActiveMQ exploitation story is really about collapsing exposure windows, AI-assisted discovery, and the growing business cost of slow asset visibility.</p>
 
           <div class="tag-row">
             <!-- Add tags as clickable links: <a class="tag" href="/archive/?tag=TagName">TagName</a> -->
-            {{TAG_SPANS}}
+                        <a class="tag" href="/archive/?tag=ActiveMQ">ActiveMQ</a>
+            <a class="tag" href="/archive/?tag=Middleware+Risk">Middleware Risk</a>
+            <a class="tag" href="/archive/?tag=Vulnerability+Management">Vulnerability Management</a>
+            <a class="tag" href="/archive/?tag=AI+Risk">AI Risk</a>
           </div>
 
           <img class="article-cover" src="/assets/covers/2026-04-19.png" alt="CyberPulse editorial cover image for The Half-Life of Exposure Is Shrinking" loading="lazy">
@@ -462,27 +465,45 @@
           <div class="hero-meta">
             <div class="meta-card">
               <strong>Confidence</strong>
-              <span>{{CONFIDENCE}}</span>
+              <span>High confidence, corroborated by CISA, BleepingComputer, and CyberScoop</span>
             </div>
             <div class="meta-card">
               <strong>Published</strong>
-              <span>{{FULL_DATE}}</span>
+              <span>Sunday, April 19, 2026</span>
             </div>
             <div class="meta-card">
               <strong>Primary signal</strong>
-              <span>{{PRIMARY_SIGNAL}}</span>
+              <span>Attackers are capitalizing on mature, exposed infrastructure faster than defenders are shrinking the patch window.</span>
             </div>
             <div class="meta-card">
               <strong>Why it matters</strong>
-              <span>{{WHY_IT_MATTERS}}</span>
+              <span>AI-assisted research is compressing the time between vulnerability discovery and operational urgency.</span>
             </div>
           </div>
 
           <!-- ── Lead paragraph ── -->
-          <p class="lead">{{LEAD_PARAGRAPH}}</p>
+          <p class="lead">CISA’s April 16 update added CVE-2026-34197, an improper input validation flaw in Apache ActiveMQ, to the KEV catalog. BleepingComputer reports the issue had gone unnoticed for roughly thirteen years before being discovered and patched, and that federal agencies have been given an April 30 remediation deadline. Horizon3 warned that ActiveMQ remains a repeated target, and Shadowserver data cited in reporting suggests thousands of exposed servers are still visible on the internet.</p>
 
           <!-- ── Body paragraphs ── -->
-          {{BODY_PARAGRAPHS}}
+                    <h2 id="the-story-that-matters">The story that matters</h2>
+          <div class="signal">
+            <h3>Apache ActiveMQ is now an exploited enterprise exposure, not a backlog item</h3>
+            <p>CISA’s April 16 update added CVE-2026-34197, an improper input validation flaw in Apache ActiveMQ, to the KEV catalog. BleepingComputer reports the issue had gone unnoticed for roughly thirteen years before being discovered and patched, and that federal agencies have been given an April 30 remediation deadline. Horizon3 warned that ActiveMQ remains a repeated target, and Shadowserver data cited in reporting suggests thousands of exposed servers are still visible on the internet.</p>
+            <p>That combination matters because ActiveMQ is not obscure hobbyist software. It sits inside real application and integration environments, often far from the board’s view but close to production data flows. When software like that becomes actively exploited, the blast radius extends beyond one server. It can become a bridge into adjacent systems, credentials, workflows, and downstream services.</p>
+          </div>
+          <div class="signal">
+            <h3>The patch volume story is now connected to the AI-assisted discovery story</h3>
+            <p>CyberScoop noted that Microsoft’s April patch cycle was one of its largest on record, and Trend Micro’s Zero Day Initiative attributed part of the rising submission volume across programs to artificial intelligence-assisted research. That is the real strategic signal hiding behind the patch count headlines. The problem is not only that there are many vulnerabilities. It is that the economics of finding, testing, and packaging them are improving.</p>
+            <p>When AI helps researchers and attackers alike move faster, the market changes. More issues get surfaced. More proof-of-concept paths emerge. More defenders face decisions under tighter time pressure. The question for leadership is no longer whether vulnerability volume will plateau. It is whether the organization is structured to survive a world where exploitability matures faster than governance cycles do.</p>
+          </div>
+          <h2 id="beyond-one-cve">Why this matters beyond one CVE</h2>
+          <p>There is a familiar board trap here. Leaders often hear about an old flaw in middleware and assume it belongs in the ordinary patch-and-move-on bucket. But a vulnerability’s age is not the same thing as its operational urgency. A bug can sleep in plain sight for years and still become strategically dangerous once discovery methods improve, exploit chains get simplified, or a large enough installed base remains exposed.</p>
+          <p>That is why this story fits into a broader pattern. Yesterday’s concern was privileged humans being treated as infrastructure. Today’s concern is long-lived infrastructure being rediscovered as easy entry. The common thread is attacker efficiency. Whether the route is a help desk impersonation or a message broker flaw, the attackers who win are increasingly the ones who can turn routine enterprise complexity into fast, repeatable access.</p>
+          <p>There is also a governance implication. Many companies still measure cyber readiness by annual program maturity, quarterly patch metrics, or generic mean-time-to-remediate dashboards. Those views can be directionally useful, but they often miss the thing that matters most in practice: how quickly can this specific weakness move from obscure to operationally exploited, and how quickly can we identify whether we have it in production?</p>
+          <h2 id="enterprise-risk">What this means for enterprise risk</h2>
+          <p>The first implication is that exposed middleware deserves the same scrutiny boards now give remote access infrastructure, identity systems, and perimeter appliances. Business integration layers are not back-office plumbing anymore. They are adversary routes.</p>
+          <p>The second implication is that asset visibility is still one of the most underrated controls in cyber defense. If a vulnerability can survive in a core product for over a decade and then immediately matter once exposed, the real failure mode is often not only patch latency. It is not knowing exactly where the software lives, who owns it, and whether it is reachable from the internet.</p>
+          <p>The third implication is that AI changes the tempo even when it does not autonomously launch attacks. If it speeds up triage, exploit development, code comprehension, or configuration analysis, then every weak process on the defense side becomes more painful. Slow inventories, unclear ownership, and exception-heavy patch governance all get more expensive in an AI-accelerated threat environment.</p>
 
           <!-- ── Sections ── -->
           <!--
@@ -504,51 +525,55 @@
             <div class="action-box">
               <h4>Board takeaway in 20 seconds</h4>
               <ul>
-                <li>{{BOARD_TAKEAWAY_1}}</li>
-                <li>{{BOARD_TAKEAWAY_2}}</li>
+                <li>Technical debt can become live enterprise risk very quickly once exploitability becomes easier and cheaper.</li>
+                <li>Boards should focus less on patch counts in aggregate and more on whether exposed, high-leverage systems can outrun normal governance cycles.</li>
               </ul>
             </div>
             <div class="action-box">
               <h4>What should CISOs do?</h4>
               <ul>
-                <li>{{CISO_ACTION_1}}</li>
-                <li>{{CISO_ACTION_2}}</li>
-                <li>{{CISO_ACTION_3}}</li>
+                <li>Immediately identify whether Apache ActiveMQ exists anywhere in production, development, partner-facing, or inherited legacy environments, and verify version exposure rather than relying on assumptions.</li>
+                <li>Treat internet-exposed integration and messaging infrastructure as urgent validation territory this week, including broker logs, suspicious connection patterns, and adjacent identity paths.</li>
+                <li>Use this moment to tighten ownership for middleware and integration assets, because the biggest operational gap is often not patching itself but ambiguity over who is responsible.</li>
               </ul>
             </div>
             <div class="action-box">
               <h4>What should boards demand?</h4>
               <ul>
-                <li>{{BOARD_DEMAND_1}}</li>
-                <li>{{BOARD_DEMAND_2}}</li>
-                <li>{{BOARD_DEMAND_3}}</li>
+                <li>Ask for a short list of externally reachable enterprise infrastructure that is both security-critical and operationally easy to overlook, including message brokers, management consoles, and integration servers.</li>
+                <li>Request reporting on exploitability exposure, not just raw patch counts. A smaller number of reachable, actively exploited systems matters more than a larger number of low-value internal findings.</li>
+                <li>Push management to explain how AI is changing both their vulnerability intake and their remediation operating model, not as innovation theater but as a practical timing problem.</li>
               </ul>
             </div>
             <div class="action-box">
               <h4>What should risk committees rethink?</h4>
               <ul>
-                <li>{{RISK_RETHINK_1}}</li>
-                <li>{{RISK_RETHINK_2}}</li>
-                <li>{{RISK_RETHINK_3}}</li>
+                <li>Stop treating technical debt as merely a cost issue. In many cases, it is latent adversary enablement.</li>
+                <li>Model enterprise risk around shrinking decision windows. The danger is not only that a weakness exists, but that it becomes exploitable faster than normal governance can react.</li>
+                <li>Revisit how resilience is measured. Mature cyber programs still fail if they cannot rapidly answer a simple question under pressure: do we have this, where is it, and is it exposed?</li>
               </ul>
             </div>
           </div>
 
           <!-- ── Blind spot ── -->
           <h2 id="blind-spot">The board blind spot</h2>
-          {{BLIND_SPOT_PARAGRAPHS}}
+                    <p>The blind spot is not ignorance of cyber headlines. Most directors see the headlines. The blind spot is assuming that exposure rises linearly. It does not. In practice, risk can remain dormant and then spike suddenly when tooling, research methods, or attacker incentives change.</p>
+          <p>That is the deeper lesson in today’s ActiveMQ story. Security teams are not only racing attackers. They are racing compressing timelines. And in that race, organizations with incomplete inventories, fuzzy ownership, and slow exception handling will keep discovering that what looked like stable infrastructure was actually a quietly aging liability.</p>
+          <p>The companies that will look smartest this quarter are the ones that stop asking whether they are patched enough in general and start asking where exploitability can outrun process.</p>
 
           <!-- ── Sources ── -->
           <div class="source-box">
             <div class="meta-kicker">Sources</div>
             <ol>
               <!-- <li><a href="URL">Publication, Article title</a></li> -->
-              {{SOURCE_LIST}}
+                            <li><a href="https://www.cisa.gov/news-events/alerts/2026/04/16/cisa-adds-one-known-exploited-vulnerability-catalog">CISA, Adds One Known Exploited Vulnerability to Catalog</a></li>
+              <li><a href="https://www.bleepingcomputer.com/news/security/cisa-flags-apache-activemq-flaw-as-actively-exploited-in-attacks/">BleepingComputer, CISA flags Apache ActiveMQ flaw as actively exploited in attacks</a></li>
+              <li><a href="https://cyberscoop.com/microsoft-patch-tuesday-april-2026/">CyberScoop, Microsoft drops its second-largest monthly batch of defects on record</a></li>
             </ol>
           </div>
 
           <div class="article-footer">
-            <span>CyberPulse &middot; Signal over noise &middot; Edition No. {{EDITION_NUMBER}}</span>
+            <span>CyberPulse &middot; Signal over noise &middot; Edition No. 2</span>
             <a href="/">Home</a>
           </div>
         </div>
@@ -559,23 +584,29 @@
           <div class="side-kicker">In this edition</div>
           <ul class="toc-list">
             <!-- Build TOC from h2 ids -->
-            {{TOC_LIST}}
+                        <li><a href="#the-story-that-matters">The story that matters</a></li>
+            <li><a href="#beyond-one-cve">Why this matters beyond one CVE</a></li>
+            <li><a href="#enterprise-risk">What this means for enterprise risk</a></li>
+            <li><a href="#takeaways">Takeaways</a></li>
+            <li><a href="#blind-spot">The board blind spot</a></li>
           </ul>
         </div>
 
         <div class="sticky-card">
           <div class="side-kicker">At a glance</div>
-          <p>{{AT_A_GLANCE}}</p>
+          <p>Today’s edition argues that overlooked middleware can become urgent enterprise risk very quickly once AI-assisted research and real-world exploitation compress response time.</p>
           <ul>
-            {{GLANCE_BULLETS}}
+                        <li>ActiveMQ is now an exploited enterprise exposure, not a quiet back-end component.</li>
+            <li>Asset visibility matters as much as patch velocity when exposed infrastructure is involved.</li>
+            <li>AI is accelerating discovery and forcing faster governance and remediation decisions.</li>
           </ul>
         </div>
 
         <div class="sticky-card">
           <div class="side-kicker">Share this briefing</div>
           <div class="share-stack">
-            <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url={{ENCODED_URL}}" data-analytics="share-linkedin">Share on LinkedIn</a>
-            <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text={{ENCODED_TITLE}}&url={{ENCODED_URL}}" data-analytics="share-x">Share on X</a>
+            <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=https://tusharvartak.com/posts/2026-04-19.html" data-analytics="share-linkedin">Share on LinkedIn</a>
+            <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=The%20Half-Life%20of%20Exposure%20Is%20Shrinking&url=https://tusharvartak.com/posts/2026-04-19.html" data-analytics="share-x">Share on X</a>
             <button class="share-btn" id="copyLinkBtnAside" type="button" data-analytics="share-copy">Copy article link</button>
           </div>
         </div>

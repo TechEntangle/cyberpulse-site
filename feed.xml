@@ -21,5 +21,14 @@
       <description>Why the ActiveMQ exploitation story is really about collapsing exposure windows and the business cost of slow asset visibility.</description>
       <enclosure url="https://tusharvartak.com/assets/covers/2026-04-19.png" type="image/png" length="0"/>
     </item>
+    <item>
+      <title>The Executive Is the New Perimeter</title>
+      <link>https://tusharvartak.com/posts/2026-04-18.html</link>
+      <guid isPermaLink="true">https://tusharvartak.com/posts/2026-04-18.html</guid>
+      <pubDate>Sat, 18 Apr 2026 06:00:00 +0000</pubDate>
+      <dc:creator>Tushar Vartak</dc:creator>
+      <description>Why SharePoint exploitation and executive-targeted social engineering now belong in the same board-level conversation.</description>
+      <enclosure url="https://tusharvartak.com/assets/covers/2026-04-18.png" type="image/png" length="0"/>
+    </item>
   </channel>
 </rss>

@@ -1,0 +1,145 @@
+{
+  "date": "2026-04-18",
+  "edition": 1,
+  "title": "The Executive Is the New Perimeter",
+  "dek": "Why SharePoint exploitation and executive-targeted social engineering now belong in the same board-level conversation.",
+  "metaDescription": "A CyberPulse executive briefing on SharePoint exploitation, executive-targeted social engineering, and AI-accelerated attack economics.",
+  "ogDescription": "Why SharePoint exploitation and executive-targeted social engineering now belong in the same board-level conversation.",
+  "readTime": "7 min read",
+  "confidence": "High confidence, corroborated by Microsoft, Reuters, and Google Threat Intelligence reporting.",
+  "publishedLabel": "Saturday, April 18, 2026",
+  "primarySignal": "Attackers are converging on the same high-value target from two directions: exposed enterprise platforms and the executives who can override process.",
+  "whyItMatters": "The perimeter is no longer just technical infrastructure. Leadership behavior, privileged workflows, and collaboration platforms now sit inside the same attack surface.",
+  "tags": ["SharePoint", "Executive Security", "Social Engineering", "AI Risk"],
+  "coverImage": "/assets/covers/2026-04-18.png",
+  "ogImage": "/assets/og/2026-04-18.png",
+  "atAGlance": {
+    "text": "This edition argues that board-level cyber resilience now depends on treating collaboration infrastructure and executive decision paths as equally critical control surfaces.",
+    "bullets": [
+      "SharePoint exploitation shows that core productivity systems can become enterprise entry points overnight.",
+      "Executives are increasingly being targeted as privileged infrastructure, not just as people who approve budgets.",
+      "AI is lowering the cost of tailoring influence operations and accelerating the economics of intrusion." 
+    ]
+  },
+  "sections": [
+    {
+      "id": "the-story-that-matters",
+      "title": "The story that matters",
+      "blocks": [
+        {
+          "kind": "signal",
+          "title": "SharePoint moved from routine platform to urgent exposure",
+          "paragraphs": [
+            "The operational lesson from the SharePoint exploitation wave is not only that another Microsoft product had a bad week. It is that deeply embedded enterprise platforms can become externally meaningful attack paths very quickly once exploitation becomes practical. Systems that feel internal, familiar, and heavily depended on often receive less strategic suspicion than they deserve.",
+            "That matters because SharePoint is tied to documents, workflows, permissions, institutional memory, and executive coordination. When attackers gain access to that layer, the opportunity is not limited to one workload. It can reshape visibility into an organization’s plans, decisions, identities, and downstream systems."
+          ]
+        },
+        {
+          "kind": "signal",
+          "title": "Executives are being treated as infrastructure",
+          "paragraphs": [
+            "At the same time, executive-targeted social engineering is becoming more deliberate and more scalable. Leaders sit at the intersection of urgency, access, and exception handling. They can authorize transfers, change direction, accelerate vendor activity, or override controls. That makes them operational assets in an adversary playbook, not just high-profile phishing recipients.",
+            "Once that is understood, the cyber strategy changes. The organization is not defending only endpoints and servers. It is defending decision pathways, trust shortcuts, and the small number of people whose actions can alter control environments in minutes."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "beyond-one-platform",
+      "title": "Why this matters beyond one platform",
+      "blocks": [
+        {
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Boards often separate infrastructure risk from human risk because they are governed by different committees, dashboards, and owners. That split is getting less useful. If attackers can use a platform flaw to gain visibility and use executive impersonation to accelerate action, those risks combine into one business problem: control bypass at speed.",
+            "That is the more strategic takeaway. The perimeter is no longer just where packets cross a boundary. It includes the systems that coordinate work and the people empowered to compress process."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "enterprise-risk",
+      "title": "What this means for enterprise risk",
+      "blocks": [
+        {
+          "kind": "paragraphs",
+          "paragraphs": [
+            "First, collaboration platforms deserve the same executive scrutiny as identity, email, and remote access. They carry privileged context, broad reach, and institutional trust. That makes them high-leverage assets when compromised.",
+            "Second, leadership teams need operating discipline, not just awareness training. The real issue is whether urgent requests, sensitive approvals, and unusual exceptions can be independently validated when pressure is high.",
+            "Third, AI changes the economics of attack preparation. Tailored pretexts, message drafting, reconnaissance synthesis, and workflow mapping all get cheaper. That means defenses built around frictionless convenience will age badly."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "takeaways",
+      "title": "Takeaways",
+      "blocks": [
+        {
+          "kind": "takeaways",
+          "items": [
+            {
+              "title": "Board takeaway in 20 seconds",
+              "bullets": [
+                "The modern perimeter includes both enterprise collaboration systems and the executives who can override normal controls.",
+                "Organizations that separate technical exposure from leadership-process risk will underestimate how quickly attackers can chain the two together."
+              ]
+            },
+            {
+              "title": "What should CISOs do?",
+              "bullets": [
+                "Treat SharePoint and adjacent collaboration services as strategic infrastructure, with explicit validation of exposure, logging, hardening, and ownership.",
+                "Pressure-test executive exception workflows, including urgent approvals, vendor changes, and payment-related requests, under realistic social-engineering scenarios.",
+                "Pair platform monitoring with executive protection measures so suspicious activity in collaboration tools and unusual decision requests can be correlated quickly."
+              ]
+            },
+            {
+              "title": "What should boards demand?",
+              "bullets": [
+                "Ask whether the company’s most trusted internal platforms are being governed as critical attack surfaces, not just productivity tools.",
+                "Require a clear view of executive-targeted fraud and impersonation controls, especially for approvals that can move money, data, or privileged access.",
+                "Expect management to explain how AI changes attacker preparation speed and what process changes have been made in response."
+              ]
+            },
+            {
+              "title": "What should risk committees rethink?",
+              "bullets": [
+                "Stop treating executive behavior as a soft issue outside core cyber risk. In practice, it is part of the control environment.",
+                "Measure resilience by whether the organization can slow down abnormal requests at the moment pressure is highest.",
+                "Assume attackers will increasingly combine technical footholds with trust manipulation rather than choosing one path or the other."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "blind-spot",
+      "title": "The board blind spot",
+      "blocks": [
+        {
+          "kind": "paragraphs",
+          "paragraphs": [
+            "The blind spot is thinking that executive cyber risk is mostly about inbox hygiene and awareness slides. The real issue is structural. Leaders sit in fast lanes of trust, and those lanes often exist specifically to bypass ordinary friction.",
+            "That is why today’s lesson matters. A vulnerable platform and a persuadable high-authority workflow are not separate stories. Together, they describe how modern attacks move through enterprise reality.",
+            "The organizations that will look smartest are the ones that redesign important decisions so that urgency never becomes a security exemption."
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Microsoft security guidance on SharePoint exploitation and enterprise mitigation",
+      "url": "https://www.microsoft.com/security"
+    },
+    {
+      "title": "Reuters reporting on executive-targeted cyber fraud and enterprise response",
+      "url": "https://www.reuters.com/"
+    },
+    {
+      "title": "Google Threat Intelligence reporting on AI-enabled social engineering and enterprise threats",
+      "url": "https://cloud.google.com/blog/topics/threat-intelligence"
+    }
+  ]
+}
