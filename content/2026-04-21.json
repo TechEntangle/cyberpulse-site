@@ -1,0 +1,154 @@
+{
+  "date": "2026-04-21",
+  "edition": 4,
+  "title": "The Exposure Backlog Is Becoming the Real Breach Surface",
+  "dek": "CISA’s latest KEV additions, large-scale remediation data, and Microsoft’s identity warning all point to the same executive problem: attackers are exploiting the gap between what enterprises know and what they can close in time.",
+  "metaDescription": "A CyberPulse executive briefing on fresh KEV additions, the limits of human-scale remediation, and why stolen credentials keep turning identity into the fastest breach path.",
+  "ogDescription": "Why newly exploited flaws, long-tail remediation, and password-driven identity attacks all point to the same board-level issue: exposure backlog is now a primary risk surface.",
+  "readTime": "6 min read",
+  "confidence": "High confidence, anchored in CISA KEV updates, Qualys analysis reported by BleepingComputer, and Microsoft identity findings reported by Recorded Future News.",
+  "publishedLabel": "Tuesday, April 21, 2026",
+  "primarySignal": "The practical cyber battlefield is shifting from discovering risk to closing it fast enough. Backlog, not blindness, is increasingly what attackers exploit.",
+  "whyItMatters": "When exploited vulnerabilities keep entering priority queues while stolen credentials remain the dominant entry path, enterprise risk is defined less by visibility and more by execution capacity under pressure.",
+  "tags": [
+    "KEV",
+    "Identity Security",
+    "Remediation",
+    "Operational Resilience"
+  ],
+  "coverImage": "/assets/covers/2026-04-21.png",
+  "ogImage": "/assets/og/2026-04-21.png",
+  "atAGlance": {
+    "text": "Today’s edition argues that the real enterprise exposure is accumulating in the distance between prioritized risk and completed action. Newly added KEV items, slow long-tail remediation, and password-heavy identity abuse are all symptoms of the same operating constraint.",
+    "bullets": [
+      "CISA added eight more known exploited vulnerabilities on April 20, expanding the set of issues defenders are expected to treat as immediately actionable.",
+      "Qualys analysis of one billion KEV remediation records suggests attackers are routinely moving faster than enterprise patch operations can absorb.",
+      "Microsoft says more than 97% of identity attacks are still password-driven, with identity-based attacks up 32% in the first half of 2025."
+    ]
+  },
+  "sections": [
+    {
+      "id": "the-story-that-matters",
+      "title": "The story that matters",
+      "blocks": [
+        {
+          "kind": "signal",
+          "title": "The KEV list keeps growing, but the real stress shows up in the queue behind it",
+          "paragraphs": [
+            "CISA added eight more known exploited vulnerabilities to its catalog on April 20, including issues affecting Cisco SD-WAN Manager, Kentico Xperience, PaperCut NG/MF, and Zimbra Collaboration Suite. On paper, that is another operational priority list for defenders. In practice, it is another reminder that exploited risk now arrives as a stream, not as an isolated emergency.",
+            "That distinction matters because most enterprises do not fail to notice KEV entries. They fail when those entries land on top of already crowded patch, validation, and change windows. The board-level problem is no longer just whether teams can identify what matters. It is whether they can force urgent work through the organization before attackers reach the same gap first."
+          ]
+        },
+        {
+          "kind": "signal",
+          "title": "Identity remains the fastest shortcut through enterprise complexity",
+          "paragraphs": [
+            "Recorded Future News reports that Microsoft saw identity-based attacks surge by 32% in the first half of 2025 and says more than 97% of identity attacks are still password attacks. That is strategically important because it shows attackers do not need novel tradecraft everywhere. They can keep extracting value from stolen credentials, help-desk manipulation, and infostealer-driven access at industrial scale.",
+            "This is why the exposure backlog problem is bigger than vulnerability management alone. Even if infrastructure teams improve patch prioritization, attackers can still bypass slow-moving environments by entering through the identity layer, especially where password resets, remote assistance, or weak privileged account controls remain easier than direct exploitation."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "beyond-one-cve",
+      "title": "Why this matters beyond one CVE",
+      "blocks": [
+        {
+          "kind": "paragraphs",
+          "paragraphs": [
+            "BleepingComputer’s coverage of Qualys research is useful here because it reframes the problem. The analysis of one billion CISA KEV remediation records argues that the issue is not simply patch speed, but the human operating model behind it. Teams are closing far more tickets than before, yet critical exposures still remain open too long because the tail of remediation keeps stretching out.",
+            "Put differently, the risk is no longer captured by a neat list of severe flaws. It sits in cumulative exposure, where new exploited vulnerabilities, stale infrastructure, and reusable credentials combine into a backlog attackers can route around or straight through."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "enterprise-risk",
+      "title": "What this means for enterprise risk",
+      "blocks": [
+        {
+          "kind": "paragraphs",
+          "paragraphs": [
+            "First, executives should stop reading exploitation alerts as separate events owned by separate teams. KEV additions, credential abuse, and remediation lag are all different expressions of the same organizational constraint: limited security execution capacity under real business conditions.",
+            "Second, remediation programs should be measured on reduction of exposed high-leverage paths, not on gross closure counts. The flattering metric is how many tickets got closed. The dangerous metric is how much exploitable exposure remained open across the long tail.",
+            "Third, identity control weakness deserves the same urgency as internet-facing software defects. If stolen passwords, help-desk social engineering, or infostealer loot can still reliably produce access, then enterprises are leaving attackers a lower-friction option whenever patching takes longer than planned."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "takeaways",
+      "title": "Takeaways",
+      "blocks": [
+        {
+          "kind": "takeaways",
+          "items": [
+            {
+              "title": "Board takeaway in 20 seconds",
+              "bullets": [
+                "The real cyber risk surface is increasingly the backlog between known exposure and completed action.",
+                "Boards should ask whether the company can shrink exploitable queues fast enough when new KEV items and identity abuse land at the same time."
+              ]
+            },
+            {
+              "title": "What should CISOs do?",
+              "bullets": [
+                "Re-rank current patch work around actively exploited assets and attack paths with real privilege or business impact, not just CVSS volume.",
+                "Pressure-test password reset, help-desk verification, remote support, and privileged identity workflows as aggressively as internet-facing software controls.",
+                "Track cumulative exposure over time, especially for high-value assets that remain open after the initial remediation sprint."
+              ]
+            },
+            {
+              "title": "What should boards demand?",
+              "bullets": [
+                "Ask which exploited vulnerabilities or identity pathways remain open this week despite being known priorities.",
+                "Require a view of where remediation is slowing down in practice, whether because of staffing, change windows, asset visibility, or business friction.",
+                "Push management to show how identity abuse and vulnerability management are being connected into one risk model rather than separate dashboards."
+              ]
+            },
+            {
+              "title": "What should risk committees rethink?",
+              "bullets": [
+                "Stop assuming the main problem is seeing threats early enough. In many environments, the harder problem is closing them before the queue hardens.",
+                "Treat long-tail exposure as a strategic risk indicator, because attackers often win in the part of the remediation curve that dashboards underweight.",
+                "Model cyber resilience around operational throughput, not just control coverage or severity counts."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "blind-spot",
+      "title": "The board blind spot",
+      "blocks": [
+        {
+          "kind": "paragraphs",
+          "paragraphs": [
+            "The blind spot is believing that better prioritization alone will solve the problem. Prioritization matters, but it does not eliminate the execution debt that builds up behind every urgent item that still waits for patching, validation, credential cleanup, or business approval.",
+            "That is the deeper meaning of today’s signals. CISA keeps identifying exploited flaws, Microsoft keeps seeing password-heavy identity abuse, and large-scale remediation data keeps showing the same structural lag. These are not disconnected issues. They are different measurements of the same operating gap.",
+            "The organizations that will look strongest over the next year are the ones that treat backlog compression as a security capability in its own right, not as an administrative byproduct of vulnerability management."
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "CISA, Cybersecurity Alerts & Advisories, noting eight KEV additions on April 20, 2026",
+      "url": "https://www.cisa.gov/news-events/cybersecurity-advisories"
+    },
+    {
+      "title": "CISA Known Exploited Vulnerabilities Catalog CSV",
+      "url": "https://www.cisa.gov/sites/default/files/csv/known_exploited_vulnerabilities.csv"
+    },
+    {
+      "title": "BleepingComputer, Analysis of one billion CISA KEV remediation records exposes limits of human-scale security",
+      "url": "https://www.bleepingcomputer.com/news/security/analysis-of-one-billion-cisa-kev-remediation-records-exposes-limits-of-human-scale-security/"
+    },
+    {
+      "title": "Recorded Future News, Microsoft warns of a 32% surge in identity hacks, mainly driven by stolen passwords",
+      "url": "https://therecord.media/microsoft-warns-of-surge-identity-hacks-passwords"
+    }
+  ]
+}

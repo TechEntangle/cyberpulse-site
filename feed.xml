@@ -5,13 +5,22 @@
     <link>https://tusharvartak.com</link>
     <description>Executive cyber intelligence briefings on cyber risk, AI threats, infrastructure exposure, and board-level decision-making.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 Apr 2026 06:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 21 Apr 2026 06:00:00 +0000</lastBuildDate>
     <atom:link href="https://tusharvartak.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://tusharvartak.com/assets/og/default.png</url>
       <title>CyberPulse</title>
       <link>https://tusharvartak.com</link>
     </image>
+    <item>
+      <title>The Exposure Backlog Is Becoming the Real Breach Surface</title>
+      <link>https://tusharvartak.com/posts/2026-04-21.html</link>
+      <guid isPermaLink="true">https://tusharvartak.com/posts/2026-04-21.html</guid>
+      <pubDate>Tue, 21 Apr 2026 06:00:00 +0000</pubDate>
+      <dc:creator>Tushar Vartak</dc:creator>
+      <description>Why newly exploited flaws, long-tail remediation, and password-driven identity attacks all point to the same board-level issue: exposure backlog is now a primary risk surface.</description>
+      <enclosure url="https://tusharvartak.com/assets/covers/2026-04-21.png" type="image/png" length="0"/>
+    </item>
     <item>
       <title>Patch Volume Is Becoming a Business-Speed Problem</title>
       <link>https://tusharvartak.com/posts/2026-04-20.html</link>
