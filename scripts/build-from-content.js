@@ -76,6 +76,7 @@ out = out.replace(/{{OG_DESCRIPTION}}/g, escAttr(entry.ogDescription));
 out = out.replace(/{{ARTICLE_TAGS}}/g, articleTags);
 out = out.replace(/{{EDITION_NUMBER}}/g, String(entry.edition));
 out = out.replace(/{{DISPLAY_DATE}}/g, escHtml(entry.publishedLabel));
+out = out.replace(/{{READ_TIME}}/g, escHtml(entry.readTime || '6 min read'));
 out = out.replace(/{{DEK}}/g, escHtml(entry.dek));
 out = out.replace(/{{TAG_SPANS}}/g, tagRow);
 out = out.replace(/{{CONFIDENCE}}/g, escHtml(entry.confidence));
