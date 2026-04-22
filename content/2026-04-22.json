@@ -1,0 +1,158 @@
+{
+  "date": "2026-04-22",
+  "edition": 5,
+  "title": "The Exposure Queue Is Starting to Look Like the Threat Surface",
+  "dek": "CISA’s latest exploited-vulnerability actions, recurring emergency patch orders for edge platforms, and ransomware use of overlooked mail infrastructure all point to the same executive lesson: attackers are thriving in the window between exposure discovery and operational closure.",
+  "metaDescription": "A CyberPulse executive briefing on fresh KEV pressure, repeated emergency patching of edge systems, and why neglected infrastructure is turning remediation delay into the real enterprise risk surface.",
+  "ogDescription": "Why recurring KEV additions, emergency patch deadlines, and ransomware exploitation of overlooked infrastructure all point to one board-level issue: the exposure queue is now part of the attack surface.",
+  "readTime": "6 min read",
+  "confidence": "High confidence, anchored in CISA alerts and BleepingComputer reporting on exploited Ivanti, Fortinet, and SmarterMail vulnerabilities.",
+  "publishedLabel": "Wednesday, April 22, 2026",
+  "primarySignal": "The enterprise cyber problem is no longer just identifying critical exposure. It is shrinking the queue of known, reachable, high-leverage weaknesses before attackers monetize the delay.",
+  "whyItMatters": "When exploited flaws keep surfacing across management systems, email infrastructure, and internet-facing edge software, the business risk shifts from isolated vulnerability severity to cumulative closure failure across the exposure backlog.",
+  "tags": [
+    "KEV",
+    "Exposure Management",
+    "Ransomware",
+    "Operational Resilience"
+  ],
+  "coverImage": "/assets/covers/2026-04-22.png",
+  "ogImage": "/assets/og/2026-04-22.png",
+  "atAGlance": {
+    "text": "Today’s edition argues that the more useful signal is not any one CVE in isolation, but the pattern of repeatedly exploited management and collaboration systems that organizations already know they should patch. The real risk surface is increasingly the queue of delayed action.",
+    "bullets": [
+      "CISA added eight more exploited vulnerabilities on April 20, spanning Cisco SD-WAN, TeamCity, PaperCut, Zimbra, Kentico, and Quest KACE.",
+      "BleepingComputer reports CISA recently issued urgent patch pressure for exploited Ivanti EPMM and FortiClient EMS flaws affecting widely exposed management infrastructure.",
+      "CISA also warned that ransomware actors are exploiting a critical SmarterMail RCE, showing how older or less glamorous enterprise software can still become a direct monetization path."
+    ]
+  },
+  "sections": [
+    {
+      "id": "the-story-that-matters",
+      "title": "The story that matters",
+      "blocks": [
+        {
+          "kind": "signal",
+          "title": "The KEV list is increasingly a map of where operational delay becomes enterprise risk",
+          "paragraphs": [
+            "CISA added eight more known exploited vulnerabilities to its catalog on April 20, including flaws affecting Cisco Catalyst SD-WAN Manager, JetBrains TeamCity, Quest KACE, Kentico Xperience, Zimbra, and PaperCut. That variety matters. The issue is no longer confined to one vendor family or one technology stack. It spans management planes, collaboration tools, and administrative systems that often sit close to privileged operations.",
+            "For executives, the important signal is not just that more exploited vulnerabilities exist. It is that the queue of urgent remediation work keeps widening across systems that are both operationally important and hard to touch quickly. Once that queue accumulates, attackers do not need a new breakthrough. They only need defenders to remain behind."
+          ]
+        },
+        {
+          "kind": "signal",
+          "title": "Attackers keep picking the systems enterprises are slowest to disrupt",
+          "paragraphs": [
+            "Recent CISA-linked patch pressure around Ivanti Endpoint Manager Mobile and FortiClient EMS reinforces the same pattern. These are not fringe assets. They are management and control systems that enterprises hesitate to patch casually because they sit close to device administration, endpoint operations, and business continuity. That friction is exactly what makes them attractive.",
+            "The SmarterMail case sharpens the point further. BleepingComputer reports that CISA warned ransomware actors are exploiting a critical unauthenticated remote-code-execution flaw in the platform. Email and collaboration infrastructure that feels mundane or secondary can still become a direct intrusion and monetization path when patching urgency fades faster than attacker interest."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "beyond-one-cve",
+      "title": "Why this matters beyond one CVE",
+      "blocks": [
+        {
+          "kind": "paragraphs",
+          "paragraphs": [
+            "The strategic lesson is not simply that defenders must patch faster. It is that many organizations are still running cyber operations as if exploited exposure appears as a sequence of isolated tickets. It does not. It arrives as a layered backlog of edge software, identity-adjacent systems, mail infrastructure, and management tooling, all competing for the same finite maintenance windows and approval processes.",
+            "That changes the board conversation. The real question is no longer whether the security team can identify critical issues. It is whether the organization can force closure through business friction quickly enough when attackers are already operating against that same list."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "enterprise-risk",
+      "title": "What this means for enterprise risk",
+      "blocks": [
+        {
+          "kind": "paragraphs",
+          "paragraphs": [
+            "First, management infrastructure should be treated as high-consequence business infrastructure, not just another IT patch queue. Systems like endpoint managers, SD-WAN controllers, and administrative platforms sit too close to privileged workflows to tolerate long remediation tails.",
+            "Second, backlog itself is becoming a measurable risk signal. A company may have excellent detection and a mature severity model, but if known exploited issues remain open across internet-facing or control-plane systems, that exposure queue effectively becomes part of the attack surface.",
+            "Third, executive resilience depends on reducing decision latency as much as technical latency. When emergency fixes require too many approvals, coordination steps, or business exceptions, attackers gain a structural advantage without needing unusually advanced tradecraft."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "takeaways",
+      "title": "Takeaways",
+      "blocks": [
+        {
+          "kind": "takeaways",
+          "items": [
+            {
+              "title": "Board takeaway in 20 seconds",
+              "bullets": [
+                "The real cyber threat surface is increasingly the backlog of known exploited weaknesses that remain operationally hard to close.",
+                "Boards should ask where the company is still carrying delayed remediation on internet-facing, administrative, or collaboration systems attackers already know how to abuse."
+              ]
+            },
+            {
+              "title": "What should CISOs do?",
+              "bullets": [
+                "Re-rank patch and validation work around management planes, email infrastructure, and edge systems where compromise produces leverage, not just severity points.",
+                "Track exposed known-exploited vulnerabilities by closure age and business friction, not only by open versus closed state.",
+                "Escalate any system that combines internet exposure, administrative privilege, and deferred maintenance into an executive risk conversation immediately."
+              ]
+            },
+            {
+              "title": "What should boards demand?",
+              "bullets": [
+                "Ask which known exploited vulnerabilities are still open on control-plane, endpoint-management, VPN, email, or collaboration infrastructure this week.",
+                "Require a view of where remediation is being delayed by testing, change freezes, staffing, or ownership ambiguity.",
+                "Expect management to explain how emergency patching decisions are accelerated when exploited issues hit business-critical systems."
+              ]
+            },
+            {
+              "title": "What should risk committees rethink?",
+              "bullets": [
+                "Stop treating backlog as an operational nuisance. In many enterprises, it is now a primary cyber risk indicator.",
+                "Model exposure in terms of reachable attack paths and closure delay, not just vulnerability counts or severity labels.",
+                "Assume attackers will keep targeting the systems the business is most reluctant to interrupt, because that is where delay compounds into advantage."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "blind-spot",
+      "title": "The board blind spot",
+      "blocks": [
+        {
+          "kind": "paragraphs",
+          "paragraphs": [
+            "The blind spot is assuming that because a vulnerability is known, prioritized, and assigned, it is strategically under control. In reality, many exploited issues remain dangerous precisely because they are known but still waiting inside a crowded operational queue.",
+            "That is the deeper meaning of this week’s signals. Fresh KEV additions, urgent federal patch deadlines, and ransomware exploitation of overlooked platforms all describe the same structural gap between awareness and closure.",
+            "The organizations that will look strongest are the ones that treat exposure compression as a leadership capability, not just a vulnerability-management metric."
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "CISA, CISA Adds Eight Known Exploited Vulnerabilities to Catalog",
+      "url": "https://www.cisa.gov/news-events/alerts/2026/04/20/cisa-adds-eight-known-exploited-vulnerabilities-catalog"
+    },
+    {
+      "title": "CISA Known Exploited Vulnerabilities Catalog",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+    },
+    {
+      "title": "BleepingComputer, CISA orders feds to patch exploited Ivanti EPMM flaw by Sunday",
+      "url": "https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-exploited-ivanti-epmm-flaw-by-sunday/"
+    },
+    {
+      "title": "BleepingComputer, CISA orders feds to patch exploited Fortinet EMS flaw by Friday",
+      "url": "https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-fortinet-flaw-exploited-in-attacks-by-friday/"
+    },
+    {
+      "title": "BleepingComputer, CISA warns of SmarterMail RCE flaw used in ransomware attacks",
+      "url": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-smartermail-rce-flaw-used-in-ransomware-attacks/"
+    }
+  ]
+}
