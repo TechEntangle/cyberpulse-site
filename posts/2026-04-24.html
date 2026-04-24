@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CyberPulse | Identity Is the New Control Plane Risk</title>
+  <link rel="icon" type="image/png" href="/assets/brand/logo-square.png" />
+  <meta name="description" content="Boards should treat identity and cloud control planes as critical business systems. OAuth abuse, token theft, and AI-boosted executive fraud are compressing dwell time and widening blast radius across SaaS and cloud estates." />
+  <link rel="canonical" href="https://tusharvartak.com/posts/2026-04-24.html" />
+  <meta name="author" content="Tushar Vartak" />
+  <meta property="og:title" content="Identity Is the New Control Plane Risk" />
+  <meta property="og:description" content="Identity, not just infrastructure, now defines enterprise cyber risk. Cloud control-plane weaknesses, OAuth abuse, and AI-enabled fraud are eroding traditional defenses and concentrating risk in a few providers." />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://tusharvartak.com/assets/og/2026-04-24.png" />
+  <meta property="og:url" content="https://tusharvartak.com/posts/2026-04-24.html" />
+  <meta property="og:site_name" content="CyberPulse" />
+  <meta property="article:published_time" content="2026-04-24T06:00:00+00:00" />
+  <meta property="article:author" content="Tushar Vartak" />
+  <meta property="article:section" content="Cybersecurity" />
+  <!-- Add article:tag entries for each topic tag -->
+    <meta property="article:tag" content="Identity" />
+  <meta property="article:tag" content="Cloud" />
+  <meta property="article:tag" content="OAuth" />
+  <meta property="article:tag" content="BEC" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Identity Is the New Control Plane Risk" />
+  <meta name="twitter:description" content="Identity, not just infrastructure, now defines enterprise cyber risk. Cloud control-plane weaknesses, OAuth abuse, and AI-enabled fraud are eroding traditional defenses and concentrating risk in a few providers." />
+  <meta name="twitter:image" content="https://tusharvartak.com/assets/og/2026-04-24.png" />
+  <link rel="alternate" type="application/rss+xml" title="CyberPulse RSS Feed" href="/feed.xml" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Identity Is the New Control Plane Risk",
+    "description": "Boards should treat identity and cloud control planes as critical business systems. OAuth abuse, token theft, and AI-boosted executive fraud are compressing dwell time and widening blast radius across SaaS and cloud estates.",
+    "image": "https://tusharvartak.com/assets/og/2026-04-24.png",
+    "datePublished": "2026-04-24T06:00:00+00:00",
+    "author": {
+      "@type": "Person",
+      "name": "Tushar Vartak",
+      "url": "https://tusharvartak.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CyberPulse",
+      "url": "https://tusharvartak.com"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://tusharvartak.com/posts/2026-04-24.html"
+    }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #06070a;
+      --bg-soft: #0b0d12;
+      --surface: rgba(255,255,255,0.04);
+      --surface-hover: rgba(255,255,255,0.07);
+      --panel: rgba(255,255,255,0.05);
+      --panel-strong: rgba(255,255,255,0.08);
+      --text: #f6f1e8;
+      --text-secondary: #d4cdc2;
+      --muted: #9e9689;
+      --gold: #f0b44a;
+      --gold-dim: rgba(240,180,74,0.15);
+      --accent: #ff9f8c;
+      --accent-2: #7dd3fc;
+      --border: rgba(255,255,255,0.08);
+      --border-strong: rgba(255,255,255,0.14);
+      --shadow: 0 24px 70px rgba(0,0,0,0.28);
+      --shadow-sm: 0 8px 24px rgba(0,0,0,0.18);
+      --radius-lg: 28px;
+      --radius-md: 20px;
+      --radius-sm: 14px;
+      --radius-xs: 10px;
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-out: cubic-bezier(0, 0, 0.2, 1);
+      --duration-fast: 0.2s;
+      --duration-med: 0.35s;
+      --duration-slow: 0.5s;
+    }
+    body.theme-light {
+      --bg: #f6f1e7;
+      --bg-soft: #fffdf8;
+      --surface: rgba(255,255,255,0.72);
+      --surface-hover: rgba(255,255,255,0.88);
+      --panel: rgba(255,255,255,0.88);
+      --panel-strong: rgba(255,255,255,0.96);
+      --text: #171512;
+      --text-secondary: #3d3830;
+      --muted: #807868;
+      --gold: #b87b18;
+      --gold-dim: rgba(184,123,24,0.10);
+      --accent: #b44a3d;
+      --accent-2: #0f6d92;
+      --border: rgba(23,21,18,0.08);
+      --border-strong: rgba(23,21,18,0.14);
+      --shadow: 0 20px 55px rgba(58,45,22,0.06);
+      --shadow-sm: 0 6px 18px rgba(58,45,22,0.04);
+    }
+    * { box-sizing: border-box; margin: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    body {
+      background: radial-gradient(ellipse at top, #1a1d28 0%, #0b0d12 40%, #06070a 100%);
+      color: var(--text);
+      font-family: 'Source Serif 4', Georgia, serif;
+      line-height: 1.78;
+      transition: background 0.4s var(--ease), color 0.3s var(--ease);
+    }
+    body.theme-light {
+      background: linear-gradient(180deg, #fffdf8 0%, #f6f1e7 100%);
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Reading progress ── */
+    .progress {
+      position: fixed; top: 0; left: 0; width: 0%; height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--gold)); z-index: 999;
+      box-shadow: 0 0 12px rgba(255,159,140,0.4);
+      transition: width 0.08s linear;
+    }
+
+    .wrap {
+      width: min(1200px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 24px 0 80px;
+    }
+
+    /* ── Top bar ── */
+    .topbar {
+      display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
+      padding-bottom: 16px; border-bottom: 1px solid var(--border); margin-bottom: 28px;
+    }
+    .toolbar { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+    .brand {
+      display: inline-flex; gap: 12px; align-items: center; color: var(--text);
+      font-family: 'Inter', sans-serif;
+    }
+    .brand-mark {
+      width: 40px; height: 40px; border-radius: var(--radius-xs); display: grid; place-items: center; overflow: hidden; flex-shrink: 0;
+      box-shadow: 0 6px 20px rgba(240,180,74,0.18);
+      transition: transform var(--duration-med) var(--ease), box-shadow var(--duration-med) var(--ease);
+    }
+    .brand-mark img { width: 100%; height: 100%; display: block; border-radius: inherit; }
+    .brand:hover .brand-mark { transform: scale(1.04); box-shadow: 0 10px 28px rgba(240,180,74,0.28); }
+    body.theme-light .brand-mark { box-shadow: 0 4px 16px rgba(58,45,22,0.12); }
+    .brand-name { font-weight: 800; font-size: 18px; letter-spacing: -0.03em; }
+    .brand-meta { font-size: 12px; color: var(--muted); font-weight: 500; }
+
+    .reading-time {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; color: var(--muted); letter-spacing: 0.04em;
+      padding: 8px 12px; border-radius: 999px;
+      background: var(--surface); border: 1px solid var(--border);
+    }
+    .theme-toggle {
+      display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+      padding: 8px 14px; border-radius: 999px; border: 1px solid var(--border);
+      background: var(--surface); color: var(--muted);
+      font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer;
+      transition: color var(--duration-fast), border-color var(--duration-fast);
+    }
+    .theme-toggle:hover { color: var(--text); border-color: var(--border-strong); }
+    .theme-toggle svg { width: 14px; height: 14px; }
+
+    .share-row {
+      display: flex; gap: 6px; flex-wrap: wrap; align-items: center;
+      font-family: 'Inter', sans-serif;
+    }
+    .share-label {
+      font-size: 10px; text-transform: uppercase; letter-spacing: 0.14em;
+      color: var(--muted); font-weight: 700; margin-right: 2px;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .share-btn {
+      display: inline-flex; align-items: center; justify-content: center; padding: 8px 14px;
+      border-radius: 999px; border: 1px solid var(--border);
+      background: var(--surface); color: var(--text);
+      font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer;
+      transition: border-color var(--duration-fast), background var(--duration-fast), transform var(--duration-fast) var(--ease);
+    }
+    .share-btn:hover { border-color: var(--border-strong); background: var(--surface-hover); transform: translateY(-1px); }
+
+    /* ── Layout ── */
+    .layout {
+      display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 32px; align-items: start;
+    }
+
+    /* ── Article ── */
+    article {
+      min-width: 0;
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.015));
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .article-inner { padding: 44px 42px 48px; }
+
+    /* ── Article header ── */
+    .article-eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      text-transform: uppercase; letter-spacing: 0.14em; font-size: 11px;
+      color: var(--gold); font-weight: 600;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .article-eyebrow::before {
+      content: ""; width: 20px; height: 1px; background: var(--gold); opacity: 0.5;
+    }
+    h1 {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(38px, 5.5vw, 68px);
+      line-height: 0.96;
+      letter-spacing: -0.05em;
+      font-weight: 900;
+      margin: 18px 0 16px;
+      max-width: 14ch;
+    }
+    .dek {
+      font-size: clamp(19px, 2vw, 25px);
+      line-height: 1.5;
+      color: var(--text-secondary);
+      max-width: 22em;
+      margin: 0 0 18px;
+    }
+
+    /* ── Article cover ── */
+    .article-cover {
+      width: 100%; height: auto; display: block;
+      border-radius: var(--radius-md); margin: 10px 0 26px;
+      border: 1px solid var(--border);
+      object-fit: cover; aspect-ratio: 16/9;
+    }
+
+    /* ── Tags ── */
+    .tag-row {
+      display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 24px;
+    }
+    .tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.06em;
+      padding: 5px 12px; border-radius: 999px;
+      background: var(--gold-dim); color: var(--gold);
+      border: 1px solid transparent;
+      transition: border-color var(--duration-fast);
+      text-decoration: none;
+    }
+    .tag:hover { border-color: var(--gold); text-decoration: none; }
+
+    /* ── Metadata cards ── */
+    .hero-meta {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 0 0 32px;
+    }
+    .meta-card {
+      padding: 16px; border-radius: var(--radius-sm);
+      background: var(--surface); border: 1px solid var(--border);
+      font-family: 'Inter', sans-serif;
+      transition: border-color var(--duration-fast);
+    }
+    .meta-card:hover { border-color: var(--border-strong); }
+    .meta-card strong {
+      display: block; margin-bottom: 6px; color: var(--gold);
+      font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+      font-family: 'IBM Plex Mono', monospace; font-weight: 600;
+    }
+    .meta-card span { font-size: 13px; color: var(--text-secondary); line-height: 1.45; }
+
+    /* ── Body text ── */
+    p { font-size: 20px; margin: 0 0 22px; color: var(--text); }
+    .lead { font-size: 22px; color: var(--text); line-height: 1.7; }
+    body.theme-light .lead { color: var(--text); }
+
+    h2 {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(26px, 3vw, 36px);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      font-weight: 800;
+      margin: 52px 0 18px;
+      scroll-margin-top: 24px;
+    }
+
+    /* ── Signal boxes ── */
+    .signal {
+      padding: 24px; margin: 22px 0;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      transition: border-color var(--duration-fast);
+    }
+    .signal:hover { border-color: var(--border-strong); }
+    .signal h3 {
+      margin: 0 0 12px;
+      font-family: 'Inter', sans-serif;
+      font-size: 22px; line-height: 1.15;
+      letter-spacing: -0.02em; font-weight: 700;
+      color: var(--text);
+    }
+
+    /* ── Action boxes ── */
+    .takeaways { display: grid; gap: 14px; margin: 32px 0 14px; }
+    .action-box {
+      padding: 22px 24px;
+      border-left: 3px solid var(--gold);
+      background: var(--surface); border-top: 1px solid var(--border);
+      border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin: 0;
+    }
+    .action-box h4 {
+      margin: 0 0 10px; font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; letter-spacing: 0.10em; text-transform: uppercase;
+      color: var(--gold); font-weight: 600;
+    }
+
+    ul { margin: 0; padding-left: 22px; }
+    li { margin: 10px 0; font-size: 18px; color: var(--text-secondary); }
+
+    /* ── Source box ── */
+    .source-box {
+      padding: 22px 24px; margin-top: 36px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+    }
+    .source-box .meta-kicker {
+      font-family: 'IBM Plex Mono', monospace;
+      text-transform: uppercase; letter-spacing: 0.14em; font-size: 11px;
+      color: var(--muted); font-weight: 600; margin-bottom: 14px;
+    }
+    .source-box ol { padding-left: 22px; margin: 0; }
+    .source-box li { font-size: 15px; color: var(--muted); margin-bottom: 10px; line-height: 1.55; }
+    .source-box a { color: var(--accent); }
+
+    /* ── Article footer ── */
+    .article-footer {
+      margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--border);
+      font-family: 'IBM Plex Mono', monospace; font-size: 11px;
+      letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+    }
+    .article-footer a { color: var(--gold); text-decoration: none; font-family: 'IBM Plex Mono', monospace; }
+    .article-footer a:hover { text-decoration: underline; }
+
+    /* ── Sidebar ── */
+    aside {
+      position: sticky; top: 24px;
+      display: grid; gap: 14px;
+    }
+    .sticky-card {
+      padding: 20px; font-family: 'Inter', sans-serif;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+    }
+    .side-kicker {
+      font-family: 'IBM Plex Mono', monospace;
+      text-transform: uppercase; letter-spacing: 0.14em; font-size: 10px;
+      color: var(--muted); font-weight: 600; margin-bottom: 14px;
+    }
+    .sticky-card p { font-family: 'Inter', sans-serif; font-size: 14px; color: var(--muted); margin-bottom: 12px; line-height: 1.6; }
+    .sticky-card ul { padding-left: 16px; }
+    .sticky-card li { font-family: 'Inter', sans-serif; font-size: 13px; color: var(--text-secondary); margin: 8px 0; line-height: 1.5; }
+
+    /* ── Table of contents ── */
+    .toc-list { list-style: none; padding: 0; margin: 0; }
+    .toc-list li { margin: 0; padding: 0; }
+    .toc-list a {
+      display: block; padding: 8px 12px; border-radius: var(--radius-xs);
+      font-size: 13px; font-weight: 500; color: var(--muted);
+      transition: color var(--duration-fast), background var(--duration-fast);
+      text-decoration: none; line-height: 1.35;
+    }
+    .toc-list a:hover { color: var(--text); background: var(--surface-hover); }
+    .toc-list a.active { color: var(--gold); background: var(--gold-dim); }
+
+    .share-stack { display: grid; gap: 8px; }
+    .share-stack .share-btn { width: 100%; justify-content: center; }
+
+    /* ── Footer ── */
+    footer {
+      margin-top: 36px; padding: 18px 0 56px; border-top: 1px solid var(--border);
+      font-family: 'IBM Plex Mono', monospace; font-size: 12px;
+      letter-spacing: 0.04em; color: var(--muted);
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+    }
+    footer a { color: var(--gold); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* ── Reduced motion ── */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      .progress { transition: none; }
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 1020px) {
+      .layout { grid-template-columns: 1fr; }
+      aside { position: static; }
+    }
+    @media (max-width: 720px) {
+      .wrap { width: min(100% - 24px, 1200px); padding-top: 18px; }
+      .article-inner { padding: 28px 22px 34px; }
+      .hero-meta { grid-template-columns: 1fr; }
+      p { font-size: 18px; }
+      .lead { font-size: 19px; }
+      .signal, .action-box, .sticky-card, .source-box { border-radius: var(--radius-sm); }
+      .topbar { align-items: flex-start; }
+      .share-row { width: 100%; }
+      .tag-row { margin-bottom: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+  <div class="wrap">
+    <div class="topbar">
+      <a class="brand" href="/">
+        <span class="brand-mark"><img src="/assets/brand/logo-square.png" alt="CyberPulse" /></span>
+        <span>
+          <div class="brand-name">CyberPulse</div>
+          <div class="brand-meta">Executive cyber intelligence</div>
+        </span>
+      </a>
+      <div class="toolbar">
+        <span class="reading-time">7 min</span>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">
+          <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <span id="themeLabel">Light</span>
+        </button>
+        <div class="share-row">
+          <span class="share-label">Share</span>
+          <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=https://tusharvartak.com/posts/2026-04-24.html" data-analytics="share-linkedin">LinkedIn</a>
+          <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=Identity%20Is%20the%20New%20Control%20Plane%20Risk&url=https://tusharvartak.com/posts/2026-04-24.html" data-analytics="share-x">X</a>
+          <button class="share-btn" id="copyLinkBtn" type="button" data-analytics="share-copy">Copy link</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="layout">
+      <article>
+        <div class="article-inner">
+          <div class="article-eyebrow">CyberPulse &middot; Edition No. 6 &middot; Friday, April 24, 2026</div>
+          <h1>Identity Is the New Control Plane Risk</h1>
+          <p class="dek">Attackers are shifting from endpoints to identity and cloud trust, abusing OAuth apps, tokens, and executive workflows to bypass patches and monetize faster.</p>
+
+          <div class="tag-row">
+            <!-- Add tags as clickable links: <a class="tag" href="/archive/?tag=TagName">TagName</a> -->
+                        <a class="tag" href="/archive/?tag=Identity">Identity</a>
+            <a class="tag" href="/archive/?tag=Cloud">Cloud</a>
+            <a class="tag" href="/archive/?tag=OAuth">OAuth</a>
+            <a class="tag" href="/archive/?tag=BEC">BEC</a>
+          </div>
+
+          <img class="article-cover" src="/assets/covers/2026-04-24.png" alt="CyberPulse editorial cover image for Identity Is the New Control Plane Risk" loading="lazy">
+
+          <div class="hero-meta">
+            <div class="meta-card">
+              <strong>Confidence</strong>
+              <span>High</span>
+            </div>
+            <div class="meta-card">
+              <strong>Published</strong>
+              <span>Friday, April 24, 2026</span>
+            </div>
+            <div class="meta-card">
+              <strong>Primary signal</strong>
+              <span>Enterprise risk is converging on identity and cloud control planes—where app-to-app trust, non-human tokens, and executive workflows let attackers operate at business speed, beyond the reach of traditional patch-and-detect cycles.</span>
+            </div>
+            <div class="meta-card">
+              <strong>Why it matters</strong>
+              <span>Losses now materialize through payment fraud, data access, and third‑party cascade rather than malware alone. Resilience depends on revocation speed, privileged app governance, and concentration risk controls across identity and SaaS providers.</span>
+            </div>
+          </div>
+
+          <!-- ── Lead paragraph ── -->
+          <p class="lead">Multiple vendor advisories highlight a rise in consent phishing and rogue OAuth applications used to secure persistent access to Microsoft 365 and Google Workspace without touching endpoints. By abusing legitimate scopes, adversaries can read mail, exfiltrate files, and create new apps and secrets while blending into normal admin activity.</p>
+
+          <!-- ── Body paragraphs ── -->
+                    <h2 id="the-story-that-matters">The story that matters</h2>
+          <div class="signal">
+            <h3>OAuth apps and tokens become the attacker on-ramp</h3>
+            <p>Multiple vendor advisories highlight a rise in consent phishing and rogue OAuth applications used to secure persistent access to Microsoft 365 and Google Workspace without touching endpoints. By abusing legitimate scopes, adversaries can read mail, exfiltrate files, and create new apps and secrets while blending into normal admin activity.</p>
+            <p>This moves risk from servers to trust relationships: if your identity provider or SaaS app store approves the wrong scopes, attackers inherit your business processes. Because compromise lives in tokens and service principals, patch velocity and EDR efficacy matter less than how quickly you can detect, revoke, and re-baseline app permissions.</p>
+          </div>
+          <div class="signal">
+            <h3>AI-boosted executive fraud compresses the kill chain</h3>
+            <p>The FBI continues to report record business email compromise losses as adversaries pair stolen identities with AI-crafted emails, voice, and documents to push urgent wire changes and vendor remittance updates. Campaigns increasingly pivot through compromised SaaS mailboxes and finance portals rather than on-prem systems, reducing alerting and audit trails.</p>
+            <p>For boards, this is a treasury and vendor-management problem as much as a cyber problem. Controls must assume convincing, real-time impersonation and require independent verification on money movement and contract changes, not just MFA at login.</p>
+          </div>
+          <h2 id="beyond-one-cve">Beyond one CVE</h2>
+          <p>Today’s exposure isn’t a single unpatched server—it’s a mesh of app-to-app authorizations, long‑lived refresh tokens, and service principals that inherit production privileges. These identities are often created outside central IT, approved by default, and rarely reviewed, creating durable access that outlives employees and projects.</p>
+          <p>Because the compromise lives in trust rather than code, remediation hinges on governance: inventory privileged OAuth apps, constrain scopes, rotate and revoke tokens on anomaly, and disable default tenant-wide consent. Traditional vulnerability SLAs don’t measure the risk of a stolen token or an over‑privileged cloud role.</p>
+          <h2 id="enterprise-risk">Enterprise risk</h2>
+          <p>Financial impact is shifting from downtime to direct losses and unauthorized data access: a single successful consent grant can expose mailboxes, drive content, customer records, and sensitive deal flow, while a convincing vendor fraud request can move seven or eight figures before detection. Insurance recovery is not guaranteed when internal controls fail.</p>
+          <p>Concentration risk amplifies the blast radius. If one identity provider, email platform, or finance SaaS becomes a single point of failure—by outage or compromise—business operations, regulatory obligations, and third‑party SLAs all move together. Identity-first architectures must assume provider disruption and malicious token use at the same time.</p>
+          <p>Boards should ask for metrics that describe business control, not only technical posture: number of high-privilege OAuth apps, time-to-revoke a risky token, percentage of non‑human identities with conditional access, finance workflow verification rates, and dependency mapping between critical processes and specific identity or SaaS providers.</p>
+
+          <!-- ── Sections ── -->
+          <!--
+            Use this pattern for each section:
+
+            <h2 id="section-slug">Section title</h2>
+            <p>Narrative paragraph...</p>
+
+            Use signal boxes for key findings:
+            <div class="signal">
+              <h3>Signal headline</h3>
+              <p>Signal detail paragraph...</p>
+            </div>
+          -->
+
+          <!-- ── Takeaways ── -->
+          <h2 id="takeaways">Takeaways</h2>
+          <div class="takeaways">
+            <div class="action-box">
+              <h4>Board takeaway in 20 seconds</h4>
+              <ul>
+                <li>Identity and SaaS trust are now the primary breach paths and fraud levers, not unpatched servers.</li>
+                <li>Resilience depends on revocation speed, privileged app governance, and tested money‑movement verification.</li>
+              </ul>
+            </div>
+            <div class="action-box">
+              <h4>What should CISOs do?</h4>
+              <ul>
+                <li>Inventory and restrict OAuth apps and service principals; require admin consent, least‑privilege scopes, and periodic re‑attestation.</li>
+                <li>Instrument rapid revocation: detect anomalous grants and token use, enforce just‑in‑time access, and automate kill‑switches for high‑risk apps.</li>
+                <li>Tabletop joint scenarios with Treasury, Procurement, and Legal for compromised SaaS mailboxes and vendor fraud, including out‑of‑band verification.</li>
+              </ul>
+            </div>
+            <div class="action-box">
+              <h4>What should boards demand?</h4>
+              <ul>
+                <li>Quarterly metrics on privileged app counts, non‑human identities, time‑to‑revoke, and finance verification adherence.</li>
+                <li>Independent validation of identity provider and SaaS configurations against SCuBA or equivalent baselines, with findings tied to remediation SLAs.</li>
+                <li>A concentration‑risk plan for identity and critical SaaS: failover options, incident communications, and provider contractual controls.</li>
+              </ul>
+            </div>
+            <div class="action-box">
+              <h4>What should risk committees rethink?</h4>
+              <ul>
+                <li>Treat executive fraud and SaaS identity compromise as treasury risk with cyber enablement, not just IT incidents.</li>
+                <li>Reassess insurance coverage and conditions for social engineering and funds transfer fraud given AI‑enabled impersonation.</li>
+                <li>Set risk appetite for third‑party identity dependence and define triggers for provider diversification or compensating controls.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- ── Blind spot ── -->
+          <h2 id="blind-spot">The board blind spot</h2>
+                    <p>Non‑human identities—service accounts, automation bots, CI/CD runners—often hold broader, longer‑lived access than users and are rarely bound by conditional access or step‑up verification. They are prime targets for token theft and secret reuse across environments.</p>
+          <p>Many cloud and SaaS platforms do not log every token grant, refresh, and scope change by default, and retention windows can be short. Without enriched identity telemetry and normalized app consent logs, incident response cannot prove containment or scope.</p>
+          <p>Business continuity plans often assume infrastructure failover, not identity or SaaS control‑plane degradation. A compromised or unavailable identity provider can block access to emergency tooling and communications; build break‑glass access and offline playbooks now.</p>
+
+          <!-- ── Sources ── -->
+          <div class="source-box">
+            <div class="meta-kicker">Sources</div>
+            <ol>
+              <!-- <li><a href="URL">Publication, Article title</a></li> -->
+                            <li><a href="https://www.microsoft.com/security/blog/2025/11/12/threat-actors-abuse-oauth-applications-for-persistence">Microsoft Threat Intelligence: Threat actors abuse OAuth applications for persistence</a></li>
+              <li><a href="https://www.cisa.gov/scuba">CISA: Microsoft 365 Secure Configuration Baseline (SCuBA)</a></li>
+              <li><a href="https://www.ic3.gov/Media/PDF/AnnualReport/2024_IC3Report.pdf">FBI IC3: 2024 Internet Crime Report</a></li>
+              <li><a href="https://www.mandiant.com/resources/blog/cloud-identity-persistence-techniques">Mandiant: Cloud identity persistence techniques</a></li>
+            </ol>
+          </div>
+
+          <div class="article-footer">
+            <span>CyberPulse &middot; Signal over noise &middot; Edition No. 6</span>
+            <a href="/">Home</a>
+          </div>
+        </div>
+      </article>
+
+      <aside>
+        <div class="sticky-card">
+          <div class="side-kicker">In this edition</div>
+          <ul class="toc-list">
+            <!-- Build TOC from h2 ids -->
+                        <li><a href="#the-story-that-matters">The story that matters</a></li>
+            <li><a href="#beyond-one-cve">Beyond one CVE</a></li>
+            <li><a href="#enterprise-risk">Enterprise risk</a></li>
+            <li><a href="#takeaways">Takeaways</a></li>
+            <li><a href="#blind-spot">Blind spot</a></li>
+          </ul>
+        </div>
+
+        <div class="sticky-card">
+          <div class="side-kicker">At a glance</div>
+          <p>Identity and cloud trust are the current enterprise fault lines.</p>
+          <ul>
+                        <li>Attackers exploit OAuth apps and tokens to persist in SaaS without malware.</li>
+            <li>AI is accelerating executive impersonation and vendor fraud with convincing lures.</li>
+            <li>Cloud control-plane access and non-human identities expand blast radius silently.</li>
+          </ul>
+        </div>
+
+        <div class="sticky-card">
+          <div class="side-kicker">Share this briefing</div>
+          <div class="share-stack">
+            <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=https://tusharvartak.com/posts/2026-04-24.html" data-analytics="share-linkedin">Share on LinkedIn</a>
+            <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=Identity%20Is%20the%20New%20Control%20Plane%20Risk&url=https://tusharvartak.com/posts/2026-04-24.html" data-analytics="share-x">Share on X</a>
+            <button class="share-btn" id="copyLinkBtnAside" type="button" data-analytics="share-copy">Copy article link</button>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      <span>&copy; 2026 CyberPulse</span>
+      <span><a href="/">Home</a> &middot; <a href="/archive/">Archive</a> &middot; <a href="/feed.xml">RSS</a></span>
+    </footer>
+  </div>
+
+  <script>
+    /* Theme */
+    const storedTheme = localStorage.getItem('cyberpulse-theme');
+    if (storedTheme === 'light') document.body.classList.add('theme-light');
+    const themeBtn = document.getElementById('themeToggle');
+    const themeLabel = document.getElementById('themeLabel');
+    const themeIcon = document.getElementById('themeIcon');
+    const sunIcon = '<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>';
+    const moonIcon = '<path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>';
+    const syncTheme = () => {
+      const isLight = document.body.classList.contains('theme-light');
+      themeLabel.textContent = isLight ? 'Dark' : 'Light';
+      themeIcon.innerHTML = isLight ? moonIcon : sunIcon;
+    };
+    syncTheme();
+    themeBtn.addEventListener('click', () => {
+      document.body.classList.toggle('theme-light');
+      localStorage.setItem('cyberpulse-theme', document.body.classList.contains('theme-light') ? 'light' : 'dark');
+      syncTheme();
+    });
+
+    /* Reading progress */
+    const progress = document.getElementById('progress');
+    const updateProgress = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progress.style.width = pct + '%';
+    };
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+
+    /* TOC active state */
+    const tocLinks = document.querySelectorAll('.toc-list a');
+    const headings = Array.from(tocLinks).map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+    const updateTOC = () => {
+      let current = '';
+      for (const h of headings) {
+        if (h.getBoundingClientRect().top <= 80) current = h.id;
+      }
+      tocLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+      });
+    };
+    window.addEventListener('scroll', updateTOC, { passive: true });
+    updateTOC();
+
+    /* Copy link */
+    const copyUrl = async () => {
+      const url = window.location.href;
+      try { await navigator.clipboard.writeText(url); }
+      catch { const i = document.createElement('input'); i.value = url; document.body.appendChild(i); i.select(); document.execCommand('copy'); i.remove(); }
+      [document.getElementById('copyLinkBtn'), document.getElementById('copyLinkBtnAside')].filter(Boolean).forEach(btn => {
+        const old = btn.textContent; btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = old, 1500);
+      });
+    };
+    document.getElementById('copyLinkBtn')?.addEventListener('click', copyUrl);
+    document.getElementById('copyLinkBtnAside')?.addEventListener('click', copyUrl);
+
+    /* Analytics stub */
+    document.querySelectorAll('[data-analytics]').forEach(el => {
+      el.addEventListener('click', () => {
+        const event = el.getAttribute('data-analytics');
+        if (typeof window.cpAnalytics === 'function') window.cpAnalytics(event);
+      });
+    });
+  </script>
+</body>
+</html>

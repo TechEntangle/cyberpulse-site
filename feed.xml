@@ -5,13 +5,22 @@
     <link>https://tusharvartak.com</link>
     <description>Executive cyber intelligence briefings on cyber risk, AI threats, infrastructure exposure, and board-level decision-making.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Apr 2026 06:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 24 Apr 2026 06:00:00 +0000</lastBuildDate>
     <atom:link href="https://tusharvartak.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://tusharvartak.com/assets/og/default.png</url>
       <title>CyberPulse</title>
       <link>https://tusharvartak.com</link>
     </image>
+    <item>
+      <title>Identity Is the New Control Plane Risk</title>
+      <link>https://tusharvartak.com/posts/2026-04-24.html</link>
+      <guid isPermaLink="true">https://tusharvartak.com/posts/2026-04-24.html</guid>
+      <pubDate>Fri, 24 Apr 2026 06:00:00 +0000</pubDate>
+      <dc:creator>Tushar Vartak</dc:creator>
+      <description>Identity, not just infrastructure, now defines enterprise cyber risk. Cloud control-plane weaknesses, OAuth abuse, and AI-enabled fraud are eroding traditional defenses and concentrating risk in a few providers.</description>
+      <enclosure url="https://tusharvartak.com/assets/covers/2026-04-24.png" type="image/png" length="0"/>
+    </item>
     <item>
       <title>The Exposure Queue Is Starting to Look Like the Threat Surface</title>
       <link>https://tusharvartak.com/posts/2026-04-22.html</link>
