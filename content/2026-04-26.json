@@ -1,0 +1,154 @@
+{
+  "date": "2026-04-26",
+  "edition": 8,
+  "publishedLabel": "Sunday, April 26, 2026",
+  "coverImage": "/assets/covers/2026-04-26.png",
+  "ogImage": "/assets/og/2026-04-26.png",
+  "title": "Your AI Models Are Now Crown Jewels—And Your MLOps Is the Front Door",
+  "dek": "Model weights, training data, and API credentials now sit in third‑party AI platforms and CI/CD. Attackers don’t need ransomware when they can steal your models, siphon data, and pivot via tokens and service accounts at cloud speed.",
+  "metaDescription": "AI models and training data are high‑value assets flowing through MLOps and SaaS. Recent token compromises and third‑party breaches show concentration risk and governance gaps that convert into IP loss, fraud, and operational disruption.",
+  "ogDescription": "Boards must treat AI pipelines like financial systems: inventory models and secrets, enforce revocation SLAs, constrain egress, and plan for a provider breach or outage across identity and AI platforms.",
+  "readTime": "5 min",
+  "confidence": "High",
+  "primarySignal": "AI model IP and training data are exposed through MLOps pipelines and third‑party platforms where long‑lived tokens and service accounts create outsized blast radius and concentration risk.",
+  "whyItMatters": "Losses now show up as stolen models, vendor data exfiltration, and hijacked AI workflows driving real payments and decisions—well before malware is detected. Resilience depends on revocation speed, egress control, and survivability of AI operations if an identity or AI platform is compromised.",
+  "tags": [
+    "AI risk",
+    "MLOps",
+    "Tokens",
+    "SaaS"
+  ],
+  "atAGlance": {
+    "text": "AI assets are business‑critical, but the control points sit in third‑party platforms and identity systems you do not fully control.",
+    "bullets": [
+      "Model weights and training data are now prime theft targets with immediate competitive impact.",
+      "Long‑lived tokens and service accounts in AI and CI/CD create silent, high‑privilege access.",
+      "Third‑party concentration means one provider incident can disrupt many AI workflows at once."
+    ]
+  },
+  "sections": [
+    {
+      "id": "the-story-that-matters",
+      "title": "The story that matters",
+      "blocks": [
+        {
+          "kind": "signal",
+          "title": "Hugging Face token incident spotlights MLOps blast radius",
+          "paragraphs": [
+            "Hugging Face disclosed compromised access tokens and urged customers to rotate credentials, underscoring how model repos, datasets, and pipelines hinge on long‑lived tokens that often outlive staff and projects.",
+            "For enterprises that mirror or deploy via these platforms, a single exposed token can permit model weight theft, dataset access, and pipeline manipulation—an IP, compliance, and integrity problem rather than a patching issue."
+          ]
+        },
+        {
+          "kind": "signal",
+          "title": "Snowflake breach shows data/AI supply chain concentration risk",
+          "paragraphs": [
+            "Reports on the Snowflake intrusion linked widespread customer data theft to stolen credentials and weak MFA on service accounts—demonstrating how a single third‑party hinge can enable multi‑tenant data exfiltration.",
+            "Many AI pipelines source features and training data from cloud warehouses; when identity and egress controls at that layer fail, multiple downstream models, analytics, and finance workflows are simultaneously at risk."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "beyond-one-cve",
+      "title": "Beyond one CVE",
+      "blocks": [
+        {
+          "kind": "paragraphs",
+          "paragraphs": [
+            "This is not about a single vulnerability; it’s about governance gaps where non‑human identities, tokens, and SaaS connectors bypass standard join/move/leave, review, and revocation processes.",
+            "Risk concentrates where AI platforms, data warehouses, and identity providers intersect: time‑to‑revoke, egress governance, and provider dependency mapping matter more than scanning one more image or patching one more node."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "enterprise-risk",
+      "title": "Enterprise risk",
+      "blocks": [
+        {
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Strategic: Theft of proprietary model weights and curated training data collapses differentiation and valuation assumptions; copies enable competitors and criminals to reproduce capabilities without your cost base.",
+            "Financial and operational: Hijacked AI agents and data pipelines can trigger payment changes, pricing shifts, and customer outreach at machine speed; containment requires revocation and egress controls measured in minutes, not days.",
+            "Regulatory and contractual: Data minimization, residency, and audit obligations extend to AI supply chains; weak visibility into third‑party admin activity, token scope, and cross‑border processing invites enforcement and class‑action risk."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "takeaways",
+      "title": "Takeaways",
+      "blocks": [
+        {
+          "kind": "takeaways",
+          "items": [
+            {
+              "title": "Board takeaway in 20 seconds",
+              "bullets": [
+                "Treat models, datasets, and prompts as crown‑jewel assets with explicit ownership, controls, and recovery plans.",
+                "Measure revocation speed and egress limits across identity, data, and AI platforms as top‑level resilience KPIs."
+              ]
+            },
+            {
+              "title": "What should CISOs do?",
+              "bullets": [
+                "Inventory all AI workloads, models, datasets, and non‑human credentials with owners, scopes, and rotation dates.",
+                "Enforce short‑lived, scoped tokens and mandatory MFA for service accounts; implement just‑in‑time access and workload identity federation.",
+                "Stand up egress guardrails and detections for model and dataset exfiltration; rehearse provider breach playbooks with time‑boxed revocation SLAs."
+              ]
+            },
+            {
+              "title": "What should boards demand?",
+              "bullets": [
+                "A consolidated AI asset register with dependency maps to identity, data, and SaaS providers and tested exit plans.",
+                "Quarterly metrics on token age, orphaned app connections, revocation MTTR, and model/data egress events.",
+                "Third‑party risk attestations that cover AI platforms, including admin activity logging, tenant isolation, and incident notification SLAs."
+              ]
+            },
+            {
+              "title": "What should risk committees rethink?",
+              "bullets": [
+                "Insurance adequacy for IP theft and business interruption from AI platform or identity outages.",
+                "Vendor concentration thresholds for AI hosting, data warehousing, and identity, with pre‑approved alternates and escrow.",
+                "Materiality triggers that include model weight loss, dataset exfiltration, and AI workflow misuse, not just ransomware or PII breaches."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "blind-spot",
+      "title": "Blind spot",
+      "blocks": [
+        {
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Most DLP programs miss model‑weight theft because weights look like ordinary binaries at rest and in transit; without explicit egress controls and canary models, exfiltration goes unseen.",
+            "LoRA adapters, embeddings, and feature stores often sit outside regulated data inventories, leaving sensitive derivatives unclassified and under‑protected.",
+            "Build systems and notebooks routinely cache secrets and artifacts; ephemeral compute and GPU job schedulers complicate forensics, making post‑incident attribution and containment slow and costly."
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "Hugging Face urges users to rotate keys after security incident",
+      "url": "https://techcrunch.com/2024/05/10/hugging-face-keys-rotation-security-incident/"
+    },
+    {
+      "title": "Security notice: Compromised access tokens and recommended actions",
+      "url": "https://huggingface.co/blog/security-incident-keys-rotation"
+    },
+    {
+      "title": "Snowflake intrusion tied to stolen credentials, weak MFA adoption",
+      "url": "https://krebsonsecurity.com/2024/06/snowflake-intrusion-tied-to-stolen-credentials-weak-mfa/"
+    },
+    {
+      "title": "Snowflake says customer data was stolen after hackers used stolen logins",
+      "url": "https://www.wsj.com/tech/cybersecurity/snowflake-customer-data-stolen-credentials/"
+    }
+  ]
+}
