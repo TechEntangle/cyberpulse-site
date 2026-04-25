@@ -5,13 +5,22 @@
     <link>https://tusharvartak.com</link>
     <description>Executive cyber intelligence briefings on cyber risk, AI threats, infrastructure exposure, and board-level decision-making.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Apr 2026 06:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 25 Apr 2026 06:00:00 +0000</lastBuildDate>
     <atom:link href="https://tusharvartak.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://tusharvartak.com/assets/og/default.png</url>
       <title>CyberPulse</title>
       <link>https://tusharvartak.com</link>
     </image>
+    <item>
+      <title>AI-Accelerated Fraud Meets Instant Payments</title>
+      <link>https://tusharvartak.com/posts/2026-04-25.html</link>
+      <guid isPermaLink="true">https://tusharvartak.com/posts/2026-04-25.html</guid>
+      <pubDate>Sat, 25 Apr 2026 06:00:00 +0000</pubDate>
+      <dc:creator>Tushar Vartak</dc:creator>
+      <description>AI-accelerated BEC and vendor fraud, amplified by instant payments and identity delegation, are making treasury workflows the new breach surface.</description>
+      <enclosure url="https://tusharvartak.com/assets/covers/2026-04-25.png" type="image/png" length="0"/>
+    </item>
     <item>
       <title>Identity Is the New Control Plane Risk</title>
       <link>https://tusharvartak.com/posts/2026-04-24.html</link>
