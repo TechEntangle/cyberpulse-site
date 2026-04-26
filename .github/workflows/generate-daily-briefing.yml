@@ -20,6 +20,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: cyberpulse-generate-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   generate-publish-email:
     runs-on: ubuntu-latest
@@ -41,7 +45,9 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies
-        run: npm install -g wrangler@latest
+        run: |
+          npm install
+          npm install -g wrangler@latest
 
       - name: Install librsvg
         run: sudo apt-get update && sudo apt-get install -y librsvg2-bin
@@ -56,16 +62,21 @@ jobs:
           fi
           echo "date=${DATE}" >> "$GITHUB_OUTPUT"
 
-      - name: Ensure manifest exists
+      - name: Generate manifest in cloud
+        run: node scripts/cloud-generate-manifest.mjs "${{ steps.date.outputs.date }}"
+
+      - name: Check topic diversity against last three manifests
+        run: node scripts/check-topic-diversity.mjs "${{ steps.date.outputs.date }}"
+
+      - name: Validate manifest is final
         run: |
           if [ ! -f "content/${{ steps.date.outputs.date }}.json" ]; then
             echo "Missing manifest for ${{ steps.date.outputs.date }}."
-            echo "Automatic editorial generation is not wired in this workflow yet, so create the manifest first."
+            echo "Cloud generation did not produce a manifest."
             exit 1
           fi
           if grep -q 'Draft manifest generated automatically' "content/${{ steps.date.outputs.date }}.json"; then
-            echo "Manifest for ${{ steps.date.outputs.date }} is still a draft scaffold. Daily generation is not fully automated yet."
-            echo "Please replace the scaffold with final editorial content before publish."
+            echo "Manifest for ${{ steps.date.outputs.date }} is still a draft scaffold."
             exit 1
           fi
 
@@ -77,12 +88,9 @@ jobs:
       - name: Publish manifest edition
         run: |
           if [ "${DRY_RUN}" = "true" ]; then
-            node scripts/generate-og.js "${{ steps.date.outputs.date }}" "$(node -e "const e=require('./content/${{ steps.date.outputs.date }}.json'); console.log(e.title)")" "$(node -e "const e=require('./content/${{ steps.date.outputs.date }}.json'); console.log(e.ogDescription)")"
-            node scripts/build-from-content.js "${{ steps.date.outputs.date }}"
-            node scripts/render-site-from-content.js
-            node scripts/validate-publish.js "${{ steps.date.outputs.date }}"
+            node --input-type=module -e "import('./functions/generate-edition.js').then(async m => { const manifest = JSON.parse(require('fs').readFileSync('./content/${{ steps.date.outputs.date }}.json', 'utf8')); const result = await import('./lib/publish.js').then(p => p.publishToRepo(manifest, { dryRun: true })); console.log(JSON.stringify(result, null, 2)); })"
           else
-            node scripts/publish-manifest.js "${{ steps.date.outputs.date }}"
+            node --input-type=module -e "import('./lib/publish.js').then(async p => { const fs = await import('fs'); const manifest = JSON.parse(fs.readFileSync('./content/${{ steps.date.outputs.date }}.json', 'utf8')); const result = await p.publishToRepo(manifest); console.log(JSON.stringify(result, null, 2)); })"
           fi
 
       - name: Send newsletter
