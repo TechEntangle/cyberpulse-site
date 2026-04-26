@@ -27,9 +27,6 @@ concurrency:
 jobs:
   generate-publish-email:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ../cyberpulse-automation
     env:
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
@@ -49,6 +46,7 @@ jobs:
 
       - name: Install dependencies
         run: |
+          cd ..
           npm install
           npm install -g wrangler@latest
 
@@ -66,10 +64,10 @@ jobs:
           echo "date=${DATE}" >> "$GITHUB_OUTPUT"
 
       - name: Generate manifest in cloud
-        run: node scripts/cloud-generate-manifest.mjs "${{ steps.date.outputs.date }}"
+        run: cd .. && node site/scripts/cloud-generate-manifest.mjs "${{ steps.date.outputs.date }}"
 
       - name: Check topic diversity against last three manifests
-        run: node scripts/check-topic-diversity.mjs "${{ steps.date.outputs.date }}"
+        run: cd .. && node site/scripts/check-topic-diversity.mjs "${{ steps.date.outputs.date }}"
 
       - name: Validate manifest is final
         run: |
@@ -90,18 +88,20 @@ jobs:
 
       - name: Publish manifest edition
         run: |
+          cd ..
           if [ "${DRY_RUN}" = "true" ]; then
-            node --input-type=module -e "import('./lib/publish.js').then(async p => { const fs = await import('fs'); const manifest = JSON.parse(fs.readFileSync('../site/content/${{ steps.date.outputs.date }}.json', 'utf8')); const result = await p.publishToRepo(manifest, { dryRun: true }); console.log(JSON.stringify(result, null, 2)); })"
+            node --input-type=module -e "import('./lib/publish.js').then(async p => { const fs = await import('fs'); const manifest = JSON.parse(fs.readFileSync('./site/content/${{ steps.date.outputs.date }}.json', 'utf8')); const result = await p.publishToRepo(manifest, { dryRun: true }); console.log(JSON.stringify(result, null, 2)); })"
           else
-            node --input-type=module -e "import('./lib/publish.js').then(async p => { const fs = await import('fs'); const manifest = JSON.parse(fs.readFileSync('../site/content/${{ steps.date.outputs.date }}.json', 'utf8')); const result = await p.publishToRepo(manifest); console.log(JSON.stringify(result, null, 2)); })"
+            node --input-type=module -e "import('./lib/publish.js').then(async p => { const fs = await import('fs'); const manifest = JSON.parse(fs.readFileSync('./site/content/${{ steps.date.outputs.date }}.json', 'utf8')); const result = await p.publishToRepo(manifest); console.log(JSON.stringify(result, null, 2)); })"
           fi
 
       - name: Send newsletter
         if: ${{ env.SEND_NEWSLETTER == 'true' }}
         run: |
-          TITLE=$(node -e "const e=require('../site/content/${{ steps.date.outputs.date }}.json'); console.log(e.title)")
-          DESC=$(node -e "const e=require('../site/content/${{ steps.date.outputs.date }}.json'); console.log(e.ogDescription)")
-          EDITION=$(node -e "const e=require('../site/content/${{ steps.date.outputs.date }}.json'); console.log(e.edition)")
+          cd ..
+          TITLE=$(node -e "const e=require('./site/content/${{ steps.date.outputs.date }}.json'); console.log(e.title)")
+          DESC=$(node -e "const e=require('./site/content/${{ steps.date.outputs.date }}.json'); console.log(e.ogDescription)")
+          EDITION=$(node -e "const e=require('./site/content/${{ steps.date.outputs.date }}.json'); console.log(e.edition)")
           if [ "${DRY_RUN}" = "true" ]; then
             node email/send.js --date "${{ steps.date.outputs.date }}" --title "$TITLE" --desc "$DESC" --edition "$EDITION" --dry-run
           else
