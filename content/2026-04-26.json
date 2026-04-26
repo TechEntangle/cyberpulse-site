@@ -1,0 +1,154 @@
+{
+  "date": "2026-04-26",
+  "edition": 6,
+  "publishedLabel": "Sunday, April 26, 2026",
+  "coverImage": "/assets/covers/2026-04-26.png",
+  "ogImage": "/assets/og/2026-04-26.png",
+  "title": "Trust Boundaries Are Collapsing Faster Than Patch Cycles",
+  "dek": "Fresh exploitation pressure on Cisco SD-WAN and Apache ActiveMQ, plus voice-led extortion campaigns targeting enterprise help desks, point to the same executive problem: attackers are routing around slow remediation and weak identity verification to reach control planes and data faster.",
+  "metaDescription": "A CyberPulse executive briefing on actively exploited infrastructure flaws and rising vishing-led extortion. The enterprise risk is no longer just exposure, but the speed at which trust boundaries fail across admin systems, SaaS, and support workflows.",
+  "ogDescription": "Actively exploited control-plane flaws and help-desk impersonation campaigns are compressing enterprise response time. Boards should treat revocation speed, admin-surface hardening, and human verification controls as one resilience problem.",
+  "readTime": "6 min read",
+  "confidence": "High confidence, anchored in current reporting from BleepingComputer, Recorded Future News, and RH-ISAC-linked disclosures surfaced this week.",
+  "primarySignal": "Attackers are converging on the fastest trust paths into the enterprise, exploiting exposed control planes while simultaneously using human impersonation to bypass identity controls and accelerate data theft or disruption.",
+  "whyItMatters": "This is no longer a clean split between vulnerability management and social engineering. The same organizations now face infrastructure exploitation, token and admin abuse, and help-desk driven credential theft inside the same shrinking response window.",
+  "tags": [
+    "Control Planes",
+    "Vishing",
+    "Active Exploitation",
+    "Resilience"
+  ],
+  "atAGlance": {
+    "text": "This edition’s real warning is that enterprise trust boundaries are failing at multiple layers at once, technical exposure, administrative access, and human verification.",
+    "bullets": [
+      "CISA-backed reporting shows actively exploited Cisco SD-WAN and Apache ActiveMQ weaknesses still exposing high-leverage enterprise systems.",
+      "BlackFile-linked attacks show vishing can now turn help-desk trust and SaaS access into fast data theft and extortion.",
+      "Leaders should treat patch speed, admin hardening, and out-of-band verification as one response problem, not three separate programs."
+    ]
+  },
+  "sections": [
+    {
+      "id": "the-story-that-matters",
+      "title": "The story that matters",
+      "blocks": [
+        {
+          "kind": "signal",
+          "title": "Control-plane exposure is still handing attackers disproportionate leverage",
+          "paragraphs": [
+            "Fresh CISA-linked reporting this week shows continued active exploitation pressure against Cisco SD-WAN and Apache ActiveMQ, two very different platforms that share one important trait: they sit close to operational control. When those systems are internet-facing or slow to patch, attackers do not just gain a foothold, they gain visibility and leverage over how critical business infrastructure is managed.",
+            "That matters at board level because these are not edge cases. SD-WAN managers and message brokers are the connective tissue of enterprise operations. A single exposed admin or messaging layer can create a path to sensitive information, downstream systems, or service disruption without the noise of a traditional ransomware event."
+          ]
+        },
+        {
+          "kind": "signal",
+          "title": "Human verification failures are now being exploited like software flaws",
+          "paragraphs": [
+            "At the same time, reporting on the BlackFile extortion campaign shows attackers increasingly using spoofed help-desk calls, MFA interception, and normal SaaS APIs to steal data from platforms like Salesforce and SharePoint. That shifts the breach path from malware deployment to trust abuse, where a convincing phone call and a one-time passcode can open the same doors as a technical exploit.",
+            "The strategic point is that attackers no longer need to choose between exploiting software and exploiting people. They are combining both against the same enterprises, taking whichever path collapses trust boundaries fastest. That is why help-desk process discipline and app-level revocation speed now matter as much as CVE remediation."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "beyond-one-cve",
+      "title": "Beyond one CVE",
+      "blocks": [
+        {
+          "kind": "paragraphs",
+          "paragraphs": [
+            "The deeper problem is not any single vulnerability or criminal group. It is the convergence of exposed management surfaces, reusable identity signals, and business processes that still assume trust can be verified quickly and locally. In practice, most enterprises are still organized as if infrastructure, IAM, and call-center procedures are separate domains with separate clocks.",
+            "Attackers are exploiting the seams between those domains. A delayed patch on a control plane, an over-privileged SaaS integration, or a frontline employee who trusts a spoofed internal caller can each become the first move in the same enterprise compromise. That means resilience depends less on any individual control and more on how fast the organization can invalidate trust when something looks wrong."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "enterprise-risk",
+      "title": "Enterprise risk",
+      "blocks": [
+        {
+          "kind": "paragraphs",
+          "paragraphs": [
+            "First, control-plane systems should be treated as business-critical risk multipliers. When attackers compromise network management or message-routing layers, the impact spreads well beyond IT into continuity, supplier operations, and incident response itself.",
+            "Second, support workflows have become part of the attack surface. Help desks, identity reset processes, and SaaS admin approvals are now direct pathways to data theft and extortion, especially when attackers can register devices, reuse stolen sessions, or operate through legitimate APIs.",
+            "Third, executive readiness should be measured in response compression terms. Boards should ask how quickly the company can patch exposed management surfaces, revoke risky app and account access, freeze suspicious support-driven changes, and communicate across teams when trust has to be broken fast."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "takeaways",
+      "title": "Takeaways",
+      "blocks": [
+        {
+          "kind": "takeaways",
+          "items": [
+            {
+              "title": "Board takeaway in 20 seconds",
+              "bullets": [
+                "The enterprise attack surface now includes both exposed control planes and the humans who can reset, approve, or extend trust into them.",
+                "Resilience depends on shrinking the time between suspicious signal and trust revocation across infrastructure, identity, and support operations."
+              ]
+            },
+            {
+              "title": "What should CISOs do?",
+              "bullets": [
+                "Re-rank remediation around exposed management and messaging systems where compromise creates outsized leverage over downstream operations.",
+                "Harden help-desk and admin workflows with mandatory callback controls, phishing-resistant identity verification, and stronger device-registration checks.",
+                "Instrument rapid revocation across SaaS, identity, and admin systems so suspicious sessions, apps, and accounts can be frozen in minutes rather than investigated for days."
+              ]
+            },
+            {
+              "title": "What should boards demand?",
+              "bullets": [
+                "A current list of internet-facing control-plane systems and the age of unresolved exploited or high-leverage weaknesses affecting them.",
+                "Metrics on how quickly the company can revoke privileged app access, disable suspect sessions, and freeze user-driven access changes after escalation.",
+                "Evidence that support, security, and infrastructure teams have rehearsed a combined response to control-plane exploitation plus identity-driven social engineering."
+              ]
+            },
+            {
+              "title": "What should risk committees rethink?",
+              "bullets": [
+                "Treat support and identity verification functions as operational risk controls, not just IT service processes.",
+                "Model incident impact based on trust collapse speed across admin platforms and SaaS, not only on malware execution or encryption outcomes.",
+                "Review whether cyber insurance, incident retainer, and communications plans assume blended attacks that mix exploited flaws with extortion and data theft."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "blind-spot",
+      "title": "Blind spot",
+      "blocks": [
+        {
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Many enterprises still separate vulnerability response from user-support governance, even though attackers increasingly move between the two in a single campaign. That organizational split creates decision latency precisely where attackers want it.",
+            "Logging often captures the technical side of compromise better than the human side. A spoofed help-desk call, a rushed approval, or a suspicious device registration may be poorly correlated with later SaaS or API abuse, making containment harder and post-incident reconstruction incomplete.",
+            "The next maturity step is not just more detection, but explicit trust-break playbooks: who can revoke access, halt support-driven changes, and suspend exposed admin pathways immediately when signals span both infrastructure and human workflows."
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "CISA flags new SD-WAN flaw as actively exploited in attacks",
+      "url": "https://www.bleepingcomputer.com/news/security/cisa-flags-new-sd-wan-flaw-as-actively-exploited-in-attacks/"
+    },
+    {
+      "title": "Actively exploited Apache ActiveMQ flaw impacts 6,400 servers",
+      "url": "https://www.bleepingcomputer.com/news/security/actively-exploited-apache-activemq-flaw-impacts-6-400-servers/"
+    },
+    {
+      "title": "New BlackFile extortion group linked to surge of vishing attacks",
+      "url": "https://www.bleepingcomputer.com/news/security/new-blackfile-extortion-gang-targets-retail-and-hospitality-orgs/"
+    },
+    {
+      "title": "Treasury Department announces crypto industry cyber threat sharing initiative",
+      "url": "https://therecord.media/treasury-department-announces-crypto-info-sharing"
+    }
+  ]
+}
