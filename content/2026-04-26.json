@@ -1,0 +1,154 @@
+{
+  "atAGlance": {
+    "bullets": [
+      "Attackers are chaining AiTM, OAuth consent, and refresh-token theft to take cloud tenants without touching endpoints.",
+      "Deepfake-enabled BEC is bypassing callbacks by spoofing trusted identities in emails and live meetings.",
+      "Third-party concentration at identity providers and payment processors is a growing single point of failure for enterprises and sectors alike."
+    ],
+    "text": "Identity-driven cloud takeover and AI-enabled payment fraud are now the dominant enterprise loss vectors—faster than patchable bugs and harder to detect with endpoint tools."
+  },
+  "confidence": "Medium",
+  "coverImage": "/assets/covers/2026-04-26.png",
+  "date": "2026-04-26",
+  "dek": "Attackers are skipping endpoints and going straight for identity, cloud control planes, and finance workflows—now supercharged by AI-driven social engineering. The fastest paths to material loss are OAuth abuse and executive fraud, not one more critical patch.",
+  "edition": 6,
+  "metaDescription": "Identity and cloud control-plane abuse are outpacing traditional defenses. OAuth consent attacks and AI-enabled BEC are converting access into cash and disruption. Boards should treat IdP, SaaS integrations, and AP workflows as critical infrastructure.",
+  "ogDescription": "The breach path is identity-first: OAuth consent, token theft, and AI-enabled executive fraud are driving material losses. Harden the cloud control plane and modernize payment verification now.",
+  "ogImage": "/assets/og/2026-04-26.png",
+  "primarySignal": "Identity-centric attacks that exploit OAuth consent, token theft, and AI-enabled social engineering now provide the shortest route from initial access to material business loss.",
+  "publishedLabel": "Sunday, April 26, 2026",
+  "readTime": "5 min",
+  "sections": [
+    {
+      "blocks": [
+        {
+          "kind": "signal",
+          "paragraphs": [
+            "Recent reporting from Microsoft and incident responders highlights a surge in consent-phishing and adversary-in-the-middle campaigns that capture session cookies and grant malicious OAuth apps broad Graph and storage permissions. Once a user or admin clicks “consent,” attackers mint refresh tokens, create service principals, and persist with minimal EDR signal.",
+            "The business effect is immediate: mailbox rules hide approvals, finance connectors are hijacked, SharePoint and cloud storage are quietly exfiltrated, and privileged roles are escalated without an endpoint footprint. In many cases, revoking a user session is not enough; the malicious app and service principal live on until explicitly discovered and removed."
+          ],
+          "title": "OAuth consent abuse and AiTM bypass are handing adversaries the cloud control plane"
+        },
+        {
+          "kind": "signal",
+          "paragraphs": [
+            "FBI and mainstream reporting show business email compromise losses remain the top-reported cyber crime, with attackers now using deepfake voice and video to impersonate executives and vendors during live calls. Compromised cloud mailboxes and vendor portals seed believable invoices and bank-change requests that sail through callback checks when the ‘caller’ sounds and appears legitimate.",
+            "This is no longer a pure email problem; it is a treasury and procurement control problem. Attackers target vendor master data, payment approvers, and AP workflows—where policy often lags practice—turning identity trust signals into authorization to move money. The losses are immediate, insurance recovery is uncertain, and disclosure obligations can follow."
+          ],
+          "title": "AI-accelerated executive fraud is turning vendor payments into a cash-out lane"
+        }
+      ],
+      "id": "the-story-that-matters",
+      "title": "The story that matters"
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Today’s risk is architectural: identity trust, OAuth app sprawl, and finance workflow assumptions—not a single patch. AiTM and consent phishing convert normal login and approval steps into attacker persistence and authorization, while deepfakes exploit human verification rituals that were never designed to handle synthetic media.",
+            "The fix is programmatic: turn off default user consent; enforce admin consent workflows and allow-lists; mandate phishing-resistant MFA and step-up for admins and finance approvers; bind tokens to device and client with conditional access; rotate and inventory service principal secrets; and continuously hunt for anomalous OAuth grants, token reuse, and vendor master changes."
+          ]
+        }
+      ],
+      "id": "beyond-one-cve",
+      "title": "Beyond one CVE"
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Materiality arrives fast when identity is the entry point: cloud tenant takeover enables silent data theft and extortion, while a single fraudulent vendor change can move seven figures in an afternoon. Median BEC losses are rising, and recovery windows are short; the first 24 hours determine whether funds can be recalled.",
+            "Regulatory and audit exposure is growing. SEC incident disclosure rules, SOX controls over financial reporting, and sectoral obligations (e.g., DORA in the EU, NYDFS Part 500) now intersect with identity and payment controls. A compromised IdP or AP workflow can trigger both cyber and financial-reporting impacts, raising scrutiny from auditors and regulators.",
+            "Concentration risk is systemic. An outage or compromise at your IdP, payroll, or AP provider becomes a sector-wide incident, while overprivileged service principals can bridge multiple SaaS estates. Insurance sublimits for social engineering frequently cap recovery well below potential losses, shifting the residual to the balance sheet."
+          ]
+        }
+      ],
+      "id": "enterprise-risk",
+      "title": "Enterprise risk"
+    },
+    {
+      "blocks": [
+        {
+          "items": [
+            {
+              "bullets": [
+                "Identity and finance workflows are now the shortest path to material loss; treat IdP, OAuth, and AP as critical infrastructure.",
+                "Measure and manage consented apps, privileged identities, and payment-change controls with the same rigor as patch SLAs."
+              ],
+              "title": "Board takeaway in 20 seconds"
+            },
+            {
+              "bullets": [
+                "Disable default user consent, enforce admin consent with allow-lists, and continuously review high-privilege OAuth grants and service principals.",
+                "Require phishing-resistant MFA and step-up for admins and finance approvers; enable token binding and conditional access policies that break token replay.",
+                "Integrate treasury and procurement into incident response; simulate vendor-change fraud and rehearse rapid fund-recall with banks."
+              ],
+              "title": "What should CISOs do?"
+            },
+            {
+              "bullets": [
+                "Quarterly metrics on privileged identities, OAuth app inventory, and percent of admins and finance approvers on phishing-resistant MFA.",
+                "A tested playbook to evict malicious OAuth apps and service principals within hours, with named ownership across IAM, SecOps, and app teams.",
+                "Evidence that payment verification uses independently sourced contact data and multi-person approval rather than callbacks from the same email thread."
+              ],
+              "title": "What should boards demand?"
+            },
+            {
+              "bullets": [
+                "Concentration risk at IdP and payment processors, including failover plans, provider attestation, and exit tests.",
+                "Insurance coverage for social engineering and voluntary transfer fraud, including sublimits and conditions tied to control effectiveness.",
+                "Materiality thresholds that consider attempted and prevented wire fraud, cloud control-plane disruption, and finance workflow compromise—not only data exfiltration volume."
+              ],
+              "title": "What should risk committees rethink?"
+            }
+          ],
+          "kind": "takeaways"
+        }
+      ],
+      "id": "takeaways",
+      "title": "Takeaways"
+    },
+    {
+      "blocks": [
+        {
+          "kind": "paragraphs",
+          "paragraphs": [
+            "Machine identities outnumber humans, yet service principals and API keys often have excessive, non-expiring privileges with little monitoring. Attackers know these are durable footholds that survive password resets and device wipes.",
+            "Shadow integrations—employee-installed connectors, marketplace apps, and low-code automations—silently expand your attack surface and authorization graph. Without an authoritative inventory and approval workflow, you cannot meaningfully manage consent risk.",
+            "Verification theater persists in finance: callbacks to phone numbers in the same compromised thread, acceptance of Zoom presence as identity, and single-approver exceptions for ‘urgent’ payments. These patterns are precisely what AI-enabled adversaries are built to exploit."
+          ]
+        }
+      ],
+      "id": "blind-spot",
+      "title": "Blind spot"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Microsoft: Consent phishing and OAuth app abuse evolving in Entra ID",
+      "url": "https://www.microsoft.com/security/blog/2026/04/24/consent-phishing-oauth-app-abuse-entra-id/"
+    },
+    {
+      "title": "Mandiant: AiTM phishing fuels token theft and cloud tenant compromise",
+      "url": "https://www.mandiant.com/resources/blog/aitm-phishing-token-theft-cloud"
+    },
+    {
+      "title": "FBI IC3 2025 Internet Crime Report",
+      "url": "https://www.ic3.gov/Media/PDF/AnnualReports/2025_IC3Report.pdf"
+    },
+    {
+      "title": "KrebsOnSecurity: Okta warns of OAuth app abuse in multi-tenant attacks",
+      "url": "https://krebsonsecurity.com/2026/04/okta-warns-of-oauth-app-abuse-in-multi-tenant-attacks/"
+    }
+  ],
+  "tags": [
+    "Identity",
+    "Cloud",
+    "AI Fraud",
+    "Third-Party"
+  ],
+  "title": "Identity Is the New Control Plane",
+  "whyItMatters": "Boards must treat identity, SaaS integrations, and payment workflows as critical infrastructure and demand control-plane hardening, privileged-user protections, and CFO-grade verification that resists AI deception."
+}
