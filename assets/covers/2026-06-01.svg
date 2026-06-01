@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="bg" cx="30%" cy="20%" r="85%">
+      <stop offset="0" stop-color="#27202a"/>
+      <stop offset="0.45" stop-color="#090b12"/>
+      <stop offset="1" stop-color="#030406"/>
+    </radialGradient>
+    <linearGradient id="door" x1="0" x2="1">
+      <stop offset="0" stop-color="#141824"/>
+      <stop offset="0.5" stop-color="#2b1620"/>
+      <stop offset="1" stop-color="#08121a"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" x2="1">
+      <stop offset="0" stop-color="#f0b44a"/>
+      <stop offset="1" stop-color="#ff7d69"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="14" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3"/></filter>
+    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M 44 0 L 0 0 0 44" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.05"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Network horizon -->
+  <g opacity="0.42" stroke="#7dd3fc" stroke-width="1.5" fill="none">
+    <path d="M45 480 C180 410 250 510 372 438 S620 412 772 470 1010 512 1160 430"/>
+    <path d="M70 392 C210 340 345 420 465 360 S710 322 850 382 1030 410 1135 350" opacity="0.55"/>
+    <path d="M110 540 L255 468 L390 515 L545 436 L704 492 L850 426 L1040 480" opacity="0.38"/>
+  </g>
+  <g fill="#7dd3fc" opacity="0.75">
+    <circle cx="255" cy="468" r="5"/><circle cx="545" cy="436" r="5"/><circle cx="850" cy="426" r="5"/><circle cx="1040" cy="480" r="5"/>
+  </g>
+
+  <!-- False guarded door -->
+  <g transform="translate(455 82)">
+    <ellipse cx="170" cy="475" rx="210" ry="34" fill="#000" opacity="0.5" filter="url(#soft)"/>
+    <path d="M64 410 V60 C64 33 86 12 113 12 H286 C314 12 336 34 336 62 V410" fill="url(#door)" stroke="#f0b44a" stroke-width="3" opacity="0.92"/>
+    <path d="M102 410 V72 H298 V410" fill="#070910" stroke="#ffffff" stroke-width="1" opacity="0.62"/>
+    <path d="M200 72 V410" stroke="#f0b44a" stroke-width="2" opacity="0.48"/>
+    <path d="M118 112 H280 M118 166 H280 M118 220 H280 M118 274 H280 M118 328 H280" stroke="#ffffff" stroke-width="1" opacity="0.11"/>
+    <circle cx="232" cy="244" r="10" fill="url(#gold)" filter="url(#glow)"/>
+    <path d="M232 244 C315 205 380 215 454 174" stroke="url(#gold)" stroke-width="3" fill="none" filter="url(#glow)" opacity="0.9"/>
+    <path d="M232 244 C126 220 82 252 -12 204" stroke="#7dd3fc" stroke-width="2" fill="none" opacity="0.7"/>
+    <path d="M58 64 L-18 64 M342 64 L438 64" stroke="#ff7d69" stroke-width="3" opacity="0.8"/>
+    <text x="200" y="42" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" letter-spacing="3" fill="#f0b44a">ACCESS GRANTED</text>
+    <text x="200" y="438" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="2" fill="#9e9689">NO GUARDRAIL VERIFIED</text>
+  </g>
+
+  <!-- Identity tokens -->
+  <g opacity="0.92">
+    <rect x="92" y="126" width="230" height="72" rx="18" fill="#111722" stroke="#7dd3fc" stroke-opacity="0.35"/>
+    <circle cx="130" cy="162" r="16" fill="#7dd3fc" opacity="0.22"/>
+    <path d="M161 148 H286 M161 168 H248" stroke="#d4cdc2" stroke-width="4" stroke-linecap="round" opacity="0.72"/>
+    <rect x="865" y="104" width="244" height="76" rx="18" fill="#171018" stroke="#ff7d69" stroke-opacity="0.38"/>
+    <path d="M894 142 h54 m-27 -27 v54" stroke="#ff7d69" stroke-width="5" stroke-linecap="round" opacity="0.8"/>
+    <path d="M970 132 H1070 M970 154 H1032" stroke="#d4cdc2" stroke-width="4" stroke-linecap="round" opacity="0.72"/>
+  </g>
+
+  <!-- Text panel -->
+  <g transform="translate(70 382)">
+    <rect x="0" y="0" width="590" height="150" rx="28" fill="#05070b" opacity="0.74" stroke="#ffffff" stroke-opacity="0.08"/>
+    <text x="34" y="44" font-family="IBM Plex Mono, monospace" font-size="14" letter-spacing="4" fill="#f0b44a">CYBERPULSE DAILY</text>
+    <text x="34" y="88" font-family="Inter, Arial, sans-serif" font-size="38" font-weight="800" fill="#f6f1e8">The Door That</text>
+    <text x="34" y="130" font-family="Inter, Arial, sans-serif" font-size="38" font-weight="800" fill="#f6f1e8">Pretended to Be Guarded</text>
+  </g>
+  <text x="1128" y="560" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="16" letter-spacing="2" fill="#9e9689">tusharvartak.com</text>
+</svg>
