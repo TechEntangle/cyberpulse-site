@@ -34,7 +34,7 @@ function normalizeList(list, expectedLength = 0) {
 const articleTags = entry.tags.map(tag => `  <meta property="article:tag" content="${escAttr(tag)}" />`).join('\n');
 const tagRow = entry.tags.map(tag => `            <a class="tag" href="/archive/?tag=${encodeTag(tag)}">${escHtml(tag)}</a>`).join('\n');
 
-const leadParagraph = entry.sections?.[0]?.blocks?.[0]?.paragraphs?.[0] || entry.dek || '';
+const leadParagraph = entry.leadParagraph || entry.sections?.[0]?.blocks?.[0]?.paragraphs?.[0] || entry.dek || '';
 const bodyParts = [];
 const takeawaysSection = entry.sections.find(section => section.id === 'takeaways');
 const blindSpotSection = entry.sections.find(section => section.id === 'blind-spot');

@@ -46,6 +46,9 @@ else if (heroImgMatch[1] !== `/assets/covers/${date}.png`) fail(`article hero us
 else ok('article hero uses cover asset');
 if (!postHtml.includes(`https://tusharvartak.com/assets/covers/${date}.png`) && !postHtml.includes(`https://tusharvartak.com/assets/og/${date}.png`)) fail('post social image metadata missing'); else ok('post social image metadata present');
 
+const unresolved = postHtml.match(/\{\{[^}]+\}\}|Replace with|Narrative paragraph|Signal headline|TagName/);
+if (unresolved) fail(`post contains unresolved template text: ${unresolved[0]}`); else ok('post contains no unresolved template placeholders');
+
 if (!indexHtml.includes(`href="./posts/${date}.html" data-analytics="hero-panel-click"`)) fail('homepage hero link does not target latest post'); else ok('homepage hero link targets latest post');
 if (!indexHtml.includes(`src="./assets/covers/${date}.png"`)) fail('homepage hero image does not target latest cover'); else ok('homepage hero image targets latest cover');
 if (title && !indexHtml.includes(title)) fail('homepage missing latest title'); else ok('homepage includes latest title');
