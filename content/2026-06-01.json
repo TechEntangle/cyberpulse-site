@@ -16,8 +16,8 @@
     "Edge Security",
     "Operational Risk"
   ],
-  "coverImage": "/assets/covers/2026-06-01.png",
-  "ogImage": "/assets/og/2026-06-01.png",
+  "coverImage": "/assets/covers/2026-06-01-v2.png",
+  "ogImage": "/assets/og/2026-06-01-v2.png",
   "atAGlance": {
     "text": "The enterprise edge is a chain of trust dependencies; attackers only need the weakest broker, plugin, kernel path, AI-assisted workflow, or trusted interface to turn access into business risk.",
     "bullets": [

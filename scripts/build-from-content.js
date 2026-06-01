@@ -70,6 +70,8 @@ const glanceBullets = entry.atAGlance.bullets.map(b => `            <li>${escHtm
 
 let out = template;
 out = out.replace(/{{DATE}}/g, entry.date);
+out = out.replace(/{{COVER_IMAGE}}/g, escAttr(entry.coverImage || `/assets/covers/${entry.date}.png`));
+out = out.replace(/{{OG_IMAGE_ABSOLUTE}}/g, escAttr(`https://tusharvartak.com${entry.ogImage || `/assets/og/${entry.date}.png`}`));
 out = out.replace(/{{TITLE}}/g, escAttr(entry.title));
 out = out.replace(/{{META_DESCRIPTION}}/g, escAttr(entry.metaDescription));
 out = out.replace(/{{OG_DESCRIPTION}}/g, escAttr(entry.ogDescription));
