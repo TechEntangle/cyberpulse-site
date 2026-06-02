@@ -1,0 +1,194 @@
+{
+  "date": "2026-06-02",
+  "edition": 9,
+  "title": "The Control Plane Is the Loot",
+  "dek": "Attackers are moving upstream into the systems that create trust: packages, gateways, directories, AI workflows, and the partners that sit near critical enterprises.",
+  "metaDescription": "CyberPulse Daily for June 2, 2026: software supply chain compromise, remote access exploitation, directory controller risk, AI workflow exposure, trusted-interface phishing, and state-linked collection activity.",
+  "ogDescription": "Attackers are optimizing for authority, not noise: the package developers trust, the gateway users pass through, the directory that grants privilege, and the AI surface employees now believe.",
+  "readTime": "6 min read",
+  "confidence": "High",
+  "publishedLabel": "Tuesday, June 2, 2026",
+  "primarySignal": "Attackers are shifting from noisy endpoint compromise toward the control planes that decide what software, sessions, identities, and automation enterprises trust automatically.",
+  "whyItMatters": "If a trusted package, gateway, directory service, or AI workflow is compromised, attackers do not need to break every downstream control. They can inherit authority from the systems that grant it.",
+  "tags": [
+    "Supply Chain",
+    "Identity",
+    "AI Security",
+    "Control Plane"
+  ],
+  "coverImage": "/assets/covers/2026-06-02.png",
+  "ogImage": "/assets/og/2026-06-02.png",
+  "atAGlance": {
+    "text": "The enterprise control plane is becoming the target: software dependency trust, remote access sessions, directory authority, AI workflows, and strategic third-party access now form one chain of business risk.",
+    "bullets": [
+      "Inspect recent high-trust package pulls and rotate build secrets exposed to install workflows.",
+      "Validate remote access gateway and directory controller exposure from telemetry, not spreadsheets.",
+      "Inventory AI workflow tools, shared links, connectors, and supplier access paths touching enterprise data."
+    ]
+  },
+  "sections": [
+    {
+      "id": "the-story-that-matters",
+      "title": "The story that matters",
+      "blocks": [
+        {
+          "kind": "signal",
+          "title": "The control plane is becoming the prize",
+          "paragraphs": [
+            "Today’s signal is that attackers are no longer satisfied with stealing from the edge. They are trying to become the edge, the package maintainer, the artificial intelligence operator, and the directory administrator at the same time.",
+            "For security teams across the Gulf, the uncomfortable question is not whether one product needs a fix. It is whether control planes are still governed as infrastructure, or merely trusted because they have always been trusted."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "software-supply-chain",
+      "title": "Software supply chain risk",
+      "blocks": [
+        {
+          "kind": "signal",
+          "title": "Package trust is now privileged identity",
+          "paragraphs": [
+            "The lead story is a software supply chain compromise affecting an enterprise package namespace, where malicious packages were modified to behave like a credential-stealing worm. The tactic matters more than the brand.",
+            "A developer installs what looks familiar, automation pulls what appears legitimate, and secrets move before a human has time to notice. The update pipeline is not just a delivery mechanism. It is a privileged identity system with write access to the future."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "operational-priorities",
+      "title": "Operational priorities",
+      "blocks": [
+        {
+          "kind": "paragraphs",
+          "paragraphs": [
+            "P zero for today: freeze and inspect recent package pulls from high-trust internal build systems, especially where packages are mirrored automatically into private registries. Rotate tokens exposed to build runners, development containers, and continuous integration jobs.",
+            "P one: enforce provenance controls on software dependencies. Require signed packages where possible, restrict maintainer changes, alert on sudden version jumps, and block install scripts from reaching sensitive environment variables unless explicitly justified.",
+            "P two: run a dependency governance review across application teams. The question is simple: who is allowed to introduce code that production will trust automatically? If the answer is unclear, the organization does not have a supply chain strategy. It has a hope strategy."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "infrastructure-signals",
+      "title": "Infrastructure signals",
+      "blocks": [
+        {
+          "kind": "signal",
+          "title": "Gateways and directories are authority layers",
+          "paragraphs": [
+            "The second signal is active exploitation against a widely deployed remote access gateway flaw. This class of bug remains dangerous because it sits at the point where identity, network reachability, and administrative exception handling collide.",
+            "The third signal is pressure on directory infrastructure. Directory systems are the memory of the organization: users, groups, policies, delegated rights, service accounts, and the quiet exceptions that accumulate for years. If that layer is reachable, unpatched, and under-monitored, attackers do not need to own every system. They need to own the system that tells every other system whom to trust.",
+            "Confirm exposure and patch status for directory controllers and remote access gateways today. Validate from network telemetry, not spreadsheets. Spreadsheets do not get exploited; forgotten interfaces do."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ai-and-third-party-risk",
+      "title": "AI and third-party risk",
+      "blocks": [
+        {
+          "kind": "signal",
+          "title": "Trusted interfaces are expanding",
+          "paragraphs": [
+            "The fourth signal is the artificial intelligence application layer. A critical flaw in a workflow platform for language-model applications has proof-of-concept exploitation risk, while attackers are also abusing shared assistant content to run phishing campaigns.",
+            "Enterprises are adopting artificial intelligence interfaces faster than they are defining the trust boundaries around them. A shared prompt, a generated page, a connector, or a workflow agent can become a delivery path, an exfiltration path, or a command surface.",
+            "The fifth signal is state-linked activity against diplomatic and institutional targets, using stealthier staging and persistence methods. For Gulf enterprises that support public-sector, energy, logistics, finance, or telecom ecosystems, the key point is adjacency. You may not be the primary target. You may be the route."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "takeaways",
+      "title": "What to do now",
+      "blocks": [
+        {
+          "kind": "takeaways",
+          "items": [
+            {
+              "title": "Board takeaway in 20 seconds",
+              "bullets": [
+                "Attackers are optimizing for authority, not noise.",
+                "Protect the systems that create trust before attackers turn them into authority."
+              ]
+            },
+            {
+              "title": "What should CISOs do?",
+              "bullets": [
+                "Freeze and inspect high-trust package pulls and rotate exposed build secrets.",
+                "Validate gateway and directory controller exposure from network telemetry today.",
+                "Inventory AI workflow tools, shared-link features, browser extensions, and connectors that touch enterprise data."
+              ]
+            },
+            {
+              "title": "What should boards demand?",
+              "bullets": [
+                "A clear owner for software dependency trust, including maintainer changes, signed packages, and install-script behavior.",
+                "Evidence that remote access and directory authority layers are patched, monitored, segmented, and reviewed for unusual sessions.",
+                "A third-party access review for strategic suppliers, law firms, consultancies, managed service providers, and joint-venture technology partners."
+              ]
+            },
+            {
+              "title": "What should risk committees rethink?",
+              "bullets": [
+                "Control planes should be treated as tier-zero business infrastructure.",
+                "AI connectors and shared content should be governed as enterprise data paths, not merely productivity features.",
+                "Supplier adjacency can be a route into high-value organizations even when the supplier is not the primary target."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "blind-spot",
+      "title": "The board blind spot",
+      "blocks": [
+        {
+          "kind": "paragraphs",
+          "paragraphs": [
+            "The blind spot is assuming trusted systems are trusted because they are safe. In reality, trusted systems are valuable because the enterprise has already decided not to challenge them every time.",
+            "A package install process, a gateway session, a directory decision, an AI connector call, and a supplier account are all forms of delegated authority. If those forms of authority are invisible, attackers will find them before governance does.",
+            "Defenders should respond by protecting trust itself as a tier-zero asset."
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "title": "The Hacker News — Miasma Supply Chain Attack Compromises Enterprise npm Packages",
+      "url": "https://thehackernews.com/2026/06/miasma-supply-chain-attack-compromises.html"
+    },
+    {
+      "title": "The Hacker News — Weekly Recap: Linux Flaw, PAN-OS Exploit, AI-Powered Attacks, OAuth Phishing",
+      "url": "https://thehackernews.com/2026/06/weekly-recap-new-linux-flaw-pan-os.html"
+    },
+    {
+      "title": "The Hacker News — State-Aligned Groups Ramp Up Attacks",
+      "url": "https://thehackernews.com/2026/06/china-aligned-groups-ramp-up-attacks.html"
+    },
+    {
+      "title": "The Hacker News — Codex Authentication Tokens Stolen in npm Supply Chain Attack",
+      "url": "https://thehackernews.com/2026/06/openai-codex-authentication-tokens.html"
+    },
+    {
+      "title": "The Hacker News — Critical WP Maps Pro Flaw Actively Exploited",
+      "url": "https://thehackernews.com/2026/06/critical-wp-maps-pro-flaw-actively.html"
+    },
+    {
+      "title": "Infosecurity Magazine — Critical Flowise Flaw Gives Attackers Full Server Control",
+      "url": "https://www.infosecurity-magazine.com/news/flowise-mcp-rce-poc/"
+    },
+    {
+      "title": "Infosecurity Magazine — High-Severity Gateway Bug Actively Exploited",
+      "url": "https://www.infosecurity-magazine.com/news/palo-alto-highseverity-bug/"
+    },
+    {
+      "title": "BleepingComputer — Critical Directory Service Flaw Exploited in Attacks",
+      "url": "https://www.bleepingcomputer.com/news/security/critical-windows-netlogon-rce-flaw-now-exploited-in-attacks/"
+    }
+  ],
+  "leadParagraph": "Today’s signal is that attackers are no longer satisfied with stealing from the edge. They are trying to become the edge, the package maintainer, the artificial intelligence operator, and the directory administrator at the same time."
+}
