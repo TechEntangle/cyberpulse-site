@@ -28,7 +28,9 @@ indexHtml = indexHtml.replace(/<span class="stat-value">\d+<\/span> editions pub
 indexHtml = indexHtml.replace(/Edition No\. \d+ &mdash; [^<]+/, `Edition No. ${latest.edition} &mdash; ${latest.publishedLabel.replace(/^[A-Za-z]+,\s*/, '')}`);
 indexHtml = indexHtml.replace(/<a class="btn primary" href="\.\/posts\/[0-9\-]+\.html" data-analytics="cta-read-today">/, `<a class="btn primary" href="./posts/${latest.date}.html" data-analytics="cta-read-today">`);
 indexHtml = indexHtml.replace(/<a href="\.\/posts\/[0-9\-]+\.html" data-analytics="hero-panel-click">/, `<a href="./posts/${latest.date}.html" data-analytics="hero-panel-click">`);
-indexHtml = indexHtml.replace(/<img class="hero-cover" src="\.\/assets\/covers\/[0-9\-]+\.png" alt="[^"]+" loading="lazy">/, `<img class="hero-cover" src="./assets/covers/${latest.date}.png" alt="CyberPulse cover art for ${attr(latest.publishedLabel.replace(/^[A-Za-z]+,\s*/, ''))}" loading="lazy">`);
+const latestCover = latest.coverImage || `/assets/covers/${latest.date}.png`;
+const latestCoverRelative = latestCover.startsWith('/') ? `.${latestCover}` : latestCover;
+indexHtml = indexHtml.replace(/<img class="hero-cover" src="\.\/assets\/covers\/[0-9\-]+(?:-[A-Za-z0-9]+)?\.png" alt="[^"]+" loading="lazy">/, `<img class="hero-cover" src="${attr(latestCoverRelative)}" alt="CyberPulse cover art for ${attr(latest.publishedLabel.replace(/^[A-Za-z]+,\s*/, ''))}" loading="lazy">`);
 indexHtml = indexHtml.replace(/<h2 class="signal-title">[\s\S]*?<\/h2>/, `<h2 class="signal-title">${esc(latest.title)}</h2>`);
 indexHtml = indexHtml.replace(/<p class="signal-desc">[\s\S]*?<\/p>/, `<p class="signal-desc">${esc(latest.ogDescription)}</p>`);
 const latestTags = latest.tags.map(tag => `            <a class="panel-tag" href="/archive/?tag=${encodeTag(tag)}">${esc(tag)}</a>`).join('\n');
