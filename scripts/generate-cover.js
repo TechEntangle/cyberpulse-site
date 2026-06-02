@@ -50,15 +50,21 @@ function themeFromContent(entry) {
 function buildPrompt(entry, themes) {
   const title = entry.title || 'CyberPulse Daily';
   const dek = entry.dek || entry.primarySignal || 'executive cyber risk and control-plane security';
+  const primarySignal = entry.primarySignal || dek;
+  const whyItMatters = entry.whyItMatters || '';
   const tags = (entry.tags || themes).join(', ');
   return [
-    `Premium editorial article header image for CyberPulse Daily: "${title}".`,
-    `Strategic theme: ${dek}`,
-    `Visual motifs: ${themes.join(', ')}; tags: ${tags}.`,
-    'Show enterprise control planes as layered trust infrastructure: software packages, identity graphs, remote gateways, AI workflow connectors, and third-party access paths converging on one protected control core.',
-    'Dark premium magazine aesthetic, deep black/navy background, restrained amber/gold CyberPulse accents with subtle red risk highlights, cinematic but clean, executive cyber intelligence tone, Gulf enterprise security audience.',
-    'No text, no logos, no watermark, no country flags, no recognizable vendor marks, no people, no victim names. Leave calm negative space so the article title can sit nearby in the page layout.'
-  ].join(' ');
+    `Create a premium editorial hero image for a CyberPulse Daily article titled "${title}".`,
+    `The article thesis is: ${dek}`,
+    `Primary signal: ${primarySignal}`,
+    whyItMatters ? `Why it matters: ${whyItMatters}` : '',
+    `Themes to visualize: ${themes.join(', ')}. Topic tags: ${tags}.`,
+    'Make it look like a high-end cyber-intelligence magazine commission, not an icon set or abstract wallpaper.',
+    'Use one strong scene/metaphor: an enterprise trust control room / digital infrastructure command layer where software supply-chain packages, identity directories, remote access gateways, AI workflow agents, and supplier access routes converge around a vulnerable but protected control plane.',
+    'Style: cinematic 3D editorial illustration with realistic depth, volumetric light, glassy translucent interface layers, precise cyber-forensics detail, premium Bloomberg/FT-style restraint, dark navy-black base, warm amber/gold CyberPulse light, small red risk accents, no clutter.',
+    'Composition: 16:9 article header, wide horizontal crop, strong central focal point with meaningful surrounding details, usable negative space near edges, sophisticated contrast, publication-ready at 1200x630.',
+    'Avoid: flat vector icons, generic network dots, childish sci-fi UI, stock-photo hackers, people, flags, logos, text, letters, numbers, watermarks, vendor marks, victim names, country symbolism.'
+  ].filter(Boolean).join(' ');
 }
 
 async function generateWithOpenAI(prompt, out) {
@@ -189,13 +195,18 @@ async function main() {
       console.log(JSON.stringify({ date, provider, output: out, prompt: promptOut, themes }, null, 2));
       return;
     } catch (err) {
-      console.error(`OpenAI image generation failed; falling back to procedural SVG: ${err.message}`);
+      if (!process.env.CYBERPULSE_ALLOW_PROCEDURAL_COVER) {
+        throw new Error(`OpenAI image generation failed and procedural fallback is disabled for publish-quality covers: ${err.message}`);
+      }
+      console.error(`OpenAI image generation failed; CYBERPULSE_ALLOW_PROCEDURAL_COVER is set, falling back to procedural SVG: ${err.message}`);
     }
+  } else if (!process.env.CYBERPULSE_ALLOW_PROCEDURAL_COVER) {
+    throw new Error(`No publish-quality image provider configured. Set OPENAI_API_KEY (recommended) or set CYBERPULSE_ALLOW_PROCEDURAL_COVER=1 only for temporary drafts. Prompt saved to ${promptOut}`);
   }
 
   const svg = generateFallbackSvg(entry, themes);
   const svgPath = renderSvgToPng(svg, out);
-  console.log(JSON.stringify({ date, provider: 'procedural-svg', output: out, svg: svgPath, prompt: promptOut, themes }, null, 2));
+  console.log(JSON.stringify({ date, provider: 'procedural-svg-draft', output: out, svg: svgPath, prompt: promptOut, themes }, null, 2));
 }
 
 main().catch(err => { console.error(err); process.exit(1); });
