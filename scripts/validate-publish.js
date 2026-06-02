@@ -61,7 +61,7 @@ const unresolved = postHtml.match(/\{\{[^}]+\}\}|Replace with|Narrative paragrap
 if (unresolved) fail(`post contains unresolved template text: ${unresolved[0]}`); else ok('post contains no unresolved template placeholders');
 
 if (!indexHtml.includes(`href="./posts/${date}.html" data-analytics="hero-panel-click"`)) fail('homepage hero link does not target latest post'); else ok('homepage hero link targets latest post');
-if (!indexHtml.includes(`src="./${coverPath}"`)) fail('homepage hero image does not target latest cover'); else ok('homepage hero image targets latest cover');
+if (!indexHtml.includes(`src="./${coverPath}`)) fail('homepage hero image does not target latest cover'); else ok('homepage hero image targets latest cover');
 if (title && !indexHtml.includes(title)) fail('homepage missing latest title'); else ok('homepage includes latest title');
 
 if (!archiveHtml.includes(`/posts/${date}.html`)) fail('archive missing latest post'); else ok('archive includes latest post');
