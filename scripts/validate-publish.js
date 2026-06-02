@@ -12,8 +12,11 @@ if (!date) {
 function read(rel) {
   return fs.readFileSync(path.join(ROOT, rel), 'utf8');
 }
+function assetPath(rel) {
+  return String(rel).split('?')[0].replace(/^\//, '');
+}
 function exists(rel) {
-  return fs.existsSync(path.join(ROOT, rel));
+  return fs.existsSync(path.join(ROOT, assetPath(rel)));
 }
 function fail(msg) {
   console.error(`FAIL: ${msg}`);
@@ -30,8 +33,8 @@ let expectedOgPath = `assets/og/${date}.png`;
 const contentPath = path.join(ROOT, 'content', `${date}.json`);
 if (fs.existsSync(contentPath)) {
   const entry = JSON.parse(fs.readFileSync(contentPath, 'utf8'));
-  expectedCoverPath = String(entry.coverImage || `/assets/covers/${date}.png`).replace(/^\//, '');
-  expectedOgPath = String(entry.ogImage || `/assets/og/${date}.png`).replace(/^\//, '');
+  expectedCoverPath = assetPath(entry.coverImage || `/assets/covers/${date}.png`);
+  expectedOgPath = assetPath(entry.ogImage || `/assets/og/${date}.png`);
 }
 const coverPath = expectedCoverPath;
 const ogPath = expectedOgPath;
@@ -50,7 +53,7 @@ if (!title) fail('could not extract title from post'); else ok(`post title extra
 
 const heroImgMatch = postHtml.match(/<img class="article-cover" src="([^"]+)"/);
 if (!heroImgMatch) fail('article hero image tag missing');
-else if (heroImgMatch[1].replace(/^\//, '') !== coverPath) fail(`article hero uses wrong asset: ${heroImgMatch[1]}`);
+else if (assetPath(heroImgMatch[1]) !== coverPath) fail(`article hero uses wrong asset: ${heroImgMatch[1]}`);
 else ok('article hero uses cover asset');
 if (!postHtml.includes(`https://tusharvartak.com/${coverPath}`) && !postHtml.includes(`https://tusharvartak.com/${ogPath}`)) fail('post social image metadata missing'); else ok('post social image metadata present');
 
