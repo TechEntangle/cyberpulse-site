@@ -1,0 +1,23 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#07080B"/>
+  <rect x="40" y="40" width="1120" height="550" rx="30" fill="url(#g1)" stroke="rgba(255,255,255,0.10)"/>
+  
+  <rect x="80" y="80" width="56" height="56" rx="14" fill="#0A0C12"/>
+  <path d="M100 96C96.7 96 94 98.7 94 102C94 105.3 96.7 108 100 108H102V105.5H100C98.1 105.5 96.5 103.9 96.5 102C96.5 100.1 98.1 98.5 100 98.5H102V96H100Z" fill="#F0B44A"/>
+  <rect x="105" y="96" width="3" height="12" rx="1.5" fill="#F5EFE6"/>
+  <path d="M106.5 96H109C111.2 96 113 97.8 113 100C113 102.2 111.2 104 109 104H106.5V101.5H109C109.8 101.5 110.5 100.8 110.5 100C110.5 99.2 109.8 98.5 109 98.5H106.5V96Z" fill="#F5EFE6"/>
+  <circle cx="112" cy="108" r="1.5" fill="#F0B44A" opacity="0.55"/>
+  <text x="148" y="117" fill="#F0B44A" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" letter-spacing="4">CYBERPULSE</text>
+  <text x="84" y="170" fill="#8F887B" font-family="Arial, Helvetica, sans-serif" font-size="18">June 5, 2026</text>
+  <text x="84" y="240" fill="#F5EFE6" font-family="Arial, Helvetica, sans-serif" font-size="60" font-weight="800" letter-spacing="-1">CyberPulse Daily — The Trust</text>
+  <text x="84" y="312" fill="#F5EFE6" font-family="Arial, Helvetica, sans-serif" font-size="60" font-weight="800" letter-spacing="-1">Boundary Weekend</text>
+  <text x="84" y="424" fill="#C9BFB1" font-family="Arial, Helvetica, sans-serif" font-size="26">Executive cyber intelligence briefing for 2026-06-05.</text>
+  <text x="84" y="535" fill="#8F887B" font-family="Arial, Helvetica, sans-serif" font-size="20">tusharvartak.com</text>
+  <line x1="84" y1="548" x2="340" y2="548" stroke="#F0B44A" stroke-width="2" opacity="0.3"/>
+  <defs>
+    <linearGradient id="g1" x1="90" y1="40" x2="1110" y2="590" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1A1D28"/>
+      <stop offset="1" stop-color="#0B0D12"/>
+    </linearGradient>
+  </defs>
+</svg>
