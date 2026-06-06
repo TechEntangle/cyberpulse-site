@@ -1,57 +1,315 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://tusharvartak.com/</loc>
-    <lastmod>2026-06-05</lastmod>
+    <lastmod>2026-06-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://tusharvartak.com/posts/2026-04-18.html</loc>
-    <lastmod>2026-04-18</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://tusharvartak.com/archive/</loc>
-    <lastmod>2026-04-18</lastmod>
+    <lastmod>2026-06-06</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tusharvartak.com/about/</loc>
-    <lastmod>2026-04-18</lastmod>
+    <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tusharvartak.com/feed.xml</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://tusharvartak.com/posts/2026-06-01.html</loc>
-    <lastmod>2026-06-01</lastmod>
-    <changefreq>never</changefreq>
+    <loc>https://tusharvartak.com/posts/2026-06-05.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://tusharvartak.com/posts/2026-06-02.html</loc>
-    <lastmod>2026-06-02</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://tusharvartak.com/posts/2026-06-03.html</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://tusharvartak.com/assets/covers/2026-06-05.png?v=20260605</image:loc>
+      <image:title>The Trust Boundary Weekend</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://tusharvartak.com/posts/2026-06-04.html</loc>
-    <lastmod>2026-06-04</lastmod>
-    <changefreq>never</changefreq>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://tusharvartak.com/assets/covers/2026-06-04.png?v=20260604</image:loc>
+      <image:title>The Control Plane Squeeze</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://tusharvartak.com/posts/2026-06-05.html</loc>
-    <lastmod>2026-06-05</lastmod>
-    <changefreq>never</changefreq>
+    <loc>https://tusharvartak.com/posts/2026-06-03.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://tusharvartak.com/assets/covers/2026-06-03.png</image:loc>
+      <image:title>The Automation Gap</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tusharvartak.com/posts/2026-06-02.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://tusharvartak.com/assets/covers/2026-06-02-apiframe-clean.png?v=crisp-20260602</image:loc>
+      <image:title>The Control Plane Is the Loot</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tusharvartak.com/posts/2026-06-01.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://tusharvartak.com/assets/covers/2026-06-01-v2.png</image:loc>
+      <image:title>The Door That Pretended to Be Guarded</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tusharvartak.com/posts/2026-04-27.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://tusharvartak.com/https://raw.githubusercontent.com/TechEntangle/cyberpulse-site/main/assets/covers/2026-04-27.png</image:loc>
+      <image:title>Cloud Control Planes, AI Fraud, and the New Concentration Risk</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tusharvartak.com/posts/2026-04-26.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://tusharvartak.com/assets/covers/2026-04-26.png</image:loc>
+      <image:title>Identity Is the New Control Plane</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tusharvartak.com/posts/2026-04-22.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://tusharvartak.com/assets/covers/2026-04-22.png</image:loc>
+      <image:title>The Exposure Queue Is Starting to Look Like the Threat Surface</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tusharvartak.com/posts/2026-04-21.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://tusharvartak.com/assets/covers/2026-04-21.png</image:loc>
+      <image:title>The Exposure Backlog Is Becoming the Real Breach Surface</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tusharvartak.com/posts/2026-04-20.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://tusharvartak.com/assets/covers/2026-04-20.png</image:loc>
+      <image:title>Patch Volume Is Becoming a Business-Speed Problem</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tusharvartak.com/posts/2026-04-19.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://tusharvartak.com/assets/covers/2026-04-19.png</image:loc>
+      <image:title>The Half-Life of Exposure Is Shrinking</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tusharvartak.com/posts/2026-04-18.html</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://tusharvartak.com/assets/covers/2026-04-18.png</image:loc>
+      <image:title>The Executive Is the New Perimeter</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tusharvartak.com/topics/activemq/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tusharvartak.com/topics/ai-fraud/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tusharvartak.com/topics/ai-risk/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tusharvartak.com/topics/ai-security/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tusharvartak.com/topics/cloud/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tusharvartak.com/topics/control-plane/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tusharvartak.com/topics/crypto-risk/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tusharvartak.com/topics/edge-security/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tusharvartak.com/topics/executive-cyber-risk/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tusharvartak.com/topics/executive-security/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tusharvartak.com/topics/exposure-management/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tusharvartak.com/topics/identity/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tusharvartak.com/topics/identity-security/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tusharvartak.com/topics/infrastructure-exposure/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tusharvartak.com/topics/kev/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tusharvartak.com/topics/middleware-risk/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tusharvartak.com/topics/operational-resilience/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tusharvartak.com/topics/operational-risk/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tusharvartak.com/topics/patch-tuesday/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tusharvartak.com/topics/ransomware/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tusharvartak.com/topics/remediation/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tusharvartak.com/topics/remote-access/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tusharvartak.com/topics/sharepoint/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tusharvartak.com/topics/social-engineering/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tusharvartak.com/topics/software-supply-chain/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tusharvartak.com/topics/supply-chain/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tusharvartak.com/topics/third-party/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tusharvartak.com/topics/vulnerability-management/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
