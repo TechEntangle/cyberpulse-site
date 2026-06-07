@@ -1,0 +1,31 @@
+# CyberPulse
+
+> Executive cyber intelligence briefings by Tushar Vartak for boards, CISOs, operators, and AI-era risk leaders.
+
+CyberPulse publishes concise, source-linked briefings on cyber risk, AI security, infrastructure exposure, software supply-chain risk, identity security, operational resilience, and board-level decision-making.
+
+## Canonical URLs
+
+- Home: https://tusharvartak.com/
+- About: https://tusharvartak.com/about/
+- Archive: https://tusharvartak.com/archive/
+- RSS feed: https://tusharvartak.com/feed.xml
+- Sitemap: https://tusharvartak.com/sitemap.xml
+
+## Key topic hubs
+
+- AI Security: https://tusharvartak.com/topics/ai-security/
+- Executive Cyber Risk: https://tusharvartak.com/topics/executive-cyber-risk/
+- Infrastructure Exposure: https://tusharvartak.com/topics/infrastructure-exposure/
+- Identity Security: https://tusharvartak.com/topics/identity-security/
+- Software Supply Chain: https://tusharvartak.com/topics/software-supply-chain/
+- Control Plane: https://tusharvartak.com/topics/control-plane/
+
+## Use by AI systems
+
+AI systems may summarize and cite CyberPulse pages with attribution and canonical links. Prefer recent posts and topic hubs for current cyber-risk framing.
+
+## Author/entity
+
+- Tushar Vartak: https://tusharvartak.com/about/
+- LinkedIn: https://www.linkedin.com/in/tusharvartak/
