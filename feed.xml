@@ -5,7 +5,7 @@
     <link>https://tusharvartak.com</link>
     <description>Executive cyber intelligence briefings on cyber risk, AI threats, infrastructure exposure, and board-level decision-making.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 06 Jun 2026 06:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 07 Jun 2026 06:00:00 +0000</lastBuildDate>
     <atom:link href="https://tusharvartak.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://tusharvartak.com/assets/og/default.png</url>
@@ -13,13 +13,13 @@
       <link>https://tusharvartak.com</link>
     </image>
     <item>
-      <title>CyberPulse Daily — The Autonomous Exposure Weekend</title>
-      <link>https://tusharvartak.com/posts/2026-06-06.html</link>
-      <guid isPermaLink="true">https://tusharvartak.com/posts/2026-06-06.html</guid>
-      <pubDate>Sat, 06 Jun 2026 06:00:00 +0000</pubDate>
+      <title>CyberPulse Daily — The Control Plane Is Bleeding</title>
+      <link>https://tusharvartak.com/posts/2026-06-07.html</link>
+      <guid isPermaLink="true">https://tusharvartak.com/posts/2026-06-07.html</guid>
+      <pubDate>Sun, 07 Jun 2026 06:00:00 +0000</pubDate>
       <dc:creator>Tushar Vartak</dc:creator>
-      <description>Executive cyber intelligence briefing for 2026-06-06.</description>
-      <enclosure url="https://tusharvartak.com/assets/covers/2026-06-06.png?v=20260606" type="image/png" length="0"/>
+      <description>Executive cyber intelligence briefing for 2026-06-07.</description>
+      <enclosure url="https://tusharvartak.com/assets/covers/2026-06-07.png?v=20260607" type="image/png" length="0"/>
     </item>
   </channel>
 </rss>

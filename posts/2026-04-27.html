@@ -587,32 +587,32 @@
             <div class="action-box">
               <h4>Board takeaway in 20 seconds</h4>
               <ul>
-                <li>Your material exposure is shifting to cloud control planes and third-party financial workflows where one consent or approval can move money or revoke access at scale.</li>
-                <li>Demand provider-failure and payment-fraud playbooks with tested controls that work on weekends and across borders.</li>
+                <li>Attackers are skipping endpoints and targeting cloud control planes and financial workflows run by a few third parties—while AI makes fraud faster and harder to spot. The material risk is misrouted funds.</li>
+                <li>Trusted systems are now business attack surfaces; directors should ask where authority has been delegated and what evidence proves it is constrained.</li>
               </ul>
             </div>
             <div class="action-box">
               <h4>What should CISOs do?</h4>
               <ul>
-                <li>Instrument the cloud control plane: enable immutable logging, alert on app consent and service-principal changes, and require step-up for high-impact actions.</li>
-                <li>Minimize blast radius: inventory and right-size OAuth scopes, rotate secrets, restrict who can create apps or grant consent, and enforce least privilege for automation accounts.</li>
-                <li>Integrate with finance: implement out-of-band, named-person verification for payee or bank changes and institute delayed-release wires with treasury holds for exceptions.</li>
+                <li>Inventory every agent, bot, workflow, script, and plugin that can read secrets, change code, trigger builds, or alter production settings.</li>
+                <li>Reduce delegated authority: least privilege for automation tokens, human approval on high-impact workflow actions, and emergency kill switches for agentic tools.</li>
+                <li>Treat packages and plugins as ingress points: pin versions, verify maintainers, monitor new dependencies, and alert on unexpected install or update paths.</li>
               </ul>
             </div>
             <div class="action-box">
               <h4>What should boards demand?</h4>
               <ul>
-                <li>A joint CFO–CISO policy covering payment verification, supplier onboarding, and SaaS connector governance with measurable break-glass procedures.</li>
-                <li>Quarterly independent assessments of cloud control-plane posture and cross-tenant isolation claims from critical providers, including event export SLAs.</li>
-                <li>Scenario exercises for provider outage and cross-tenant compromise with time-to-operate metrics for order-to-cash and procure-to-pay.</li>
+                <li>A current map of which automated systems can change production code, infrastructure, identity permissions, or customer-facing content.</li>
+                <li>Named executive ownership for risk acceptance below formal procurement thresholds, especially open-source packages and third-party plugins.</li>
+                <li>Quarterly evidence that delegated digital authority is constrained, monitored, logged, and reversible — not just documented in policy.</li>
               </ul>
             </div>
             <div class="action-box">
               <h4>What should risk committees rethink?</h4>
               <ul>
-                <li>Concentration risk metrics for identity, billing, and integration hubs, with thresholds that trigger diversification or compensating controls.</li>
-                <li>Liquidity-at-risk modeling for payment fraud, including cut-off times, weekends, and cross-border transfers, with capital buffers or insurance alignment.</li>
-                <li>Assurance requirements that go beyond SOC 2 to attest to management-plane abuse resistance, event visibility, and tenant isolation under fault.</li>
+                <li>Expand the risk register to include internet-, vendor-, and contractor-reachable operational systems that sit outside normal IT change control.</li>
+                <li>Require incident scenarios for harmful automated decisions: what instruction, data, credential, and approval path would investigators need to reconstruct?</li>
+                <li>Move assurance from vendor-by-vendor review to authority-chain review: who can act, through which tool, with which credential, and under whose risk acceptance.</li>
               </ul>
             </div>
           </div>
@@ -634,6 +634,7 @@
               <li><a href="https://krebsonsecurity.com/2026/04/invoice-fraud-via-saas-vendor-portals-is-booming/">Invoice Fraud via SaaS Vendor Portals Is Booming</a></li>
             </ol>
           </div>
+
 
 
           <!-- CyberPulse related briefings start -->

@@ -584,32 +584,32 @@
             <div class="action-box">
               <h4>Board takeaway in 20 seconds</h4>
               <ul>
-                <li>Attackers are optimizing for authority, not noise.</li>
-                <li>Protect the systems that create trust before attackers turn them into authority.</li>
+                <li>Attackers are moving upstream into the systems that create trust: packages, gateways, directories, AI workflows, and the partners that sit near critical enterprises.</li>
+                <li>Trusted systems are now business attack surfaces; directors should ask where authority has been delegated and what evidence proves it is constrained.</li>
               </ul>
             </div>
             <div class="action-box">
               <h4>What should CISOs do?</h4>
               <ul>
-                <li>Freeze and inspect high-trust package pulls and rotate exposed build secrets.</li>
-                <li>Validate gateway and directory controller exposure from network telemetry today.</li>
-                <li>Inventory AI workflow tools, shared-link features, browser extensions, and connectors that touch enterprise data.</li>
+                <li>Inventory every agent, bot, workflow, script, and plugin that can read secrets, change code, trigger builds, or alter production settings.</li>
+                <li>Reduce delegated authority: least privilege for automation tokens, human approval on high-impact workflow actions, and emergency kill switches for agentic tools.</li>
+                <li>Treat packages and plugins as ingress points: pin versions, verify maintainers, monitor new dependencies, and alert on unexpected install or update paths.</li>
               </ul>
             </div>
             <div class="action-box">
               <h4>What should boards demand?</h4>
               <ul>
-                <li>A clear owner for software dependency trust, including maintainer changes, signed packages, and install-script behavior.</li>
-                <li>Evidence that remote access and directory authority layers are patched, monitored, segmented, and reviewed for unusual sessions.</li>
-                <li>A third-party access review for strategic suppliers, law firms, consultancies, managed service providers, and joint-venture technology partners.</li>
+                <li>A current map of which automated systems can change production code, infrastructure, identity permissions, or customer-facing content.</li>
+                <li>Named executive ownership for risk acceptance below formal procurement thresholds, especially open-source packages and third-party plugins.</li>
+                <li>Quarterly evidence that delegated digital authority is constrained, monitored, logged, and reversible — not just documented in policy.</li>
               </ul>
             </div>
             <div class="action-box">
               <h4>What should risk committees rethink?</h4>
               <ul>
-                <li>Control planes should be treated as tier-zero business infrastructure.</li>
-                <li>AI connectors and shared content should be governed as enterprise data paths, not merely productivity features.</li>
-                <li>Supplier adjacency can be a route into high-value organizations even when the supplier is not the primary target.</li>
+                <li>Expand the risk register to include internet-, vendor-, and contractor-reachable operational systems that sit outside normal IT change control.</li>
+                <li>Require incident scenarios for harmful automated decisions: what instruction, data, credential, and approval path would investigators need to reconstruct?</li>
+                <li>Move assurance from vendor-by-vendor review to authority-chain review: who can act, through which tool, with which credential, and under whose risk acceptance.</li>
               </ul>
             </div>
           </div>
@@ -635,6 +635,7 @@
               <li><a href="https://www.bleepingcomputer.com/news/security/critical-windows-netlogon-rce-flaw-now-exploited-in-attacks/">BleepingComputer — Critical Directory Service Flaw Exploited in Attacks</a></li>
             </ol>
           </div>
+
 
 
           <!-- CyberPulse related briefings start -->
