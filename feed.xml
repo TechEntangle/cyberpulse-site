@@ -5,7 +5,7 @@
     <link>https://tusharvartak.com</link>
     <description>Executive cyber intelligence briefings on cyber risk, AI threats, infrastructure exposure, and board-level decision-making.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 16 Jun 2026 06:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 17 Jun 2026 06:00:00 +0000</lastBuildDate>
     <atom:link href="https://tusharvartak.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://tusharvartak.com/assets/og/default.png</url>
@@ -13,13 +13,13 @@
       <link>https://tusharvartak.com</link>
     </image>
     <item>
-      <title>CyberPulse Daily — The Shortcut Layer</title>
-      <link>https://tusharvartak.com/posts/cyberpulse-the-shortcut-layer.html</link>
-      <guid isPermaLink="true">https://tusharvartak.com/posts/cyberpulse-the-shortcut-layer.html</guid>
-      <pubDate>Tue, 16 Jun 2026 06:00:00 +0000</pubDate>
+      <title>CyberPulse Daily — The Conversion Layer</title>
+      <link>https://tusharvartak.com/posts/cyberpulse-the-conversion-layer.html</link>
+      <guid isPermaLink="true">https://tusharvartak.com/posts/cyberpulse-the-conversion-layer.html</guid>
+      <pubDate>Wed, 17 Jun 2026 06:00:00 +0000</pubDate>
       <dc:creator>Tushar Vartak</dc:creator>
-      <description>Executive cyber intelligence briefing for 2026-06-16.</description>
-      <enclosure url="https://tusharvartak.com/assets/covers/2026-06-16.png?v=20260616" type="image/png" length="0"/>
+      <description>Executive cyber intelligence briefing for 2026-06-17.</description>
+      <enclosure url="https://tusharvartak.com/assets/covers/2026-06-17.png?v=20260617" type="image/png" length="0"/>
     </item>
   </channel>
 </rss>
