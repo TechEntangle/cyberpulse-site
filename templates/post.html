@@ -333,6 +333,58 @@
     .source-box li { font-size: 15px; color: var(--muted); margin-bottom: 10px; line-height: 1.55; }
     .source-box a { color: var(--accent); }
 
+    /* ── Related briefings ── */
+    .related-briefings {
+      margin-top: 44px;
+      padding-top: 12px;
+    }
+    .related-briefings h2 { margin-top: 0; }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .related-card {
+      display: grid;
+      gap: 8px;
+      min-width: 0;
+      padding: 18px;
+      border-radius: var(--radius-sm);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      text-decoration: none;
+      box-shadow: var(--shadow-sm);
+      transition: border-color var(--duration-fast), background var(--duration-fast), transform var(--duration-fast) var(--ease);
+    }
+    .related-card:hover {
+      background: var(--surface-hover);
+      border-color: var(--border-strong);
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+    .related-card span {
+      color: var(--gold);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+    }
+    .related-card strong {
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+    }
+    .related-card em {
+      color: var(--muted);
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
     /* ── Article footer ── */
     .article-footer {
       margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--border);
@@ -410,6 +462,7 @@
       p { font-size: 18px; }
       .lead { font-size: 19px; }
       .signal, .action-box, .sticky-card, .source-box { border-radius: var(--radius-sm); }
+      .related-grid { grid-template-columns: 1fr; }
       .topbar { align-items: flex-start; }
       .share-row { width: 100%; }
       .tag-row { margin-bottom: 18px; }
