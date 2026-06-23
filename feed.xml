@@ -5,7 +5,7 @@
     <link>https://tusharvartak.com</link>
     <description>Executive cyber intelligence briefings on cyber risk, AI threats, infrastructure exposure, and board-level decision-making.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 19 Jun 2026 06:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 23 Jun 2026 06:00:00 +0000</lastBuildDate>
     <atom:link href="https://tusharvartak.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://tusharvartak.com/assets/og/default.png</url>
@@ -13,13 +13,13 @@
       <link>https://tusharvartak.com</link>
     </image>
     <item>
-      <title>CyberPulse Daily — The Revenue Surface</title>
-      <link>https://tusharvartak.com/posts/cyberpulse-the-revenue-surface.html</link>
-      <guid isPermaLink="true">https://tusharvartak.com/posts/cyberpulse-the-revenue-surface.html</guid>
-      <pubDate>Fri, 19 Jun 2026 06:00:00 +0000</pubDate>
+      <title>CyberPulse Daily — The Defender Is in Scope</title>
+      <link>https://tusharvartak.com/posts/cyberpulse-the-defender-is-in-scope.html</link>
+      <guid isPermaLink="true">https://tusharvartak.com/posts/cyberpulse-the-defender-is-in-scope.html</guid>
+      <pubDate>Tue, 23 Jun 2026 06:00:00 +0000</pubDate>
       <dc:creator>Tushar Vartak</dc:creator>
-      <description>A board-level CyberPulse Emerging Risks briefing on payment paths, customer journeys, automation identities, ransomware operations, and resilience as revenue protection.</description>
-      <enclosure url="https://tusharvartak.com/assets/covers/2026-06-19.png?v=20260619" type="image/png" length="0"/>
+      <description>CyberPulse Daily Brief for June 23, 2026: attackers are increasingly targeting the defensive layer itself — security tooling, OAuth grants, plugins, AI tenancy, and proxy infrastructure.</description>
+      <enclosure url="https://tusharvartak.com/assets/covers/2026-06-23.png?v=20260623" type="image/png" length="0"/>
     </item>
   </channel>
 </rss>

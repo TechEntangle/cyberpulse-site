@@ -3,41 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Executive Is the New Perimeter | CyberPulse</title>
+  <title>The Defender Is in Scope | CyberPulse Executive Brief</title>
   <link rel="icon" type="image/png" href="/assets/brand/logo-square.png" />
-  <meta name="description" content="A CyberPulse executive briefing on SharePoint exploitation, executive-targeted social engineering, and AI-accelerated attack economics." />
-  <link rel="canonical" href="https://tusharvartak.com/posts/2026-04-18.html" />
+  <meta name="description" content="Attackers are increasingly aiming at the systems enterprises rely on to investigate, authenticate, filter, proxy, and clean up the damage." />
+  <link rel="canonical" href="https://tusharvartak.com/posts/cyberpulse-the-defender-is-in-scope.html" />
   <meta name="author" content="Tushar Vartak" />
-  <meta name="keywords" content="SharePoint, Executive Security, Social Engineering, AI Risk, CyberPulse, Tushar Vartak, cybersecurity, AI security, executive cyber risk" />
-  <meta property="og:title" content="The Executive Is the New Perimeter" />
-  <meta property="og:description" content="A CyberPulse executive briefing on SharePoint exploitation, executive-targeted social engineering, and AI-accelerated attack economics." />
+  <meta name="keywords" content="AI Security, Executive Cyber Risk, Software Supply Chain, Identity Security, Infrastructure Exposure, CyberPulse, Tushar Vartak, cybersecurity, AI security, executive cyber risk" />
+  <meta property="og:title" content="The Defender Is in Scope" />
+  <meta property="og:description" content="Attackers are increasingly aiming at the systems enterprises rely on to investigate, authenticate, filter, proxy, and clean up the damage." />
   <meta property="og:type" content="article" />
-  <meta property="og:image" content="https://tusharvartak.com/assets/og/2026-04-18.png" />
-  <meta property="og:url" content="https://tusharvartak.com/posts/2026-04-18.html" />
+  <meta property="og:image" content="https://tusharvartak.com/assets/og/2026-06-23.png" />
+  <meta property="og:url" content="https://tusharvartak.com/posts/cyberpulse-the-defender-is-in-scope.html" />
   <meta property="og:site_name" content="CyberPulse" />
-  <meta property="article:published_time" content="2026-04-18T06:00:00+00:00" />
+  <meta property="article:published_time" content="2026-06-23T06:00:00+00:00" />
   <meta property="article:author" content="Tushar Vartak" />
   <meta property="article:section" content="Cybersecurity" />
   <!-- Add article:tag entries for each topic tag -->
-    <meta property="article:tag" content="SharePoint" />
-  <meta property="article:tag" content="Executive Security" />
-  <meta property="article:tag" content="Social Engineering" />
-  <meta property="article:tag" content="AI Risk" />
+  
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="The Executive Is the New Perimeter" />
-  <meta name="twitter:description" content="A CyberPulse executive briefing on SharePoint exploitation, executive-targeted social engineering, and AI-accelerated attack economics." />
-  <meta name="twitter:image" content="https://tusharvartak.com/assets/og/2026-04-18.png" />
+  <meta name="twitter:title" content="The Defender Is in Scope" />
+  <meta name="twitter:description" content="Attackers are increasingly aiming at the systems enterprises rely on to investigate, authenticate, filter, proxy, and clean up the damage." />
+  <meta name="twitter:image" content="https://tusharvartak.com/assets/og/2026-06-23.png" />
   <link rel="alternate" type="application/rss+xml" title="CyberPulse RSS Feed" href="/feed.xml" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "The Executive Is the New Perimeter",
-    "description": "A CyberPulse executive briefing on SharePoint exploitation, executive-targeted social engineering, and AI-accelerated attack economics.",
-    "image": "https://tusharvartak.com/assets/og/2026-04-18.png",
-    "datePublished": "2026-04-18T06:00:00+00:00",
-    "keywords": "SharePoint, Executive Security, Social Engineering, AI Risk, CyberPulse, Tushar Vartak, cybersecurity, AI security, executive cyber risk",
-    "dateModified": "2026-04-18T06:00:00+00:00",
+    "headline": "The Defender Is in Scope",
+    "description": "Attackers are increasingly aiming at the systems enterprises rely on to investigate, authenticate, filter, proxy, and clean up the damage.",
+    "image": "https://tusharvartak.com/assets/og/2026-06-23.png",
+    "datePublished": "2026-06-23T06:00:00+00:00",
+    "keywords": "AI Security, Executive Cyber Risk, Software Supply Chain, Identity Security, Infrastructure Exposure, CyberPulse, Tushar Vartak, cybersecurity, AI security, executive cyber risk",
+    "dateModified": "2026-06-23T06:00:00+00:00",
     "author": {
       "@type": "Person",
       "name": "Tushar Vartak",
@@ -50,7 +47,7 @@
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://tusharvartak.com/posts/2026-04-18.html"
+      "@id": "https://tusharvartak.com/posts/cyberpulse-the-defender-is-in-scope.html"
     }
   }
   </script>
@@ -339,6 +336,58 @@
     .source-box li { font-size: 15px; color: var(--muted); margin-bottom: 10px; line-height: 1.55; }
     .source-box a { color: var(--accent); }
 
+    /* ── Related briefings ── */
+    .related-briefings {
+      margin-top: 44px;
+      padding-top: 12px;
+    }
+    .related-briefings h2 { margin-top: 0; }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .related-card {
+      display: grid;
+      gap: 8px;
+      min-width: 0;
+      padding: 18px;
+      border-radius: var(--radius-sm);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      text-decoration: none;
+      box-shadow: var(--shadow-sm);
+      transition: border-color var(--duration-fast), background var(--duration-fast), transform var(--duration-fast) var(--ease);
+    }
+    .related-card:hover {
+      background: var(--surface-hover);
+      border-color: var(--border-strong);
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+    .related-card span {
+      color: var(--gold);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+    }
+    .related-card strong {
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+    }
+    .related-card em {
+      color: var(--muted);
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
     /* ── Article footer ── */
     .article-footer {
       margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--border);
@@ -416,6 +465,7 @@
       p { font-size: 18px; }
       .lead { font-size: 19px; }
       .signal, .action-box, .sticky-card, .source-box { border-radius: var(--radius-sm); }
+      .related-grid { grid-template-columns: 1fr; }
       .topbar { align-items: flex-start; }
       .share-row { width: 100%; }
       .tag-row { margin-bottom: 18px; }
@@ -425,12 +475,10 @@
   <!-- CyberPulse Phase 2/3 SEO start -->
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
   <meta name="theme-color" content="#06070a" />
-  <meta property="article:modified_time" content="2026-04-18T06:00:00+00:00" />
-  <link rel="next" href="https://tusharvartak.com/posts/2026-04-19.html" />
-  <link rel="tag" href="https://tusharvartak.com/topics/sharepoint/" title="SharePoint" />
-  <link rel="tag" href="https://tusharvartak.com/topics/executive-security/" title="Executive Security" />
-  <link rel="tag" href="https://tusharvartak.com/topics/social-engineering/" title="Social Engineering" />
-  <link rel="tag" href="https://tusharvartak.com/topics/ai-risk/" title="AI Risk" />
+  <meta property="article:modified_time" content="2026-06-23T06:00:00+00:00" />
+  <link rel="prev" href="https://tusharvartak.com/posts/2026-06-19.html" />
+  <link rel="next" href="https://tusharvartak.com/posts/cyberpulse-borrowed-legitimacy.html" />
+  <link rel="tag" href="https://tusharvartak.com/topics/operational-threat-intelligence/" title="Operational Threat Intelligence" />
   <script type="application/ld+json" id="breadcrumb-schema">
 {
     "@context": "https://schema.org",
@@ -451,8 +499,8 @@
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "The Executive Is the New Perimeter",
-        "item": "https://tusharvartak.com/posts/2026-04-18.html"
+        "name": "The Defender Is in Scope",
+        "item": "https://tusharvartak.com/posts/cyberpulse-the-defender-is-in-scope.html"
       }
     ]
   }
@@ -461,10 +509,10 @@
 {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://tusharvartak.com/posts/2026-04-18.html#webpage",
-    "url": "https://tusharvartak.com/posts/2026-04-18.html",
-    "name": "The Executive Is the New Perimeter",
-    "description": "A CyberPulse executive briefing on SharePoint exploitation, executive-targeted social engineering, and AI-accelerated attack economics.",
+    "@id": "https://tusharvartak.com/posts/cyberpulse-the-defender-is-in-scope.html#webpage",
+    "url": "https://tusharvartak.com/posts/cyberpulse-the-defender-is-in-scope.html",
+    "name": "The Defender Is in Scope",
+    "description": "Attackers are increasingly aiming at the systems enterprises rely on to investigate, authenticate, filter, proxy, and clean up the damage.",
     "isPartOf": {
       "@type": "WebSite",
       "name": "CyberPulse",
@@ -472,10 +520,10 @@
     },
     "primaryImageOfPage": {
       "@type": "ImageObject",
-      "url": "https://tusharvartak.com/assets/covers/2026-04-18.png"
+      "url": "https://tusharvartak.com/assets/covers/2026-06-23.png?v=20260623"
     },
     "breadcrumb": {
-      "@id": "https://tusharvartak.com/posts/2026-04-18.html#breadcrumb"
+      "@id": "https://tusharvartak.com/posts/cyberpulse-the-defender-is-in-scope.html#breadcrumb"
     }
   }
   </script>
@@ -493,15 +541,15 @@
         </span>
       </a>
       <div class="toolbar">
-        <span class="reading-time">10 min read</span>
+        <span class="reading-time">6 min read</span>
         <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">
           <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
           <span id="themeLabel">Light</span>
         </button>
         <div class="share-row">
           <span class="share-label">Share</span>
-          <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=https://tusharvartak.com/posts/2026-04-18.html" data-analytics="share-linkedin">LinkedIn</a>
-          <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=The%20Executive%20Is%20the%20New%20Perimeter&url=https://tusharvartak.com/posts/2026-04-18.html" data-analytics="share-x">X</a>
+          <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-06-23.html" data-analytics="share-linkedin">LinkedIn</a>
+          <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=The%20Defender%20Is%20in%20Scope&url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-06-23.html" data-analytics="share-x">X</a>
           <button class="share-btn" id="copyLinkBtn" type="button" data-analytics="share-copy">Copy link</button>
         </div>
       </div>
@@ -510,75 +558,54 @@
     <div class="layout">
       <article>
         <div class="article-inner">
-          <div class="article-eyebrow">CyberPulse &middot; Edition No. 1 &middot; Saturday, April 18, 2026</div>
-          <h1>The Executive Is the New Perimeter</h1>
-          <p class="dek">Why SharePoint exploitation and executive-targeted social engineering now belong in the same board-level conversation.</p>
+          <div class="article-eyebrow">CyberPulse &middot; Edition No. 6 &middot; Tuesday, June 23, 2026</div>
+          <h1>The Defender Is in Scope</h1>
+          <p class="dek"></p>
 
           <div class="tag-row">
-            <!-- Add tags as clickable links: <a class="tag" href="/archive/?tag=TagName">TagName</a> -->
-                        <a class="tag" href="/archive/?tag=SharePoint">SharePoint</a>
-            <a class="tag" href="/archive/?tag=Executive+Security">Executive Security</a>
-            <a class="tag" href="/archive/?tag=Social+Engineering">Social Engineering</a>
-            <a class="tag" href="/archive/?tag=AI+Risk">AI Risk</a>
+            <a class="tag" href="/topics/operational-threat-intelligence/">Operational Threat Intelligence</a>
           </div>
 
-          <img class="article-cover" src="/assets/covers/2026-04-18.png" alt="CyberPulse editorial cover image for The Executive Is the New Perimeter" loading="lazy">
+          <img class="article-cover" src="/assets/covers/2026-06-23.png?v=20260623" alt="CyberPulse editorial cover image for The Defender Is in Scope" loading="lazy">
 
           <div class="hero-meta">
             <div class="meta-card">
               <strong>Confidence</strong>
-              <span>High confidence, corroborated by Microsoft, Reuters, and Google Threat Intelligence reporting.</span>
+              <span>High</span>
             </div>
             <div class="meta-card">
               <strong>Published</strong>
-              <span>Saturday, April 18, 2026</span>
+              <span>2026-06-23</span>
             </div>
             <div class="meta-card">
               <strong>Primary signal</strong>
-              <span>Attackers are converging on the same high-value target from two directions: exposed enterprise platforms and the executives who can override process.</span>
+              <span>The Defender Is in Scope</span>
             </div>
             <div class="meta-card">
               <strong>Why it matters</strong>
-              <span>The perimeter is no longer just technical infrastructure. Leadership behavior, privileged workflows, and collaboration platforms now sit inside the same attack surface.</span>
+              <span>The morning signal is not merely that business applications are exposed. It is that the defensive layer itself is being tested, bypassed, borrowed, and blinded.</span>
             </div>
           </div>
 
           <!-- ── Lead paragraph ── -->
-          <p class="lead">The operational lesson from the SharePoint exploitation wave is not only that another Microsoft product had a bad week. It is that deeply embedded enterprise platforms can become externally meaningful attack paths very quickly once exploitation becomes practical. Systems that feel internal, familiar, and heavily depended on often receive less strategic suspicion than they deserve.</p>
+          <p class="lead">The morning signal is not merely that business applications are exposed. It is that the defensive layer itself is being tested, bypassed, borrowed, and blinded.</p>
 
           <!-- ── Body paragraphs ── -->
-                    <h2 id="the-story-that-matters">The story that matters</h2>
-          <div class="signal">
-            <h3>SharePoint moved from routine platform to urgent exposure</h3>
-            <p>The operational lesson from the SharePoint exploitation wave is not only that another Microsoft product had a bad week. It is that deeply embedded enterprise platforms can become externally meaningful attack paths very quickly once exploitation becomes practical. Systems that feel internal, familiar, and heavily depended on often receive less strategic suspicion than they deserve.</p>
-            <p>That matters because SharePoint is tied to documents, workflows, permissions, institutional memory, and executive coordination. When attackers gain access to that layer, the opportunity is not limited to one workload. It can reshape visibility into an organization’s plans, decisions, identities, and downstream systems.</p>
-          </div>
-          <div class="signal">
-            <h3>Executives are being treated as infrastructure</h3>
-            <p>At the same time, executive-targeted social engineering is becoming more deliberate and more scalable. Leaders sit at the intersection of urgency, access, and exception handling. They can authorize transfers, change direction, accelerate vendor activity, or override controls. That makes them operational assets in an adversary playbook, not just high-profile phishing recipients.</p>
-            <p>Once that is understood, the cyber strategy changes. The organization is not defending only endpoints and servers. It is defending decision pathways, trust shortcuts, and the small number of people whose actions can alter control environments in minutes.</p>
-          </div>
-          <h2 id="beyond-one-platform">Why this matters beyond one platform</h2>
-          <p>Boards often separate infrastructure risk from human risk because they are governed by different committees, dashboards, and owners. That split is getting less useful. If attackers can use a platform flaw to gain visibility and use executive impersonation to accelerate action, those risks combine into one business problem: control bypass at speed.</p>
-          <p>That is the more strategic takeaway. The perimeter is no longer just where packets cross a boundary. It includes the systems that coordinate work and the people empowered to compress process.</p>
-          <h2 id="enterprise-risk">What this means for enterprise risk</h2>
-          <p>First, collaboration platforms deserve the same executive scrutiny as identity, email, and remote access. They carry privileged context, broad reach, and institutional trust. That makes them high-leverage assets when compromised.</p>
-          <p>Second, leadership teams need operating discipline, not just awareness training. The real issue is whether urgent requests, sensitive approvals, and unusual exceptions can be independently validated when pressure is high.</p>
-          <p>Third, AI changes the economics of attack preparation. Tailored pretexts, message drafting, reconnaissance synthesis, and workflow mapping all get cheaper. That means defenses built around frictionless convenience will age badly.</p>
-
-          <!-- ── Sections ── -->
-          <!--
-            Use this pattern for each section:
-
-            <h2 id="section-slug">Section title</h2>
-            <p>Narrative paragraph...</p>
-
-            Use signal boxes for key findings:
-            <div class="signal">
-              <h3>Signal headline</h3>
-              <p>Signal detail paragraph...</p>
-            </div>
-          -->
+          <p>Attackers are increasingly aiming at the systems enterprises rely on to investigate, authenticate, filter, proxy, and clean up the damage. That moves today’s risk discussion from perimeter exposure to defensive survivability.</p>
+          <p>Security software is being disabled before extortion begins. OAuth tokens are becoming intrusion pivots. AI workspaces are leaking conversations across tenants. Plugin updates are turning into delivery channels. Long-lived proxy infrastructure is reminding defenders that inspection systems can also become evidence exposure.</p>
+          <p>For enterprise teams across the Gulf, the uncomfortable question is no longer only whether the business application is exposed. It is whether the defensive layer can survive first contact.</p>
+          <p>Fresh reporting describes a ransomware-aligned framework designed to disable victim security tools before the main extortion sequence begins. The strategic implication is blunt: many incident response plans assume telemetry remains reliable during the incident. That assumption is now a risk item.</p>
+          <p>If the first move is to suppress endpoint protection, reduce security operations center visibility, and force responders into partial evidence, containment becomes a governance problem as much as a technical one. Executives need to know which defensive controls are tamper-resistant, which privileged changes are independently logged, and which recovery decisions can proceed when primary tooling is degraded.</p>
+          <p>A separate report on a breach at a competitive-intelligence platform points to a sharper identity issue: OAuth tokens can give attackers a path into adjacent vendors and connected organizations. The lesson is not limited to one platform. Delegated access is now a silent inventory of business trust.</p>
+          <p>Tokens, integrations, browser sessions, marketplace connectors, and third-party workflows often move faster than the contract owners who approved them. When those permissions are not mapped, expired, and monitored, incident teams discover the real shape of the enterprise during the incident itself.</p>
+          <p>Software supply-chain risk also remains active. Multiple commercial WordPress plugins were reported backdoored after a supply-chain compromise, creating exposure for sites that believed they were merely consuming routine updates. For the region, that is not just a web-team problem. Customer portals, investor pages, campaign microsites, and recruitment journeys carry brand, data, and payment context even when they sit outside the core application estate.</p>
+          <p>At the same time, researchers detailed flaws in an open-source AI application platform that could expose chat data across tenants. Boards should treat that as a governance signal. AI pilots are not isolated experiments if they contain customer context, internal prompts, credentials, operational reasoning, or sensitive documents. Multi-tenant boundaries and workspace isolation require the same discipline as finance and identity systems.</p>
+          <p>A decades-old proxy flaw, now described publicly as Squidbleed, can leak cleartext HTTP requests under certain conditions. The point is not nostalgia. Inspection, caching, and proxy infrastructure often has long life, broad visibility, and weak ownership. When those systems fail, they may expose the traffic they were meant to mediate.</p>
+          <p>Continuing fallout around network-device exposure and boot-chain research on mobile hardware reinforces the operational split leaders must maintain: some risks are patchable, some require compensating controls, and some demand replacement, isolation, or reduced trust.</p>
+          <p>Validate tamper resistance for endpoint, identity, logging, and backup controls. Confirm protected settings, independent logs, break-glass access, and recovery decisions that work even when primary telemetry is degraded.</p>
+          <p>Inventory OAuth grants, service integrations, marketplace plugins, browser sessions, and third-party tokens tied to security, collaboration, customer, and web operations. Revoke stale grants and alert on unusual token use.</p>
+          <p>Classify defensive infrastructure as business-critical. Proxies, security agents, AI workspaces, web plugins, and management dashboards need named owners, resilience tests, and recovery playbooks.</p>
+          <p>If the defensive layer is fragile, the enterprise is not merely exposed. It is negotiating with an attacker while wearing a blindfold.</p>
 
           <!-- ── Takeaways ── -->
           <h2 id="takeaways">Takeaways</h2>
@@ -586,7 +613,7 @@
             <div class="action-box">
               <h4>Board takeaway in 20 seconds</h4>
               <ul>
-                <li>Why SharePoint exploitation and executive-targeted social engineering now belong in the same board-level conversation.</li>
+                <li>The morning signal is not merely that business applications are exposed.</li>
                 <li>Fraud controls should be judged by whether they interrupt the handoffs attackers need: attention, delivery, trust, identity, web foothold, and credential payout.</li>
               </ul>
             </div>
@@ -618,64 +645,10 @@
 
           <!-- ── Blind spot ── -->
           <h2 id="blind-spot">The board blind spot</h2>
-                    <p>The blind spot is thinking that executive cyber risk is mostly about inbox hygiene and awareness slides. The real issue is structural. Leaders sit in fast lanes of trust, and those lanes often exist specifically to bypass ordinary friction.</p>
-          <p>That is why today’s lesson matters. A vulnerable platform and a persuadable high-authority workflow are not separate stories. Together, they describe how modern attacks move through enterprise reality.</p>
-          <p>The organizations that will look smartest are the ones that redesign important decisions so that urgency never becomes a security exemption.</p>
+          <p>The board blind spot is process friction. Fraud risk is treated as a user-awareness problem, while attackers are building the operational stack around payment approvals, travel workflows, support interactions, trusted sharing links, and exposed web tools. Directors should ask which business moments now require stronger proof, not just which employees received another warning email.</p>
 
-          <!-- ── Sources ── -->
-          <div class="source-box">
-            <div class="meta-kicker">Sources</div>
-            <ol>
-              <!-- <li><a href="URL">Publication, Article title</a></li> -->
-                            <li><a href="https://www.microsoft.com/security">Microsoft security guidance on SharePoint exploitation and enterprise mitigation</a></li>
-              <li><a href="https://www.reuters.com/">Reuters reporting on executive-targeted cyber fraud and enterprise response</a></li>
-              <li><a href="https://cloud.google.com/blog/topics/threat-intelligence">Google Threat Intelligence reporting on AI-enabled social engineering and enterprise threats</a></li>
-            </ol>
-          </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          <!-- CyberPulse related briefings start -->
-          <section class="related-briefings" aria-labelledby="related-briefings-title">
-            <h2 id="related-briefings-title">Related briefings</h2>
-            <div class="related-grid">
-              <a class="related-card" href="/posts/2026-04-19.html">
-                <span>2026-04-19</span>
-                <strong>The Half-Life of Exposure Is Shrinking</strong>
-                <em>A CyberPulse executive briefing on ActiveMQ exploitation, shrinking patch windows, and AI-accelerated vulnerability discovery.</em>
-              </a>
-              <a class="related-card" href="/posts/2026-04-20.html">
-                <span>2026-04-20</span>
-                <strong>Patch Volume Is Becoming a Business-Speed Problem</strong>
-                <em>A CyberPulse executive briefing on Microsoft’s April 2026 Patch Tuesday, exploited SharePoint risk, and the governance lessons from another major cryp</em>
-              </a>
-              <a class="related-card" href="/posts/2026-04-21.html">
-                <span>2026-04-21</span>
-                <strong>The Exposure Backlog Is Becoming the Real Breach Surface</strong>
-                <em>In practice, it is another reminder that exploited risk now arrives as a stream, not as an isolated emergency.</em>
-              </a>
-            </div>
-          </section>
-          <!-- CyberPulse related briefings end -->
-
-          <div class="article-footer">
-            <span>CyberPulse &middot; Signal over noise &middot; Edition No. 1</span>
+<div class="article-footer">
+            <span>CyberPulse &middot; Signal over noise &middot; Edition No. 6</span>
             <a href="/">Home</a>
           </div>
         </div>
@@ -686,29 +659,23 @@
           <div class="side-kicker">In this edition</div>
           <ul class="toc-list">
             <!-- Build TOC from h2 ids -->
-                        <li><a href="#the-story-that-matters">The story that matters</a></li>
-            <li><a href="#beyond-one-platform">Why this matters beyond one platform</a></li>
-            <li><a href="#enterprise-risk">What this means for enterprise risk</a></li>
             <li><a href="#takeaways">Takeaways</a></li>
-            <li><a href="#blind-spot">The board blind spot</a></li>
           </ul>
         </div>
 
         <div class="sticky-card">
           <div class="side-kicker">At a glance</div>
-          <p>This edition argues that board-level cyber resilience now depends on treating collaboration infrastructure and executive decision paths as equally critical control surfaces.</p>
+          <p>The morning signal is not merely that business applications are exposed. It is that the defensive layer itself is being tested, bypassed, borrowed, and blinded.</p>
           <ul>
-                        <li>SharePoint exploitation shows that core productivity systems can become enterprise entry points overnight.</li>
-            <li>Executives are increasingly being targeted as privileged infrastructure, not just as people who approve budgets.</li>
-            <li>AI is lowering the cost of tailoring influence operations and accelerating the economics of intrusion.</li>
+            <li>P0 · Defender survivability: Validate tamper resistance for endpoint, identity, logging, and backup controls. Confirm protected settings, independent logs, break-glass access, and recovery decisions that work even when primary telemetry is degraded.</li><li>P1 · Delegated-access governance: Inventory OAuth grants, service integrations, marketplace plugins, browser sessions, and third-party tokens tied to security, collaboration, customer, and web operations. Revoke stale grants and alert on unusual token use.</li><li>P2 · Critical ownership: Classify defensive infrastructure as business-critical. Proxies, security agents, AI workspaces, web plugins, and management dashboards need named owners, resilience tests, and recovery playbooks.</li>
           </ul>
         </div>
 
         <div class="sticky-card">
           <div class="side-kicker">Share this briefing</div>
           <div class="share-stack">
-            <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=https://tusharvartak.com/posts/2026-04-18.html" data-analytics="share-linkedin">Share on LinkedIn</a>
-            <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=The%20Executive%20Is%20the%20New%20Perimeter&url=https://tusharvartak.com/posts/2026-04-18.html" data-analytics="share-x">Share on X</a>
+            <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-06-23.html" data-analytics="share-linkedin">Share on LinkedIn</a>
+            <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=The%20Defender%20Is%20in%20Scope&url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-06-23.html" data-analytics="share-x">Share on X</a>
             <button class="share-btn" id="copyLinkBtnAside" type="button" data-analytics="share-copy">Copy article link</button>
           </div>
         </div>
