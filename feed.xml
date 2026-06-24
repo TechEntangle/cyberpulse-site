@@ -5,7 +5,7 @@
     <link>https://tusharvartak.com</link>
     <description>Executive cyber intelligence briefings on cyber risk, AI threats, infrastructure exposure, and board-level decision-making.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 Jun 2026 06:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 24 Jun 2026 06:00:00 +0000</lastBuildDate>
     <atom:link href="https://tusharvartak.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://tusharvartak.com/assets/og/default.png</url>
@@ -13,13 +13,13 @@
       <link>https://tusharvartak.com</link>
     </image>
     <item>
-      <title>CyberPulse Daily — The Defender Is in Scope</title>
-      <link>https://tusharvartak.com/posts/cyberpulse-the-defender-is-in-scope.html</link>
-      <guid isPermaLink="true">https://tusharvartak.com/posts/cyberpulse-the-defender-is-in-scope.html</guid>
-      <pubDate>Tue, 23 Jun 2026 06:00:00 +0000</pubDate>
+      <title>CyberPulse Daily — The Approval Gap</title>
+      <link>https://tusharvartak.com/posts/cyberpulse-the-approval-gap.html</link>
+      <guid isPermaLink="true">https://tusharvartak.com/posts/cyberpulse-the-approval-gap.html</guid>
+      <pubDate>Wed, 24 Jun 2026 06:00:00 +0000</pubDate>
       <dc:creator>Tushar Vartak</dc:creator>
-      <description>CyberPulse Daily Brief for June 23, 2026: attackers are increasingly targeting the defensive layer itself — security tooling, OAuth grants, plugins, AI tenancy, and proxy infrastructure.</description>
-      <enclosure url="https://tusharvartak.com/assets/covers/2026-06-23.png?v=20260623" type="image/png" length="0"/>
+      <description>CyberPulse Daily Brief for Gulf enterprise security teams: AI agent skills, CI workflows, dependency intake, edge credentials, and cryptography migration expose the approval gap.</description>
+      <enclosure url="https://tusharvartak.com/assets/covers/2026-06-24.png?v=20260624" type="image/png" length="0"/>
     </item>
   </channel>
 </rss>
