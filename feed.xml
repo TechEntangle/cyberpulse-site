@@ -5,7 +5,7 @@
     <link>https://tusharvartak.com</link>
     <description>Executive cyber intelligence briefings on cyber risk, AI threats, infrastructure exposure, and board-level decision-making.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 24 Jun 2026 06:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 25 Jun 2026 06:00:00 +0000</lastBuildDate>
     <atom:link href="https://tusharvartak.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://tusharvartak.com/assets/og/default.png</url>
@@ -13,13 +13,13 @@
       <link>https://tusharvartak.com</link>
     </image>
     <item>
-      <title>CyberPulse Daily — The Approval Gap</title>
-      <link>https://tusharvartak.com/posts/cyberpulse-the-approval-gap.html</link>
-      <guid isPermaLink="true">https://tusharvartak.com/posts/cyberpulse-the-approval-gap.html</guid>
-      <pubDate>Wed, 24 Jun 2026 06:00:00 +0000</pubDate>
+      <title>CyberPulse Daily — The Credential Float</title>
+      <link>https://tusharvartak.com/posts/cyberpulse-the-credential-float.html</link>
+      <guid isPermaLink="true">https://tusharvartak.com/posts/cyberpulse-the-credential-float.html</guid>
+      <pubDate>Thu, 25 Jun 2026 06:00:00 +0000</pubDate>
       <dc:creator>Tushar Vartak</dc:creator>
-      <description>CyberPulse Daily Brief for Gulf enterprise security teams: AI agent skills, CI workflows, dependency intake, edge credentials, and cryptography migration expose the approval gap.</description>
-      <enclosure url="https://tusharvartak.com/assets/covers/2026-06-24.png?v=20260624" type="image/png" length="0"/>
+      <description>CyberPulse Daily Brief for Gulf enterprise security teams: credential liquidity, active exploitation, infostealer disruption, firewall harvesting, CI/CD exposure, and agentic browser risk.</description>
+      <enclosure url="https://tusharvartak.com/assets/covers/2026-06-25.png?v=20260625" type="image/png" length="0"/>
     </item>
   </channel>
 </rss>
