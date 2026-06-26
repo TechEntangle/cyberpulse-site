@@ -3,41 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Control Plane Is the Loot | CyberPulse Executive Brief</title>
+  <title>The Measurement Failure | CyberPulse Executive Brief</title>
   <link rel="icon" type="image/png" href="/assets/brand/logo-square.png" />
-  <meta name="description" content="They are trying to become the edge, the package maintainer, the artificial intelligence operator, and the directory administrator at the same time." />
-  <link rel="canonical" href="https://tusharvartak.com/posts/2026-06-02.html" />
+  <meta name="description" content="A board-level CyberPulse Emerging Risks Brief on measuring adversary conversion rather than security activity." />
+  <link rel="canonical" href="https://tusharvartak.com/posts/cyberpulse-the-measurement-failure.html" />
   <meta name="author" content="Tushar Vartak" />
-  <meta name="keywords" content="Supply Chain, Identity, AI Security, Control Plane, CyberPulse, Tushar Vartak, cybersecurity, AI security, executive cyber risk" />
-  <meta property="og:title" content="The Control Plane Is the Loot" />
-  <meta property="og:description" content="They are trying to become the edge, the package maintainer, the artificial intelligence operator, and the directory administrator at the same time." />
+  <meta name="keywords" content="AI Security, Executive Cyber Risk, Software Supply Chain, Identity Security, Infrastructure Exposure, CyberPulse, Tushar Vartak, cybersecurity, AI security, executive cyber risk" />
+  <meta property="og:title" content="The Measurement Failure" />
+  <meta property="og:description" content="A board-level CyberPulse Emerging Risks Brief on measuring adversary conversion rather than security activity." />
   <meta property="og:type" content="article" />
-  <meta property="og:image" content="https://tusharvartak.com/assets/og/2026-06-02.png" />
-  <meta property="og:url" content="https://tusharvartak.com/posts/2026-06-02.html" />
+  <meta property="og:image" content="https://tusharvartak.com/assets/og/2026-06-26.png" />
+  <meta property="og:url" content="https://tusharvartak.com/posts/cyberpulse-the-measurement-failure.html" />
   <meta property="og:site_name" content="CyberPulse" />
-  <meta property="article:published_time" content="2026-06-02T06:00:00+00:00" />
+  <meta property="article:published_time" content="2026-06-26T06:00:00+00:00" />
   <meta property="article:author" content="Tushar Vartak" />
   <meta property="article:section" content="Cybersecurity" />
   <!-- Add article:tag entries for each topic tag -->
-    <meta property="article:tag" content="Supply Chain" />
-  <meta property="article:tag" content="Identity" />
-  <meta property="article:tag" content="AI Security" />
-  <meta property="article:tag" content="Control Plane" />
+  
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="The Control Plane Is the Loot" />
-  <meta name="twitter:description" content="They are trying to become the edge, the package maintainer, the artificial intelligence operator, and the directory administrator at the same time." />
-  <meta name="twitter:image" content="https://tusharvartak.com/assets/og/2026-06-02.png" />
+  <meta name="twitter:title" content="The Measurement Failure" />
+  <meta name="twitter:description" content="A board-level CyberPulse Emerging Risks Brief on measuring adversary conversion rather than security activity." />
+  <meta name="twitter:image" content="https://tusharvartak.com/assets/og/2026-06-26.png" />
   <link rel="alternate" type="application/rss+xml" title="CyberPulse RSS Feed" href="/feed.xml" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "The Control Plane Is the Loot",
-    "description": "They are trying to become the edge, the package maintainer, the artificial intelligence operator, and the directory administrator at the same time.",
-    "image": "https://tusharvartak.com/assets/og/2026-06-02.png",
-    "datePublished": "2026-06-02T06:00:00+00:00",
-    "keywords": "Supply Chain, Identity, AI Security, Control Plane, CyberPulse, Tushar Vartak, cybersecurity, AI security, executive cyber risk",
-    "dateModified": "2026-06-02T06:00:00+00:00",
+    "headline": "The Measurement Failure",
+    "description": "A board-level CyberPulse Emerging Risks Brief on measuring adversary conversion rather than security activity.",
+    "image": "https://tusharvartak.com/assets/og/2026-06-26.png",
+    "datePublished": "2026-06-26T06:00:00+00:00",
+    "keywords": "AI Security, Executive Cyber Risk, Software Supply Chain, Identity Security, Infrastructure Exposure, CyberPulse, Tushar Vartak, cybersecurity, AI security, executive cyber risk",
+    "dateModified": "2026-06-26T06:00:00+00:00",
     "author": {
       "@type": "Person",
       "name": "Tushar Vartak",
@@ -50,7 +47,7 @@
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://tusharvartak.com/posts/2026-06-02.html"
+      "@id": "https://tusharvartak.com/posts/cyberpulse-the-measurement-failure.html"
     }
   }
   </script>
@@ -339,6 +336,58 @@
     .source-box li { font-size: 15px; color: var(--muted); margin-bottom: 10px; line-height: 1.55; }
     .source-box a { color: var(--accent); }
 
+    /* ── Related briefings ── */
+    .related-briefings {
+      margin-top: 44px;
+      padding-top: 12px;
+    }
+    .related-briefings h2 { margin-top: 0; }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .related-card {
+      display: grid;
+      gap: 8px;
+      min-width: 0;
+      padding: 18px;
+      border-radius: var(--radius-sm);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      text-decoration: none;
+      box-shadow: var(--shadow-sm);
+      transition: border-color var(--duration-fast), background var(--duration-fast), transform var(--duration-fast) var(--ease);
+    }
+    .related-card:hover {
+      background: var(--surface-hover);
+      border-color: var(--border-strong);
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+    .related-card span {
+      color: var(--gold);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+    }
+    .related-card strong {
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+    }
+    .related-card em {
+      color: var(--muted);
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
     /* ── Article footer ── */
     .article-footer {
       margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--border);
@@ -416,6 +465,7 @@
       p { font-size: 18px; }
       .lead { font-size: 19px; }
       .signal, .action-box, .sticky-card, .source-box { border-radius: var(--radius-sm); }
+      .related-grid { grid-template-columns: 1fr; }
       .topbar { align-items: flex-start; }
       .share-row { width: 100%; }
       .tag-row { margin-bottom: 18px; }
@@ -425,13 +475,10 @@
   <!-- CyberPulse Phase 2/3 SEO start -->
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
   <meta name="theme-color" content="#06070a" />
-  <meta property="article:modified_time" content="2026-06-02T06:00:00+00:00" />
-  <link rel="prev" href="https://tusharvartak.com/posts/2026-06-01.html" />
-  <link rel="next" href="https://tusharvartak.com/posts/2026-06-03.html" />
-  <link rel="tag" href="https://tusharvartak.com/topics/supply-chain/" title="Supply Chain" />
-  <link rel="tag" href="https://tusharvartak.com/topics/identity/" title="Identity" />
-  <link rel="tag" href="https://tusharvartak.com/topics/ai-security/" title="AI Security" />
-  <link rel="tag" href="https://tusharvartak.com/topics/control-plane/" title="Control Plane" />
+  <meta property="article:modified_time" content="2026-06-26T06:00:00+00:00" />
+  <link rel="prev" href="https://tusharvartak.com/posts/2026-06-25.html" />
+  <link rel="next" href="https://tusharvartak.com/posts/cyberpulse-borrowed-legitimacy.html" />
+  <link rel="tag" href="https://tusharvartak.com/topics/operational-threat-intelligence/" title="Operational Threat Intelligence" />
   <script type="application/ld+json" id="breadcrumb-schema">
 {
     "@context": "https://schema.org",
@@ -452,8 +499,8 @@
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "The Control Plane Is the Loot",
-        "item": "https://tusharvartak.com/posts/2026-06-02.html"
+        "name": "The Measurement Failure",
+        "item": "https://tusharvartak.com/posts/cyberpulse-the-measurement-failure.html"
       }
     ]
   }
@@ -462,10 +509,10 @@
 {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://tusharvartak.com/posts/2026-06-02.html#webpage",
-    "url": "https://tusharvartak.com/posts/2026-06-02.html",
-    "name": "The Control Plane Is the Loot",
-    "description": "They are trying to become the edge, the package maintainer, the artificial intelligence operator, and the directory administrator at the same time.",
+    "@id": "https://tusharvartak.com/posts/cyberpulse-the-measurement-failure.html#webpage",
+    "url": "https://tusharvartak.com/posts/cyberpulse-the-measurement-failure.html",
+    "name": "The Measurement Failure",
+    "description": "A board-level CyberPulse Emerging Risks Brief on measuring adversary conversion rather than security activity.",
     "isPartOf": {
       "@type": "WebSite",
       "name": "CyberPulse",
@@ -473,10 +520,10 @@
     },
     "primaryImageOfPage": {
       "@type": "ImageObject",
-      "url": "https://tusharvartak.com/assets/covers/2026-06-02-apiframe-clean.png?v=crisp-20260602"
+      "url": "https://tusharvartak.com/assets/covers/2026-06-26.png?v=20260626"
     },
     "breadcrumb": {
-      "@id": "https://tusharvartak.com/posts/2026-06-02.html#breadcrumb"
+      "@id": "https://tusharvartak.com/posts/cyberpulse-the-measurement-failure.html#breadcrumb"
     }
   }
   </script>
@@ -501,8 +548,8 @@
         </button>
         <div class="share-row">
           <span class="share-label">Share</span>
-          <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=https://tusharvartak.com/posts/2026-06-02.html" data-analytics="share-linkedin">LinkedIn</a>
-          <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=The%20Control%20Plane%20Is%20the%20Loot&url=https://tusharvartak.com/posts/2026-06-02.html" data-analytics="share-x">X</a>
+          <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-06-26.html" data-analytics="share-linkedin">LinkedIn</a>
+          <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=The%20Measurement%20Failure&url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-06-26.html" data-analytics="share-x">X</a>
           <button class="share-btn" id="copyLinkBtn" type="button" data-analytics="share-copy">Copy link</button>
         </div>
       </div>
@@ -511,18 +558,15 @@
     <div class="layout">
       <article>
         <div class="article-inner">
-          <div class="article-eyebrow">CyberPulse &middot; Edition No. 9 &middot; Tuesday, June 2, 2026</div>
-          <h1>The Control Plane Is the Loot</h1>
-          <p class="dek">Attackers are moving upstream into the systems that create trust: packages, gateways, directories, AI workflows, and the partners that sit near critical enterprises.</p>
+          <div class="article-eyebrow">CyberPulse &middot; Edition No. 9 &middot; Friday, June 26, 2026</div>
+          <h1>The Measurement Failure</h1>
+          <p class="dek"></p>
 
           <div class="tag-row">
-                        <a class="tag" href="/archive/?tag=Supply+Chain">Supply Chain</a>
-            <a class="tag" href="/archive/?tag=Identity">Identity</a>
-            <a class="tag" href="/archive/?tag=AI+Security">AI Security</a>
-            <a class="tag" href="/archive/?tag=Control+Plane">Control Plane</a>
+            <a class="tag" href="/topics/operational-threat-intelligence/">Operational Threat Intelligence</a>
           </div>
 
-          <img class="article-cover" src="/assets/covers/2026-06-02-apiframe-clean.png?v=crisp-20260602" alt="CyberPulse editorial cover image for The Control Plane Is the Loot" loading="lazy">
+          <img class="article-cover" src="/assets/covers/2026-06-26.png?v=20260626" alt="CyberPulse editorial cover image for The Measurement Failure" loading="lazy">
 
           <div class="hero-meta">
             <div class="meta-card">
@@ -531,52 +575,39 @@
             </div>
             <div class="meta-card">
               <strong>Published</strong>
-              <span>Tuesday, June 2, 2026</span>
+              <span>2026-06-26</span>
             </div>
             <div class="meta-card">
               <strong>Primary signal</strong>
-              <span>Attackers are shifting from noisy endpoint compromise toward the control planes that decide what software, sessions, identities, and automation enterprises trust automatically.</span>
+              <span>The Measurement Failure</span>
             </div>
             <div class="meta-card">
               <strong>Why it matters</strong>
-              <span>If a trusted package, gateway, directory service, or AI workflow is compromised, attackers do not need to break every downstream control. They can inherit authority from the systems that grant it.</span>
+              <span>Boards are still asking whether security controls exist. The sharper question is whether those controls reduce adversary conversion before exposure becomes leverage.</span>
             </div>
           </div>
 
           <!-- ── Lead paragraph ── -->
-          <p class="lead">Today’s signal is that attackers are no longer satisfied with stealing from the edge. They are trying to become the edge, the package maintainer, the artificial intelligence operator, and the directory administrator at the same time.</p>
+          <p class="lead">Boards are still asking whether security controls exist. The sharper question is whether those controls reduce adversary conversion before exposure becomes leverage.</p>
 
           <!-- ── Body paragraphs ── -->
-                    <h2 id="the-story-that-matters">The story that matters</h2>
-          <div class="signal">
-            <h3>The control plane is becoming the prize</h3>
-            <p>Today’s signal is that attackers are no longer satisfied with stealing from the edge. They are trying to become the edge, the package maintainer, the artificial intelligence operator, and the directory administrator at the same time.</p>
-            <p>For security teams across the Gulf, the uncomfortable question is not whether one product needs a fix. It is whether control planes are still governed as infrastructure, or merely trusted because they have always been trusted.</p>
-          </div>
-          <h2 id="software-supply-chain">Software supply chain risk</h2>
-          <div class="signal">
-            <h3>Package trust is now privileged identity</h3>
-            <p>The lead story is a software supply chain compromise affecting an enterprise package namespace, where malicious packages were modified to behave like a credential-stealing worm. The tactic matters more than the brand.</p>
-            <p>A developer installs what looks familiar, automation pulls what appears legitimate, and secrets move before a human has time to notice. The update pipeline is not just a delivery mechanism. It is a privileged identity system with write access to the future.</p>
-          </div>
-          <h2 id="operational-priorities">Operational priorities</h2>
-          <p>P zero for today: freeze and inspect recent package pulls from high-trust internal build systems, especially where packages are mirrored automatically into private registries. Rotate tokens exposed to build runners, development containers, and continuous integration jobs.</p>
-          <p>P one: enforce provenance controls on software dependencies. Require signed packages where possible, restrict maintainer changes, alert on sudden version jumps, and block install scripts from reaching sensitive environment variables unless explicitly justified.</p>
-          <p>P two: run a dependency governance review across application teams. The question is simple: who is allowed to introduce code that production will trust automatically? If the answer is unclear, the organization does not have a supply chain strategy. It has a hope strategy.</p>
-          <h2 id="infrastructure-signals">Infrastructure signals</h2>
-          <div class="signal">
-            <h3>Gateways and directories are authority layers</h3>
-            <p>The second signal is active exploitation against a widely deployed remote access gateway flaw. This class of bug remains dangerous because it sits at the point where identity, network reachability, and administrative exception handling collide.</p>
-            <p>The third signal is pressure on directory infrastructure. Directory systems are the memory of the organization: users, groups, policies, delegated rights, service accounts, and the quiet exceptions that accumulate for years. If that layer is reachable, unpatched, and under-monitored, attackers do not need to own every system. They need to own the system that tells every other system whom to trust.</p>
-            <p>Confirm exposure and patch status for directory controllers and remote access gateways today. Validate from network telemetry, not spreadsheets. Spreadsheets do not get exploited; forgotten interfaces do.</p>
-          </div>
-          <h2 id="ai-and-third-party-risk">AI and third-party risk</h2>
-          <div class="signal">
-            <h3>Trusted interfaces are expanding</h3>
-            <p>The fourth signal is the artificial intelligence application layer. A critical flaw in a workflow platform for language-model applications has proof-of-concept exploitation risk, while attackers are also abusing shared assistant content to run phishing campaigns.</p>
-            <p>Enterprises are adopting artificial intelligence interfaces faster than they are defining the trust boundaries around them. A shared prompt, a generated page, a connector, or a workflow agent can become a delivery path, an exfiltration path, or a command surface.</p>
-            <p>The fifth signal is state-linked activity against diplomatic and institutional targets, using stealthier staging and persistence methods. For Gulf enterprises that support public-sector, energy, logistics, finance, or telecom ecosystems, the key point is adjacency. You may not be the primary target. You may be the route.</p>
-          </div>
+          <p>The weekend signal is not another checklist item. It is a measurement failure. Enterprises have more dashboards, more scanners, more monitoring feeds, and more vendor attestations than ever. Yet recent developments point to a harder truth: many executive metrics still measure security activity while adversaries measure conversion.</p>
+          <p>Conversion means the moment a weakness becomes leverage. A network platform weakness becomes privileged access. A browser extension becomes a remote execution surface. A supplier incident becomes many client incidents. An automated assurance tool becomes a source of confidence even when critical issues remain hidden. The board may see coverage. The adversary sees yield.</p>
+          <p>For Gulf enterprises, the strategic risk is no longer whether the organization can name its controls. It is whether leadership can prove those controls change attacker economics quickly enough.</p>
+          <p>Recent reporting on infrastructure exploitation carried two uncomfortable timing signals: adversaries working before public disclosure in one case, and rapid weaponization of another communications platform weakness after disclosure in another. Weekend boards should avoid turning that into a narrow patching conversation. The deeper question is whether the organization can reduce reachability, constrain privileged paths, and isolate exposed services while formal remediation is still moving through ownership and change approval.</p>
+          <p>If a critical system remains reachable because nobody can decide who owns the business impact of isolation, the risk metric is not vulnerability volume. It is decision latency. The most mature security teams will show the board time-to-containment evidence, not only closure percentages.</p>
+          <p>A widely installed browser ad-blocking extension was reported to contain the ingredients for remote script execution through a server-side configuration change, without a visible store update or a fresh user decision. That is not just a browser story. It is a governance story about latent permission: trusted components that retain the ability to change behavior after the enterprise has stopped paying attention.</p>
+          <p>Boards should assume productivity layers, extensions, plug-ins, scripts, and automation helpers are no longer static approvals. They are living permissions. Approval needs expiry, behavior monitoring, and tiering by where code can execute: ordinary browsing, finance workflows, privileged administration, executive collaboration, and regulated data access.</p>
+          <p>Two automation signals deserve board attention. First, malware research described an implant that used prompt-injection text to interfere with artificial-intelligence-assisted analysis. Second, a new testing study reported a sharp decline in reliance on fully automated vulnerability testing, with many practitioners saying automated tools missed critical issues.</p>
+          <p>The implication is not that automation is failing. The implication is that unmanaged confidence is failing. Automation is excellent for breadth, speed, correlation, and repetitive coverage. It is weaker when business logic, chained weaknesses, privilege paths, and manipulated input require judgment. Boards should expect hybrid assurance: machine scale plus independent human challenge.</p>
+          <p>Attackers are increasingly shifting from direct institutional targets toward the software and service providers those institutions depend on. That changes the executive question. It is not enough to ask whether the enterprise itself is prepared. Leaders need to know which vendors can create simultaneous exposure across many clients, which of those vendors have tested isolation, and which can prove notification speed under stress.</p>
+          <p>At the same time, disruption of criminal infrastructure and recovery of large credential troves shows that criminal supply chains remain industrialized. Takedowns matter, but they do not remove the board’s duty to understand how stolen access, commodity malware, hosting, and resale markets recombine after disruption.</p>
+          <p>Can we make a critical exposed service unreachable while remediation is still pending, and can leadership see proof of that decision path?</p>
+          <p>Which extensions, automation tools, third-party scripts, and productivity layers can execute inside privileged or sensitive workflows?</p>
+          <p>Which suppliers could turn one incident into simultaneous exposure across many business units or clients, and have they tested isolation?</p>
+          <p>Where are we relying on automated assurance without independent human challenge, and what critical risks could that confidence miss?</p>
+          <p>Infrastructure policy is widening the frame as new rules affecting emergency communications and undersea connectivity show resilience becoming an executive infrastructure question, not only an information-security question. That is a preview for regional leadership: connectivity, vendor concentration, incident authority, and continuity proof are now one conversation.</p>
+          <p>The uncomfortable answer may be that the organization has more controls than proof. That is the measurement failure.</p>
 
           <!-- ── Takeaways ── -->
           <h2 id="takeaways">Takeaways</h2>
@@ -584,103 +615,41 @@
             <div class="action-box">
               <h4>Board takeaway in 20 seconds</h4>
               <ul>
-                <li>Attackers are moving upstream into the systems that create trust: packages, gateways, directories, AI workflows, and the partners that sit near critical enterprises.</li>
-                <li>Fraud controls should be judged by whether they interrupt the handoffs attackers need: attention, delivery, trust, identity, web foothold, and credential payout.</li>
+                <li>Boards are still asking whether security controls exist.</li>
+                <li>Trusted systems are now business attack surfaces; directors should ask where authority has been delegated and what evidence proves it is constrained.</li>
               </ul>
             </div>
             <div class="action-box">
               <h4>What should CISOs do?</h4>
               <ul>
-                <li>Monitor cloud workloads that unexpectedly send mail, create bulk outbound traffic, or appear outside approved provisioning patterns.</li>
-                <li>Treat trusted sharing services as redirect surfaces: inspect destination chains, not only the first domain a user clicks.</li>
-                <li>Lock down exposed form plugins, workflow tools, and AI builders with patch SLAs, admin restrictions, and recent-change review.</li>
+                <li>Inventory every agent, bot, workflow, script, and plugin that can read secrets, change code, trigger builds, or alter production settings.</li>
+                <li>Reduce delegated authority: least privilege for automation tokens, human approval on high-impact workflow actions, and emergency kill switches for agentic tools.</li>
+                <li>Treat packages and plugins as ingress points: pin versions, verify maintainers, monitor new dependencies, and alert on unexpected install or update paths.</li>
               </ul>
             </div>
             <div class="action-box">
               <h4>What should boards demand?</h4>
               <ul>
-                <li>Evidence that payment, travel, hospitality, and support workflows require out-of-band verification at high-risk moments.</li>
-                <li>Named ownership for public-facing convenience software before it becomes a fraud staging point.</li>
-                <li>Metrics that show fraud controls make completion harder across attention, delivery, trust, identity, web foothold, and credential payout.</li>
+                <li>A current map of which automated systems can change production code, infrastructure, identity permissions, or customer-facing content.</li>
+                <li>Named executive ownership for risk acceptance below formal procurement thresholds, especially open-source packages and third-party plugins.</li>
+                <li>Quarterly evidence that delegated digital authority is constrained, monitored, logged, and reversible — not just documented in policy.</li>
               </ul>
             </div>
             <div class="action-box">
               <h4>What should risk committees rethink?</h4>
               <ul>
-                <li>Move fraud from awareness-only training into process design: approvals, callbacks, domain monitoring, and cloud-mail anomaly response.</li>
-                <li>Run incident scenarios for executive hospitality fraud, fake support, and compromised public web tools.</li>
-                <li>Review whether seasonal events, procurement exceptions, and support urgency weaken verification controls faster than policy owners expect.</li>
+                <li>Expand the risk register to include internet-, vendor-, and contractor-reachable operational systems that sit outside normal IT change control.</li>
+                <li>Require incident scenarios for harmful automated decisions: what instruction, data, credential, and approval path would investigators need to reconstruct?</li>
+                <li>Move assurance from vendor-by-vendor review to authority-chain review: who can act, through which tool, with which credential, and under whose risk acceptance.</li>
               </ul>
             </div>
           </div>
 
           <!-- ── Blind spot ── -->
           <h2 id="blind-spot">The board blind spot</h2>
-                    <p>The blind spot is assuming trusted systems are trusted because they are safe. In reality, trusted systems are valuable because the enterprise has already decided not to challenge them every time.</p>
-          <p>A package install process, a gateway session, a directory decision, an AI connector call, and a supplier account are all forms of delegated authority. If those forms of authority are invisible, attackers will find them before governance does.</p>
-          <p>Defenders should respond by protecting trust itself as a tier-zero asset.</p>
+          <p>The board blind spot is delegated authority. Security reviews still focus on individual systems, while the real exposure is increasingly in the control planes, automations, agents, and credentials that can change many systems at once. Directors should ask who can act through these layers, what evidence proves those actions are constrained, and how quickly harmful authority can be revoked.</p>
 
-          <!-- ── Sources ── -->
-          <div class="source-box">
-            <div class="meta-kicker">Sources</div>
-            <ol>
-              <!-- <li><a href="URL">Publication, Article title</a></li> -->
-                            <li><a href="https://thehackernews.com/2026/06/miasma-supply-chain-attack-compromises.html">The Hacker News — Miasma Supply Chain Attack Compromises Enterprise npm Packages</a></li>
-              <li><a href="https://thehackernews.com/2026/06/weekly-recap-new-linux-flaw-pan-os.html">The Hacker News — Weekly Recap: Linux Flaw, PAN-OS Exploit, AI-Powered Attacks, OAuth Phishing</a></li>
-              <li><a href="https://thehackernews.com/2026/06/china-aligned-groups-ramp-up-attacks.html">The Hacker News — State-Aligned Groups Ramp Up Attacks</a></li>
-              <li><a href="https://thehackernews.com/2026/06/openai-codex-authentication-tokens.html">The Hacker News — Codex Authentication Tokens Stolen in npm Supply Chain Attack</a></li>
-              <li><a href="https://thehackernews.com/2026/06/critical-wp-maps-pro-flaw-actively.html">The Hacker News — Critical WP Maps Pro Flaw Actively Exploited</a></li>
-              <li><a href="https://www.infosecurity-magazine.com/news/flowise-mcp-rce-poc/">Infosecurity Magazine — Critical Flowise Flaw Gives Attackers Full Server Control</a></li>
-              <li><a href="https://www.infosecurity-magazine.com/news/palo-alto-highseverity-bug/">Infosecurity Magazine — High-Severity Gateway Bug Actively Exploited</a></li>
-              <li><a href="https://www.bleepingcomputer.com/news/security/critical-windows-netlogon-rce-flaw-now-exploited-in-attacks/">BleepingComputer — Critical Directory Service Flaw Exploited in Attacks</a></li>
-            </ol>
-          </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          <!-- CyberPulse related briefings start -->
-          <section class="related-briefings" aria-labelledby="related-briefings-title">
-            <h2 id="related-briefings-title">Related briefings</h2>
-            <div class="related-grid">
-              <a class="related-card" href="/posts/2026-04-26.html">
-                <span>2026-04-26</span>
-                <strong>Identity Is the New Control Plane</strong>
-                <em>The fastest paths to material loss are OAuth abuse and executive fraud, not one more critical patch.</em>
-              </a>
-              <a class="related-card" href="/posts/2026-04-27.html">
-                <span>2026-04-27</span>
-                <strong>Cloud Control Planes, AI Fraud, and the New Concentration Risk</strong>
-                <em>Today’s board brief: Cloud control-plane weaknesses and AI-accelerated payment fraud turn third-party platforms into single points of failure.</em>
-              </a>
-              <a class="related-card" href="/posts/2026-06-01.html">
-                <span>2026-06-01</span>
-                <strong>The Door That Pretended to Be Guarded</strong>
-                <em>Today’s signal is not subtle: identity controls at the edge are becoming the shortest path into enterprise networks.</em>
-              </a>
-            </div>
-          </section>
-          <!-- CyberPulse related briefings end -->
-
-          <div class="article-footer">
+<div class="article-footer">
             <span>CyberPulse &middot; Signal over noise &middot; Edition No. 9</span>
             <a href="/">Home</a>
           </div>
@@ -692,31 +661,23 @@
           <div class="side-kicker">In this edition</div>
           <ul class="toc-list">
             <!-- Build TOC from h2 ids -->
-                        <li><a href="#the-story-that-matters">The story that matters</a></li>
-            <li><a href="#software-supply-chain">Software supply chain risk</a></li>
-            <li><a href="#operational-priorities">Operational priorities</a></li>
-            <li><a href="#infrastructure-signals">Infrastructure signals</a></li>
-            <li><a href="#ai-and-third-party-risk">AI and third-party risk</a></li>
-            <li><a href="#takeaways">What to do now</a></li>
-            <li><a href="#blind-spot">The board blind spot</a></li>
+            <li><a href="#takeaways">Takeaways</a></li>
           </ul>
         </div>
 
         <div class="sticky-card">
           <div class="side-kicker">At a glance</div>
-          <p>The enterprise control plane is becoming the target: software dependency trust, remote access sessions, directory authority, AI workflows, and strategic third-party access now form one chain of business risk.</p>
+          <p>Boards are still asking whether security controls exist. The sharper question is whether those controls reduce adversary conversion before exposure becomes leverage.</p>
           <ul>
-                        <li>Inspect recent high-trust package pulls and rotate build secrets exposed to install workflows.</li>
-            <li>Validate remote access gateway and directory controller exposure from telemetry, not spreadsheets.</li>
-            <li>Inventory AI workflow tools, shared links, connectors, and supplier access paths touching enterprise data.</li>
+            
           </ul>
         </div>
 
         <div class="sticky-card">
           <div class="side-kicker">Share this briefing</div>
           <div class="share-stack">
-            <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=https://tusharvartak.com/posts/2026-06-02.html" data-analytics="share-linkedin">Share on LinkedIn</a>
-            <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=The%20Control%20Plane%20Is%20the%20Loot&url=https://tusharvartak.com/posts/2026-06-02.html" data-analytics="share-x">Share on X</a>
+            <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-06-26.html" data-analytics="share-linkedin">Share on LinkedIn</a>
+            <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=The%20Measurement%20Failure&url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-06-26.html" data-analytics="share-x">Share on X</a>
             <button class="share-btn" id="copyLinkBtnAside" type="button" data-analytics="share-copy">Copy article link</button>
           </div>
         </div>
