@@ -3,41 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Exposure Queue Is Starting to Look Like… | CyberPulse</title>
+  <title>The Friction Budget | CyberPulse Executive Brief</title>
   <link rel="icon" type="image/png" href="/assets/brand/logo-square.png" />
-  <meta name="description" content="It spans management planes, collaboration tools, and administrative systems that often sit close to privileged operations." />
-  <link rel="canonical" href="https://tusharvartak.com/posts/2026-04-22.html" />
+  <meta name="description" content="A board-level CyberPulse Emerging Risks Brief on where enterprises should preserve friction in high-consequence digital workflows." />
+  <link rel="canonical" href="https://tusharvartak.com/posts/cyberpulse-the-friction-budget.html" />
   <meta name="author" content="Tushar Vartak" />
-  <meta name="keywords" content="KEV, Exposure Management, Ransomware, Operational Resilience, CyberPulse, Tushar Vartak, cybersecurity, AI security, executive cyber risk" />
-  <meta property="og:title" content="The Exposure Queue Is Starting to Look Like the Threat Surface" />
-  <meta property="og:description" content="It spans management planes, collaboration tools, and administrative systems that often sit close to privileged operations." />
+  <meta name="keywords" content="AI Security, Executive Cyber Risk, Software Supply Chain, Identity Security, Infrastructure Exposure, CyberPulse, Tushar Vartak, cybersecurity, AI security, executive cyber risk" />
+  <meta property="og:title" content="The Friction Budget" />
+  <meta property="og:description" content="A board-level CyberPulse Emerging Risks Brief on where enterprises should preserve friction in high-consequence digital workflows." />
   <meta property="og:type" content="article" />
-  <meta property="og:image" content="https://tusharvartak.com/assets/og/2026-04-22.png" />
-  <meta property="og:url" content="https://tusharvartak.com/posts/2026-04-22.html" />
+  <meta property="og:image" content="https://tusharvartak.com/assets/og/2026-06-27.png" />
+  <meta property="og:url" content="https://tusharvartak.com/posts/cyberpulse-the-friction-budget.html" />
   <meta property="og:site_name" content="CyberPulse" />
-  <meta property="article:published_time" content="2026-04-22T06:00:00+00:00" />
+  <meta property="article:published_time" content="2026-06-27T06:00:00+00:00" />
   <meta property="article:author" content="Tushar Vartak" />
   <meta property="article:section" content="Cybersecurity" />
   <!-- Add article:tag entries for each topic tag -->
-    <meta property="article:tag" content="KEV" />
-  <meta property="article:tag" content="Exposure Management" />
-  <meta property="article:tag" content="Ransomware" />
-  <meta property="article:tag" content="Operational Resilience" />
+  
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="The Exposure Queue Is Starting to Look Like the Threat Surface" />
-  <meta name="twitter:description" content="It spans management planes, collaboration tools, and administrative systems that often sit close to privileged operations." />
-  <meta name="twitter:image" content="https://tusharvartak.com/assets/og/2026-04-22.png" />
+  <meta name="twitter:title" content="The Friction Budget" />
+  <meta name="twitter:description" content="A board-level CyberPulse Emerging Risks Brief on where enterprises should preserve friction in high-consequence digital workflows." />
+  <meta name="twitter:image" content="https://tusharvartak.com/assets/og/2026-06-27.png" />
   <link rel="alternate" type="application/rss+xml" title="CyberPulse RSS Feed" href="/feed.xml" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "The Exposure Queue Is Starting to Look Like the Threat Surface",
-    "description": "It spans management planes, collaboration tools, and administrative systems that often sit close to privileged operations.",
-    "image": "https://tusharvartak.com/assets/og/2026-04-22.png",
-    "datePublished": "2026-04-22T06:00:00+00:00",
-    "keywords": "KEV, Exposure Management, Ransomware, Operational Resilience, CyberPulse, Tushar Vartak, cybersecurity, AI security, executive cyber risk",
-    "dateModified": "2026-04-22T06:00:00+00:00",
+    "headline": "The Friction Budget",
+    "description": "A board-level CyberPulse Emerging Risks Brief on where enterprises should preserve friction in high-consequence digital workflows.",
+    "image": "https://tusharvartak.com/assets/og/2026-06-27.png",
+    "datePublished": "2026-06-27T06:00:00+00:00",
+    "keywords": "AI Security, Executive Cyber Risk, Software Supply Chain, Identity Security, Infrastructure Exposure, CyberPulse, Tushar Vartak, cybersecurity, AI security, executive cyber risk",
+    "dateModified": "2026-06-27T06:00:00+00:00",
     "author": {
       "@type": "Person",
       "name": "Tushar Vartak",
@@ -50,7 +47,7 @@
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://tusharvartak.com/posts/2026-04-22.html"
+      "@id": "https://tusharvartak.com/posts/cyberpulse-the-friction-budget.html"
     }
   }
   </script>
@@ -339,6 +336,58 @@
     .source-box li { font-size: 15px; color: var(--muted); margin-bottom: 10px; line-height: 1.55; }
     .source-box a { color: var(--accent); }
 
+    /* ── Related briefings ── */
+    .related-briefings {
+      margin-top: 44px;
+      padding-top: 12px;
+    }
+    .related-briefings h2 { margin-top: 0; }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .related-card {
+      display: grid;
+      gap: 8px;
+      min-width: 0;
+      padding: 18px;
+      border-radius: var(--radius-sm);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      text-decoration: none;
+      box-shadow: var(--shadow-sm);
+      transition: border-color var(--duration-fast), background var(--duration-fast), transform var(--duration-fast) var(--ease);
+    }
+    .related-card:hover {
+      background: var(--surface-hover);
+      border-color: var(--border-strong);
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+    .related-card span {
+      color: var(--gold);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+    }
+    .related-card strong {
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+    }
+    .related-card em {
+      color: var(--muted);
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
     /* ── Article footer ── */
     .article-footer {
       margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--border);
@@ -416,6 +465,7 @@
       p { font-size: 18px; }
       .lead { font-size: 19px; }
       .signal, .action-box, .sticky-card, .source-box { border-radius: var(--radius-sm); }
+      .related-grid { grid-template-columns: 1fr; }
       .topbar { align-items: flex-start; }
       .share-row { width: 100%; }
       .tag-row { margin-bottom: 18px; }
@@ -425,13 +475,10 @@
   <!-- CyberPulse Phase 2/3 SEO start -->
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
   <meta name="theme-color" content="#06070a" />
-  <meta property="article:modified_time" content="2026-04-22T06:00:00+00:00" />
-  <link rel="prev" href="https://tusharvartak.com/posts/2026-04-21.html" />
-  <link rel="next" href="https://tusharvartak.com/posts/2026-04-26.html" />
-  <link rel="tag" href="https://tusharvartak.com/topics/kev/" title="KEV" />
-  <link rel="tag" href="https://tusharvartak.com/topics/exposure-management/" title="Exposure Management" />
-  <link rel="tag" href="https://tusharvartak.com/topics/ransomware/" title="Ransomware" />
-  <link rel="tag" href="https://tusharvartak.com/topics/operational-resilience/" title="Operational Resilience" />
+  <meta property="article:modified_time" content="2026-06-27T06:00:00+00:00" />
+  <link rel="prev" href="https://tusharvartak.com/posts/2026-06-26.html" />
+  <link rel="next" href="https://tusharvartak.com/posts/cyberpulse-borrowed-legitimacy.html" />
+  <link rel="tag" href="https://tusharvartak.com/topics/operational-threat-intelligence/" title="Operational Threat Intelligence" />
   <script type="application/ld+json" id="breadcrumb-schema">
 {
     "@context": "https://schema.org",
@@ -452,8 +499,8 @@
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "The Exposure Queue Is Starting to Look Like the Threat Surface",
-        "item": "https://tusharvartak.com/posts/2026-04-22.html"
+        "name": "The Friction Budget",
+        "item": "https://tusharvartak.com/posts/cyberpulse-the-friction-budget.html"
       }
     ]
   }
@@ -462,10 +509,10 @@
 {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://tusharvartak.com/posts/2026-04-22.html#webpage",
-    "url": "https://tusharvartak.com/posts/2026-04-22.html",
-    "name": "The Exposure Queue Is Starting to Look Like the Threat Surface",
-    "description": "It spans management planes, collaboration tools, and administrative systems that often sit close to privileged operations.",
+    "@id": "https://tusharvartak.com/posts/cyberpulse-the-friction-budget.html#webpage",
+    "url": "https://tusharvartak.com/posts/cyberpulse-the-friction-budget.html",
+    "name": "The Friction Budget",
+    "description": "A board-level CyberPulse Emerging Risks Brief on where enterprises should preserve friction in high-consequence digital workflows.",
     "isPartOf": {
       "@type": "WebSite",
       "name": "CyberPulse",
@@ -473,10 +520,10 @@
     },
     "primaryImageOfPage": {
       "@type": "ImageObject",
-      "url": "https://tusharvartak.com/assets/covers/2026-04-22.png"
+      "url": "https://tusharvartak.com/assets/covers/2026-06-27.png?v=20260627"
     },
     "breadcrumb": {
-      "@id": "https://tusharvartak.com/posts/2026-04-22.html#breadcrumb"
+      "@id": "https://tusharvartak.com/posts/cyberpulse-the-friction-budget.html#breadcrumb"
     }
   }
   </script>
@@ -501,8 +548,8 @@
         </button>
         <div class="share-row">
           <span class="share-label">Share</span>
-          <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=https://tusharvartak.com/posts/2026-04-22.html" data-analytics="share-linkedin">LinkedIn</a>
-          <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=The%20Exposure%20Queue%20Is%20Starting%20to%20Look%20Like%20the%20Threat%20Surface&url=https://tusharvartak.com/posts/2026-04-22.html" data-analytics="share-x">X</a>
+          <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-06-27.html" data-analytics="share-linkedin">LinkedIn</a>
+          <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=The%20Friction%20Budget&url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-06-27.html" data-analytics="share-x">X</a>
           <button class="share-btn" id="copyLinkBtn" type="button" data-analytics="share-copy">Copy link</button>
         </div>
       </div>
@@ -511,75 +558,58 @@
     <div class="layout">
       <article>
         <div class="article-inner">
-          <div class="article-eyebrow">CyberPulse &middot; Edition No. 5 &middot; Wednesday, April 22, 2026</div>
-          <h1>The Exposure Queue Is Starting to Look Like the Threat Surface</h1>
-          <p class="dek">CISA’s latest exploited-vulnerability actions, recurring emergency patch orders for edge platforms, and ransomware use of overlooked mail infrastructure all point to the same executive lesson: attackers are thriving in the window between exposure discovery and operational closure.</p>
+          <div class="article-eyebrow">CyberPulse &middot; Edition No. 10 &middot; Saturday, June 27, 2026</div>
+          <h1>The Friction Budget</h1>
+          <p class="dek"></p>
 
           <div class="tag-row">
-            <!-- Add tags as clickable links: <a class="tag" href="/archive/?tag=TagName">TagName</a> -->
-                        <a class="tag" href="/archive/?tag=KEV">KEV</a>
-            <a class="tag" href="/archive/?tag=Exposure+Management">Exposure Management</a>
-            <a class="tag" href="/archive/?tag=Ransomware">Ransomware</a>
-            <a class="tag" href="/archive/?tag=Operational+Resilience">Operational Resilience</a>
+            <a class="tag" href="/topics/operational-threat-intelligence/">Operational Threat Intelligence</a>
           </div>
 
-          <img class="article-cover" src="/assets/covers/2026-04-22.png" alt="CyberPulse editorial cover image for The Exposure Queue Is Starting to Look Like the Threat Surface" loading="lazy">
+          <img class="article-cover" src="/assets/covers/2026-06-27.png?v=20260627" alt="CyberPulse editorial cover image for The Friction Budget" loading="lazy">
 
           <div class="hero-meta">
             <div class="meta-card">
               <strong>Confidence</strong>
-              <span>High confidence, anchored in CISA alerts and BleepingComputer reporting on exploited Ivanti, Fortinet, and SmarterMail vulnerabilities.</span>
+              <span>High</span>
             </div>
             <div class="meta-card">
               <strong>Published</strong>
-              <span>Wednesday, April 22, 2026</span>
+              <span>2026-06-27</span>
             </div>
             <div class="meta-card">
               <strong>Primary signal</strong>
-              <span>The enterprise cyber problem is no longer just identifying critical exposure. It is shrinking the queue of known, reachable, high-leverage weaknesses before attackers monetize the delay.</span>
+              <span>The Friction Budget</span>
             </div>
             <div class="meta-card">
               <strong>Why it matters</strong>
-              <span>When exploited flaws keep surfacing across management systems, email infrastructure, and internet-facing edge software, the business risk shifts from isolated vulnerability severity to cumulative closure failure across the exposure backlog.</span>
+              <span>The next board-level security question is not how to make every process faster. It is where the enterprise has removed too much deliberate friction.</span>
             </div>
           </div>
 
           <!-- ── Lead paragraph ── -->
-          <p class="lead">CISA added eight more known exploited vulnerabilities to its catalog on April 20, including flaws affecting Cisco Catalyst SD-WAN Manager, JetBrains TeamCity, Quest KACE, Kentico Xperience, Zimbra, and PaperCut. That variety matters. The issue is no longer confined to one vendor family or one technology stack. It spans management planes, collaboration tools, and administrative systems that often sit close to privileged operations.</p>
+          <p class="lead">The next board-level security question is not how to make every process faster. It is where the enterprise has removed too much deliberate friction.</p>
 
           <!-- ── Body paragraphs ── -->
-                    <h2 id="the-story-that-matters">The story that matters</h2>
-          <div class="signal">
-            <h3>The KEV list is increasingly a map of where operational delay becomes enterprise risk</h3>
-            <p>CISA added eight more known exploited vulnerabilities to its catalog on April 20, including flaws affecting Cisco Catalyst SD-WAN Manager, JetBrains TeamCity, Quest KACE, Kentico Xperience, Zimbra, and PaperCut. That variety matters. The issue is no longer confined to one vendor family or one technology stack. It spans management planes, collaboration tools, and administrative systems that often sit close to privileged operations.</p>
-            <p>For executives, the important signal is not just that more exploited vulnerabilities exist. It is that the queue of urgent remediation work keeps widening across systems that are both operationally important and hard to touch quickly. Once that queue accumulates, attackers do not need a new breakthrough. They only need defenders to remain behind.</p>
-          </div>
-          <div class="signal">
-            <h3>Attackers keep picking the systems enterprises are slowest to disrupt</h3>
-            <p>Recent CISA-linked patch pressure around Ivanti Endpoint Manager Mobile and FortiClient EMS reinforces the same pattern. These are not fringe assets. They are management and control systems that enterprises hesitate to patch casually because they sit close to device administration, endpoint operations, and business continuity. That friction is exactly what makes them attractive.</p>
-            <p>The SmarterMail case sharpens the point further. BleepingComputer reports that CISA warned ransomware actors are exploiting a critical unauthenticated remote-code-execution flaw in the platform. Email and collaboration infrastructure that feels mundane or secondary can still become a direct intrusion and monetization path when patching urgency fades faster than attacker interest.</p>
-          </div>
-          <h2 id="beyond-one-cve">Why this matters beyond one CVE</h2>
-          <p>The strategic lesson is not simply that defenders must patch faster. It is that many organizations are still running cyber operations as if exploited exposure appears as a sequence of isolated tickets. It does not. It arrives as a layered backlog of edge software, identity-adjacent systems, mail infrastructure, and management tooling, all competing for the same finite maintenance windows and approval processes.</p>
-          <p>That changes the board conversation. The real question is no longer whether the security team can identify critical issues. It is whether the organization can force closure through business friction quickly enough when attackers are already operating against that same list.</p>
-          <h2 id="enterprise-risk">What this means for enterprise risk</h2>
-          <p>First, management infrastructure should be treated as high-consequence business infrastructure, not just another IT patch queue. Systems like endpoint managers, SD-WAN controllers, and administrative platforms sit too close to privileged workflows to tolerate long remediation tails.</p>
-          <p>Second, backlog itself is becoming a measurable risk signal. A company may have excellent detection and a mature severity model, but if known exploited issues remain open across internet-facing or control-plane systems, that exposure queue effectively becomes part of the attack surface.</p>
-          <p>Third, executive resilience depends on reducing decision latency as much as technical latency. When emergency fixes require too many approvals, coordination steps, or business exceptions, attackers gain a structural advantage without needing unusually advanced tradecraft.</p>
-
-          <!-- ── Sections ── -->
-          <!--
-            Use this pattern for each section:
-
-            <h2 id="section-slug">Section title</h2>
-            <p>Narrative paragraph...</p>
-
-            Use signal boxes for key findings:
-            <div class="signal">
-              <h3>Signal headline</h3>
-              <p>Signal detail paragraph...</p>
-            </div>
-          -->
+          <p>The weekend signal is a friction budget. Not friction as bureaucracy. Not the old security reflex of slowing everything down because nobody can say yes with confidence. The sharper question is where the enterprise deliberately preserves friction — and where convenience has quietly removed it.</p>
+          <p>Recent developments point in the same direction: messaging recovery material targeted by state-linked operators, developer assistants inheriting unsafe project instructions, local system weaknesses turning ordinary access into stronger access, utilities being pushed toward stricter remote-access discipline, and insurance markets demanding stronger evidence before accepting risk.</p>
+          <p>For Gulf enterprises, the strategic risk is not speed itself. It is unmanaged speed in workflows where recovery, privilege, code execution, supplier dependence, or continuity decisions carry executive consequence.</p>
+          <p>Fresh reporting on commercial messaging platforms describes adversaries targeting backup material, including recovery keys and cloud-stored archives. That should not be read as a narrow chat-application story. It is a reminder that recovery paths often sit outside the discipline applied to live communication.</p>
+          <p>If executive, legal, crisis-management, or incident-response conversations can be reconstructed from weaker backup routines, the organization has not protected the conversation. It has protected only the moment of conversation. Boards should ask who can create backups, where they land, how keys are stored, and whether high-sensitivity channels have standards that differ from ordinary team chat.</p>
+          <p>Another current signal comes from reporting on a flaw in a popular cloud developer assistant, where malicious repository configuration could influence local behavior through model-context settings. The board-level issue is larger than one product. Developer environments now read project files, run helper commands, and connect to code workflows with very little ceremony.</p>
+          <p>That speed is valuable. It is also why repositories, plug-ins, prompts, and configuration files need review boundaries. If a tool helps build the product, its instructions are part of the product risk. The enterprise should know which code-assistance workflows can execute local commands, which repositories are allowed to define tool behavior, and when a second human decision is required.</p>
+          <p>New Linux privilege-escalation research reinforces a familiar but under-governed reality: local flaws matter because attackers sequence them. One low-friction entry point, followed by one local step, followed by one poorly segmented route can change the entire business impact of an incident.</p>
+          <p>Weekend boards should avoid asking only whether a technical fix exists. The better question is whether the organization understands which systems allow limited access to become privileged access through predictable sequencing. That means reviewing endpoint hardening, administrative boundaries, service accounts, sensitive workload placement, and the time required to isolate a suspected host from high-value systems.</p>
+          <p>Open-source and artificial-intelligence vendors are forming new alliances around vulnerable and end-of-life components, while cyber-insurance reporting shows markets tightening guardrails. Those are not separate stories. They are signs of a wider evidence market.</p>
+          <p>Shared software ecosystems are trying to reduce systemic fragility before weak components become inherited enterprise risk. Insurers are pressuring organizations to prove discipline rather than merely claim maturity. Boards should expect more counterparties to ask for evidence: asset visibility, dependency governance, remote-access controls, tested recovery, and proof that high-consequence workflows are not governed by convenience alone.</p>
+          <p>Recent guidance for water utilities using remote-access tools, alongside new security requirements for emergency alert distributors, shows resilience expectations moving beyond the cyber team. Service continuity, public safety, supplier operations, and board accountability are converging.</p>
+          <p>Regional leadership should expect this pressure to spread across telecom, energy, transport, healthcare, education, and finance. The organizations that adapt first will not make everything slower. They will make the right things intentionally harder: key recovery, privileged escalation, remote administration, dependency acceptance, and sensitive workflow automation.</p>
+          <p>Which executive, legal, crisis, and incident-response channels have backup and recovery rules stronger than ordinary collaboration?</p>
+          <p>Which developer tools can read repository instructions, run local commands, or change build behavior without a second human decision?</p>
+          <p>Which systems allow limited access to become privileged access through predictable sequencing, and how quickly can they be isolated?</p>
+          <p>Which suppliers, utilities, software components, and insurance dependencies can prove resilience rather than merely assert maturity?</p>
+          <p>Speed is still an advantage. Digital transformation, developer productivity, remote operations, collaboration, and recovery all depend on reducing unnecessary drag. But leadership now needs a more mature distinction between wasteful friction and protective friction.</p>
+          <p>The board mandate is not to slow the business. It is to decide where convenience has become too dangerous to leave unchallenged. That is the friction budget.</p>
 
           <!-- ── Takeaways ── -->
           <h2 id="takeaways">Takeaways</h2>
@@ -587,102 +617,42 @@
             <div class="action-box">
               <h4>Board takeaway in 20 seconds</h4>
               <ul>
-                <li>CISA’s latest exploited-vulnerability actions, recurring emergency patch orders for edge platforms, and ransomware use of overlooked mail infrastructure all point to the same executive lesson: attackers are.</li>
-                <li>Fraud controls should be judged by whether they interrupt the handoffs attackers need: attention, delivery, trust, identity, web foothold, and credential payout.</li>
+                <li>The next board-level security question is not how to make every process faster.</li>
+                <li>Trusted systems are now business attack surfaces; directors should ask where authority has been delegated and what evidence proves it is constrained.</li>
               </ul>
             </div>
             <div class="action-box">
               <h4>What should CISOs do?</h4>
               <ul>
-                <li>Monitor cloud workloads that unexpectedly send mail, create bulk outbound traffic, or appear outside approved provisioning patterns.</li>
-                <li>Treat trusted sharing services as redirect surfaces: inspect destination chains, not only the first domain a user clicks.</li>
-                <li>Lock down exposed form plugins, workflow tools, and AI builders with patch SLAs, admin restrictions, and recent-change review.</li>
+                <li>Inventory every agent, bot, workflow, script, and plugin that can read secrets, change code, trigger builds, or alter production settings.</li>
+                <li>Reduce delegated authority: least privilege for automation tokens, human approval on high-impact workflow actions, and emergency kill switches for agentic tools.</li>
+                <li>Treat packages and plugins as ingress points: pin versions, verify maintainers, monitor new dependencies, and alert on unexpected install or update paths.</li>
               </ul>
             </div>
             <div class="action-box">
               <h4>What should boards demand?</h4>
               <ul>
-                <li>Evidence that payment, travel, hospitality, and support workflows require out-of-band verification at high-risk moments.</li>
-                <li>Named ownership for public-facing convenience software before it becomes a fraud staging point.</li>
-                <li>Metrics that show fraud controls make completion harder across attention, delivery, trust, identity, web foothold, and credential payout.</li>
+                <li>A current map of which automated systems can change production code, infrastructure, identity permissions, or customer-facing content.</li>
+                <li>Named executive ownership for risk acceptance below formal procurement thresholds, especially open-source packages and third-party plugins.</li>
+                <li>Quarterly evidence that delegated digital authority is constrained, monitored, logged, and reversible — not just documented in policy.</li>
               </ul>
             </div>
             <div class="action-box">
               <h4>What should risk committees rethink?</h4>
               <ul>
-                <li>Move fraud from awareness-only training into process design: approvals, callbacks, domain monitoring, and cloud-mail anomaly response.</li>
-                <li>Run incident scenarios for executive hospitality fraud, fake support, and compromised public web tools.</li>
-                <li>Review whether seasonal events, procurement exceptions, and support urgency weaken verification controls faster than policy owners expect.</li>
+                <li>Expand the risk register to include internet-, vendor-, and contractor-reachable operational systems that sit outside normal IT change control.</li>
+                <li>Require incident scenarios for harmful automated decisions: what instruction, data, credential, and approval path would investigators need to reconstruct?</li>
+                <li>Move assurance from vendor-by-vendor review to authority-chain review: who can act, through which tool, with which credential, and under whose risk acceptance.</li>
               </ul>
             </div>
           </div>
 
           <!-- ── Blind spot ── -->
           <h2 id="blind-spot">The board blind spot</h2>
-                    <p>The blind spot is assuming that because a vulnerability is known, prioritized, and assigned, it is strategically under control. In reality, many exploited issues remain dangerous precisely because they are known but still waiting inside a crowded operational queue.</p>
-          <p>That is the deeper meaning of this week’s signals. Fresh KEV additions, urgent federal patch deadlines, and ransomware exploitation of overlooked platforms all describe the same structural gap between awareness and closure.</p>
-          <p>The organizations that will look strongest are the ones that treat exposure compression as a leadership capability, not just a vulnerability-management metric.</p>
+          <p>The board blind spot is delegated authority. Security reviews still focus on individual systems, while the real exposure is increasingly in the control planes, automations, agents, and credentials that can change many systems at once. Directors should ask who can act through these layers, what evidence proves those actions are constrained, and how quickly harmful authority can be revoked.</p>
 
-          <!-- ── Sources ── -->
-          <div class="source-box">
-            <div class="meta-kicker">Sources</div>
-            <ol>
-              <!-- <li><a href="URL">Publication, Article title</a></li> -->
-                            <li><a href="https://www.cisa.gov/news-events/alerts/2026/04/20/cisa-adds-eight-known-exploited-vulnerabilities-catalog">CISA, CISA Adds Eight Known Exploited Vulnerabilities to Catalog</a></li>
-              <li><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog">CISA Known Exploited Vulnerabilities Catalog</a></li>
-              <li><a href="https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-exploited-ivanti-epmm-flaw-by-sunday/">BleepingComputer, CISA orders feds to patch exploited Ivanti EPMM flaw by Sunday</a></li>
-              <li><a href="https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-fortinet-flaw-exploited-in-attacks-by-friday/">BleepingComputer, CISA orders feds to patch exploited Fortinet EMS flaw by Friday</a></li>
-              <li><a href="https://www.bleepingcomputer.com/news/security/cisa-warns-of-smartermail-rce-flaw-used-in-ransomware-attacks/">BleepingComputer, CISA warns of SmarterMail RCE flaw used in ransomware attacks</a></li>
-            </ol>
-          </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          <!-- CyberPulse related briefings start -->
-          <section class="related-briefings" aria-labelledby="related-briefings-title">
-            <h2 id="related-briefings-title">Related briefings</h2>
-            <div class="related-grid">
-              <a class="related-card" href="/posts/2026-04-21.html">
-                <span>2026-04-21</span>
-                <strong>The Exposure Backlog Is Becoming the Real Breach Surface</strong>
-                <em>In practice, it is another reminder that exploited risk now arrives as a stream, not as an isolated emergency.</em>
-              </a>
-              <a class="related-card" href="/posts/2026-04-20.html">
-                <span>2026-04-20</span>
-                <strong>Patch Volume Is Becoming a Business-Speed Problem</strong>
-                <em>A CyberPulse executive briefing on Microsoft’s April 2026 Patch Tuesday, exploited SharePoint risk, and the governance lessons from another major cryp</em>
-              </a>
-              <a class="related-card" href="/posts/2026-04-18.html">
-                <span>2026-04-18</span>
-                <strong>The Executive Is the New Perimeter</strong>
-                <em>A CyberPulse executive briefing on SharePoint exploitation, executive-targeted social engineering, and AI-accelerated attack economics.</em>
-              </a>
-            </div>
-          </section>
-          <!-- CyberPulse related briefings end -->
-
-          <div class="article-footer">
-            <span>CyberPulse &middot; Signal over noise &middot; Edition No. 5</span>
+<div class="article-footer">
+            <span>CyberPulse &middot; Signal over noise &middot; Edition No. 10</span>
             <a href="/">Home</a>
           </div>
         </div>
@@ -693,29 +663,23 @@
           <div class="side-kicker">In this edition</div>
           <ul class="toc-list">
             <!-- Build TOC from h2 ids -->
-                        <li><a href="#the-story-that-matters">The story that matters</a></li>
-            <li><a href="#beyond-one-cve">Why this matters beyond one CVE</a></li>
-            <li><a href="#enterprise-risk">What this means for enterprise risk</a></li>
             <li><a href="#takeaways">Takeaways</a></li>
-            <li><a href="#blind-spot">The board blind spot</a></li>
           </ul>
         </div>
 
         <div class="sticky-card">
           <div class="side-kicker">At a glance</div>
-          <p>Today’s edition argues that the more useful signal is not any one CVE in isolation, but the pattern of repeatedly exploited management and collaboration systems that organizations already know they should patch. The real risk surface is increasingly the queue of delayed action.</p>
+          <p>The next board-level security question is not how to make every process faster. It is where the enterprise has removed too much deliberate friction.</p>
           <ul>
-                        <li>CISA added eight more exploited vulnerabilities on April 20, spanning Cisco SD-WAN, TeamCity, PaperCut, Zimbra, Kentico, and Quest KACE.</li>
-            <li>BleepingComputer reports CISA recently issued urgent patch pressure for exploited Ivanti EPMM and FortiClient EMS flaws affecting widely exposed management infrastructure.</li>
-            <li>CISA also warned that ransomware actors are exploiting a critical SmarterMail RCE, showing how older or less glamorous enterprise software can still become a direct monetization path.</li>
+            
           </ul>
         </div>
 
         <div class="sticky-card">
           <div class="side-kicker">Share this briefing</div>
           <div class="share-stack">
-            <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=https://tusharvartak.com/posts/2026-04-22.html" data-analytics="share-linkedin">Share on LinkedIn</a>
-            <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=The%20Exposure%20Queue%20Is%20Starting%20to%20Look%20Like%20the%20Threat%20Surface&url=https://tusharvartak.com/posts/2026-04-22.html" data-analytics="share-x">Share on X</a>
+            <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-06-27.html" data-analytics="share-linkedin">Share on LinkedIn</a>
+            <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=The%20Friction%20Budget&url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-06-27.html" data-analytics="share-x">Share on X</a>
             <button class="share-btn" id="copyLinkBtnAside" type="button" data-analytics="share-copy">Copy article link</button>
           </div>
         </div>
