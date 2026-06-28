@@ -5,7 +5,7 @@
     <link>https://tusharvartak.com</link>
     <description>Executive cyber intelligence briefings on cyber risk, AI threats, infrastructure exposure, and board-level decision-making.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 27 Jun 2026 06:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 28 Jun 2026 06:00:00 +0000</lastBuildDate>
     <atom:link href="https://tusharvartak.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://tusharvartak.com/assets/og/default.png</url>
@@ -13,13 +13,13 @@
       <link>https://tusharvartak.com</link>
     </image>
     <item>
-      <title>CyberPulse Daily — The Friction Budget</title>
-      <link>https://tusharvartak.com/posts/cyberpulse-the-friction-budget.html</link>
-      <guid isPermaLink="true">https://tusharvartak.com/posts/cyberpulse-the-friction-budget.html</guid>
-      <pubDate>Sat, 27 Jun 2026 06:00:00 +0000</pubDate>
+      <title>CyberPulse Daily — Forty-Eight Hours</title>
+      <link>https://tusharvartak.com/posts/cyberpulse-forty-eight-hours.html</link>
+      <guid isPermaLink="true">https://tusharvartak.com/posts/cyberpulse-forty-eight-hours.html</guid>
+      <pubDate>Sun, 28 Jun 2026 06:00:00 +0000</pubDate>
       <dc:creator>Tushar Vartak</dc:creator>
-      <description>A board-level CyberPulse Emerging Risks Brief on where enterprises should preserve friction in high-consequence digital workflows.</description>
-      <enclosure url="https://tusharvartak.com/assets/covers/2026-06-27.png?v=20260627" type="image/png" length="0"/>
+      <description>A CyberPulse Daily Brief on exploitation tempo, persistence hunting, developer execution paths, and recovery-workflow hardening for Gulf enterprises.</description>
+      <enclosure url="https://tusharvartak.com/assets/covers/2026-06-28.png?v=20260628" type="image/png" length="0"/>
     </item>
   </channel>
 </rss>
