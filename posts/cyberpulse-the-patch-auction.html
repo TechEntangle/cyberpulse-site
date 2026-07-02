@@ -3,38 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Triage Tax | CyberPulse Executive Brief</title>
+  <title>The Patch Auction | CyberPulse Executive Brief</title>
   <link rel="icon" type="image/png" href="/assets/brand/logo-square.png" />
-  <meta name="description" content="For enterprise security teams across the Gulf, the issue is no longer whether warnings arrive." />
-  <link rel="canonical" href="https://tusharvartak.com/posts/cyberpulse-the-triage-tax.html" />
+  <meta name="description" content="That matters across the Gulf because “critical” has become too broad to guide action by itself." />
+  <link rel="canonical" href="https://tusharvartak.com/posts/cyberpulse-the-patch-auction.html" />
   <meta name="author" content="Tushar Vartak" />
   <meta name="keywords" content="AI Security, Executive Cyber Risk, Software Supply Chain, Identity Security, Infrastructure Exposure, CyberPulse, Tushar Vartak, cybersecurity, AI security, executive cyber risk" />
-  <meta property="og:title" content="The Triage Tax" />
-  <meta property="og:description" content="For enterprise security teams across the Gulf, the issue is no longer whether warnings arrive." />
+  <meta property="og:title" content="The Patch Auction" />
+  <meta property="og:description" content="That matters across the Gulf because “critical” has become too broad to guide action by itself." />
   <meta property="og:type" content="article" />
-  <meta property="og:image" content="https://tusharvartak.com/assets/og/2026-06-11.png" />
-  <meta property="og:url" content="https://tusharvartak.com/posts/cyberpulse-the-triage-tax.html" />
+  <meta property="og:image" content="https://tusharvartak.com/assets/og/2026-07-02.png" />
+  <meta property="og:url" content="https://tusharvartak.com/posts/cyberpulse-the-patch-auction.html" />
   <meta property="og:site_name" content="CyberPulse" />
-  <meta property="article:published_time" content="2026-06-11T06:00:00+00:00" />
+  <meta property="article:published_time" content="2026-07-02T06:00:00+00:00" />
   <meta property="article:author" content="Tushar Vartak" />
   <meta property="article:section" content="Cybersecurity" />
   <!-- Add article:tag entries for each topic tag -->
   
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="The Triage Tax" />
-  <meta name="twitter:description" content="For enterprise security teams across the Gulf, the issue is no longer whether warnings arrive." />
-  <meta name="twitter:image" content="https://tusharvartak.com/assets/og/2026-06-11.png" />
+  <meta name="twitter:title" content="The Patch Auction" />
+  <meta name="twitter:description" content="That matters across the Gulf because “critical” has become too broad to guide action by itself." />
+  <meta name="twitter:image" content="https://tusharvartak.com/assets/og/2026-07-02.png" />
   <link rel="alternate" type="application/rss+xml" title="CyberPulse RSS Feed" href="/feed.xml" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "The Triage Tax",
-    "description": "For enterprise security teams across the Gulf, the issue is no longer whether warnings arrive.",
-    "image": "https://tusharvartak.com/assets/og/2026-06-11.png",
-    "datePublished": "2026-06-11T06:00:00+00:00",
-    "keywords": "AI Security, Executive Cyber Risk, Identity Security, Infrastructure Exposure, CyberPulse, Tushar Vartak, cybersecurity, AI security, executive cyber risk",
-    "dateModified": "2026-06-11T06:00:00+00:00",
+    "headline": "The Patch Auction",
+    "description": "That matters across the Gulf because “critical” has become too broad to guide action by itself.",
+    "image": "https://tusharvartak.com/assets/og/2026-07-02.png",
+    "datePublished": "2026-07-02T06:00:00+00:00",
+    "keywords": "AI Security, Executive Cyber Risk, Software Supply Chain, Identity Security, Infrastructure Exposure, CyberPulse, Tushar Vartak, cybersecurity, AI security, executive cyber risk",
+    "dateModified": "2026-07-02T06:00:00+00:00",
     "author": {
       "@type": "Person",
       "name": "Tushar Vartak",
@@ -47,7 +47,7 @@
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://tusharvartak.com/posts/cyberpulse-the-triage-tax.html"
+      "@id": "https://tusharvartak.com/posts/cyberpulse-the-patch-auction.html"
     }
   }
   </script>
@@ -336,6 +336,58 @@
     .source-box li { font-size: 15px; color: var(--muted); margin-bottom: 10px; line-height: 1.55; }
     .source-box a { color: var(--accent); }
 
+    /* ── Related briefings ── */
+    .related-briefings {
+      margin-top: 44px;
+      padding-top: 12px;
+    }
+    .related-briefings h2 { margin-top: 0; }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .related-card {
+      display: grid;
+      gap: 8px;
+      min-width: 0;
+      padding: 18px;
+      border-radius: var(--radius-sm);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      text-decoration: none;
+      box-shadow: var(--shadow-sm);
+      transition: border-color var(--duration-fast), background var(--duration-fast), transform var(--duration-fast) var(--ease);
+    }
+    .related-card:hover {
+      background: var(--surface-hover);
+      border-color: var(--border-strong);
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+    .related-card span {
+      color: var(--gold);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+    }
+    .related-card strong {
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+    }
+    .related-card em {
+      color: var(--muted);
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
     /* ── Article footer ── */
     .article-footer {
       margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--border);
@@ -413,6 +465,7 @@
       p { font-size: 18px; }
       .lead { font-size: 19px; }
       .signal, .action-box, .sticky-card, .source-box { border-radius: var(--radius-sm); }
+      .related-grid { grid-template-columns: 1fr; }
       .topbar { align-items: flex-start; }
       .share-row { width: 100%; }
       .tag-row { margin-bottom: 18px; }
@@ -422,14 +475,10 @@
   <!-- CyberPulse Phase 2/3 SEO start -->
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
   <meta name="theme-color" content="#06070a" />
-  <meta property="article:modified_time" content="cyberpulse-the-triage-taxT06:00:00+00:00" />
-  <link rel="prev" href="https://tusharvartak.com/posts/cyberpulse-the-shortcut-layer.html" />
-  <link rel="next" href="https://tusharvartak.com/posts/cyberpulse-when-data-becomes-debt.html" />
-  <link rel="tag" href="https://tusharvartak.com/topics/ai-security/" title="AI Security" />
-  <link rel="tag" href="https://tusharvartak.com/topics/executive-cyber-risk/" title="Executive Cyber Risk" />
-  <link rel="tag" href="https://tusharvartak.com/topics/infrastructure-exposure/" title="Infrastructure Exposure" />
-  <link rel="tag" href="https://tusharvartak.com/topics/identity-security/" title="Identity Security" />
-  <link rel="tag" href="https://tusharvartak.com/topics/software-supply-chain/" title="Software Supply Chain" />
+  <meta property="article:modified_time" content="2026-07-02T06:00:00+00:00" />
+  <link rel="prev" href="https://tusharvartak.com/posts/2026-07-01.html" />
+  <link rel="next" href="https://tusharvartak.com/posts/cyberpulse-borrowed-legitimacy.html" />
+  <link rel="tag" href="https://tusharvartak.com/topics/operational-threat-intelligence/" title="Operational Threat Intelligence" />
   <script type="application/ld+json" id="breadcrumb-schema">
 {
     "@context": "https://schema.org",
@@ -450,8 +499,8 @@
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "The Triage Tax",
-        "item": "https://tusharvartak.com/posts/cyberpulse-the-triage-tax.html"
+        "name": "The Patch Auction",
+        "item": "https://tusharvartak.com/posts/cyberpulse-the-patch-auction.html"
       }
     ]
   }
@@ -460,10 +509,10 @@
 {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://tusharvartak.com/posts/cyberpulse-the-triage-tax.html#webpage",
-    "url": "https://tusharvartak.com/posts/cyberpulse-the-triage-tax.html",
-    "name": "The Triage Tax",
-    "description": "For enterprise security teams across the Gulf, the issue is no longer whether warnings arrive.",
+    "@id": "https://tusharvartak.com/posts/cyberpulse-the-patch-auction.html#webpage",
+    "url": "https://tusharvartak.com/posts/cyberpulse-the-patch-auction.html",
+    "name": "The Patch Auction",
+    "description": "That matters across the Gulf because “critical” has become too broad to guide action by itself.",
     "isPartOf": {
       "@type": "WebSite",
       "name": "CyberPulse",
@@ -471,10 +520,10 @@
     },
     "primaryImageOfPage": {
       "@type": "ImageObject",
-      "url": "https://tusharvartak.com/assets/covers/2026-06-11.png?v=20260611"
+      "url": "https://tusharvartak.com/assets/covers/2026-07-02.png?v=20260702"
     },
     "breadcrumb": {
-      "@id": "https://tusharvartak.com/posts/cyberpulse-the-triage-tax.html#breadcrumb"
+      "@id": "https://tusharvartak.com/posts/cyberpulse-the-patch-auction.html#breadcrumb"
     }
   }
   </script>
@@ -499,8 +548,8 @@
         </button>
         <div class="share-row">
           <span class="share-label">Share</span>
-          <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-06-11.html" data-analytics="share-linkedin">LinkedIn</a>
-          <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=The%20Triage%20Tax&url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-06-11.html" data-analytics="share-x">X</a>
+          <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-07-02.html" data-analytics="share-linkedin">LinkedIn</a>
+          <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=The%20Patch%20Auction&url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-07-02.html" data-analytics="share-x">X</a>
           <button class="share-btn" id="copyLinkBtn" type="button" data-analytics="share-copy">Copy link</button>
         </div>
       </div>
@@ -509,15 +558,15 @@
     <div class="layout">
       <article>
         <div class="article-inner">
-          <div class="article-eyebrow">CyberPulse &middot; Edition No. 1 &middot; Thursday, June 11, 2026</div>
-          <h1>The Triage Tax</h1>
+          <div class="article-eyebrow">CyberPulse &middot; Edition No. 1 &middot; Thursday, July 2, 2026</div>
+          <h1>The Patch Auction</h1>
           <p class="dek"></p>
 
           <div class="tag-row">
             <a class="tag" href="/topics/operational-threat-intelligence/">Operational Threat Intelligence</a>
           </div>
 
-          <img class="article-cover" src="/assets/covers/2026-06-11.png?v=20260611" alt="CyberPulse editorial cover image for The Triage Tax" loading="lazy">
+          <img class="article-cover" src="/assets/covers/2026-07-02.png?v=20260702" alt="CyberPulse editorial cover image for The Patch Auction" loading="lazy">
 
           <div class="hero-meta">
             <div class="meta-card">
@@ -526,38 +575,41 @@
             </div>
             <div class="meta-card">
               <strong>Published</strong>
-              <span>2026-06-11</span>
+              <span>2026-07-02</span>
             </div>
             <div class="meta-card">
               <strong>Primary signal</strong>
-              <span>The Triage Tax</span>
+              <span>The Patch Auction</span>
             </div>
             <div class="meta-card">
               <strong>Why it matters</strong>
-              <span>The day’s sharpest signal is not another alert. It is the executive cost of deciding what gets fixed first.</span>
+              <span>When every exposure claims urgency, security leadership has to rank what attackers can convert fastest into authority, persistence, and operational disruption.</span>
             </div>
           </div>
 
           <!-- ── Lead paragraph ── -->
-          <p class="lead">The day’s sharpest signal is not another alert. It is the executive cost of deciding what gets fixed first.</p>
+          <p class="lead">When every exposure claims urgency, security leadership has to rank what attackers can convert fastest into authority, persistence, and operational disruption.</p>
 
           <!-- ── Body paragraphs ── -->
-          <p>Today’s briefing is about a pressure point that rarely gets a breach headline but increasingly defines enterprise security outcomes: the cost of prioritization when every advisory claims urgency.</p>
-          <p>For enterprise security teams across the Gulf, the issue is no longer whether warnings arrive. The issue is whether the organization can convert a crowded queue into disciplined, blast-radius-based decisions before adversaries find the unresolved exception.</p>
-          <p>Reporting on the latest enterprise software patch cycle described 206 vulnerabilities, including multiple zero-days and critical remote code execution bugs. That is not simply a patch-management event. It is a decision-management event.</p>
-          <p>The practical question is not “how many fixes exist?” It is “which exposed systems can change identity, payments, code, customer records, or privileged administration?” Teams that know that answer before the advisory lands move faster than teams still arguing over ownership after exploitation begins.</p>
-          <p>A major workflow platform vendor disclosed that a vulnerability was exploited to gain unauthorized access to some customer instances, with patching and notifications under way. The strategic risk is not limited to one software flaw.</p>
-          <p>Workflow platforms carry approvals, tickets, integrations, attachments, identity context, and the operational history of how the enterprise actually runs. If one of those systems is exposed, the organization may lose more than data. It may lose the map of its own business process.</p>
-          <p>Security reporting also highlighted exploitation of an unauthenticated remote code execution flaw in a low-code artificial intelligence development framework. These frameworks are attractive because they let teams move quickly. That is also why they become dangerous when ownership, credentials, and network reach are unclear.</p>
-          <p>In regional enterprises, experimental automation often starts as useful internal glue: a dashboard, a data-processing helper, a proof of concept, or a temporary integration. The risk appears when temporary services receive durable credentials and remain reachable after the business experiment has moved on.</p>
-          <p>Critical advisories across mobile access, network security, enterprise resource planning, cryptographic libraries, browsers, and switching infrastructure are arriving together. Separately, each one is a ticket. Together, they test whether the security operating model can prioritize by business blast radius rather than vendor urgency alone.</p>
-          <p>Cryptographic library analysis reinforces the same point from the defensive side. Assisted discovery can surface serious flaws faster than traditional review cycles, which means remediation queues will not become calmer just because teams standardize their tooling.</p>
-          <p>Investigative reporting on a ransomware operation shows the ecosystem continues to professionalize around access brokers, affiliate labor, data pressure, identity trails, and operational persistence. The extortion economy is not waiting for defenders to finish internal debates.</p>
-          <p>While defenders ask whether an issue is a P1 or P2, adversaries search for the route left in the exception column. That is the triage tax: every slow decision compounds into usable leverage.</p>
-          <p>Build a same-day list of externally reachable systems affected by current critical advisories. Prioritize workflow platforms, low-code development services, remote access technology, browsers used by privileged staff, and infrastructure touching identity or finance.</p>
-          <p>Review temporary firewall openings, emergency accounts, pilot automation, abandoned development services, and integrations with stale credentials. Focus on systems approved outside the normal path for valid business reasons that may no longer hold.</p>
-          <p>Do not run the next remediation call as a vendor-by-vendor status review. Run it as a blast-radius review: which vulnerable systems can approve access, modify code, expose customer records, alter payment flows, or become a launch point into recovery infrastructure?</p>
-          <p>The executive takeaway is blunt: mature programs are no longer separated by whether they receive advisories. Everyone receives advisories. The separation is whether they can make disciplined decisions before attackers convert the queue into leverage.</p>
+          <p>The most important cyber signal today is not one vulnerability. It is the auction for limited remediation capacity. Cloud deployment infrastructure, load balancers, remote support platforms, business applications, adaptive phishing kits, dependency traps, and browser weakness are all bidding for the same engineering calendar.</p>
+          <p>That matters across the Gulf because “critical” has become too broad to guide action by itself. The better executive question is sharper: which exposure can an attacker convert into operational authority before the business can retire it?</p>
+          <p>The enterprise does not lose the patch auction when everything is vulnerable. It loses when scarce remediation capacity is spent on the loudest issue while the most convertible exposure stays open.</p>
+          <p>The Hacker News reported an unpatched flaw in the repo-server component of a widely used continuous deployment tool for Kubernetes. The issue has no public fix and no identifier yet, but the reported impact is severe: if an attacker can reach the internal service, crafted requests may lead to command execution and potentially broader cluster compromise.</p>
+          <p>The operating lesson is immediate. Where a patch does not exist, the work becomes exposure reduction: restrict reachability, segment internal services, review service accounts, and hunt for suspicious manifest-building or repository-processing activity. Deployment tooling should be treated as production authority, not just engineering plumbing.</p>
+          <p>Reporting on a critical load balancer flaw describes active exploitation attempts beginning late last month. The flaw allows unauthenticated command execution in vulnerable appliances. For a security team, this is not a routine device issue. Load balancers sit close to critical applications, authentication flows, and service availability.</p>
+          <p>If internet-facing appliances are exposed and under-maintained, they become a front-door execution layer. The correct prioritization lens is not only whether the score is high. It is whether the appliance stands between the attacker and the applications the business cannot afford to lose.</p>
+          <p>Infosecurity reported exploitation of a maximum-severity authentication bypass in remote monitoring and management software, with attackers forging trusted technician access and using built-in file transfer and execution features to deliver malware. This is why support tooling belongs in the privileged infrastructure category.</p>
+          <p>When attackers use the same channel as legitimate administrators, the intrusion can look like urgent maintenance until the damage is already moving through the environment.</p>
+          <p>Enterprises should validate exposure, versions, authentication posture, session recording, file-transfer controls, and downstream privileges from remote support infrastructure. A help channel that can execute code is not a helpdesk utility. It is an administrative pathway.</p>
+          <p>A major software vendor patched multiple maximum-severity flaws in enterprise content and campaign platforms, several allowing arbitrary code execution. These systems often sit beside customer data, web workflows, integration logic, and administrator consoles. The patch auction gets harder when the vulnerable product is not a side service, but a business platform with dependencies and testing constraints.</p>
+          <p>Attack delivery is also becoming more adaptive. Dark Reading reported phishing campaigns that tailor pages to the victim’s device and operating environment. Separate reporting described ClickFix-style delivery becoming dominant, where the victim is coached into running attacker commands under the illusion of troubleshooting.</p>
+          <p>The software supply chain is bidding too. Dark Reading highlighted phantom squatting, where attackers anticipate dependency names that artificial intelligence tools may hallucinate and then register those packages. If generated code can introduce a plausible but hostile dependency, the organization needs package controls before the build, not only detection after deployment.</p>
+          <p>Infosecurity also reported an accelerated quantum-safe migration timeline from a major platform vendor, with critical products and services moving earlier toward post-quantum cryptography. That is not a patch for this week, but it is a warning about backlog behavior. Deferred cryptographic migration becomes more expensive precisely because it competes with every urgent vulnerability cycle.</p>
+          <p>CrowdStrike’s browser security analysis adds the same strategic pattern from another angle: zero-days are only part of the problem. Enterprise browsers accumulate extension risk, unmanaged policy drift, session exposure, and user-mediated execution paths. Those risks rarely scream as loudly as a named exploit, but they often decide whether an intrusion scales.</p>
+          <p>Prioritize reachable deployment infrastructure, internet-facing appliances under active exploitation, and remote support systems that can execute code or move files. Severity scores matter, but attacker conversion value should decide the first change window.</p>
+          <p>For Kubernetes deployment components, load balancers, remote monitoring platforms, and affected enterprise application servers, validate versions and reachability. Where fixes are unavailable or delayed, enforce segmentation, restrict administrative paths, rotate exposed credentials, and hunt for unusual command execution.</p>
+          <p>Block unmanaged command-paste remediation flows, monitor for ClickFix patterns, require package provenance checks, add approval gates for newly introduced dependencies from generated code, and bring browser extension governance into the same risk review as endpoint hardening.</p>
+          <p>The auction will not end. Tomorrow will bring another critical issue. The defensible enterprise is the one that knows which bid can become business impact first — and funds that remediation before the attacker does.</p>
 
           <!-- ── Takeaways ── -->
           <h2 id="takeaways">Takeaways</h2>
@@ -565,7 +617,7 @@
             <div class="action-box">
               <h4>Board takeaway in 20 seconds</h4>
               <ul>
-                <li>The day’s sharpest signal is not another alert.</li>
+                <li>When every exposure claims urgency, security leadership has to rank what attackers can convert fastest into authority, persistence, and operational disruption.</li>
                 <li>Fraud controls should be judged by whether they interrupt the handoffs attackers need: attention, delivery, trust, identity, web foothold, and credential payout.</li>
               </ul>
             </div>
@@ -599,52 +651,7 @@
           <h2 id="blind-spot">The board blind spot</h2>
           <p>The board blind spot is process friction. Fraud risk is treated as a user-awareness problem, while attackers are building the operational stack around payment approvals, travel workflows, support interactions, trusted sharing links, and exposed web tools. Directors should ask which business moments now require stronger proof, not just which employees received another warning email.</p>
 
-<ol>
-              <!-- <li><a href="URL">Publication, Article title</a></li> -->
-              
-            </ol>
-          </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          <!-- CyberPulse related briefings start -->
-          <section class="related-briefings" aria-labelledby="related-briefings-title">
-            <h2 id="related-briefings-title">Related briefings</h2>
-            <div class="related-grid">
-              <a class="related-card" href="/posts/2026-06-03.html">
-                <span>2026-06-03</span>
-                <strong>The Automation Gap</strong>
-                <em>Today’s CyberPulse Daily Brief is about a widening operational gap: attackers are no longer just exploiting exposed software faster.</em>
-              </a>
-              <a class="related-card" href="/posts/2026-06-04.html">
-                <span>2026-06-04</span>
-                <strong>The Control Plane Squeeze</strong>
-                <em>Trusted systems are becoming attack surfaces: web gateways, telemetry, mobile tokens, AI assistants, and endpoint controls.</em>
-              </a>
-              <a class="related-card" href="/posts/2026-06-05.html">
-                <span>2026-06-05</span>
-                <strong>The Trust Boundary Weekend</strong>
-                <em>Automation, plugins, agents, package ecosystems, and operational systems are accumulating authority faster than many governance models can explain.</em>
-              </a>
-            </div>
-          </section>
-          <!-- CyberPulse related briefings end -->
-
-          <div class="article-footer">
+<div class="article-footer">
             <span>CyberPulse &middot; Signal over noise &middot; Edition No. 1</span>
             <a href="/">Home</a>
           </div>
@@ -656,23 +663,23 @@
           <div class="side-kicker">In this edition</div>
           <ul class="toc-list">
             <!-- Build TOC from h2 ids -->
-            <li><a href="#takeaways">Takeaways</a></li><li><a href="#sources">Sources</a></li>
+            <li><a href="#takeaways">Takeaways</a></li>
           </ul>
         </div>
 
         <div class="sticky-card">
           <div class="side-kicker">At a glance</div>
-          <p>The day’s sharpest signal is not another alert. It is the executive cost of deciding what gets fixed first.</p>
+          <p>When every exposure claims urgency, security leadership has to rank what attackers can convert fastest into authority, persistence, and operational disruption.</p>
           <ul>
-            <li>P0 · Rank exposure today</li><li>P1 · Hunt exception debt</li><li>P2 · Change the remediation meeting</li>
+            <li>P0 · Rank by conversion value today</li><li>P1 · Collapse exposure where patches lag</li><li>P2 · Control the quiet bidders</li>
           </ul>
         </div>
 
         <div class="sticky-card">
           <div class="side-kicker">Share this briefing</div>
           <div class="share-stack">
-            <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-06-11.html" data-analytics="share-linkedin">Share on LinkedIn</a>
-            <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=The%20Triage%20Tax&url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-06-11.html" data-analytics="share-x">Share on X</a>
+            <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-07-02.html" data-analytics="share-linkedin">Share on LinkedIn</a>
+            <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=The%20Patch%20Auction&url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-07-02.html" data-analytics="share-x">Share on X</a>
             <button class="share-btn" id="copyLinkBtnAside" type="button" data-analytics="share-copy">Copy article link</button>
           </div>
         </div>
