@@ -5,7 +5,7 @@
     <link>https://tusharvartak.com</link>
     <description>Executive cyber intelligence briefings on cyber risk, AI threats, infrastructure exposure, and board-level decision-making.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 05 Jul 2026 06:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 10 Jul 2026 06:00:00 +0000</lastBuildDate>
     <atom:link href="https://tusharvartak.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://tusharvartak.com/assets/og/default.png</url>
@@ -13,13 +13,13 @@
       <link>https://tusharvartak.com</link>
     </image>
     <item>
-      <title>CyberPulse — Pressure Ledger</title>
-      <link>https://tusharvartak.com/posts/cyberpulse-pressure-ledger.html</link>
-      <guid isPermaLink="true">https://tusharvartak.com/posts/cyberpulse-pressure-ledger.html</guid>
-      <pubDate>Sun, 05 Jul 2026 06:00:00 +0000</pubDate>
+      <title>CyberPulse — Shelf Life</title>
+      <link>https://tusharvartak.com/posts/cyberpulse-shelf-life.html</link>
+      <guid isPermaLink="true">https://tusharvartak.com/posts/cyberpulse-shelf-life.html</guid>
+      <pubDate>Fri, 10 Jul 2026 06:00:00 +0000</pubDate>
       <dc:creator>Tushar Vartak</dc:creator>
-      <description>CyberPulse Daily Brief for Gulf-region security leaders on data-extortion pressure, ransomware consolidation, developer-secret theft, embedded-device exposure, and active exploitation.</description>
-      <enclosure url="https://tusharvartak.com/assets/covers/2026-07-05.png?v=20260705" type="image/png" length="0"/>
+      <description>CyberPulse Emerging Risks briefing for Gulf enterprise boards on stale technical authority, dormant accounts, software packages, coding assistants, and identity-driven fraud.</description>
+      <enclosure url="https://tusharvartak.com/assets/covers/2026-07-10.png?v=20260710" type="image/png" length="0"/>
     </item>
   </channel>
 </rss>
