@@ -5,7 +5,7 @@
     <link>https://tusharvartak.com</link>
     <description>Executive cyber intelligence briefings on cyber risk, AI threats, infrastructure exposure, and board-level decision-making.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 14 Jul 2026 06:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jul 2026 06:00:00 +0000</lastBuildDate>
     <atom:link href="https://tusharvartak.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://tusharvartak.com/assets/og/default.png</url>
@@ -13,13 +13,13 @@
       <link>https://tusharvartak.com</link>
     </image>
     <item>
-      <title>CyberPulse Daily — The Permission Market</title>
-      <link>https://tusharvartak.com/posts/cyberpulse-the-permission-market.html</link>
-      <guid isPermaLink="true">https://tusharvartak.com/posts/cyberpulse-the-permission-market.html</guid>
-      <pubDate>Tue, 14 Jul 2026 06:00:00 +0000</pubDate>
+      <title>CyberPulse Daily — Capacity Is the Vulnerability</title>
+      <link>https://tusharvartak.com/posts/cyberpulse-capacity-is-the-vulnerability.html</link>
+      <guid isPermaLink="true">https://tusharvartak.com/posts/cyberpulse-capacity-is-the-vulnerability.html</guid>
+      <pubDate>Wed, 15 Jul 2026 06:00:00 +0000</pubDate>
       <dc:creator>Tushar Vartak</dc:creator>
-      <description>A CyberPulse Daily Brief on attackers monetizing small permissions across browser extensions, device-code phishing, cloud identity enumeration, OAuth spoofing, networking appliances, file-transfer infrastructure, stealers, destructive implants, and ransomware affiliates.</description>
-      <enclosure url="https://tusharvartak.com/assets/covers/2026-07-14.png?v=20260714" type="image/png" length="0"/>
+      <description>CyberPulse Daily Brief for Gulf security leaders: decision capacity becomes the vulnerability during a record patch and exploitation week.</description>
+      <enclosure url="https://tusharvartak.com/assets/covers/2026-07-15.png?v=20260715" type="image/png" length="0"/>
     </item>
   </channel>
 </rss>
