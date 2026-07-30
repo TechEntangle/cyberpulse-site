@@ -5,7 +5,7 @@
     <link>https://tusharvartak.com</link>
     <description>Executive cyber intelligence briefings on cyber risk, AI threats, infrastructure exposure, and board-level decision-making.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 29 Jul 2026 06:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 30 Jul 2026 06:00:00 +0000</lastBuildDate>
     <atom:link href="https://tusharvartak.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://tusharvartak.com/assets/og/default.png</url>
@@ -13,13 +13,13 @@
       <link>https://tusharvartak.com</link>
     </image>
     <item>
-      <title>CyberPulse Daily — Cut the Circuit</title>
-      <link>https://tusharvartak.com/posts/cyberpulse-cut-the-circuit.html</link>
-      <guid isPermaLink="true">https://tusharvartak.com/posts/cyberpulse-cut-the-circuit.html</guid>
-      <pubDate>Wed, 29 Jul 2026 06:00:00 +0000</pubDate>
+      <title>CyberPulse Daily — Borrowed Legitimacy</title>
+      <link>https://tusharvartak.com/posts/cyberpulse-borrowed-legitimacy.html</link>
+      <guid isPermaLink="true">https://tusharvartak.com/posts/cyberpulse-borrowed-legitimacy.html</guid>
+      <pubDate>Thu, 30 Jul 2026 06:00:00 +0000</pubDate>
       <dc:creator>Tushar Vartak</dc:creator>
-      <description>CyberPulse Daily Brief for Gulf enterprise security teams: isolation readiness, exposed management hardware, public exploit code, DNS hijacking, botnet persistence, remote management abuse, and AI-assisted research.</description>
-      <enclosure url="https://tusharvartak.com/assets/covers/2026-07-29.png?v=20260729" type="image/png" length="0"/>
+      <description>A CyberPulse daily threat intelligence brief for Gulf enterprise security leaders on adversary use of legitimate-looking uploads, logins, consoles, automation bridges, fraud infrastructure, and operational controls.</description>
+      <enclosure url="https://tusharvartak.com/assets/covers/2026-07-30.png?v=20260730" type="image/png" length="0"/>
     </item>
   </channel>
 </rss>
