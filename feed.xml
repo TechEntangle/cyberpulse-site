@@ -5,7 +5,7 @@
     <link>https://tusharvartak.com</link>
     <description>Executive cyber intelligence briefings on cyber risk, AI threats, infrastructure exposure, and board-level decision-making.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 03 Aug 2026 06:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 04 Aug 2026 06:00:00 +0000</lastBuildDate>
     <atom:link href="https://tusharvartak.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://tusharvartak.com/assets/og/default.png</url>
@@ -13,13 +13,13 @@
       <link>https://tusharvartak.com</link>
     </image>
     <item>
-      <title>CyberPulse Daily — The Handoff Point</title>
-      <link>https://tusharvartak.com/posts/cyberpulse-the-handoff-point.html</link>
-      <guid isPermaLink="true">https://tusharvartak.com/posts/cyberpulse-the-handoff-point.html</guid>
-      <pubDate>Mon, 03 Aug 2026 06:00:00 +0000</pubDate>
+      <title>CyberPulse Daily — Margin Call</title>
+      <link>https://tusharvartak.com/posts/cyberpulse-margin-call.html</link>
+      <guid isPermaLink="true">https://tusharvartak.com/posts/cyberpulse-margin-call.html</guid>
+      <pubDate>Tue, 04 Aug 2026 06:00:00 +0000</pubDate>
       <dc:creator>Tushar Vartak</dc:creator>
-      <description>A Gulf-focused cyber threat briefing on custody governance across travel networks, support workflows, identity pages, AI test boundaries, package intake, browser extensions, and managed data services.</description>
-      <enclosure url="https://tusharvartak.com/assets/covers/2026-08-03.png?v=20260803" type="image/png" length="0"/>
+      <description>CyberPulse Daily for August 4, 2026: attackers are converting packages, browser sessions, edge appliances, model artifacts, and sensitive files into commercial pressure.</description>
+      <enclosure url="https://tusharvartak.com/assets/covers/2026-08-04.png?v=20260804" type="image/png" length="0"/>
     </item>
   </channel>
 </rss>

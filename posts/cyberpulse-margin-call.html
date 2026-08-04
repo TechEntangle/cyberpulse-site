@@ -3,38 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>When Data Becomes Debt | CyberPulse Executive Brief</title>
+  <title>Margin Call | CyberPulse Executive Brief</title>
   <link rel="icon" type="image/png" href="/assets/brand/logo-square.png" />
-  <meta name="description" content="Across the latest reporting, the pattern is broader than one compromised platform or one criminal brand." />
-  <link rel="canonical" href="https://tusharvartak.com/posts/cyberpulse-when-data-becomes-debt.html" />
+  <meta name="description" content="The past five CyberPulse editions tracked legitimacy, exceptions, proxies, exploit timing, and handoffs." />
+  <link rel="canonical" href="https://tusharvartak.com/posts/cyberpulse-margin-call.html" />
   <meta name="author" content="Tushar Vartak" />
   <meta name="keywords" content="AI Security, Executive Cyber Risk, Software Supply Chain, Identity Security, Infrastructure Exposure, CyberPulse, Tushar Vartak, cybersecurity, AI security, executive cyber risk" />
-  <meta property="og:title" content="When Data Becomes Debt" />
-  <meta property="og:description" content="Across the latest reporting, the pattern is broader than one compromised platform or one criminal brand." />
+  <meta property="og:title" content="Margin Call" />
+  <meta property="og:description" content="The past five CyberPulse editions tracked legitimacy, exceptions, proxies, exploit timing, and handoffs." />
   <meta property="og:type" content="article" />
-  <meta property="og:image" content="https://tusharvartak.com/assets/og/2026-06-12.png" />
-  <meta property="og:url" content="https://tusharvartak.com/posts/cyberpulse-when-data-becomes-debt.html" />
+  <meta property="og:image" content="https://tusharvartak.com/assets/og/2026-08-04.png" />
+  <meta property="og:url" content="https://tusharvartak.com/posts/cyberpulse-margin-call.html" />
   <meta property="og:site_name" content="CyberPulse" />
-  <meta property="article:published_time" content="2026-06-12T06:00:00+00:00" />
+  <meta property="article:published_time" content="2026-08-04T06:00:00+00:00" />
   <meta property="article:author" content="Tushar Vartak" />
   <meta property="article:section" content="Cybersecurity" />
   <!-- Add article:tag entries for each topic tag -->
   
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="When Data Becomes Debt" />
-  <meta name="twitter:description" content="Across the latest reporting, the pattern is broader than one compromised platform or one criminal brand." />
-  <meta name="twitter:image" content="https://tusharvartak.com/assets/og/2026-06-12.png" />
+  <meta name="twitter:title" content="Margin Call" />
+  <meta name="twitter:description" content="The past five CyberPulse editions tracked legitimacy, exceptions, proxies, exploit timing, and handoffs." />
+  <meta name="twitter:image" content="https://tusharvartak.com/assets/og/2026-08-04.png" />
   <link rel="alternate" type="application/rss+xml" title="CyberPulse RSS Feed" href="/feed.xml" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "When Data Becomes Debt",
-    "description": "Across the latest reporting, the pattern is broader than one compromised platform or one criminal brand.",
-    "image": "https://tusharvartak.com/assets/og/2026-06-12.png",
-    "datePublished": "2026-06-12T06:00:00+00:00",
-    "keywords": "AI Security, Executive Cyber Risk, Software Supply Chain, Identity Security, Infrastructure Exposure, CyberPulse, Tushar Vartak, cybersecurity, AI security, executive cyber risk",
-    "dateModified": "2026-06-12T06:00:00+00:00",
+    "headline": "Margin Call",
+    "description": "The past five CyberPulse editions tracked legitimacy, exceptions, proxies, exploit timing, and handoffs.",
+    "image": "https://tusharvartak.com/assets/og/2026-08-04.png",
+    "datePublished": "2026-08-04T06:00:00+00:00",
+    "keywords": "Executive Cyber Risk, Software Supply Chain, Identity Security, Infrastructure Exposure, CyberPulse, Tushar Vartak, cybersecurity, AI security, executive cyber risk",
+    "dateModified": "2026-08-04T06:00:00+00:00",
     "author": {
       "@type": "Person",
       "name": "Tushar Vartak",
@@ -47,7 +47,7 @@
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://tusharvartak.com/posts/cyberpulse-when-data-becomes-debt.html"
+      "@id": "https://tusharvartak.com/posts/cyberpulse-margin-call.html"
     }
   }
   </script>
@@ -336,6 +336,58 @@
     .source-box li { font-size: 15px; color: var(--muted); margin-bottom: 10px; line-height: 1.55; }
     .source-box a { color: var(--accent); }
 
+    /* ── Related briefings ── */
+    .related-briefings {
+      margin-top: 44px;
+      padding-top: 12px;
+    }
+    .related-briefings h2 { margin-top: 0; }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .related-card {
+      display: grid;
+      gap: 8px;
+      min-width: 0;
+      padding: 18px;
+      border-radius: var(--radius-sm);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      text-decoration: none;
+      box-shadow: var(--shadow-sm);
+      transition: border-color var(--duration-fast), background var(--duration-fast), transform var(--duration-fast) var(--ease);
+    }
+    .related-card:hover {
+      background: var(--surface-hover);
+      border-color: var(--border-strong);
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+    .related-card span {
+      color: var(--gold);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+    }
+    .related-card strong {
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+    }
+    .related-card em {
+      color: var(--muted);
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
     /* ── Article footer ── */
     .article-footer {
       margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--border);
@@ -413,6 +465,7 @@
       p { font-size: 18px; }
       .lead { font-size: 19px; }
       .signal, .action-box, .sticky-card, .source-box { border-radius: var(--radius-sm); }
+      .related-grid { grid-template-columns: 1fr; }
       .topbar { align-items: flex-start; }
       .share-row { width: 100%; }
       .tag-row { margin-bottom: 18px; }
@@ -422,13 +475,10 @@
   <!-- CyberPulse Phase 2/3 SEO start -->
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
   <meta name="theme-color" content="#06070a" />
-  <meta property="article:modified_time" content="cyberpulse-when-data-becomes-debtT06:00:00+00:00" />
-  <link rel="prev" href="https://tusharvartak.com/posts/cyberpulse-the-triage-tax.html" />
-  <link rel="tag" href="https://tusharvartak.com/topics/ai-security/" title="AI Security" />
-  <link rel="tag" href="https://tusharvartak.com/topics/executive-cyber-risk/" title="Executive Cyber Risk" />
-  <link rel="tag" href="https://tusharvartak.com/topics/infrastructure-exposure/" title="Infrastructure Exposure" />
-  <link rel="tag" href="https://tusharvartak.com/topics/identity-security/" title="Identity Security" />
-  <link rel="tag" href="https://tusharvartak.com/topics/software-supply-chain/" title="Software Supply Chain" />
+  <meta property="article:modified_time" content="2026-08-04T06:00:00+00:00" />
+  <link rel="prev" href="https://tusharvartak.com/posts/2026-08-03.html" />
+  <link rel="next" href="https://tusharvartak.com/posts/cyberpulse-borrowed-legitimacy.html" />
+  <link rel="tag" href="https://tusharvartak.com/topics/operational-threat-intelligence/" title="Operational Threat Intelligence" />
   <script type="application/ld+json" id="breadcrumb-schema">
 {
     "@context": "https://schema.org",
@@ -449,8 +499,8 @@
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "When Data Becomes Debt",
-        "item": "https://tusharvartak.com/posts/cyberpulse-when-data-becomes-debt.html"
+        "name": "Margin Call",
+        "item": "https://tusharvartak.com/posts/cyberpulse-margin-call.html"
       }
     ]
   }
@@ -459,10 +509,10 @@
 {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://tusharvartak.com/posts/cyberpulse-when-data-becomes-debt.html#webpage",
-    "url": "https://tusharvartak.com/posts/cyberpulse-when-data-becomes-debt.html",
-    "name": "When Data Becomes Debt",
-    "description": "Across the latest reporting, the pattern is broader than one compromised platform or one criminal brand.",
+    "@id": "https://tusharvartak.com/posts/cyberpulse-margin-call.html#webpage",
+    "url": "https://tusharvartak.com/posts/cyberpulse-margin-call.html",
+    "name": "Margin Call",
+    "description": "The past five CyberPulse editions tracked legitimacy, exceptions, proxies, exploit timing, and handoffs.",
     "isPartOf": {
       "@type": "WebSite",
       "name": "CyberPulse",
@@ -470,10 +520,10 @@
     },
     "primaryImageOfPage": {
       "@type": "ImageObject",
-      "url": "https://tusharvartak.com/assets/covers/2026-06-12.png?v=20260612"
+      "url": "https://tusharvartak.com/assets/covers/2026-08-04.png?v=20260804"
     },
     "breadcrumb": {
-      "@id": "https://tusharvartak.com/posts/cyberpulse-when-data-becomes-debt.html#breadcrumb"
+      "@id": "https://tusharvartak.com/posts/cyberpulse-margin-call.html#breadcrumb"
     }
   }
   </script>
@@ -498,8 +548,8 @@
         </button>
         <div class="share-row">
           <span class="share-label">Share</span>
-          <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-06-12.html" data-analytics="share-linkedin">LinkedIn</a>
-          <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=When%20Data%20Becomes%20Debt&url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-06-12.html" data-analytics="share-x">X</a>
+          <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-08-04.html" data-analytics="share-linkedin">LinkedIn</a>
+          <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=Margin%20Call&url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-08-04.html" data-analytics="share-x">X</a>
           <button class="share-btn" id="copyLinkBtn" type="button" data-analytics="share-copy">Copy link</button>
         </div>
       </div>
@@ -508,15 +558,15 @@
     <div class="layout">
       <article>
         <div class="article-inner">
-          <div class="article-eyebrow">CyberPulse &middot; Edition No. 1 &middot; Friday, June 12, 2026</div>
-          <h1>When Data Becomes Debt</h1>
+          <div class="article-eyebrow">CyberPulse &middot; Edition No. 1 &middot; Tuesday, August 4, 2026</div>
+          <h1>Margin Call</h1>
           <p class="dek"></p>
 
           <div class="tag-row">
             <a class="tag" href="/topics/operational-threat-intelligence/">Operational Threat Intelligence</a>
           </div>
 
-          <img class="article-cover" src="/assets/covers/2026-06-12.png?v=20260612" alt="CyberPulse editorial cover image for When Data Becomes Debt" loading="lazy">
+          <img class="article-cover" src="/assets/covers/2026-08-04.png?v=20260804" alt="CyberPulse editorial cover image for Margin Call" loading="lazy">
 
           <div class="hero-meta">
             <div class="meta-card">
@@ -525,37 +575,35 @@
             </div>
             <div class="meta-card">
               <strong>Published</strong>
-              <span>2026-06-12</span>
+              <span>2026-08-04</span>
             </div>
             <div class="meta-card">
               <strong>Primary signal</strong>
-              <span>When Data Becomes Debt</span>
+              <span>Margin Call</span>
             </div>
             <div class="meta-card">
               <strong>Why it matters</strong>
-              <span>The breach is no longer the event. The event is the moment information custody becomes a repricing problem for the board.</span>
+              <span>The next security metric is conversion speed: how fast attackers turn packages, browser sessions, edge appliances, model artifacts, and files into commercial pressure.</span>
             </div>
           </div>
 
           <!-- ── Lead paragraph ── -->
-          <p class="lead">The breach is no longer the event. The event is the moment information custody becomes a repricing problem for the board.</p>
+          <p class="lead">The next security metric is conversion speed: how fast attackers turn packages, browser sessions, edge appliances, model artifacts, and files into commercial pressure.</p>
 
           <!-- ── Body paragraphs ── -->
-          <p>The sharpest cyber signal today is not another exploit race. It is a shift in the economics of stolen information: attackers are learning that they do not need to break every system when they can turn selected data into recurring leverage.</p>
-          <p>Across the latest reporting, the pattern is broader than one compromised platform or one criminal brand. Enterprise application data theft, extortion-only pressure, fake support workflows, manipulated developer content, agent hijacking, and recovery-path abuse all point toward the same executive problem. Data that was collected to run the business is becoming a liability when an adversary controls possession, timing, disclosure, and narrative.</p>
-          <p>For boards across the Gulf, the uncomfortable question is no longer only whether the organization can prevent intrusion. It is whether the organization can still govern trust after someone else has copied the information that makes trust possible.</p>
-          <p>Start with widely deployed business software. Fresh reporting described active data theft against enterprise application environments, with mitigation moving into emergency mode. The board-level lesson is not the product name. It is concentration risk. Platforms close to workforce, finance, education, service, and case-management processes are no longer routine software assets. They are strategic data reservoirs.</p>
-          <p>When those reservoirs are exposed, the damage is not limited to downtime. An organization may keep operating while losing control of employee records, customer context, service histories, contracts, claims, credentials, or correspondence. That is why information exposure behaves like debt: it accumulates quietly, compounds through third-party obligations, and becomes most expensive when liquidity is needed most.</p>
-          <p>The second signal is extortion without the theatre of encryption. Recent reporting shows data-theft-led claims rising because attackers can create pressure without visibly stopping operations. This is especially dangerous for governance. Business continuity metrics may look acceptable while stakeholder confidence is already deteriorating. Uptime can survive while trust does not.</p>
-          <p>The third signal is identity manipulation through trusted interactions. Reporting on fake support calls, phishing-as-a-service disruption, fraudulent developer guides, and malicious training-style content shows how adversaries exploit the places where people expect help. The help desk, the tutorial, the onboarding link, the urgent reset, and the privileged request have become transaction surfaces.</p>
-          <p>That changes how boards should view identity recovery. It is not a narrow technical workflow. It is a financial control. If attackers can socially engineer a reset, persuade a developer to run hostile content, or exploit the credibility of a support conversation, then business process has become the intrusion path.</p>
-          <p>The fourth signal is artificial intelligence raising the proof burden. New research into agent hijacking and manipulated coding assistants shows that autonomous helpers can read instructions, execute steps, touch secrets, and produce artifacts faster than human reviewers can reconstruct intent. The policy question is no longer whether staff are using AI. They are. The governance question is whether the organization can prove which tools touched sensitive work and which outputs entered operational systems.</p>
-          <p>Which categories of data would create the greatest board-level harm if copied but not encrypted? If this cannot be answered quickly, the data inventory is not decision-grade.</p>
-          <p>Which business platforms are treated as routine applications even though they concentrate strategic information? Those systems need executive ownership, not only technical administration.</p>
-          <p>Can the organization distinguish a legitimate support interaction from a hostile performance under time pressure? Identity recovery should be tested like a financial approval control.</p>
-          <p>Where can AI assistants read, write, summarize, or execute sensitive work? Permission boundaries around these tools must be auditable, revocable, and boring enough to survive daily use.</p>
-          <p>Resilience is not just the ability to keep systems running. It is the ability to retain authority over information after contact with an adversary. Recovery files, training processes, support workflows, developer environments, and AI assistants all need to be brought into that definition.</p>
-          <p>The next board report should not ask only whether the network stayed online. It should ask whether the organization can keep data from becoming debt.</p>
+          <p>When a trading desk receives a margin call, confidence is irrelevant. Liquidity, collateral, and control must be proven immediately. That is the right lens for today’s cyber risk across the Gulf: not whether a weakness exists, but how quickly it can be converted into money, downtime, account control, or false business evidence.</p>
+          <p>The past five CyberPulse editions tracked legitimacy, exceptions, proxies, exploit timing, and handoffs. Today’s shift is more commercial. Attackers are optimizing the conversion path from small technical opening to board-visible pressure.</p>
+          <p>A dependency, a browser profile, a remote-access appliance, a model repository, or a specialized file format is not only a technical object. Under the right conditions, it becomes a financial instrument in the attacker’s hands.</p>
+          <p>Reporting on eighteen malicious packages targeting users of a major commerce toolchain shows the software supply chain still being used as a revenue-adjacent entry point. The payloads delivered cross-platform remote access capability through package activity that could look ordinary inside a developer workflow. For enterprises building digital commerce, logistics, banking integrations, and customer platforms, dependency intake now sits next to revenue protection.</p>
+          <p>Identity is under the same pressure. New research describes malware techniques that could abuse browser password-manager behavior and threaten passkey-protected accounts when local endpoint trust is already compromised. Passkeys reduce phishing risk; they do not turn an infected browser into a safe place to conduct privileged work.</p>
+          <p>At the edge, extortion crews continue to treat secure remote-access infrastructure as leverage. Recent reporting ties a dominant ransomware operation to exploitation of secure mobile access flaws, while a separate endpoint-management provider warned that attackers took over central servers after an initial fix proved incomplete. That phrase — initial fix — should make executives pause. A patch without validation is not closure. It is a claim waiting to be tested.</p>
+          <p>The data-integrity story is quieter but strategically important. A life-sciences platform flaw could have made specialized file tampering hard to detect. For healthcare, research, energy, and industrial environments, some data is operational evidence. If that evidence can be altered without reliable detection, the impact moves beyond disclosure into decision poisoning.</p>
+          <p>Machine-learning repositories add another route. Researchers disclosed high-severity flaws in a widely used model library that could allow repository-hosted content to trigger arbitrary code execution. This is no longer a niche engineering concern; it is an enterprise intake problem, because model artifacts increasingly travel into internal experimentation, analytics, and automation workflows.</p>
+          <p>Review externally reachable remote-access and management appliances. Confirm versions, hunt for exploitation indicators, remove unauthorized accounts, rotate secrets, and reduce reachability while confidence is rebuilt.</p>
+          <p>Block untrusted package execution by default, monitor install scripts, enforce provenance, isolate build systems, and prioritize scrutiny for code paths connected to revenue, customer data, and payment flows.</p>
+          <p>Keep passkeys, but do not over-credit them. Segment privileged browsing, shorten session lifetimes, protect password stores, and require device health signals before sensitive access is granted.</p>
+          <p>The practical question is not whether the enterprise has controls on paper. It is which technical assets can be converted into commercial pressure before leadership even knows the margin has moved.</p>
+          <p>Cyber risk is now being priced by conversion speed. If defenders cannot interrupt the path from exposure to leverage, the organization is already trading on borrowed collateral.</p>
 
           <!-- ── Takeaways ── -->
           <h2 id="takeaways">Takeaways</h2>
@@ -563,7 +611,7 @@
             <div class="action-box">
               <h4>Board takeaway in 20 seconds</h4>
               <ul>
-                <li>The breach is no longer the event.</li>
+                <li>The next security metric is conversion speed: how fast attackers turn packages, browser sessions, edge appliances, model artifacts, and files into commercial pressure.</li>
                 <li>Fraud controls should be judged by whether they interrupt the handoffs attackers need: attention, delivery, trust, identity, web foothold, and credential payout.</li>
               </ul>
             </div>
@@ -597,63 +645,7 @@
           <h2 id="blind-spot">The board blind spot</h2>
           <p>The board blind spot is process friction. Fraud risk is treated as a user-awareness problem, while attackers are building the operational stack around payment approvals, travel workflows, support interactions, trusted sharing links, and exposed web tools. Directors should ask which business moments now require stronger proof, not just which employees received another warning email.</p>
 
-<ol>
-              <!-- <li><a href="URL">Publication, Article title</a></li> -->
-              
-            </ol>
-          </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          <!-- CyberPulse related briefings start -->
-          <section class="related-briefings" aria-labelledby="related-briefings-title">
-            <h2 id="related-briefings-title">Related briefings</h2>
-            <div class="related-grid">
-              <a class="related-card" href="/posts/2026-06-03.html">
-                <span>2026-06-03</span>
-                <strong>The Automation Gap</strong>
-                <em>Today’s CyberPulse Daily Brief is about a widening operational gap: attackers are no longer just exploiting exposed software faster.</em>
-              </a>
-              <a class="related-card" href="/posts/2026-06-04.html">
-                <span>2026-06-04</span>
-                <strong>The Control Plane Squeeze</strong>
-                <em>Trusted systems are becoming attack surfaces: web gateways, telemetry, mobile tokens, AI assistants, and endpoint controls.</em>
-              </a>
-              <a class="related-card" href="/posts/2026-06-05.html">
-                <span>2026-06-05</span>
-                <strong>The Trust Boundary Weekend</strong>
-                <em>Automation, plugins, agents, package ecosystems, and operational systems are accumulating authority faster than many governance models can explain.</em>
-              </a>
-            </div>
-          </section>
-          <!-- CyberPulse related briefings end -->
-
-          <div class="article-footer">
+<div class="article-footer">
             <span>CyberPulse &middot; Signal over noise &middot; Edition No. 1</span>
             <a href="/">Home</a>
           </div>
@@ -665,23 +657,23 @@
           <div class="side-kicker">In this edition</div>
           <ul class="toc-list">
             <!-- Build TOC from h2 ids -->
-            <li><a href="#takeaways">Takeaways</a></li><li><a href="#sources">Sources</a></li>
+            <li><a href="#takeaways">Takeaways</a></li>
           </ul>
         </div>
 
         <div class="sticky-card">
           <div class="side-kicker">At a glance</div>
-          <p>The breach is no longer the event. The event is the moment information custody becomes a repricing problem for the board.</p>
+          <p>The next security metric is conversion speed: how fast attackers turn packages, browser sessions, edge appliances, model artifacts, and files into commercial pressure.</p>
           <ul>
-            
+            <li>P0 · Validate leverage points today</li><li>P1 · Treat dependencies as financial controls</li><li>P2 · Contain browser-based identity risk</li>
           </ul>
         </div>
 
         <div class="sticky-card">
           <div class="side-kicker">Share this briefing</div>
           <div class="share-stack">
-            <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-06-12.html" data-analytics="share-linkedin">Share on LinkedIn</a>
-            <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=When%20Data%20Becomes%20Debt&url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-06-12.html" data-analytics="share-x">Share on X</a>
+            <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-08-04.html" data-analytics="share-linkedin">Share on LinkedIn</a>
+            <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=Margin%20Call&url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-08-04.html" data-analytics="share-x">Share on X</a>
             <button class="share-btn" id="copyLinkBtnAside" type="button" data-analytics="share-copy">Copy article link</button>
           </div>
         </div>
