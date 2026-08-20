@@ -5,7 +5,7 @@
     <link>https://tusharvartak.com</link>
     <description>Executive cyber intelligence briefings on cyber risk, AI threats, infrastructure exposure, and board-level decision-making.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Aug 2026 06:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 12 Aug 2026 06:00:00 +0000</lastBuildDate>
     <atom:link href="https://tusharvartak.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://tusharvartak.com/assets/og/default.png</url>
@@ -13,13 +13,13 @@
       <link>https://tusharvartak.com</link>
     </image>
     <item>
-      <title>CyberPulse Daily — Silent Keys</title>
-      <link>https://tusharvartak.com/posts/cyberpulse-silent-keys.html</link>
-      <guid isPermaLink="true">https://tusharvartak.com/posts/cyberpulse-silent-keys.html</guid>
-      <pubDate>Tue, 11 Aug 2026 06:00:00 +0000</pubDate>
+      <title>CyberPulse Daily — The Emergency Queue</title>
+      <link>https://tusharvartak.com/posts/cyberpulse-the-emergency-queue.html</link>
+      <guid isPermaLink="true">https://tusharvartak.com/posts/cyberpulse-the-emergency-queue.html</guid>
+      <pubDate>Wed, 12 Aug 2026 06:00:00 +0000</pubDate>
       <dc:creator>Tushar Vartak</dc:creator>
-      <description>CyberPulse Daily for August 11, 2026: identity proof after authentication across passkeys, managed-service ransomware, poisoned installers, remote plugin feeds, developer extensions, and extortion pressure.</description>
-      <enclosure url="https://tusharvartak.com/assets/covers/2026-08-11.png?v=20260811" type="image/png" length="0"/>
+      <description>Executive cyber intelligence briefing for 2026-08-12.</description>
+      <enclosure url="https://tusharvartak.com/assets/covers/2026-08-12.png?v=20260812" type="image/png" length="0"/>
     </item>
   </channel>
 </rss>
