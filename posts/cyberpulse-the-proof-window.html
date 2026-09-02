@@ -3,38 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Triage Tax | CyberPulse Executive Brief</title>
+  <title>The Proof Window | CyberPulse Executive Brief</title>
   <link rel="icon" type="image/png" href="/assets/brand/logo-square.png" />
-  <meta name="description" content="For enterprise security teams across the Gulf, the issue is no longer whether warnings arrive." />
-  <link rel="canonical" href="https://tusharvartak.com/posts/cyberpulse-the-triage-tax.html" />
+  <meta name="description" content="A proof window is the gap between knowing a system is exposed and proving that exposure has not already become access, persistence, or theft." />
+  <link rel="canonical" href="https://tusharvartak.com/posts/cyberpulse-the-proof-window.html" />
   <meta name="author" content="Tushar Vartak" />
   <meta name="keywords" content="AI Security, Executive Cyber Risk, Software Supply Chain, Identity Security, Infrastructure Exposure, CyberPulse, Tushar Vartak, cybersecurity, AI security, executive cyber risk" />
-  <meta property="og:title" content="The Triage Tax" />
-  <meta property="og:description" content="For enterprise security teams across the Gulf, the issue is no longer whether warnings arrive." />
+  <meta property="og:title" content="The Proof Window" />
+  <meta property="og:description" content="A proof window is the gap between knowing a system is exposed and proving that exposure has not already become access, persistence, or theft." />
   <meta property="og:type" content="article" />
-  <meta property="og:image" content="https://tusharvartak.com/assets/og/2026-06-11.png" />
-  <meta property="og:url" content="https://tusharvartak.com/posts/cyberpulse-the-triage-tax.html" />
+  <meta property="og:image" content="https://tusharvartak.com/assets/og/2026-08-31.png" />
+  <meta property="og:url" content="https://tusharvartak.com/posts/cyberpulse-the-proof-window.html" />
   <meta property="og:site_name" content="CyberPulse" />
-  <meta property="article:published_time" content="2026-06-11T06:00:00+00:00" />
+  <meta property="article:published_time" content="2026-08-31T06:00:00+00:00" />
   <meta property="article:author" content="Tushar Vartak" />
   <meta property="article:section" content="Cybersecurity" />
   <!-- Add article:tag entries for each topic tag -->
   
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="The Triage Tax" />
-  <meta name="twitter:description" content="For enterprise security teams across the Gulf, the issue is no longer whether warnings arrive." />
-  <meta name="twitter:image" content="https://tusharvartak.com/assets/og/2026-06-11.png" />
+  <meta name="twitter:title" content="The Proof Window" />
+  <meta name="twitter:description" content="A proof window is the gap between knowing a system is exposed and proving that exposure has not already become access, persistence, or theft." />
+  <meta name="twitter:image" content="https://tusharvartak.com/assets/og/2026-08-31.png" />
   <link rel="alternate" type="application/rss+xml" title="CyberPulse RSS Feed" href="/feed.xml" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "The Triage Tax",
-    "description": "For enterprise security teams across the Gulf, the issue is no longer whether warnings arrive.",
-    "image": "https://tusharvartak.com/assets/og/2026-06-11.png",
-    "datePublished": "2026-06-11T06:00:00+00:00",
-    "keywords": "AI Security, Executive Cyber Risk, Identity Security, Infrastructure Exposure, CyberPulse, Tushar Vartak, cybersecurity, AI security, executive cyber risk",
-    "dateModified": "2026-06-11T06:00:00+00:00",
+    "headline": "The Proof Window",
+    "description": "A proof window is the gap between knowing a system is exposed and proving that exposure has not already become access, persistence, or theft.",
+    "image": "https://tusharvartak.com/assets/og/2026-08-31.png",
+    "datePublished": "2026-08-31T06:00:00+00:00",
+    "keywords": "Executive Cyber Risk, Software Supply Chain, Identity Security, Infrastructure Exposure, CyberPulse, Tushar Vartak, cybersecurity, AI security, executive cyber risk",
+    "dateModified": "2026-08-31T06:00:00+00:00",
     "author": {
       "@type": "Person",
       "name": "Tushar Vartak",
@@ -47,7 +47,7 @@
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://tusharvartak.com/posts/cyberpulse-the-triage-tax.html"
+      "@id": "https://tusharvartak.com/posts/cyberpulse-the-proof-window.html"
     }
   }
   </script>
@@ -336,6 +336,58 @@
     .source-box li { font-size: 15px; color: var(--muted); margin-bottom: 10px; line-height: 1.55; }
     .source-box a { color: var(--accent); }
 
+    /* ── Related briefings ── */
+    .related-briefings {
+      margin-top: 44px;
+      padding-top: 12px;
+    }
+    .related-briefings h2 { margin-top: 0; }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .related-card {
+      display: grid;
+      gap: 8px;
+      min-width: 0;
+      padding: 18px;
+      border-radius: var(--radius-sm);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      text-decoration: none;
+      box-shadow: var(--shadow-sm);
+      transition: border-color var(--duration-fast), background var(--duration-fast), transform var(--duration-fast) var(--ease);
+    }
+    .related-card:hover {
+      background: var(--surface-hover);
+      border-color: var(--border-strong);
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+    .related-card span {
+      color: var(--gold);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+    }
+    .related-card strong {
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+    }
+    .related-card em {
+      color: var(--muted);
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
     /* ── Article footer ── */
     .article-footer {
       margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--border);
@@ -413,6 +465,7 @@
       p { font-size: 18px; }
       .lead { font-size: 19px; }
       .signal, .action-box, .sticky-card, .source-box { border-radius: var(--radius-sm); }
+      .related-grid { grid-template-columns: 1fr; }
       .topbar { align-items: flex-start; }
       .share-row { width: 100%; }
       .tag-row { margin-bottom: 18px; }
@@ -422,9 +475,9 @@
   <!-- CyberPulse Phase 2/3 SEO start -->
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
   <meta name="theme-color" content="#06070a" />
-  <meta property="article:modified_time" content="cyberpulse-the-triage-taxT06:00:00+00:00" />
-  <link rel="prev" href="https://tusharvartak.com/posts/cyberpulse-the-transfer-surface.html" />
-  <link rel="next" href="https://tusharvartak.com/posts/cyberpulse-three-day-fuse.html" />
+  <meta property="article:modified_time" content="cyberpulse-the-proof-windowT06:00:00+00:00" />
+  <link rel="prev" href="https://tusharvartak.com/posts/cyberpulse-the-permission-market.html" />
+  <link rel="next" href="https://tusharvartak.com/posts/cyberpulse-the-proxy-economy.html" />
   <link rel="tag" href="https://tusharvartak.com/topics/ai-security/" title="AI Security" />
   <link rel="tag" href="https://tusharvartak.com/topics/executive-cyber-risk/" title="Executive Cyber Risk" />
   <link rel="tag" href="https://tusharvartak.com/topics/infrastructure-exposure/" title="Infrastructure Exposure" />
@@ -450,8 +503,8 @@
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "The Triage Tax",
-        "item": "https://tusharvartak.com/posts/cyberpulse-the-triage-tax.html"
+        "name": "The Proof Window",
+        "item": "https://tusharvartak.com/posts/cyberpulse-the-proof-window.html"
       }
     ]
   }
@@ -460,10 +513,10 @@
 {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://tusharvartak.com/posts/cyberpulse-the-triage-tax.html#webpage",
-    "url": "https://tusharvartak.com/posts/cyberpulse-the-triage-tax.html",
-    "name": "The Triage Tax",
-    "description": "For enterprise security teams across the Gulf, the issue is no longer whether warnings arrive.",
+    "@id": "https://tusharvartak.com/posts/cyberpulse-the-proof-window.html#webpage",
+    "url": "https://tusharvartak.com/posts/cyberpulse-the-proof-window.html",
+    "name": "The Proof Window",
+    "description": "A proof window is the gap between knowing a system is exposed and proving that exposure has not already become access, persistence, or theft.",
     "isPartOf": {
       "@type": "WebSite",
       "name": "CyberPulse",
@@ -471,10 +524,10 @@
     },
     "primaryImageOfPage": {
       "@type": "ImageObject",
-      "url": "https://tusharvartak.com/assets/covers/2026-06-11.png?v=20260611"
+      "url": "https://tusharvartak.com/assets/covers/2026-08-31.png?v=20260831"
     },
     "breadcrumb": {
-      "@id": "https://tusharvartak.com/posts/cyberpulse-the-triage-tax.html#breadcrumb"
+      "@id": "https://tusharvartak.com/posts/cyberpulse-the-proof-window.html#breadcrumb"
     }
   }
   </script>
@@ -499,8 +552,8 @@
         </button>
         <div class="share-row">
           <span class="share-label">Share</span>
-          <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-06-11.html" data-analytics="share-linkedin">LinkedIn</a>
-          <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=The%20Triage%20Tax&url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-06-11.html" data-analytics="share-x">X</a>
+          <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-08-31.html" data-analytics="share-linkedin">LinkedIn</a>
+          <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=The%20Proof%20Window&url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-08-31.html" data-analytics="share-x">X</a>
           <button class="share-btn" id="copyLinkBtn" type="button" data-analytics="share-copy">Copy link</button>
         </div>
       </div>
@@ -509,15 +562,15 @@
     <div class="layout">
       <article>
         <div class="article-inner">
-          <div class="article-eyebrow">CyberPulse &middot; Edition No. 1 &middot; Thursday, June 11, 2026</div>
-          <h1>The Triage Tax</h1>
+          <div class="article-eyebrow">CyberPulse &middot; Edition No. 14 &middot; Monday, August 31, 2026</div>
+          <h1>The Proof Window</h1>
           <p class="dek"></p>
 
           <div class="tag-row">
             <a class="tag" href="/topics/operational-threat-intelligence/">Operational Threat Intelligence</a>
           </div>
 
-          <img class="article-cover" src="/assets/covers/2026-06-11.png?v=20260611" alt="CyberPulse editorial cover image for The Triage Tax" loading="lazy">
+          <img class="article-cover" src="/assets/covers/2026-08-31.png?v=20260831" alt="CyberPulse editorial cover image for The Proof Window" loading="lazy">
 
           <div class="hero-meta">
             <div class="meta-card">
@@ -526,38 +579,39 @@
             </div>
             <div class="meta-card">
               <strong>Published</strong>
-              <span>2026-06-11</span>
+              <span>2026-08-31</span>
             </div>
             <div class="meta-card">
               <strong>Primary signal</strong>
-              <span>The Triage Tax</span>
+              <span>The Proof Window</span>
             </div>
             <div class="meta-card">
               <strong>Why it matters</strong>
-              <span>The day’s sharpest signal is not another alert. It is the executive cost of deciding what gets fixed first.</span>
+              <span>Emergency patches no longer close the issue. Security teams now have to prove the exposed system was not already used.</span>
             </div>
           </div>
 
           <!-- ── Lead paragraph ── -->
-          <p class="lead">The day’s sharpest signal is not another alert. It is the executive cost of deciding what gets fixed first.</p>
+          <p class="lead">Emergency patches no longer close the issue. Security teams now have to prove the exposed system was not already used.</p>
 
           <!-- ── Body paragraphs ── -->
-          <p>Today’s briefing is about a pressure point that rarely gets a breach headline but increasingly defines enterprise security outcomes: the cost of prioritization when every advisory claims urgency.</p>
-          <p>For enterprise security teams across the Gulf, the issue is no longer whether warnings arrive. The issue is whether the organization can convert a crowded queue into disciplined, blast-radius-based decisions before adversaries find the unresolved exception.</p>
-          <p>Reporting on the latest enterprise software patch cycle described 206 vulnerabilities, including multiple zero-days and critical remote code execution bugs. That is not simply a patch-management event. It is a decision-management event.</p>
-          <p>The practical question is not “how many fixes exist?” It is “which exposed systems can change identity, payments, code, customer records, or privileged administration?” Teams that know that answer before the advisory lands move faster than teams still arguing over ownership after exploitation begins.</p>
-          <p>A major workflow platform vendor disclosed that a vulnerability was exploited to gain unauthorized access to some customer instances, with patching and notifications under way. The strategic risk is not limited to one software flaw.</p>
-          <p>Workflow platforms carry approvals, tickets, integrations, attachments, identity context, and the operational history of how the enterprise actually runs. If one of those systems is exposed, the organization may lose more than data. It may lose the map of its own business process.</p>
-          <p>Security reporting also highlighted exploitation of an unauthenticated remote code execution flaw in a low-code artificial intelligence development framework. These frameworks are attractive because they let teams move quickly. That is also why they become dangerous when ownership, credentials, and network reach are unclear.</p>
-          <p>In regional enterprises, experimental automation often starts as useful internal glue: a dashboard, a data-processing helper, a proof of concept, or a temporary integration. The risk appears when temporary services receive durable credentials and remain reachable after the business experiment has moved on.</p>
-          <p>Critical advisories across mobile access, network security, enterprise resource planning, cryptographic libraries, browsers, and switching infrastructure are arriving together. Separately, each one is a ticket. Together, they test whether the security operating model can prioritize by business blast radius rather than vendor urgency alone.</p>
-          <p>Cryptographic library analysis reinforces the same point from the defensive side. Assisted discovery can surface serious flaws faster than traditional review cycles, which means remediation queues will not become calmer just because teams standardize their tooling.</p>
-          <p>Investigative reporting on a ransomware operation shows the ecosystem continues to professionalize around access brokers, affiliate labor, data pressure, identity trails, and operational persistence. The extortion economy is not waiting for defenders to finish internal debates.</p>
-          <p>While defenders ask whether an issue is a P1 or P2, adversaries search for the route left in the exception column. That is the triage tax: every slow decision compounds into usable leverage.</p>
-          <p>Build a same-day list of externally reachable systems affected by current critical advisories. Prioritize workflow platforms, low-code development services, remote access technology, browsers used by privileged staff, and infrastructure touching identity or finance.</p>
-          <p>Review temporary firewall openings, emergency accounts, pilot automation, abandoned development services, and integrations with stale credentials. Focus on systems approved outside the normal path for valid business reasons that may no longer hold.</p>
-          <p>Do not run the next remediation call as a vendor-by-vendor status review. Run it as a blast-radius review: which vulnerable systems can approve access, modify code, expose customer records, alter payment flows, or become a launch point into recovery infrastructure?</p>
-          <p>The executive takeaway is blunt: mature programs are no longer separated by whether they receive advisories. Everyone receives advisories. The separation is whether they can make disciplined decisions before attackers convert the queue into leverage.</p>
+          <p>A proof window is the gap between knowing a system is exposed and proving that exposure has not already become access, persistence, or theft. That window is shrinking across the Gulf because attackers are arriving before ownership, evidence collection, and remediation governance can align.</p>
+          <p>The recent CyberPulse arc moved from leakage and visible inventory to process handoffs and permitted entry. Today’s signal is different. The decisive question is no longer “did we patch?” It is “what evidence proves the exposure did not become compromise before the patch took effect?”</p>
+          <p>PaperCut has warned that a zero-day affecting NG and MF application servers is being actively exploited, with confirmed customer incidents and emergency patches now available. The vendor is also urging operators with public-facing application servers to restrict web access to trusted addresses or remove direct exposure.</p>
+          <p>For executive teams, the print platform should not be treated as office plumbing. It is an administrative bridge with access to identities, queues, documents, servers, logs, and privileged service paths.</p>
+          <p>The most important detail is the evidentiary trail. Suspicious use of the legitimate application process, missing or truncated server logs, and database errors may all matter. A clean patch dashboard does not answer whether the application server was touched, whether logs were altered, or whether credentials and scripts need rotation.</p>
+          <p>Remote-access appliances are carrying the same lesson. Reporting on SonicWall SMA one thousand devices describes two recently patched flaws used to open restricted service paths and escalate privilege. Incident responders observed credential harvesting, malicious file placement, internal pivots, and follow-on extortion pressure through email and phone outreach.</p>
+          <p>That makes the appliance more than an initial doorway. It can become a negotiation platform: root access creates operational depth, harvested credentials create movement, and public pressure tactics create executive urgency. In the region, any externally reachable remote-access system should now have an exposure-history review attached to remediation.</p>
+          <p>Product-lifecycle platforms add a sharper business-risk dimension. The campaign against PTC Windchill and FlexPLM shows remote code execution used to place a custom implant with data-theft capability. Reported stolen material included vault data, keystore secrets, project files, engineering documents, diagrams, backups, images, logs, and corporate records.</p>
+          <p>This is not ordinary file theft. It is design intelligence leaving through the systems that define what the enterprise is building, sourcing, maintaining, and monetizing. For industrial, logistics, healthcare, and energy-linked operators, engineering platforms deserve the same emergency governance as identity providers and financial systems.</p>
+          <p>Developer platforms are also compressing the proof window. Reporting on active exploitation against GitLab described vulnerability reproduction within minutes of disclosure and observation against honeypots. Source control and build automation are too close to release authority to wait for a routine maintenance slot.</p>
+          <p>Remote monitoring tools widen the blast radius. N-able’s N-central issue involved administrative account takeover risk in environments that manage many downstream systems. Once hostile access reaches a monitoring console, the scope becomes scripts, remote-control sessions, agent deployment, roles, policy changes, and every managed endpoint that trusts the console.</p>
+          <p>Endpoint privilege issues remain the final accelerator. This month’s large platform patch set included an exploited WinSock driver flaw and other privilege risks, while a Windows Task Host flaw has now been flagged as used by ransomware crews. Local elevation may not be the opening move, but it is often what turns a foothold into durable control.</p>
+          <p>The operating model implication is blunt. Incident command needs a faster path from vulnerability notice to evidence review. Asset owners should know in advance which logs matter, which credentials rotate automatically, and who can approve emergency isolation without a committee meeting. Otherwise the enterprise keeps treating exploitation as a patching problem, while attackers treat patching delay as a discovery period.</p>
+          <p>For exposed PaperCut, SonicWall SMA, N-central, GitLab, PTC, and collaboration or engineering systems, capture version, exposure history, access logs, administrator creation events, process anomalies, deleted or shortened logs, web shell indicators, and credential rotation evidence.</p>
+          <p>Move print servers, remote monitoring consoles, lifecycle platforms, source-control servers, and VPN appliances out of flat trust with domain controllers, build workers, sensitive file stores, and operational administration networks.</p>
+          <p>Close every emergency patch with three answered questions: was it exposed, was it accessed, and what evidence proves the answer? If evidence is incomplete, keep the issue open as a suspected exposure, not a completed patch task.</p>
+          <p>The proof window closes only when the enterprise can demonstrate that the patch changed reality, not just inventory color.</p>
 
           <!-- ── Takeaways ── -->
           <h2 id="takeaways">Takeaways</h2>
@@ -565,106 +619,58 @@
             <div class="action-box">
               <h4>Board takeaway in 20 seconds</h4>
               <ul>
-                <li>The day’s sharpest signal is not another alert.</li>
-                <li>Fraud controls should be judged by whether they interrupt the handoffs attackers need: attention, delivery, trust, identity, web foothold, and credential payout.</li>
+                <li>Emergency patches no longer close the issue.</li>
+                <li>Trusted systems are now business attack surfaces; directors should ask where authority has been delegated and what evidence proves it is constrained.</li>
               </ul>
             </div>
             <div class="action-box">
               <h4>What should CISOs do?</h4>
               <ul>
-                <li>Monitor cloud workloads that unexpectedly send mail, create bulk outbound traffic, or appear outside approved provisioning patterns.</li>
-                <li>Treat trusted sharing services as redirect surfaces: inspect destination chains, not only the first domain a user clicks.</li>
-                <li>Lock down exposed form plugins, workflow tools, and AI builders with patch SLAs, admin restrictions, and recent-change review.</li>
+                <li>Inventory every agent, bot, workflow, script, and plugin that can read secrets, change code, trigger builds, or alter production settings.</li>
+                <li>Reduce delegated authority: least privilege for automation tokens, human approval on high-impact workflow actions, and emergency kill switches for agentic tools.</li>
+                <li>Treat packages and plugins as ingress points: pin versions, verify maintainers, monitor new dependencies, and alert on unexpected install or update paths.</li>
               </ul>
             </div>
             <div class="action-box">
               <h4>What should boards demand?</h4>
               <ul>
-                <li>Evidence that payment, travel, hospitality, and support workflows require out-of-band verification at high-risk moments.</li>
-                <li>Named ownership for public-facing convenience software before it becomes a fraud staging point.</li>
-                <li>Metrics that show fraud controls make completion harder across attention, delivery, trust, identity, web foothold, and credential payout.</li>
+                <li>A current map of which automated systems can change production code, infrastructure, identity permissions, or customer-facing content.</li>
+                <li>Named executive ownership for risk acceptance below formal procurement thresholds, especially open-source packages and third-party plugins.</li>
+                <li>Quarterly evidence that delegated digital authority is constrained, monitored, logged, and reversible — not just documented in policy.</li>
               </ul>
             </div>
             <div class="action-box">
               <h4>What should risk committees rethink?</h4>
               <ul>
-                <li>Move fraud from awareness-only training into process design: approvals, callbacks, domain monitoring, and cloud-mail anomaly response.</li>
-                <li>Run incident scenarios for executive hospitality fraud, fake support, and compromised public web tools.</li>
-                <li>Review whether seasonal events, procurement exceptions, and support urgency weaken verification controls faster than policy owners expect.</li>
+                <li>Expand the risk register to include internet-, vendor-, and contractor-reachable operational systems that sit outside normal IT change control.</li>
+                <li>Require incident scenarios for harmful automated decisions: what instruction, data, credential, and approval path would investigators need to reconstruct?</li>
+                <li>Move assurance from vendor-by-vendor review to authority-chain review: who can act, through which tool, with which credential, and under whose risk acceptance.</li>
               </ul>
             </div>
           </div>
 
           <!-- ── Blind spot ── -->
           <h2 id="blind-spot">The board blind spot</h2>
-          <p>The board blind spot is process friction. Fraud risk is treated as a user-awareness problem, while attackers are building the operational stack around payment approvals, travel workflows, support interactions, trusted sharing links, and exposed web tools. Directors should ask which business moments now require stronger proof, not just which employees received another warning email.</p>
+          <p>The board blind spot is delegated authority. Security reviews still focus on individual systems, while the real exposure is increasingly in the control planes, automations, agents, and credentials that can change many systems at once. Directors should ask who can act through these layers, what evidence proves those actions are constrained, and how quickly harmful authority can be revoked.</p>
 
-<ol>
+          <!-- ── Sources ── -->
+          <div class="source-box">
+            <div class="meta-kicker">Sources</div>
+            <ol>
               <!-- <li><a href="URL">Publication, Article title</a></li> -->
-              
+              <li><a href="https://www.bleepingcomputer.com/news/security/papercut-warns-of-ng-mf-flaw-exploited-in-zero-day-attacks/">PaperCut warns of NG, MF flaw exploited in zero-day attacks</a></li>
+<li><a href="https://securityweek.com/papercut-releases-emergency-patch-for-exploited-zero-day">PaperCut Releases Emergency Patch for Exploited Zero-Day</a></li>
+<li><a href="https://securityweek.com/recent-sonicwall-vulnerabilities-exploited-in-ransomware-attacks">Recent SonicWall Vulnerabilities Exploited in Ransomware Attacks</a></li>
+<li><a href="https://securityweek.com/cl0p-ransomware-group-names-over-40-victims-of-ptc-windchill-campaign">Cl0p Ransomware Group Names Over 40 Victims of PTC Windchill Campaign</a></li>
+<li><a href="https://securityweek.com/august-2026-patch-tuesday-microsoft-fixes-421-cves-one-exploited-zero-day">August 2026 Patch Tuesday: Microsoft Fixes 421 CVEs, One Exploited Zero-Day</a></li>
+<li><a href="https://thehackernews.com/2026/08/gitlab-cve-2026-19478-comes-under.html">GitLab CVE-2026-19478 Comes Under Active Exploitation Within Days of Disclosure</a></li>
+<li><a href="https://securityweek.com/n-able-patches-vulnerability-exploited-to-hack-n-central-servers">N-able Patches Vulnerability Exploited to Hack N-central Servers</a></li>
+<li><a href="https://www.bleepingcomputer.com/news/security/cisa-windows-task-host-flaw-now-exploited-by-ransomware-gangs/">Windows Task Host flaw now exploited by ransomware gangs</a></li>
             </ol>
           </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          <!-- CyberPulse related briefings start -->
-          <section class="related-briefings" aria-labelledby="related-briefings-title">
-            <h2 id="related-briefings-title">Related briefings</h2>
-            <div class="related-grid">
-              <a class="related-card" href="/posts/2026-06-03.html">
-                <span>2026-06-03</span>
-                <strong>The Automation Gap</strong>
-                <em>Today’s CyberPulse Daily Brief is about a widening operational gap: attackers are no longer just exploiting exposed software faster.</em>
-              </a>
-              <a class="related-card" href="/posts/2026-06-04.html">
-                <span>2026-06-04</span>
-                <strong>The Control Plane Squeeze</strong>
-                <em>Trusted systems are becoming attack surfaces: web gateways, telemetry, mobile tokens, AI assistants, and endpoint controls.</em>
-              </a>
-              <a class="related-card" href="/posts/2026-06-05.html">
-                <span>2026-06-05</span>
-                <strong>The Trust Boundary Weekend</strong>
-                <em>Automation, plugins, agents, package ecosystems, and operational systems are accumulating authority faster than many governance models can explain.</em>
-              </a>
-            </div>
-          </section>
-          <!-- CyberPulse related briefings end -->
-
           <div class="article-footer">
-            <span>CyberPulse &middot; Signal over noise &middot; Edition No. 1</span>
+            <span>CyberPulse &middot; Signal over noise &middot; Edition No. 14</span>
             <a href="/">Home</a>
           </div>
         </div>
@@ -681,17 +687,17 @@
 
         <div class="sticky-card">
           <div class="side-kicker">At a glance</div>
-          <p>The day’s sharpest signal is not another alert. It is the executive cost of deciding what gets fixed first.</p>
+          <p>Emergency patches no longer close the issue. Security teams now have to prove the exposed system was not already used.</p>
           <ul>
-            <li>P0 · Rank exposure today</li><li>P1 · Hunt exception debt</li><li>P2 · Change the remediation meeting</li>
+            <li>Build the proof package</li><li>Separate administrative utilities</li><li>Require owner attestation</li>
           </ul>
         </div>
 
         <div class="sticky-card">
           <div class="side-kicker">Share this briefing</div>
           <div class="share-stack">
-            <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-06-11.html" data-analytics="share-linkedin">Share on LinkedIn</a>
-            <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=The%20Triage%20Tax&url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-06-11.html" data-analytics="share-x">Share on X</a>
+            <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-08-31.html" data-analytics="share-linkedin">Share on LinkedIn</a>
+            <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=The%20Proof%20Window&url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-08-31.html" data-analytics="share-x">Share on X</a>
             <button class="share-btn" id="copyLinkBtnAside" type="button" data-analytics="share-copy">Copy article link</button>
           </div>
         </div>
