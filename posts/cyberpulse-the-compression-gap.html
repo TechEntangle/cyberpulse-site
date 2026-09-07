@@ -3,38 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>When Data Becomes Debt | CyberPulse Executive Brief</title>
+  <title>The Compression Gap | CyberPulse Executive Brief</title>
   <link rel="icon" type="image/png" href="/assets/brand/logo-square.png" />
-  <meta name="description" content="Across the latest reporting, the pattern is broader than one compromised platform or one criminal brand." />
-  <link rel="canonical" href="https://tusharvartak.com/posts/cyberpulse-when-data-becomes-debt.html" />
+  <meta name="description" content="The recent CyberPulse arc tracked exposed routes, temporary exceptions, and priced weaknesses." />
+  <link rel="canonical" href="https://tusharvartak.com/posts/cyberpulse-the-compression-gap.html" />
   <meta name="author" content="Tushar Vartak" />
   <meta name="keywords" content="AI Security, Executive Cyber Risk, Software Supply Chain, Identity Security, Infrastructure Exposure, CyberPulse, Tushar Vartak, cybersecurity, AI security, executive cyber risk" />
-  <meta property="og:title" content="When Data Becomes Debt" />
-  <meta property="og:description" content="Across the latest reporting, the pattern is broader than one compromised platform or one criminal brand." />
+  <meta property="og:title" content="The Compression Gap" />
+  <meta property="og:description" content="The recent CyberPulse arc tracked exposed routes, temporary exceptions, and priced weaknesses." />
   <meta property="og:type" content="article" />
-  <meta property="og:image" content="https://tusharvartak.com/assets/og/2026-06-12.png" />
-  <meta property="og:url" content="https://tusharvartak.com/posts/cyberpulse-when-data-becomes-debt.html" />
+  <meta property="og:image" content="https://tusharvartak.com/assets/og/2026-09-07.png" />
+  <meta property="og:url" content="https://tusharvartak.com/posts/cyberpulse-the-compression-gap.html" />
   <meta property="og:site_name" content="CyberPulse" />
-  <meta property="article:published_time" content="2026-06-12T06:00:00+00:00" />
+  <meta property="article:published_time" content="2026-09-07T06:00:00+00:00" />
   <meta property="article:author" content="Tushar Vartak" />
   <meta property="article:section" content="Cybersecurity" />
   <!-- Add article:tag entries for each topic tag -->
   
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="When Data Becomes Debt" />
-  <meta name="twitter:description" content="Across the latest reporting, the pattern is broader than one compromised platform or one criminal brand." />
-  <meta name="twitter:image" content="https://tusharvartak.com/assets/og/2026-06-12.png" />
+  <meta name="twitter:title" content="The Compression Gap" />
+  <meta name="twitter:description" content="The recent CyberPulse arc tracked exposed routes, temporary exceptions, and priced weaknesses." />
+  <meta name="twitter:image" content="https://tusharvartak.com/assets/og/2026-09-07.png" />
   <link rel="alternate" type="application/rss+xml" title="CyberPulse RSS Feed" href="/feed.xml" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "When Data Becomes Debt",
-    "description": "Across the latest reporting, the pattern is broader than one compromised platform or one criminal brand.",
-    "image": "https://tusharvartak.com/assets/og/2026-06-12.png",
-    "datePublished": "2026-06-12T06:00:00+00:00",
-    "keywords": "AI Security, Executive Cyber Risk, Software Supply Chain, Identity Security, Infrastructure Exposure, CyberPulse, Tushar Vartak, cybersecurity, AI security, executive cyber risk",
-    "dateModified": "2026-06-12T06:00:00+00:00",
+    "headline": "The Compression Gap",
+    "description": "The recent CyberPulse arc tracked exposed routes, temporary exceptions, and priced weaknesses.",
+    "image": "https://tusharvartak.com/assets/og/2026-09-07.png",
+    "datePublished": "2026-09-07T06:00:00+00:00",
+    "keywords": "Executive Cyber Risk, Software Supply Chain, Identity Security, Infrastructure Exposure, CyberPulse, Tushar Vartak, cybersecurity, AI security, executive cyber risk",
+    "dateModified": "2026-09-07T06:00:00+00:00",
     "author": {
       "@type": "Person",
       "name": "Tushar Vartak",
@@ -47,7 +47,7 @@
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://tusharvartak.com/posts/cyberpulse-when-data-becomes-debt.html"
+      "@id": "https://tusharvartak.com/posts/cyberpulse-the-compression-gap.html"
     }
   }
   </script>
@@ -336,6 +336,58 @@
     .source-box li { font-size: 15px; color: var(--muted); margin-bottom: 10px; line-height: 1.55; }
     .source-box a { color: var(--accent); }
 
+    /* ── Related briefings ── */
+    .related-briefings {
+      margin-top: 44px;
+      padding-top: 12px;
+    }
+    .related-briefings h2 { margin-top: 0; }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .related-card {
+      display: grid;
+      gap: 8px;
+      min-width: 0;
+      padding: 18px;
+      border-radius: var(--radius-sm);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      text-decoration: none;
+      box-shadow: var(--shadow-sm);
+      transition: border-color var(--duration-fast), background var(--duration-fast), transform var(--duration-fast) var(--ease);
+    }
+    .related-card:hover {
+      background: var(--surface-hover);
+      border-color: var(--border-strong);
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+    .related-card span {
+      color: var(--gold);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+    }
+    .related-card strong {
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+    }
+    .related-card em {
+      color: var(--muted);
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
     /* ── Article footer ── */
     .article-footer {
       margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--border);
@@ -413,6 +465,7 @@
       p { font-size: 18px; }
       .lead { font-size: 19px; }
       .signal, .action-box, .sticky-card, .source-box { border-radius: var(--radius-sm); }
+      .related-grid { grid-template-columns: 1fr; }
       .topbar { align-items: flex-start; }
       .share-row { width: 100%; }
       .tag-row { margin-bottom: 18px; }
@@ -422,13 +475,10 @@
   <!-- CyberPulse Phase 2/3 SEO start -->
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
   <meta name="theme-color" content="#06070a" />
-  <meta property="article:modified_time" content="cyberpulse-when-data-becomes-debtT06:00:00+00:00" />
-  <link rel="prev" href="https://tusharvartak.com/posts/cyberpulse-toll-roads.html" />
-  <link rel="tag" href="https://tusharvartak.com/topics/ai-security/" title="AI Security" />
-  <link rel="tag" href="https://tusharvartak.com/topics/executive-cyber-risk/" title="Executive Cyber Risk" />
-  <link rel="tag" href="https://tusharvartak.com/topics/infrastructure-exposure/" title="Infrastructure Exposure" />
-  <link rel="tag" href="https://tusharvartak.com/topics/identity-security/" title="Identity Security" />
-  <link rel="tag" href="https://tusharvartak.com/topics/software-supply-chain/" title="Software Supply Chain" />
+  <meta property="article:modified_time" content="2026-09-07T06:00:00+00:00" />
+  <link rel="prev" href="https://tusharvartak.com/posts/2026-09-06.html" />
+  <link rel="next" href="https://tusharvartak.com/posts/cyberpulse-borrowed-doors.html" />
+  <link rel="tag" href="https://tusharvartak.com/topics/operational-threat-intelligence/" title="Operational Threat Intelligence" />
   <script type="application/ld+json" id="breadcrumb-schema">
 {
     "@context": "https://schema.org",
@@ -449,8 +499,8 @@
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "When Data Becomes Debt",
-        "item": "https://tusharvartak.com/posts/cyberpulse-when-data-becomes-debt.html"
+        "name": "The Compression Gap",
+        "item": "https://tusharvartak.com/posts/cyberpulse-the-compression-gap.html"
       }
     ]
   }
@@ -459,10 +509,10 @@
 {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://tusharvartak.com/posts/cyberpulse-when-data-becomes-debt.html#webpage",
-    "url": "https://tusharvartak.com/posts/cyberpulse-when-data-becomes-debt.html",
-    "name": "When Data Becomes Debt",
-    "description": "Across the latest reporting, the pattern is broader than one compromised platform or one criminal brand.",
+    "@id": "https://tusharvartak.com/posts/cyberpulse-the-compression-gap.html#webpage",
+    "url": "https://tusharvartak.com/posts/cyberpulse-the-compression-gap.html",
+    "name": "The Compression Gap",
+    "description": "The recent CyberPulse arc tracked exposed routes, temporary exceptions, and priced weaknesses.",
     "isPartOf": {
       "@type": "WebSite",
       "name": "CyberPulse",
@@ -470,10 +520,10 @@
     },
     "primaryImageOfPage": {
       "@type": "ImageObject",
-      "url": "https://tusharvartak.com/assets/covers/2026-06-12.png?v=20260612"
+      "url": "https://tusharvartak.com/assets/covers/2026-09-07.png?v=20260907"
     },
     "breadcrumb": {
-      "@id": "https://tusharvartak.com/posts/cyberpulse-when-data-becomes-debt.html#breadcrumb"
+      "@id": "https://tusharvartak.com/posts/cyberpulse-the-compression-gap.html#breadcrumb"
     }
   }
   </script>
@@ -498,8 +548,8 @@
         </button>
         <div class="share-row">
           <span class="share-label">Share</span>
-          <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-06-12.html" data-analytics="share-linkedin">LinkedIn</a>
-          <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=When%20Data%20Becomes%20Debt&url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-06-12.html" data-analytics="share-x">X</a>
+          <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-09-07.html" data-analytics="share-linkedin">LinkedIn</a>
+          <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=The%20Compression%20Gap&url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-09-07.html" data-analytics="share-x">X</a>
           <button class="share-btn" id="copyLinkBtn" type="button" data-analytics="share-copy">Copy link</button>
         </div>
       </div>
@@ -508,15 +558,15 @@
     <div class="layout">
       <article>
         <div class="article-inner">
-          <div class="article-eyebrow">CyberPulse &middot; Edition No. 1 &middot; Friday, June 12, 2026</div>
-          <h1>When Data Becomes Debt</h1>
-          <p class="dek"></p>
+          <div class="article-eyebrow">CyberPulse &middot; Edition No. 114 &middot; Monday, September 7, 2026</div>
+          <h1>The Compression Gap</h1>
+          <p class="dek">CyberPulse Daily Brief for September 7, 2026: attackers are compressing the interval between disclosure, exploitation, evidence, and containment across edge, repository, workflow, model-routing, website, and social-engineering surfaces.</p>
 
           <div class="tag-row">
             <a class="tag" href="/topics/operational-threat-intelligence/">Operational Threat Intelligence</a>
           </div>
 
-          <img class="article-cover" src="/assets/covers/2026-06-12.png?v=20260612" alt="CyberPulse editorial cover image for When Data Becomes Debt" loading="lazy">
+          <img class="article-cover" src="/assets/covers/2026-09-07.png?v=20260907" alt="CyberPulse editorial cover image for The Compression Gap" loading="lazy">
 
           <div class="hero-meta">
             <div class="meta-card">
@@ -525,37 +575,51 @@
             </div>
             <div class="meta-card">
               <strong>Published</strong>
-              <span>2026-06-12</span>
+              <span>2026-09-07</span>
             </div>
             <div class="meta-card">
               <strong>Primary signal</strong>
-              <span>When Data Becomes Debt</span>
+              <span>This week’s most important signal is not any single product advisory.</span>
             </div>
             <div class="meta-card">
               <strong>Why it matters</strong>
-              <span>The breach is no longer the event. The event is the moment information custody becomes a repricing problem for the board.</span>
+              <span>CyberPulse Daily Brief for September 7, 2026: attackers are compressing the interval between disclosure, exploitation, evidence, and containment across edge, repository, workflow.</span>
             </div>
           </div>
 
           <!-- ── Lead paragraph ── -->
-          <p class="lead">The breach is no longer the event. The event is the moment information custody becomes a repricing problem for the board.</p>
+          <p class="lead">The stopwatch is part of the attack surface. This week’s most important signal is not any single product advisory. It is the speed at which multiple exposed business surfaces are being converted into command execution, credential access, unauthorized administration, and persistent reach.</p>
 
           <!-- ── Body paragraphs ── -->
-          <p>The sharpest cyber signal today is not another exploit race. It is a shift in the economics of stolen information: attackers are learning that they do not need to break every system when they can turn selected data into recurring leverage.</p>
-          <p>Across the latest reporting, the pattern is broader than one compromised platform or one criminal brand. Enterprise application data theft, extortion-only pressure, fake support workflows, manipulated developer content, agent hijacking, and recovery-path abuse all point toward the same executive problem. Data that was collected to run the business is becoming a liability when an adversary controls possession, timing, disclosure, and narrative.</p>
-          <p>For boards across the Gulf, the uncomfortable question is no longer only whether the organization can prevent intrusion. It is whether the organization can still govern trust after someone else has copied the information that makes trust possible.</p>
-          <p>Start with widely deployed business software. Fresh reporting described active data theft against enterprise application environments, with mitigation moving into emergency mode. The board-level lesson is not the product name. It is concentration risk. Platforms close to workforce, finance, education, service, and case-management processes are no longer routine software assets. They are strategic data reservoirs.</p>
-          <p>When those reservoirs are exposed, the damage is not limited to downtime. An organization may keep operating while losing control of employee records, customer context, service histories, contracts, claims, credentials, or correspondence. That is why information exposure behaves like debt: it accumulates quietly, compounds through third-party obligations, and becomes most expensive when liquidity is needed most.</p>
-          <p>The second signal is extortion without the theatre of encryption. Recent reporting shows data-theft-led claims rising because attackers can create pressure without visibly stopping operations. This is especially dangerous for governance. Business continuity metrics may look acceptable while stakeholder confidence is already deteriorating. Uptime can survive while trust does not.</p>
-          <p>The third signal is identity manipulation through trusted interactions. Reporting on fake support calls, phishing-as-a-service disruption, fraudulent developer guides, and malicious training-style content shows how adversaries exploit the places where people expect help. The help desk, the tutorial, the onboarding link, the urgent reset, and the privileged request have become transaction surfaces.</p>
-          <p>That changes how boards should view identity recovery. It is not a narrow technical workflow. It is a financial control. If attackers can socially engineer a reset, persuade a developer to run hostile content, or exploit the credibility of a support conversation, then business process has become the intrusion path.</p>
-          <p>The fourth signal is artificial intelligence raising the proof burden. New research into agent hijacking and manipulated coding assistants shows that autonomous helpers can read instructions, execute steps, touch secrets, and produce artifacts faster than human reviewers can reconstruct intent. The policy question is no longer whether staff are using AI. They are. The governance question is whether the organization can prove which tools touched sensitive work and which outputs entered operational systems.</p>
-          <p>Which categories of data would create the greatest board-level harm if copied but not encrypted? If this cannot be answered quickly, the data inventory is not decision-grade.</p>
-          <p>Which business platforms are treated as routine applications even though they concentrate strategic information? Those systems need executive ownership, not only technical administration.</p>
-          <p>Can the organization distinguish a legitimate support interaction from a hostile performance under time pressure? Identity recovery should be tested like a financial approval control.</p>
-          <p>Where can AI assistants read, write, summarize, or execute sensitive work? Permission boundaries around these tools must be auditable, revocable, and boring enough to survive daily use.</p>
-          <p>Resilience is not just the ability to keep systems running. It is the ability to retain authority over information after contact with an adversary. Recovery files, training processes, support workflows, developer environments, and AI assistants all need to be brought into that definition.</p>
-          <p>The next board report should not ask only whether the network stayed online. It should ask whether the organization can keep data from becoming debt.</p>
+          <p>The recent CyberPulse arc tracked exposed routes, temporary exceptions, and priced weaknesses. Today’s development is different: attackers are compressing the interval between a public weakness and useful leverage until normal governance feels late by design.</p>
+          <h2 id="signal">Signal</h2>
+          <p>A dense cluster of actively abused vulnerabilities now spans secure access gateways, telephony management, software repositories, workflow orchestration, web frameworks, and model-routing infrastructure. Researchers and vendors are reporting reverse shells, administrator-token creation, miner deployment, environment discovery, and credential harvesting. That is not a narrow patch-management story. It is a tempo problem.</p>
+
+    <p>For enterprise security teams across the Gulf, the practical question is no longer whether a high-severity flaw exists somewhere in the estate. The question is whether the organization can prove, quickly, which reachable systems were exposed, which credentials may have been touched, which administrative objects changed, and which outbound channels appeared before the patch was applied.</p>
+
+    <p class="emphasis">The gap attackers want is the gap between technical remediation and executive certainty. A system can be patched while the business is still blind about whether leverage was created during the window.</p>
+          <h2 id="edge-and-communications">Edge and communications</h2>
+          <p>Secure access remains the obvious pressure point. Two newly disclosed flaws in a secure remote-access gateway line can be chained from pre-authenticated server-side request forgery toward operating-system command execution. The affected appliances are internet-facing by purpose, close to authentication flows, and frequently trusted during disruption.</p>
+
+    <p>Voice and collaboration infrastructure now belongs in the same operational queue. A critical flaw in an enterprise voice management platform allows unauthenticated SQL injection that can reach database operations and remote code execution. These systems may feel less strategic than identity or cloud platforms, but they manage users, directories, call flows, backend stores, and operational continuity. That makes them viable staging layers.</p>
+          <h2 id="delivery-and-automation">Delivery and automation</h2>
+          <p>Software delivery is carrying the same pressure. A critical authentication weakness in a widely used artifact repository reportedly allowed attackers to create administrator-level tokens shortly after disclosure. A repository is not passive storage; it is where build systems, deployment pipelines, packages, containers, and model artifacts converge.</p>
+
+    <p>Workflow orchestration and language-model gateway components add another layer. Recent reporting describes shell execution through orchestration, environment discovery through container access, durable access, resource monetization, and searches for provider keys, proxy-issued virtual keys, backend data, and host access. These platforms often start as developer accelerators. In practice, they sit close to secrets, cloud connectors, containers, and internal services.</p>
+
+    <p>Website administration is feeding the same compression. A critical file-upload flaw in a premium website-builder plugin has drawn nearly two hundred thousand blocked exploit attempts, while a separate migration and backup plugin leaves millions of sites exposed to restore-secret leakage and code execution. Public sites cannot be governed as cosmetic assets when they connect to payment journeys, customer data, marketing operations, and brand trust.</p>
+          <h2 id="human-execution">Human execution</h2>
+          <p>The TerminalFix campaign shows the human path accelerating as well. Fake verification lures push users into PowerShell-led execution chains with dynamic library sideloading, hidden payload extraction, directory reconnaissance, persistence, and reverse tunneling. The campaign matters because it converts a user action into network-level access through tools administrators already allow.</p>
+
+    <p>Training remains necessary, but it is not sufficient. The control objective is to reduce what a tricked user can execute, record what actually ran, and detect outbound tunnel behavior before a workstation becomes a proxy into the enterprise.</p>
+          <h2 id="actions">Actions</h2>
+          <div class="action"><div class="action-label">P0 — Open a seventy-two-hour compression review</div><p>List every internet-reachable secure-access, voice, repository, workflow, model-routing, website administration, and backup component. For each, record patch state, exploit evidence, owner, preserved logs, rotated credentials, and whether compromise has been excluded.</p></div>
+
+    <div class="action"><div class="action-label">P1 — Treat patching as evidence collection</div><p>For the highest-risk surfaces, require administrator-change review, token inventory, new user and group checks, shell and webshell hunting, outbound tunnel review, and key rotation tied to the affected platform.</p></div>
+
+    <div class="action"><div class="action-label">P2 — Build an exposure-tempo register</div><p>Any platform that can execute code, route requests, store secrets, publish artifacts, manage communications, or restore websites should sit in one daily register during active exploitation waves, with accountable owners and closure evidence.</p></div>
+
+    <p>The compression gap closes only when the enterprise can move evidence, authority, and containment at the speed attackers move from disclosure to leverage.</p>
 
           <!-- ── Takeaways ── -->
           <h2 id="takeaways">Takeaways</h2>
@@ -563,16 +627,16 @@
             <div class="action-box">
               <h4>Board takeaway in 20 seconds</h4>
               <ul>
-                <li>The breach is no longer the event. The event is the moment information custody becomes a repricing problem for the board.</li>
+                <li>The stopwatch is part of the attack surface. This week’s most important signal is not any single product advisory. It is the speed at which multiple exposed business surfaces are being converted into command.</li>
                 <li>Fraud controls should be judged by whether they interrupt the handoffs attackers need: attention, delivery, trust, identity, web foothold, and credential payout.</li>
               </ul>
             </div>
             <div class="action-box">
               <h4>What should CISOs do?</h4>
               <ul>
-                <li>Monitor cloud workloads that unexpectedly send mail, create bulk outbound traffic, or appear outside approved provisioning patterns.</li>
-                <li>Treat trusted sharing services as redirect surfaces: inspect destination chains, not only the first domain a user clicks.</li>
-                <li>Lock down exposed form plugins, workflow tools, and AI builders with patch SLAs, admin restrictions, and recent-change review.</li>
+                <li>Open a seventy-two-hour compression review</li>
+                <li>Treat patching as evidence collection</li>
+                <li>Build an exposure-tempo register</li>
               </ul>
             </div>
             <div class="action-box">
@@ -597,80 +661,25 @@
           <h2 id="blind-spot">The board blind spot</h2>
           <p>The board blind spot is process friction. Fraud risk is treated as a user-awareness problem, while attackers are building the operational stack around payment approvals, travel workflows, support interactions, trusted sharing links, and exposed web tools. Directors should ask which business moments now require stronger proof, not just which employees received another warning email.</p>
 
-<ol>
+          <!-- ── Sources ── -->
+          <div class="source-box">
+            <div class="meta-kicker">Sources</div>
+            <ol>
               <!-- <li><a href="URL">Publication, Article title</a></li> -->
-              
+              <li><a href="https://thehackernews.com/2026/09/cisa-adds-seven-exploited-flaws-as.html">Seven exploited flaws added to public priority queue</a></li>
+<li><a href="https://www.securityweek.com/sonicwall-warns-of-two-sma1000-zero-days-exploited-in-attacks/">Secure gateway zero-days exploited in attacks</a></li>
+<li><a href="https://www.securityweek.com/sangoma-switchvox-vulnerabilities-exploited-in-the-wild/">Voice management flaw exploited in the wild</a></li>
+<li><a href="https://www.securityweek.com/critical-jfrog-artifactory-vulnerability-reportedly-exploited-in-the-wild/">Artifact repository authentication weakness reportedly exploited</a></li>
+<li><a href="https://www.securityweek.com/hackers-start-exploiting-critical-langflow-vulnerability/">Low-code model workflow flaw targeted for harvesting</a></li>
+<li><a href="https://www.securityweek.com/elementor-pro-wordpress-plugin-vulnerability-exploited-to-hack-sites/">Website-builder plugin flaw exploited to compromise sites</a></li>
+<li><a href="https://www.securityweek.com/over-3-million-wordpress-sites-affected-by-migration-plugin-vulnerability/">Migration and backup plugin exposure affecting millions of sites</a></li>
+<li><a href="https://www.microsoft.com/en-us/security/blog/2026/08/28/terminalfix-campaign-deploys-reverse-tunnel-through-multistage-intrusion">TerminalFix reverse-tunnel campaign research</a></li>
+<li><a href="https://www.darkreading.com/threat-intelligence/ai-gives-cybercriminals-dangerous-time-advantage">Attacker time advantage analysis</a></li>
             </ol>
           </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          <!-- CyberPulse related briefings start -->
-          <section class="related-briefings" aria-labelledby="related-briefings-title">
-            <h2 id="related-briefings-title">Related briefings</h2>
-            <div class="related-grid">
-              <a class="related-card" href="/posts/2026-06-03.html">
-                <span>2026-06-03</span>
-                <strong>The Automation Gap</strong>
-                <em>Today’s CyberPulse Daily Brief is about a widening operational gap: attackers are no longer just exploiting exposed software faster.</em>
-              </a>
-              <a class="related-card" href="/posts/2026-06-04.html">
-                <span>2026-06-04</span>
-                <strong>The Control Plane Squeeze</strong>
-                <em>Trusted systems are becoming attack surfaces: web gateways, telemetry, mobile tokens, AI assistants, and endpoint controls.</em>
-              </a>
-              <a class="related-card" href="/posts/2026-06-05.html">
-                <span>2026-06-05</span>
-                <strong>The Trust Boundary Weekend</strong>
-                <em>Automation, plugins, agents, package ecosystems, and operational systems are accumulating authority faster than many governance models can explain.</em>
-              </a>
-            </div>
-          </section>
-          <!-- CyberPulse related briefings end -->
-
           <div class="article-footer">
-            <span>CyberPulse &middot; Signal over noise &middot; Edition No. 1</span>
+            <span>CyberPulse &middot; Signal over noise &middot; Edition No. 114</span>
             <a href="/">Home</a>
           </div>
         </div>
@@ -681,23 +690,23 @@
           <div class="side-kicker">In this edition</div>
           <ul class="toc-list">
             <!-- Build TOC from h2 ids -->
-            <li><a href="#takeaways">Takeaways</a></li><li><a href="#sources">Sources</a></li>
+            <li><a href="#signal">Signal</a></li><li><a href="#edge-and-communications">Edge and communications</a></li><li><a href="#delivery-and-automation">Delivery and automation</a></li><li><a href="#human-execution">Human execution</a></li><li><a href="#actions">Actions</a></li><li><a href="#takeaways">Takeaways</a></li><li><a href="#blind-spot">The board blind spot</a></li><li><a href="#sources">Sources</a></li>
           </ul>
         </div>
 
         <div class="sticky-card">
           <div class="side-kicker">At a glance</div>
-          <p>The breach is no longer the event. The event is the moment information custody becomes a repricing problem for the board.</p>
+          <p>CyberPulse Daily Brief for September 7, 2026: attackers are compressing the interval between disclosure, exploitation, evidence, and containment across edge, repository, workflow, model-routing, website, and.</p>
           <ul>
-            
+            <li>Signal</li><li>Edge and communications</li><li>Delivery and automation</li><li>Human execution</li>
           </ul>
         </div>
 
         <div class="sticky-card">
           <div class="side-kicker">Share this briefing</div>
           <div class="share-stack">
-            <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-06-12.html" data-analytics="share-linkedin">Share on LinkedIn</a>
-            <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=When%20Data%20Becomes%20Debt&url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-06-12.html" data-analytics="share-x">Share on X</a>
+            <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-09-07.html" data-analytics="share-linkedin">Share on LinkedIn</a>
+            <a class="share-btn" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=The%20Compression%20Gap&url=https%3A%2F%2Ftusharvartak.com%2Fposts%2F2026-09-07.html" data-analytics="share-x">Share on X</a>
             <button class="share-btn" id="copyLinkBtnAside" type="button" data-analytics="share-copy">Copy article link</button>
           </div>
         </div>

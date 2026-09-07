@@ -5,7 +5,7 @@
     <link>https://tusharvartak.com</link>
     <description>Executive cyber intelligence briefings on cyber risk, AI threats, infrastructure exposure, and board-level decision-making.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 06 Sep 2026 06:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2026 06:00:00 +0000</lastBuildDate>
     <atom:link href="https://tusharvartak.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://tusharvartak.com/assets/og/default.png</url>
@@ -13,13 +13,13 @@
       <link>https://tusharvartak.com</link>
     </image>
     <item>
-      <title>CyberPulse Daily — The Exposure Market</title>
-      <link>https://tusharvartak.com/posts/cyberpulse-the-exposure-market.html</link>
-      <guid isPermaLink="true">https://tusharvartak.com/posts/cyberpulse-the-exposure-market.html</guid>
-      <pubDate>Sun, 06 Sep 2026 06:00:00 +0000</pubDate>
+      <title>CyberPulse Daily — The Compression Gap</title>
+      <link>https://tusharvartak.com/posts/cyberpulse-the-compression-gap.html</link>
+      <guid isPermaLink="true">https://tusharvartak.com/posts/cyberpulse-the-compression-gap.html</guid>
+      <pubDate>Mon, 07 Sep 2026 06:00:00 +0000</pubDate>
       <dc:creator>Tushar Vartak</dc:creator>
-      <description>CyberPulse Daily for September 6, 2026: attackers are pricing reachable enterprise exposure by exploitability, privilege proximity, credential value, business dependency, and containment readiness.</description>
-      <enclosure url="https://tusharvartak.com/assets/covers/2026-09-06.png?v=20260906" type="image/png" length="0"/>
+      <description>CyberPulse Daily Brief for September 7, 2026: attackers are compressing the interval between disclosure, exploitation, evidence, and containment across edge, repository, workflow, model-routing, website, and social-engineering surfaces.</description>
+      <enclosure url="https://tusharvartak.com/assets/covers/2026-09-07.png?v=20260907" type="image/png" length="0"/>
     </item>
   </channel>
 </rss>
