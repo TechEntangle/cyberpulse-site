@@ -5,7 +5,7 @@
     <link>https://tusharvartak.com</link>
     <description>Executive cyber intelligence briefings on cyber risk, AI threats, infrastructure exposure, and board-level decision-making.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 10 Sep 2026 06:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 11 Sep 2026 06:00:00 +0000</lastBuildDate>
     <atom:link href="https://tusharvartak.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://tusharvartak.com/assets/og/default.png</url>
@@ -13,13 +13,13 @@
       <link>https://tusharvartak.com</link>
     </image>
     <item>
-      <title>CyberPulse Daily — The Permission Forge</title>
-      <link>https://tusharvartak.com/posts/cyberpulse-the-permission-forge.html</link>
-      <guid isPermaLink="true">https://tusharvartak.com/posts/cyberpulse-the-permission-forge.html</guid>
-      <pubDate>Thu, 10 Sep 2026 06:00:00 +0000</pubDate>
+      <title>CyberPulse Emerging Risks — The Leverage Ledger</title>
+      <link>https://tusharvartak.com/posts/cyberpulse-the-leverage-ledger.html</link>
+      <guid isPermaLink="true">https://tusharvartak.com/posts/cyberpulse-the-leverage-ledger.html</guid>
+      <pubDate>Fri, 11 Sep 2026 06:00:00 +0000</pubDate>
       <dc:creator>Tushar Vartak</dc:creator>
-      <description>Attackers are increasingly targeting systems that manufacture permission: consoles, repositories, collaboration platforms, browsers, voice tools, and business application kernels.</description>
-      <enclosure url="https://tusharvartak.com/assets/covers/2026-09-10.png?v=20260910" type="image/png" length="0"/>
+      <description>A board-level CyberPulse briefing on how extortion actors convert product data, commerce surfaces, security tools, mobile estates, executive workflows, and suppliers into business leverage.</description>
+      <enclosure url="https://tusharvartak.com/assets/covers/2026-09-11.png?v=20260911" type="image/png" length="0"/>
     </item>
   </channel>
 </rss>
