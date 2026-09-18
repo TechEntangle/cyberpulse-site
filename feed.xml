@@ -5,7 +5,7 @@
     <link>https://tusharvartak.com</link>
     <description>Executive cyber intelligence briefings on cyber risk, AI threats, infrastructure exposure, and board-level decision-making.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 Sep 2026 06:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 18 Sep 2026 06:00:00 +0000</lastBuildDate>
     <atom:link href="https://tusharvartak.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://tusharvartak.com/assets/og/default.png</url>
@@ -13,13 +13,13 @@
       <link>https://tusharvartak.com</link>
     </image>
     <item>
-      <title>CyberPulse Emerging Risks — The Leverage Ledger</title>
-      <link>https://tusharvartak.com/posts/cyberpulse-the-leverage-ledger.html</link>
-      <guid isPermaLink="true">https://tusharvartak.com/posts/cyberpulse-the-leverage-ledger.html</guid>
-      <pubDate>Fri, 11 Sep 2026 06:00:00 +0000</pubDate>
+      <title>CyberPulse Daily — The Decision Queue</title>
+      <link>https://tusharvartak.com/posts/cyberpulse-the-decision-queue.html</link>
+      <guid isPermaLink="true">https://tusharvartak.com/posts/cyberpulse-the-decision-queue.html</guid>
+      <pubDate>Fri, 18 Sep 2026 06:00:00 +0000</pubDate>
       <dc:creator>Tushar Vartak</dc:creator>
-      <description>A board-level CyberPulse briefing on how extortion actors convert product data, commerce surfaces, security tools, mobile estates, executive workflows, and suppliers into business leverage.</description>
-      <enclosure url="https://tusharvartak.com/assets/covers/2026-09-11.png?v=20260911" type="image/png" length="0"/>
+      <description>CyberPulse Emerging Risks briefing for Gulf security leaders: identity-policy control, management-plane exposure, browser exploit kits, AI-assisted exploitation, and executive decision throughput.</description>
+      <enclosure url="https://tusharvartak.com/assets/covers/2026-09-18.png?v=20260918" type="image/png" length="0"/>
     </item>
   </channel>
 </rss>
