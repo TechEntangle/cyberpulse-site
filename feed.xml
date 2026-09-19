@@ -5,7 +5,7 @@
     <link>https://tusharvartak.com</link>
     <description>Executive cyber intelligence briefings on cyber risk, AI threats, infrastructure exposure, and board-level decision-making.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 18 Sep 2026 06:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 19 Sep 2026 06:00:00 +0000</lastBuildDate>
     <atom:link href="https://tusharvartak.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://tusharvartak.com/assets/og/default.png</url>
@@ -13,13 +13,13 @@
       <link>https://tusharvartak.com</link>
     </image>
     <item>
-      <title>CyberPulse Daily — The Decision Queue</title>
-      <link>https://tusharvartak.com/posts/cyberpulse-the-decision-queue.html</link>
-      <guid isPermaLink="true">https://tusharvartak.com/posts/cyberpulse-the-decision-queue.html</guid>
-      <pubDate>Fri, 18 Sep 2026 06:00:00 +0000</pubDate>
+      <title>CyberPulse — The Quiet Edit</title>
+      <link>https://tusharvartak.com/posts/cyberpulse-the-quiet-edit.html</link>
+      <guid isPermaLink="true">https://tusharvartak.com/posts/cyberpulse-the-quiet-edit.html</guid>
+      <pubDate>Sat, 19 Sep 2026 06:00:00 +0000</pubDate>
       <dc:creator>Tushar Vartak</dc:creator>
-      <description>CyberPulse Emerging Risks briefing for Gulf security leaders: identity-policy control, management-plane exposure, browser exploit kits, AI-assisted exploitation, and executive decision throughput.</description>
-      <enclosure url="https://tusharvartak.com/assets/covers/2026-09-18.png?v=20260918" type="image/png" length="0"/>
+      <description>Tiny changes at the edge of trust — worker scripts, consent prompts, and maintenance keys — are turning into business authority. Treat them as approval systems with dual control and rapid review.</description>
+      <enclosure url="https://tusharvartak.com/assets/covers/2026-09-19.png?v=20260919" type="image/png" length="0"/>
     </item>
   </channel>
 </rss>
