@@ -5,7 +5,7 @@
     <link>https://tusharvartak.com</link>
     <description>Executive cyber intelligence briefings on cyber risk, AI threats, infrastructure exposure, and board-level decision-making.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 19 Sep 2026 06:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 25 Sep 2026 06:00:00 +0000</lastBuildDate>
     <atom:link href="https://tusharvartak.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://tusharvartak.com/assets/og/default.png</url>
@@ -13,13 +13,13 @@
       <link>https://tusharvartak.com</link>
     </image>
     <item>
-      <title>CyberPulse — The Quiet Edit</title>
-      <link>https://tusharvartak.com/posts/cyberpulse-the-quiet-edit.html</link>
-      <guid isPermaLink="true">https://tusharvartak.com/posts/cyberpulse-the-quiet-edit.html</guid>
-      <pubDate>Sat, 19 Sep 2026 06:00:00 +0000</pubDate>
+      <title>CyberPulse — Autonomy for Sale (2026-09-25)</title>
+      <link>https://tusharvartak.com/posts/cyberpulse-autonomy-for-sale.html</link>
+      <guid isPermaLink="true">https://tusharvartak.com/posts/cyberpulse-autonomy-for-sale.html</guid>
+      <pubDate>Fri, 25 Sep 2026 06:00:00 +0000</pubDate>
       <dc:creator>Tushar Vartak</dc:creator>
-      <description>Tiny changes at the edge of trust — worker scripts, consent prompts, and maintenance keys — are turning into business authority. Treat them as approval systems with dual control and rapid review.</description>
-      <enclosure url="https://tusharvartak.com/assets/covers/2026-09-19.png?v=20260919" type="image/png" length="0"/>
+      <description>Criminal platforms now package AI‑assisted fraud, token theft, and session reuse into services that sell credibility at scale. Combined with single sign‑on sprawl, orchestration weaknesses, and long‑lived developer access, authority is being granted without a human in the loop. This Emerging Risks brief translates the pattern into board‑level actions.</description>
+      <enclosure url="https://tusharvartak.com/assets/covers/2026-09-25.png?v=20260925" type="image/png" length="0"/>
     </item>
   </channel>
 </rss>
