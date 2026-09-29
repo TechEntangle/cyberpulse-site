@@ -5,7 +5,7 @@
     <link>https://tusharvartak.com</link>
     <description>Executive cyber intelligence briefings on cyber risk, AI threats, infrastructure exposure, and board-level decision-making.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 28 Sep 2026 06:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 06:00:00 +0000</lastBuildDate>
     <atom:link href="https://tusharvartak.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://tusharvartak.com/assets/og/default.png</url>
@@ -13,13 +13,13 @@
       <link>https://tusharvartak.com</link>
     </image>
     <item>
-      <title>CyberPulse - Reach <em>Beats</em> Repair (2026-09-28)</title>
-      <link>https://tusharvartak.com/posts/cyberpulse-reach-beats-repair.html</link>
-      <guid isPermaLink="true">https://tusharvartak.com/posts/cyberpulse-reach-beats-repair.html</guid>
-      <pubDate>Mon, 28 Sep 2026 06:00:00 +0000</pubDate>
+      <title>CyberPulse - Private <em>by</em> Default (2026-09-29)</title>
+      <link>https://tusharvartak.com/posts/cyberpulse-private-by-default.html</link>
+      <guid isPermaLink="true">https://tusharvartak.com/posts/cyberpulse-private-by-default.html</guid>
+      <pubDate>Tue, 29 Sep 2026 06:00:00 +0000</pubDate>
       <dc:creator>Tushar Vartak</dc:creator>
-      <description>Executive cyber intelligence briefing for 2026-09-28.</description>
-      <enclosure url="https://tusharvartak.com/assets/covers/2026-09-28.png?v=20260928" type="image/png" length="0"/>
+      <description>Executive cyber intelligence briefing for 2026-09-29.</description>
+      <enclosure url="https://tusharvartak.com/assets/covers/2026-09-29.png?v=20260929" type="image/png" length="0"/>
     </item>
   </channel>
 </rss>
