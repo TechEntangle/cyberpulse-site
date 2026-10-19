@@ -5,7 +5,7 @@
     <link>https://tusharvartak.com</link>
     <description>Executive cyber intelligence briefings on cyber risk, AI threats, infrastructure exposure, and board-level decision-making.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 09 Oct 2026 06:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 19 Oct 2026 06:00:00 +0000</lastBuildDate>
     <atom:link href="https://tusharvartak.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://tusharvartak.com/assets/og/default.png</url>
@@ -13,13 +13,13 @@
       <link>https://tusharvartak.com</link>
     </image>
     <item>
-      <title>CyberPulse Daily — Trust Is a Dependency</title>
-      <link>https://tusharvartak.com/posts/cyberpulse-trust-is-a-dependency.html</link>
-      <guid isPermaLink="true">https://tusharvartak.com/posts/cyberpulse-trust-is-a-dependency.html</guid>
-      <pubDate>Fri, 09 Oct 2026 06:00:00 +0000</pubDate>
+      <title>CyberPulse — Short Windows, Wide Blast Radius (2026-10-19)</title>
+      <link>https://tusharvartak.com/posts/cyberpulse-short-windows-wide-blast-radius.html</link>
+      <guid isPermaLink="true">https://tusharvartak.com/posts/cyberpulse-short-windows-wide-blast-radius.html</guid>
+      <pubDate>Mon, 19 Oct 2026 06:00:00 +0000</pubDate>
       <dc:creator>Tushar Vartak</dc:creator>
-      <description>CyberPulse Emerging Risks briefing for Gulf security leaders: decision-system trust, sign-in continuity, mail inspection risk, fake-repository rearming, small-utility admin risk, and executive moves to reduce dependency blast radius.</description>
-      <enclosure url="https://tusharvartak.com/assets/covers/2026-10-09.png?v=20261009" type="image/png" length="0"/>
+      <description>Remote gateways and mail infrastructure face live exploitation, multiple gateway vendors ship critical fixes, a maximum-severity plugin flaw enables unauthenticated code execution, and the monthly platform bundle raises patch pressure. P0: pull admin planes off the internet and patch the edge. P1: revoke sessions and cut token lifetimes. P2: treat plugin governance as production security and update client libraries.</description>
+      <enclosure url="https://tusharvartak.com/assets/covers/2026-10-19.png?v=20261019" type="image/png" length="0"/>
     </item>
   </channel>
 </rss>
