@@ -5,7 +5,7 @@
     <link>https://tusharvartak.com</link>
     <description>Executive cyber intelligence briefings on cyber risk, AI threats, infrastructure exposure, and board-level decision-making.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 21 Oct 2026 06:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 Oct 2026 06:00:00 +0000</lastBuildDate>
     <atom:link href="https://tusharvartak.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://tusharvartak.com/assets/og/default.png</url>
@@ -13,13 +13,13 @@
       <link>https://tusharvartak.com</link>
     </image>
     <item>
-      <title>CyberPulse — Access on <em>Subscription</em> (2026-10-21)</title>
-      <link>https://tusharvartak.com/posts/cyberpulse-access-on-subscription.html</link>
-      <guid isPermaLink="true">https://tusharvartak.com/posts/cyberpulse-access-on-subscription.html</guid>
-      <pubDate>Wed, 21 Oct 2026 06:00:00 +0000</pubDate>
+      <title>CyberPulse — When Gateways Become Servers (2026-10-22)</title>
+      <link>https://tusharvartak.com/posts/cyberpulse-when-gateways-become-servers.html</link>
+      <guid isPermaLink="true">https://tusharvartak.com/posts/cyberpulse-when-gateways-become-servers.html</guid>
+      <pubDate>Thu, 22 Oct 2026 06:00:00 +0000</pubDate>
       <dc:creator>Tushar Vartak</dc:creator>
-      <description>Executive cyber intelligence briefing for 2026-10-21.</description>
-      <enclosure url="https://tusharvartak.com/assets/covers/2026-10-21.png?v=20261021" type="image/png" length="0"/>
+      <description>Executive cyber intelligence briefing for 2026-10-22.</description>
+      <enclosure url="https://tusharvartak.com/assets/covers/2026-10-22.png?v=20261022" type="image/png" length="0"/>
     </item>
   </channel>
 </rss>
