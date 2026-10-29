@@ -5,7 +5,7 @@
     <link>https://tusharvartak.com</link>
     <description>Executive cyber intelligence briefings on cyber risk, AI threats, infrastructure exposure, and board-level decision-making.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 27 Oct 2026 06:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2026 06:00:00 +0000</lastBuildDate>
     <atom:link href="https://tusharvartak.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://tusharvartak.com/assets/og/default.png</url>
@@ -13,13 +13,13 @@
       <link>https://tusharvartak.com</link>
     </image>
     <item>
-      <title>CyberPulse - The Session Squeeze (2026-10-27)</title>
-      <link>https://tusharvartak.com/posts/cyberpulse-the-session-squeeze.html</link>
-      <guid isPermaLink="true">https://tusharvartak.com/posts/cyberpulse-the-session-squeeze.html</guid>
-      <pubDate>Tue, 27 Oct 2026 06:00:00 +0000</pubDate>
+      <title>CyberPulse - When Trust Breaks Mid‑Flight (2026-10-29)</title>
+      <link>https://tusharvartak.com/posts/cyberpulse-when-trust-breaks-mid-flight.html</link>
+      <guid isPermaLink="true">https://tusharvartak.com/posts/cyberpulse-when-trust-breaks-mid-flight.html</guid>
+      <pubDate>Thu, 29 Oct 2026 06:00:00 +0000</pubDate>
       <dc:creator>Tushar Vartak</dc:creator>
-      <description>Executive cyber intelligence briefing for 2026-10-27.</description>
-      <enclosure url="https://tusharvartak.com/assets/covers/2026-10-27.png?v=20261027" type="image/png" length="0"/>
+      <description>Compromised certificate intermediates, emergency fixes in core runtimes, and high‑severity flaws in CI and analytics tooling show how trust can flip state mid‑transaction. Actions: certificate governance, runtime hardening, pipeline isolation, sandbox verification, and session assurance.</description>
+      <enclosure url="https://tusharvartak.com/assets/covers/2026-10-29.png?v=20261029" type="image/png" length="0"/>
     </item>
   </channel>
 </rss>
