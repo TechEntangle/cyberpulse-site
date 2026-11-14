@@ -5,7 +5,7 @@
     <link>https://tusharvartak.com</link>
     <description>Executive cyber intelligence briefings on cyber risk, AI threats, infrastructure exposure, and board-level decision-making.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 11 Nov 2026 06:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 14 Nov 2026 06:00:00 +0000</lastBuildDate>
     <atom:link href="https://tusharvartak.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://tusharvartak.com/assets/og/default.png</url>
@@ -13,13 +13,13 @@
       <link>https://tusharvartak.com</link>
     </image>
     <item>
-      <title>Proofless Access — CyberPulse Daily (2026-11-11)</title>
-      <link>https://tusharvartak.com/posts/cyberpulse-proofless-access.html</link>
-      <guid isPermaLink="true">https://tusharvartak.com/posts/cyberpulse-proofless-access.html</guid>
-      <pubDate>Wed, 11 Nov 2026 06:00:00 +0000</pubDate>
+      <title>CyberPulse — Machine Pace, Human Stakes (2026-11-14)</title>
+      <link>https://tusharvartak.com/posts/cyberpulse-machine-pace-human-stakes.html</link>
+      <guid isPermaLink="true">https://tusharvartak.com/posts/cyberpulse-machine-pace-human-stakes.html</guid>
+      <pubDate>Sat, 14 Nov 2026 06:00:00 +0000</pubDate>
       <dc:creator>Tushar Vartak</dc:creator>
-      <description>Verification gaps dominated today’s risk: unsigned or redirect‑bypassed identity flows, a repository SSO revocation gap, an in‑the‑wild browser fix, active exploitation of Brotli and Metabase, and a patch wave with critical preview‑pane and identity components. Actions: enforce signed assertions, accelerate click‑less patches, and tighten package governance.</description>
-      <enclosure url="https://tusharvartak.com/assets/covers/2026-11-11.png?v=20261111" type="image/png" length="0"/>
+      <description>Executive cyber intelligence briefing for 2026-11-14.</description>
+      <enclosure url="https://tusharvartak.com/assets/covers/2026-11-14.png?v=20261114" type="image/png" length="0"/>
     </item>
   </channel>
 </rss>
